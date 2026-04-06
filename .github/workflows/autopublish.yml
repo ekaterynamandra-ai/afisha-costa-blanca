@@ -1,0 +1,38 @@
+name: Auto-publish Telegram posts
+
+on:
+  schedule:
+    # Every hour at :00
+    - cron: '0 * * * *'
+  workflow_dispatch:
+    # Manual trigger from GitHub UI
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests python-dotenv
+
+      - name: Run autopublish
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL: ${{ secrets.TELEGRAM_CHANNEL }}
+        run: python scripts/autopublish.py
+
+      - name: Commit updated schedule files
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          git add content/schedule/*.json
+          git diff --staged --quiet || git commit -m "Auto-publish: update post statuses"
+          git push

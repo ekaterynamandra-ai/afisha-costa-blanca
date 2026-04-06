@@ -24,13 +24,18 @@ from datetime import datetime, timezone
 from pathlib import Path
 from dotenv import load_dotenv
 
-load_dotenv(Path(__file__).parent.parent / ".env")
+# Load .env if exists (local), otherwise use env vars (GitHub Actions)
+env_path = Path(__file__).parent.parent / ".env"
+if env_path.exists():
+    load_dotenv(env_path)
+
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 CHANNEL_ID = os.getenv("TELEGRAM_CHANNEL")
 API = f"https://api.telegram.org/bot{BOT_TOKEN}"
 SCHEDULE_DIR = Path(__file__).parent.parent / "content" / "schedule"
 
 DRY_RUN = "--dry" in sys.argv
+FORCE_TODAY = "--today" in sys.argv  # publish all approved posts for today regardless of time
 
 
 def send(text, photo=None):
@@ -106,9 +111,13 @@ def process_schedule():
                 continue
 
             if post_dt > now:
-                print(f"  ⏰ #{post_id} {title} — scheduled {post_date} {post_time} (not yet)")
-                skipped_count += 1
-                continue
+                # --today: publish if same date, ignore time
+                if FORCE_TODAY and post_dt.date() == now.date():
+                    print(f"  🔵 #{post_id} {title} — today (forced)")
+                else:
+                    print(f"  ⏰ #{post_id} {title} — scheduled {post_date} {post_time} (not yet)")
+                    skipped_count += 1
+                    continue
 
             # Публикуем!
             text = post.get("text", "")
