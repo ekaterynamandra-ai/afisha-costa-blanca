@@ -38,8 +38,11 @@ DRY_RUN = "--dry" in sys.argv
 FORCE_TODAY = "--today" in sys.argv  # publish all approved posts for today regardless of time
 
 
+PROJECT_ROOT = Path(__file__).parent.parent
+
+
 def send(text, photo=None):
-    """Отправить пост в канал."""
+    """Отправить пост с одним фото или без."""
     if DRY_RUN:
         print(f"  [DRY RUN] Would send: {text[:60]}...")
         return {"ok": True, "result": {"message_id": 0}}
@@ -63,6 +66,53 @@ def send(text, photo=None):
             "parse_mode": "HTML", "disable_web_page_preview": True
         })
         d = r.json()
+
+    return d
+
+
+def send_album(text, photos):
+    """Отправить альбом (несколько фото) с подписью."""
+    if DRY_RUN:
+        print(f"  [DRY RUN] Would send album ({len(photos)} photos): {text[:60]}...")
+        return {"ok": True, "result": [{"message_id": 0}]}
+
+    media = []
+    files = {}
+
+    for i, photo_path in enumerate(photos):
+        if photo_path.startswith("http"):
+            entry = {"type": "photo", "media": photo_path}
+        else:
+            full_path = Path(photo_path)
+            if not full_path.is_absolute():
+                full_path = PROJECT_ROOT / photo_path
+            key = f"photo{i}"
+            files[key] = open(full_path, "rb")
+            entry = {"type": "photo", "media": f"attach://{key}"}
+
+        if i == 0:
+            entry["caption"] = text
+            entry["parse_mode"] = "HTML"
+        media.append(entry)
+
+    r = requests.post(
+        f"{API}/sendMediaGroup",
+        data={"chat_id": CHANNEL_ID, "media": json.dumps(media)},
+        files=files
+    )
+    d = r.json()
+
+    for f in files.values():
+        f.close()
+
+    if not d.get("ok"):
+        print(f"  Album failed ({d.get('description','')}), retrying single photo...")
+        # Fallback: send first photo only
+        first = photos[0]
+        if first.startswith("http"):
+            return send(text, photo=first)
+        else:
+            return send(text)
 
     return d
 
@@ -125,10 +175,14 @@ def process_schedule():
                 print(f"  ⚠️  #{post_id} {title} — no text, skipping")
                 continue
 
-            photo = post.get("photo")
+            photos = post.get("photos")  # album (list)
+            photo = post.get("photo")    # single photo (string)
             print(f"  📤 #{post_id} {title}...")
 
-            result = send(text, photo)
+            if photos and len(photos) > 1:
+                result = send_album(text, photos)
+            else:
+                result = send(text, photo)
 
             if result.get("ok"):
                 post["status"] = "published"
