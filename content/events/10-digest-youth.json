@@ -1,0 +1,40 @@
+{
+  "type": "audience_digest",
+  "audience_key": "youth",
+  "events": [
+    {
+      "category_emoji": "🎵",
+      "title_short": "Festival Rocanrola",
+      "city": "Аликанте",
+      "date_short": "30 апр – 2 мая",
+      "price": "Платно",
+      "why_this_audience": "100+ артистов, стрит-арт, фуд-траки, BMX — 3 дня нон-стоп"
+    },
+    {
+      "category_emoji": "🎵",
+      "title_short": "Mar de Javea Festival",
+      "city": "Хавеа",
+      "date_short": "3–4 апреля",
+      "price": "от €40",
+      "why_this_audience": "Crystal Fighters + испанские звёзды у моря. VIP-зона с видом"
+    },
+    {
+      "category_emoji": "🎭",
+      "title_short": "Moros y Cristianos",
+      "city": "Алькой",
+      "date_short": "24–27 апреля",
+      "price": "Бесплатно",
+      "why_this_audience": "Ночные шествия, фейерверки, атмосфера — идеально для компании"
+    },
+    {
+      "category_emoji": "💃",
+      "title_short": "Abril en Danza",
+      "city": "Аликанте",
+      "date_short": "20 апр – 3 мая",
+      "price": "Микс",
+      "why_this_audience": "Современный танец, мастер-классы, вечеринки — свежий культурный вайб"
+    }
+  ],
+  "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Harlot_concierto_Barcelona.jpg",
+  "published": false
+}

@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>@afishaCB — Полный мокап АПРЕЛЬ 2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, 'Segoe UI', Roboto, sans-serif; background: #0e1621; color: #fff; padding: 16px; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+  h1 { color: #aaa; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; margin: 16px 0 0; }
+  .tg { width: 400px; max-width: 95vw; }
+  .ch { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; padding: 6px 0; }
+  .av { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #1A365D, #F6AD55); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; flex-shrink: 0; }
+  .cn { font-weight: 600; font-size: 14px; }
+  .cs { font-size: 11px; color: #708499; }
+  .msg { background: #182533; border-radius: 12px; border-top-left-radius: 4px; overflow: hidden; margin-bottom: 10px; }
+  .img { position: relative; width: 100%; height: 180px; overflow: hidden; }
+  .img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .img .ov { position: absolute; bottom: 0; left: 0; right: 0; padding: 6px 10px; background: linear-gradient(transparent, rgba(0,0,0,0.75)); font-size: 10px; color: rgba(255,255,255,0.85); text-transform: uppercase; letter-spacing: 1px; }
+  .bd { padding: 10px 12px 6px; font-size: 13.5px; line-height: 1.5; color: #e4e6ea; }
+  .bd b { color: #fff; }
+  .bd a { color: #5b9bd5; text-decoration: none; }
+  .bd i { color: #7a99b5; }
+  .tt { font-weight: 700; font-size: 14px; margin-bottom: 6px; color: #fff; display: block; }
+  .st { font-weight: 700; font-size: 12.5px; color: #F6AD55; margin: 8px 0 3px; display: block; }
+  .mt { font-size: 13px; color: #8dabc4; line-height: 1.65; }
+  .mt b { color: #c0d8f0; }
+  .tp { background: rgba(246,173,85,0.12); border-left: 3px solid #F6AD55; padding: 5px 9px; border-radius: 0 6px 6px 0; margin: 6px 0; font-size: 13px; color: #ccd6e0; }
+  .tp b { color: #F6AD55; }
+  .au { background: rgba(91,155,213,0.08); border-radius: 6px; padding: 5px 9px; margin: 6px 0; font-size: 12px; color: #8dabc4; }
+  .au b { color: #a0c4e8; }
+  .tg-tags { color: #5b9bd5; font-size: 12px; margin-top: 6px; }
+  .ft { display: flex; justify-content: space-between; padding: 3px 12px 8px; font-size: 11px; color: #708499; }
+  .rx { display: flex; gap: 5px; padding: 2px 12px 8px; flex-wrap: wrap; }
+  .rx span { background: rgba(91,155,213,0.15); border: 1px solid rgba(91,155,213,0.25); border-radius: 16px; padding: 2px 8px; font-size: 12px; color: #5b9bd5; }
+  .btn { display: block; background: rgba(91,155,213,0.15); border: 1px solid rgba(91,155,213,0.3); border-radius: 8px; padding: 7px 14px; text-align: center; color: #5b9bd5; font-size: 13px; font-weight: 500; text-decoration: none; margin: 4px 12px 10px; }
+  .wk { background: rgba(26,54,93,0.3); border: 1px solid rgba(26,54,93,0.5); border-radius: 8px; padding: 8px 10px; margin: 6px 0; }
+  .wk .wt { font-weight: 700; font-size: 12px; color: #F6AD55; margin-bottom: 4px; }
+  .wk .wi { font-size: 13px; color: #8dabc4; line-height: 1.65; }
+  .wk .wi b { color: #e4e6ea; }
+  .hl { background: rgba(246,173,85,0.08); border: 1px solid rgba(246,173,85,0.2); border-radius: 8px; padding: 7px 10px; margin: 5px 0; }
+  .hl .ht { font-weight: 700; font-size: 13px; color: #fff; }
+  .hl .hd { font-size: 12.5px; color: #ccd6e0; margin-top: 2px; }
+  .it { margin-bottom: 8px; }
+  .it .in { font-weight: 700; font-size: 13px; color: #e4e6ea; }
+  .it .in a { font-weight: 400; font-size: 11px; }
+  .it .im { font-size: 12.5px; color: #8dabc4; margin-top: 1px; }
+  .it .iw { font-size: 12px; color: #7a99b5; font-style: italic; margin-top: 1px; }
+  .sep { width: 400px; max-width: 95vw; border-top: 2px solid #1A365D; padding-top: 20px; margin-top: 8px; }
+  .day { color: #F6AD55; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; background: rgba(246,173,85,0.1); border-radius: 4px; padding: 3px 8px; margin-bottom: 6px; display: inline-block; }
+  .week-sep { width: 400px; max-width: 95vw; border-top: 3px solid #F6AD55; padding-top: 16px; margin-top: 16px; text-align: center; }
+  .week-label { color: #F6AD55; font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; }
+  .pnum { color: #556; font-size: 10px; float: right; }
+  .rd { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #e53e3e; margin-right: 3px; vertical-align: middle; }
+</style>
+</head>
+<body>
+
+<h1>@afishaCB — Полный мокап АПРЕЛЬ 2026 · 32 поста</h1>
+
+<div class="tg">
+  <div class="ch"><div class="av">CB</div><div><div class="cn">Афиша Costa Blanca</div><div class="cs">@afishaCB</div></div></div>
+</div>
+
+<!-- ====================================================== -->
+<div class="tg week-sep"><div class="week-label">Пт 27 марта — Старт месяца</div></div>
+<!-- ====================================================== -->
+
+<!-- POST 1 -->
+<div class="tg sep">
+<span class="day">Пт 27 марта · 10:00</span><span class="pnum">#1/32</span>
+<div class="msg">
+  <div class="img"><img src="https://images.pexels.com/photos/29837765/pexels-photo-29837765.jpeg?auto=compress&cs=tinysrgb&w=800" alt=""><div class="ov">📅 Апрель 2026 | План месяца</div></div>
+  <div class="bd">
+    <span class="tt">📅 АПРЕЛЬ 2026: самое интересное по неделям</span>
+    <div class="wk"><div class="wt">НЕДЕЛЯ 1: 30 марта – 6 апреля</div><div class="wi">🕊️ <b>Semana Santa</b> — процессии во всех городах<br>🏰 <b>2-6 апр:</b> Средневековый рынок, Санта-Пола<br><span class="rd"></span>3 апр — Страстная пятница · <span class="rd"></span>6 апр — Пасх. понедельник</div></div>
+    <div class="wk"><div class="wt">НЕДЕЛЯ 2: 7–13 апреля</div><div class="wi">🎮 <b>11-12 апр:</b> Expo Torrevieja + ComarCON<br><span class="rd"></span>13 апр — San Vicente Ferrer<br>🦩 Пик сезона фламинго</div></div>
+    <div class="wk"><div class="wt">НЕДЕЛЯ 3: 14–20 апреля</div><div class="wi"><span class="rd"></span>16 апр — Santa Faz (Аликанте)<br>🎵 <b>17 апр:</b> DJ Symphonic, Торревьеха</div></div>
+    <div class="wk"><div class="wt">НЕДЕЛЯ 4: 21–27 апреля 🔥</div><div class="wi">🍽️ <b>24-25 апр:</b> «A Todo Tren!» тапас-маршрут<br>🎭 <b>25-27 апр:</b> Moros y Cristianos — ЮБИЛЕЙ 750!</div></div>
+    <span class="st">Каждую неделю:</span>
+    <div class="mt">🛍️ Пт — мега-рынок Торревьехи (500+)<br>🛍️ Вс — El Campico, Гуардамар (~500)<br>🦩 Весь месяц — фламинго · 🌡️ +20-24°C</div>
+  </div>
+  <a class="btn" href="#">📱 Подпишись @afishaCB</a>
+  <div class="rx"><span>📌 98</span><span>🔥 56</span></div>
+  <div class="ft"><span>10:00</span><span>👁 8.4K</span></div>
+</div>
+</div>
+
+<!-- ====================================================== -->
+<div class="tg week-sep"><div class="week-label">Неделя 1 · Semana Santa</div></div>
+<!-- ====================================================== -->
+
+<!-- POST 2 -->
+<div class="tg sep">
+<span class="day">Сб 28 марта · 10:00</span><span class="pnum">#2</span>
+<div class="msg">
+  <div class="img"><img src="https://images.pexels.com/photos/13598504/pexels-photo-13598504.jpeg?auto=compress&cs=tinysrgb&w=800" alt=""><div class="ov">🕊️ Semana Santa | Costa Blanca</div></div>
+  <div class="bd">
+    <span class="tt">🕊️ SEMANA SANTA: где и что смотреть на Costa Blanca</span>
+    <div class="hl"><span class="ht">🏆 ОРИХУЭЛА</span> — лучшая! Международный туристический интерес<div class="hd">Скульптуры XVI века. Ночная процессия при свечах. <a href="https://www.google.com/maps/place/Orihuela/">📍</a></div></div>
+    <div class="hl"><span class="ht">🥈 КРЕЙВИЛЛЕНТ</span> — Национальный интерес<div class="hd">Рассвет Страстной пятницы — «Abrazo de la Morquera». <a href="https://www.google.com/maps/place/Crevillent/">📍</a></div></div>
+    <div class="hl"><span class="ht">🥉 АЛИКАНТЕ</span> — 28 процессий<div class="hd">Район Санта-Крус — самый атмосферный. <a href="https://www.google.com/maps/place/Barrio+Santa+Cruz,+Alicante/">📍</a></div></div>
+    <div class="mt" style="margin-top:6px">📍 <b>ГУАРДАМАР</b> — живой театр! Пт 3 апр 20:30<br>📍 <b>ТОРРЕВЬЕХА</b> — новый маршрут 2026<br>📍 <b>ЭЛЬЧЕ</b> — юбилей 325 лет!</div>
+    <div class="tp">💡 <b>Совет:</b> Самое зрелищное — Страстная пятница (3 апреля). Орихуэла стоит поездки!</div>
+    <div class="au">🎯 <b>Подойдёт:</b> 👨‍👩‍👧 семьям · 💑 парам · 📸 фотографам</div>
+  </div>
+  <a class="btn" href="#">🔗 Подробнее — расписание по городам</a>
+  <div class="rx"><span>🕊️ 67</span><span>📌 42</span></div>
+  <div class="ft"><span>10:00</span><span>👁 5.2K</span></div>
+</div>
+</div>
+
+<!-- POST 3 -->
+<div class="tg sep">
+<span class="day">Вс 29 марта · 10:00</span><span class="pnum">#3</span>
+<div class="msg">
+  <div class="img"><img src="https://images.pexels.com/photos/31715517/pexels-photo-31715517.jpeg?auto=compress&cs=tinysrgb&w=800" alt=""><div class="ov">🏆 Орихуэла | 30 мин от нас</div></div>
+  <div class="bd">
+    <span class="tt">🏆 ОРИХУЭЛА: лучшая Semana Santa на Costa Blanca</span>
+    <p>Уровень Севильи! Единственная с титулом «Международный туристический интерес».</p>
+    <span class="st">Расписание:</span>
+    <div class="mt">📅 <b>Пт 3 апр, 19:15</b> — «Convocatoria» (десятки колоколов!)<br>📅 <b>Пт 3 апр, 01:00</b> — Ночная процессия при свечах 🕯️<br>📅 <b>Сб 4 апр, 20:15</b> — «Santo Entierro», стиль XVIII века<br><br>📍 <a href="https://www.google.com/maps/place/Orihuela/">Орихуэла</a> (30 мин от Торревьехи) · 💰 Бесплатно</div>
+    <div class="tp">💡 <b>Совет:</b> Приезжайте за час. Лучшие точки — Plaza de las Salesas. Ночная в 1:00 — оденьтесь тепло!</div>
+    <div class="au">🎯 💑 парам · 📸 фотографам · 👨‍👩‍👧 семьям (днём)</div>
+  </div>
+  <a class="btn" href="#">🔗 Подробнее на сайте</a>
+  <div class="rx"><span>🔥 78</span><span>❤️ 41</span></div>
+  <div class="ft"><span>10:00</span><span>👁 4.8K</span></div>
+</div>
+</div>
+
+<!-- POST 4 -->
+<div class="tg sep">
+<span class="day">Пн 30 марта · 10:00</span><span class="pnum">#4</span>
+<div class="msg">
+  <div class="bd">
+    <span class="tt">🛍️ РЫНКИ: расписание на апрель</span>
+    <div class="mt">📅 <b>Пн</b> — <a href="https://www.google.com/maps/place/Santa+Pola/">Санта-Пола</a> (~450)<br>📅 <b>Вт</b> — <a href="https://www.google.com/maps/place/Orihuela/">Орихуэла</a> (~400, продукты с уэрт!)<br>📅 <b>Ср</b> — <a href="https://www.google.com/maps/place/Guardamar+del+Segura/">Гуардамар</a> · Бенидорм<br>📅 <b>Чт</b> — <a href="https://www.google.com/maps/place/Alicante/">Аликанте</a> (~375)<br>📅 <b>Пт</b> — <b>ТОРРЕВЬЕХА</b> 🔥 500+! 8:00-14:00<br>📅 <b>Сб</b> — Санта-Пола · Аликанте<br>📅 <b>Вс</b> — <b>El Campico</b> 🔥 ~500! 8:00-15:00</div>
+    <div class="tp">💡 Работают в дождь и в праздники!</div>
+  </div>
+  <a class="btn" href="#">📱 Подпишись @afishaCB</a>
+  <div class="rx"><span>📌 72</span><span>🛍️ 28</span></div>
+  <div class="ft"><span>10:00</span><span>👁 6.8K</span></div>
+</div>
+</div>
+
+<!-- POST 5 -->
+<div class="tg sep">
+<span class="day">Вт 31 марта · 10:00</span><span class="pnum">#5</span>
+<div class="msg">
+  <div class="bd">
+    <span class="tt">🏰 2-6 АПРЕЛЯ: Средневековый рынок у крепости Санта-Пола</span>
+    <p>У стен крепости XVI века — средневековый рынок с традиционной едой (arroz a banda, паэлья), ремесленные лавки, уличные артисты.</p>
+    <div class="mt">📅 2-6 апреля<br>📍 <a href="https://www.google.com/maps/place/Castillo+Fortaleza+de+Santa+Pola/">Castillo Fortaleza de Santa Pola</a> (15 мин)<br>💰 Вход бесплатный</div>
+    <div class="au">🎯 👨‍👩‍👧 семьям · 🍽️ гурманам · 📸 фотографам</div>
+  </div>
+  <a class="btn" href="#">📱 Подпишись @afishaCB</a>
+  <div class="rx"><span>🏰 34</span><span>❤️ 18</span></div>
+  <div class="ft"><span>10:00</span><span>👁 2.9K</span></div>
+</div>
+</div>
+
+<!-- POST 6 -->
+<div class="tg sep">
+<span class="day">Ср 1 апреля · 18:00</span><span class="pnum">#6</span>
+<div class="msg">
+  <div class="bd">
+    <span class="tt">🌟 ПАСХАЛЬНЫЕ ВЫХОДНЫЕ 4-6 АПРЕЛЯ: куда пойти</span>
+    <div class="it"><div class="in">1️⃣ 🕊️ Semana Santa — финальные процессии</div><div class="im">Пт вечер → Вс утро. Орихуэла, Гуардамар, Торревьеха</div><div class="iw">→ Парам, семьям, фотографам</div></div>
+    <div class="it"><div class="in">2️⃣ 🏰 Средневековый рынок — Санта-Пола <a href="https://www.google.com/maps/place/Castillo+Fortaleza+de+Santa+Pola/">📍</a></div><div class="im">Вс-Вс · Бесплатно · Еда, ремёсла, артисты</div><div class="iw">→ С детьми, гурманам</div></div>
+    <div class="it"><div class="in">3️⃣ 🎨 RODEARTE — подземный арт-рынок <a href="https://www.google.com/maps/place/Cuevas+del+Rodeo,+Rojales/">📍</a></div><div class="im">Вс 5 апр 10:00-15:00 · Бесплатно · В пещерах!</div><div class="iw">→ С подружками, парам, с детьми</div></div>
+    <div class="it"><div class="in">4️⃣ 🦩 Фламинго — пик сезона! <a href="https://www.google.com/maps/place/Parque+Natural+de+las+Salinas+de+Santa+Pola/">📍</a></div><div class="im">Любой день · Бесплатно · До 8000 птиц</div><div class="iw">→ С собакой, всем</div></div>
+  </div>
+  <a class="btn" href="#">📱 @afishaCB — подборки каждую среду!</a>
+  <div class="rx"><span>🔥 58</span><span>📌 36</span></div>
+  <div class="ft"><span>18:00</span><span>👁 5.4K</span></div>
+</div>
+</div>
+
+<!-- POST 7 -->
+<div class="tg sep">
+<span class="day">Чт 2 апреля · 10:00</span><span class="pnum">#7</span>
+<div class="msg">
+  <div class="img"><img src="https://images.pexels.com/photos/2253275/pexels-photo-2253275.jpeg?auto=compress&cs=tinysrgb&w=800" alt=""><div class="ov">🐕 С собакой | Пляжи + маршруты</div></div>
+  <div class="bd">
+    <span class="tt">🐕 С СОБАКОЙ: лучшие пляжи и маршруты</span>
+    <p>Апрель — идеально: тепло, пляжи пустые.</p>
+    <div class="it"><div class="in">🏖️ Playa Los Tusales <a href="https://www.google.com/maps/place/Playa+de+Los+Tusales/">📍</a></div><div class="im">Гуардамар · Песчаный, у дюн</div></div>
+    <div class="it"><div class="in">🏖️ Cala Ferrís <a href="https://www.google.com/maps/place/Cala+Ferris,+Torrevieja/">📍</a></div><div class="im">Торревьеха · Аджилити + душ!</div></div>
+    <div class="it"><div class="in">🏖️ Caleta dels Gossets <a href="https://www.google.com/maps/place/Caleta+dels+Gossets/">📍</a></div><div class="im">Санта-Пола · Бухта у скал</div></div>
+    <div class="it"><div class="in">🌲 Парк Альфонсо XIII <a href="https://www.google.com/maps/place/Parque+Alfonso+XIII,+Guardamar+del+Segura/">📍</a></div><div class="im">Гуардамар · 800 га тени</div></div>
+    <div class="it"><div class="in">🦩 Лагуна Ла-Мата <a href="https://www.google.com/maps/place/Parque+Natural+de+las+Lagunas+de+La+Mata+y+Torrevieja/">📍</a></div><div class="im">Торревьеха · Фламинго!</div></div>
+    <div class="tp">💡 В апреле собачьи пляжи свободны — лучшее время!</div>
+  </div>
+  <a class="btn" href="#">📱 Подпишись @afishaCB</a>
+  <div class="rx"><span>🐕 68</span><span>❤️ 41</span></div>
+  <div class="ft"><span>10:00</span><span>👁 5.8K</span></div>
+</div>
+</div>
+
+<!-- POST 8 -->
+<div class="tg sep">
+<span class="day">Пт 3 апреля · 08:00</span><span class="pnum">#8</span>
+<div class="msg">
+  <div class="bd">
+    <span class="tt">🔴 СЕГОДНЯ ВЫХОДНОЙ: Страстная пятница</span>
+    <p>Магазины закрыты. Рестораны работают. Рынки — тоже! 🛍️</p>
+    <div class="mt">🕊️ <b>Процессии сегодня:</b><br>· Орихуэла 19:15 + 01:00 ночь<br>· Гуардамар 20:30<br>· Торревьеха — весь день<br>· Аликанте — Santo Entierro</div>
+    <div class="tp">💡 Лучший вечер для процессий — сегодня!</div>
+  </div>
+  <div class="rx"><span>🕊️ 45</span><span>📌 22</span></div>
+  <div class="ft"><span>08:00</span><span>👁 4.1K</span></div>
+</div>
+</div>
+
+<!-- POST 9 -->
+<div class="tg sep">
+<span class="day">Сб 4 апреля · 10:00</span><span class="pnum">#9</span>
+<div class="msg">
+  <div class="bd">
+    <span class="tt">🎨 ЗАВТРА: RODEARTE — арт-рынок в пещерах Рохалеса</span>
+    <p>20+ ремесленных лавок в подземных пещерах! Керамика, ювелирка, мастер-классы, живая музыка. + «Swap Party» — обмен одеждой.</p>
+    <div class="mt">📅 Вс 5 апреля, 10:00-15:00<br>📍 <a href="https://www.google.com/maps/place/Cuevas+del+Rodeo,+Rojales/">Cuevas del Rodeo, Рохалес</a> (15 мин)<br>💰 Бесплатно</div>
+    <div class="au">🎯 👯‍♀️ с подружками · 💑 парам · 👨‍👩‍👧 с детьми</div>
+  </div>
+  <a class="btn" href="#">📱 Подпишись @afishaCB</a>
+  <div class="rx"><span>🎨 32</span><span>❤️ 19</span></div>
+  <div class="ft"><span>10:00</span><span>👁 2.6K</span></div>
+</div>
+</div>
+
+<!-- ====================================================== -->
+<div class="tg week-sep"><div class="week-label">Неделя 2 · Expo + ComarCON</div></div>
+<!-- ====================================================== -->
+
+<!-- POST 10 -->
+<div class="tg sep">
+<span class="day">Вс 5 апреля · 10:00</span><span class="pnum">#10</span>
+<div class="msg">
+  <div class="img"><img src="https://images.pexels.com/photos/1680214/pexels-photo-1680214.jpeg?auto=compress&cs=tinysrgb&w=800" alt=""><div class="ov">🦩 Сезон фламинго | Апрель</div></div>
+  <div class="bd">
+    <span class="tt">🦩 ФЛАМИНГО: пик сезона — до 8000 птиц рядом с нами!</span>
+    <p>Апрель — начало гнездования. Розовые облака на солёных озёрах!</p>
+    <div class="it"><div class="in">1️⃣ Салинас Санта-Пола <a href="https://www.google.com/maps/place/Parque+Natural+de+las+Salinas+de+Santa+Pola/">📍</a></div><div class="im">15 мин. Смотровые вышки. Самая большая колония!</div></div>
+    <div class="it"><div class="in">2️⃣ Лагуна Ла-Мата <a href="https://www.google.com/maps/place/Parque+Natural+de+las+Lagunas+de+La+Mata+y+Torrevieja/">📍</a></div><div class="im">10 мин от Торревьехи. С собакой можно!</div></div>
+    <div class="it"><div class="in">3️⃣ Розовое озеро <a href="https://www.google.com/maps/place/Laguna+Rosa+de+Torrevieja/">📍</a></div><div class="im">Розовая соль + розовые фламинго = 📸</div></div>
+    <div class="tp">💡 Утро или закат. Бинокль делает разницу!</div>
+    <div class="au">🎯 👨‍👩‍👧 семьям · 📸 фотографам · 🐕 с собакой · 💑 парам</div>
+  </div>
+  <a class="btn" href="#">🔗 Подробнее — маршруты, фото, советы</a>
+  <div class="rx"><span>😍 112</span><span>📌 67</span></div>
+  <div class="ft"><span>10:00</span><span>👁 9.1K</span></div>
+</div>
+</div>
+
+<!-- POST 11 -->
+<div class="tg sep">
+<span class="day">Пн 6 апреля · 10:00</span><span class="pnum">#11</span>
+<div class="msg">
+  <div class="bd">
+    <span class="tt">📋 НЕДЕЛЯ 7-13 АПРЕЛЯ: что интересного</span>
+    <div class="it"><div class="in">🎮 <b>11-12 апр:</b> Expo Torrevieja + ComarCON</div><div class="im">Бесплатно! 180+ стендов + аниме-фест</div></div>
+    <div class="it"><div class="in">🔴 <b>13 апр:</b> Выходной (San Vicente Ferrer)</div><div class="im">Торревьеха, Эльче + ещё 10 городов</div></div>
+    <div class="it"><div class="in">🦩 Фламинго — пик сезона</div><div class="im">Салинас Санта-Пола · Бесплатно</div></div>
+    <div class="it"><div class="in">🛍️ Пт — мега-рынок Торревьехи</div><div class="im">500+ прилавков · 8:00-14:00</div></div>
+  </div>
+  <a class="btn" href="#">📱 Подпишись @afishaCB</a>
+  <div class="rx"><span>📌 38</span><span>🔥 21</span></div>
+  <div class="ft"><span>10:00</span><span>👁 2.4K</span></div>
+</div>
+</div>
+
+<!-- POST 12 -->
+<div class="tg sep">
+<span class="day">Вт 7 апреля · 10:00</span><span class="pnum">#12</span>
+<div class="msg">
+  <div class="img"><img src="https://images.pexels.com/photos/1578750/pexels-photo-1578750.jpeg?auto=compress&cs=tinysrgb&w=800" alt=""><div class="ov">🌲 Гуардамар | Дюны и лес</div></div>
+  <div class="bd">
+    <span class="tt">🌲 ДЮНЫ ГУАРДАМАРА: 800 га леса у пляжа</span>
+    <p>Крупнейший искусственный лес Европы! Сосны высадили в 1900-х, чтобы остановить дюны.</p>
+    <div class="mt">🌡️ <b>Почему в апреле:</b> +22°C, цветы, не жарко<br>🌸 <b>Что увидите:</b> Сосны, пальмы, цветы, раскопки La Fonteta (VIII в. до н.э.)<br>🥾 <b>Маршрут:</b> ~3 км, лёгкий, тенистый → пляж<br><br>📍 <a href="https://www.google.com/maps/place/Parque+Alfonso+XIII,+Guardamar+del+Segura/">Парк Альфонсо XIII</a> · 💰 Бесплатно</div>
+    <div class="au">🎯 🐕 с собакой · 👨‍👩‍👧 семьям · 💑 парам · 🏃 бегунам</div>
+  </div>
+  <a class="btn" href="#">🔗 Подробнее — карта маршрута, фото</a>
+  <div class="rx"><span>🌲 55</span><span>❤️ 38</span></div>
+  <div class="ft"><span>10:00</span><span>👁 4.9K</span></div>
+</div>
+</div>
+
+<!-- POST 13 -->
+<div class="tg sep">
+<span class="day">Ср 8 апреля · 10:00</span><span class="pnum">#13</span>
+<div class="msg">
+  <div class="img"><img src="https://images.pexels.com/photos/1231365/pexels-photo-1231365.jpeg?auto=compress&cs=tinysrgb&w=800" alt=""><div class="ov">👨‍👩‍👧 С детьми | 5 идей</div></div>
+  <div class="bd">
+    <span class="tt">👨‍👩‍👧 С ДЕТЬМИ: 5 идей на эту неделю</span>
+    <div class="it"><div class="in">1️⃣ 🎮 ComarCON (Сб-Вс) <a href="https://www.google.com/maps/place/Palacio+de+los+Deportes+Infanta+Cristina/">📍</a></div><div class="im">Бесплатно! Косплей, настолки, аниме</div></div>
+    <div class="it"><div class="in">2️⃣ 🦩 Фламинго <a href="https://www.google.com/maps/place/Parque+Natural+de+las+Salinas+de+Santa+Pola/">📍</a></div><div class="im">Бесплатно · Считаем розовых птиц!</div></div>
+    <div class="it"><div class="in">3️⃣ 🌲 Дюны Гуардамара <a href="https://www.google.com/maps/place/Parque+Alfonso+XIII,+Guardamar+del+Segura/">📍</a></div><div class="im">Тенистые тропы → пляж</div></div>
+    <div class="it"><div class="in">4️⃣ 🛍️ El Campico (Вс) <a href="https://www.google.com/maps/place/Guardamar+del+Segura/">📍</a></div><div class="im">Бесплатно · Фрукты, игрушки</div></div>
+    <div class="it"><div class="in">5️⃣ 🏖️ Пляж + мороженое</div><div class="im">22°C, без толп — идеально</div></div>
+  </div>
+  <a class="btn" href="#">📱 Подпишись @afishaCB</a>
+  <div class="rx"><span>❤️ 41</span><span>👨‍👩‍👧 28</span></div>
+  <div class="ft"><span>10:00</span><span>👁 3.8K</span></div>
+</div>
+</div>
+
+<!-- POST 14 -->
+<div class="tg sep">
+<span class="day">Ср 8 апреля · 18:00</span><span class="pnum">#14</span>
+<div class="msg">
+  <div class="bd">
+    <span class="tt">🌟 ВЫХОДНЫЕ 11-12 АПРЕЛЯ: куда пойти</span>
+    <div class="it"><div class="in">1️⃣ 🎮 Expo + ComarCON — Торревьеха</div><div class="im">Сб-Вс · Бесплатно · 180+ стендов + 6000 фанатов</div><div class="iw">→ С детьми, подростками</div></div>
+    <div class="it"><div class="in">2️⃣ 🦩 Фламинго — Санта-Пола</div><div class="im">Бесплатно · Пик сезона!</div><div class="iw">→ С собакой, вдвоём</div></div>
+    <div class="it"><div class="in">3️⃣ 🛍️ El Campico — Гуардамар</div><div class="im">Вс 8:00-15:00 · 500+ прилавков</div><div class="iw">→ С подружками</div></div>
+    <div class="it"><div class="in">4️⃣ 🌲 Дюны → пляж — Гуардамар</div><div class="im">Бесплатно · Лес + море за 10 мин</div><div class="iw">→ С собакой, вдвоём</div></div>
+  </div>
+  <a class="btn" href="#">📱 @afishaCB — подборки каждую среду!</a>
+  <div class="rx"><span>🔥 52</span><span>📌 31</span></div>
+  <div class="ft"><span>18:00</span><span>👁 5.1K</span></div>
+</div>
+</div>
+
+<!-- POST 15 -->
+<div class="tg sep">
+<span class="day">Чт 9 апреля · 10:00</span><span class="pnum">#15</span>
+<div class="msg">
+  <div class="img"><img src="https://images.pexels.com/photos/1293120/pexels-photo-1293120.jpeg?auto=compress&cs=tinysrgb&w=800" alt=""><div class="ov">🎮 11-12 апреля | Торревьеха</div></div>
+  <div class="bd">
+    <span class="tt">🎮 11-12 АПРЕЛЯ: Expo Torrevieja + ComarCON — послезавтра!</span>
+    <div class="hl"><div class="ht">🏢 Expo Torrevieja</div><div class="hd">180+ стендов, классические авто (Вс). <a href="https://www.google.com/maps/place/Auditorio+Internacional+de+Torrevieja/">📍 Auditorio</a></div></div>
+    <div class="hl"><div class="ht">🎮 ComarCON XII</div><div class="hd">Аниме, косплей, K-Pop, турниры. <a href="https://www.google.com/maps/place/Palacio+de+los+Deportes+Infanta+Cristina/">📍 Palacio</a></div></div>
+    <div class="mt" style="margin-top:6px">📅 Сб-Вс · 💰 Бесплатно</div>
+    <div class="au">🎯 👨‍👩‍👧 семьям · 🧑‍🤝‍🧑 подросткам · 🎉 компанией</div>
+  </div>
+  <a class="btn" href="#">🔗 Подробнее — программа, как добраться</a>
+  <div class="rx"><span>🔥 48</span><span>🎮 31</span></div>
+  <div class="ft"><span>10:00</span><span>👁 4.2K</span></div>
+</div>
+</div>
+
+<!-- POST 16 -->
+<div class="tg sep">
+<span class="day">Чт 9 апреля · 18:00</span><span class="pnum">#16</span>
+<div class="msg">
+  <div class="bd">
+    <span class="tt">🏃 АКТИВНЫЙ АПРЕЛЬ: падель, теннис, велосипед</span>
+    <p>+22°C — идеальный сезон для спорта!</p>
+    <span class="st">🎾 Муниципальные корты:</span>
+    <div class="it"><div class="in">Ciudad Deportiva Torrevieja <a href="https://www.google.com/maps/place/Ciudad+Deportiva+de+Torrevieja/">📍</a></div><div class="im">Падель 6€/30мин · Теннис 4€/час · ☎️ 966 111 222</div></div>
+    <div class="it"><div class="in">Polideportivo Guardamar <a href="https://www.google.com/maps/place/Polideportivo+Municipal+Guardamar+del+Segura/">📍</a></div><div class="im">Падель + теннис 4€/час · ☎️ 965 729 014</div></div>
+    <span class="st">🚴 Велосипед:</span>
+    <div class="it"><div class="in">Via Verde de Torrevieja <a href="https://www.google.com/maps/place/V%C3%ADa+Verde+de+Torrevieja/">📍</a></div><div class="im">6.7 км, асфальт, плоская → пляж</div></div>
+    <span class="st">🛶 На воде:</span>
+    <div class="it"><div class="in">Каяк / SUP <a href="https://www.google.com/maps/place/Torrevieja+Surf+%26+SUP+School/">📍</a></div><div class="im">От 15€/час</div></div>
+  </div>
+  <a class="btn" href="#">📱 Подпишись @afishaCB</a>
+  <div class="rx"><span>🎾 42</span><span>🏃 28</span></div>
+  <div class="ft"><span>18:00</span><span>👁 3.6K</span></div>
+</div>
+</div>
+
+<!-- POST 17 -->
+<div class="tg sep">
+<span class="day">Пт 10 апреля · 08:00</span><span class="pnum">#17</span>
+<div class="msg">
+  <div class="bd">
+    <span class="tt">🛍️ СЕГОДНЯ: мега-рынок Торревьехи!</span>
+    <p>500+ прилавков · 8:00-14:00 · 🚌 Бесплатный автобус</p>
+    <div class="mt">📍 <a href="https://www.google.com/maps/place/Torrevieja/">Av. Delfina Viudes</a></div>
+    <div class="tp">💡 Лучшие фрукты — первые ряды справа. Приходите до 10!</div>
+  </div>
+  <div class="rx"><span>🛍️ 42</span></div>
+  <div class="ft"><span>08:00</span><span>👁 3.2K</span></div>
+</div>
+</div>
+
+<!-- ====================================================== -->
+<div class="tg week-sep"><div class="week-label">Неделя 3 · Santa Faz</div></div>
+<!-- ====================================================== -->
+
+<!-- POST 18 -->
+<div class="tg sep">
+<span class="day">Сб 11 апреля · 10:00</span><span class="pnum">#18</span>
+<div class="msg">
+  <div class="bd">
+    <span class="tt">📋 НЕДЕЛЯ 14-20 АПРЕЛЯ: что интересного</span>
+    <div class="it"><div class="in">🔴 <b>Пн 14:</b> Длинные выходные (мост)</div><div class="im">Многие отдыхают — пляжи будут полнее</div></div>
+    <div class="it"><div class="in">🔴 <b>Чт 16:</b> Santa Faz — выходной в Аликанте</div><div class="im">Крупнейшее паломничество провинции</div></div>
+    <div class="it"><div class="in">🎵 <b>Чт 17:</b> DJ Symphonic + оркестр</div><div class="im">Auditorio Торревьехи · Электроника + симфония</div></div>
+    <div class="it"><div class="in">🦩 Фламинго — стаи растут!</div><div class="im">Бесплатно · Салинас Санта-Пола</div></div>
+  </div>
+  <a class="btn" href="#">📱 Подпишись @afishaCB</a>
+  <div class="rx"><span>📌 34</span><span>🔥 18</span></div>
+  <div class="ft"><span>10:00</span><span>👁 2.1K</span></div>
+</div>
+</div>
+
+<!-- POST 19 -->
+<div class="tg sep">
+<span class="day">Вс 12 апреля · 10:00</span><span class="pnum">#19</span>
+<div class="msg">
+  <div class="img"><img src="https://images.pexels.com/photos/868110/pexels-photo-868110.jpeg?auto=compress&cs=tinysrgb&w=800" alt=""><div class="ov">🛍️ El Campico | Гуардамар</div></div>
+  <div class="bd">
+    <span class="tt">🛍️ РЫНОК EL CAMPICO: ~500 прилавков каждое воскресенье</span>
+    <p>Один из крупнейших воскресных рынков юга Costa Blanca! Одежда, обувь, фрукты, овощи, специи, вещи для дома — всё в одном месте.</p>
+    <div class="mt">📅 Каждое воскресенье, 8:00-15:00<br>📍 <a href="https://www.google.com/maps/place/Guardamar+del+Segura/">Camino del Raso, Гуардамар</a><br>💰 Бесплатно · Парковка есть</div>
+    <div class="tp">💡 Лучшее время — 9:00-11:00. К полудню жарко и людно. Свежие фрукты — ряды слева.</div>
+    <div class="au">🎯 👯‍♀️ с подружками · 👨‍👩‍👧 семьям · 🛍️ за покупками</div>
+  </div>
+  <a class="btn" href="#">📱 Подпишись @afishaCB</a>
+  <div class="rx"><span>🛍️ 48</span><span>📌 31</span></div>
+  <div class="ft"><span>10:00</span><span>👁 4.3K</span></div>
+</div>
+</div>
+
+<!-- POST 20 -->
+<div class="tg sep">
+<span class="day">Вт 14 апреля · 10:00</span><span class="pnum">#20</span>
+<div class="msg">
+  <div class="img"><img src="https://images.pexels.com/photos/1267696/pexels-photo-1267696.jpeg?auto=compress&cs=tinysrgb&w=800" alt=""><div class="ov">👯‍♀️ С подружками | Идеи</div></div>
+  <div class="bd">
+    <span class="tt">👯‍♀️ С ПОДРУЖКАМИ: 5 идей на эту неделю</span>
+    <div class="it"><div class="in">1️⃣ 📸 Розовое озеро <a href="https://www.google.com/maps/place/Laguna+Rosa+de+Torrevieja/">📍</a></div><div class="im">Инстаграм-мечта! Бесплатно</div></div>
+    <div class="it"><div class="in">2️⃣ 🛍️ Пятничный мега-рынок</div><div class="im">500+ прилавков · Одежда, сумки</div></div>
+    <div class="it"><div class="in">3️⃣ 🎾 Падель вчетвером <a href="https://www.google.com/maps/place/Ciudad+Deportiva+de+Torrevieja/">📍</a></div><div class="im">6€/30 мин на четверых!</div></div>
+    <div class="it"><div class="in">4️⃣ 🦩 Фламинго на закате <a href="https://www.google.com/maps/place/Laguna+Rosa+de+Torrevieja/">📍</a></div><div class="im">Розовые птицы + розовое небо = 📸📸📸</div></div>
+    <div class="it"><div class="in">5️⃣ 🧘 Йога на пляже (Сб утро)</div><div class="im">Playa del Cura · Бесплатные группы</div></div>
+  </div>
+  <a class="btn" href="#">📱 Подпишись @afishaCB</a>
+  <div class="rx"><span>💅 44</span><span>❤️ 36</span></div>
+  <div class="ft"><span>10:00</span><span>👁 4.4K</span></div>
+</div>
+</div>
+
+<!-- POST 21 -->
+<div class="tg sep">
+<span class="day">Ср 15 апреля · 10:00</span><span class="pnum">#21</span>
+<div class="msg">
+  <div class="bd">
+    <span class="tt">🌿 ПРИРОДА В АПРЕЛЕ: 3 маршрута рядом</span>
+    <p>🌡️ +22°C, цветы, птицы — лучший сезон!</p>
+    <div class="it"><div class="in">1️⃣ 🌲 Дюны Гуардамара <a href="https://www.google.com/maps/place/Parque+Alfonso+XIII,+Guardamar+del+Segura/">📍</a></div><div class="im">~3 км, лёгкий, тенистый → пляж</div><div class="iw">→ Семьям, с собакой</div></div>
+    <div class="it"><div class="in">2️⃣ 🦆 Парк Эль-Ондо <a href="https://www.google.com/maps/place/Parque+Natural+El+Hondo/">📍</a></div><div class="im">Птицы, черепахи, тишина. Бинокль!</div><div class="iw">→ Фотографам, парам</div></div>
+    <div class="it"><div class="in">3️⃣ ⛰️ Сьерра-де-Эскалона <a href="https://www.google.com/maps/place/Sierra+Escalona/">📍</a></div><div class="im">30 мин. Горная сосна, виды. Средняя.</div><div class="iw">→ Активным, с собакой</div></div>
+    <div class="tp">💡 Берите воду и крем. Утро — лучшее время для птиц.</div>
+  </div>
+  <a class="btn" href="#">📱 Подпишись @afishaCB</a>
+  <div class="rx"><span>🌿 34</span><span>❤️ 19</span></div>
+  <div class="ft"><span>10:00</span><span>👁 2.9K</span></div>
+</div>
+</div>
+
+<!-- POST 22 -->
+<div class="tg sep">
+<span class="day">Чт 16 апреля · 10:00</span><span class="pnum">#22</span>
+<div class="msg">
+  <div class="bd">
+    <span class="tt">🔴 СЕГОДНЯ ВЫХОДНОЙ В АЛИКАНТЕ: Santa Faz</span>
+    <p>Крупнейшее паломничество провинции. Сотни тысяч людей идут 8 км от собора к монастырю. По пути — лотки с росильяс и мистелой.</p>
+    <div class="mt">📍 <a href="https://www.google.com/maps/place/Monasterio+de+la+Santa+Faz/">Монастырь Santa Faz, Аликанте</a><br>🚌 Спец. автобусы каждые 5 мин с Plaza del Mar</div>
+    <div class="tp">💡 Если вы в Аликанте — атмосфера праздника по всему городу!</div>
+  </div>
+  <div class="rx"><span>🕊️ 38</span><span>📌 19</span></div>
+  <div class="ft"><span>10:00</span><span>👁 3.5K</span></div>
+</div>
+</div>
+
+<!-- POST 23 -->
+<div class="tg sep">
+<span class="day">Пт 17 апреля · 08:00</span><span class="pnum">#23</span>
+<div class="msg">
+  <div class="bd">
+    <span class="tt">🛍️ СЕГОДНЯ: мега-рынок Торревьехи!</span>
+    <p>500+ · 8:00-14:00 · 🚌 Бесплатный автобус</p>
+    <div class="mt">📍 <a href="https://www.google.com/maps/place/Torrevieja/">Av. Delfina Viudes</a></div>
+  </div>
+  <div class="rx"><span>🛍️ 38</span></div>
+  <div class="ft"><span>08:00</span><span>👁 2.8K</span></div>
+</div>
+</div>
+
+<!-- ====================================================== -->
+<div class="tg week-sep"><div class="week-label">Неделя 4 · Тапас + Moros 🔥</div></div>
+<!-- ====================================================== -->
+
+<!-- POST 24 -->
+<div class="tg sep">
+<span class="day">Сб 18 апреля · 10:00</span><span class="pnum">#24</span>
+<div class="msg">
+  <div class="bd">
+    <span class="tt">📋 НЕДЕЛЯ 21-27 АПРЕЛЯ: самая яркая! 🔥</span>
+    <div class="it"><div class="in">🍽️ <b>24-25 апр:</b> «A Todo Tren!» тапас-маршрут</div><div class="im">Торревьеха · 3-4€ за тапу + напиток</div></div>
+    <div class="it"><div class="in">🎭 <b>25-27 апр:</b> Moros y Cristianos, Алькой</div><div class="im">Юбилей 750 лет! Самый масштабный за всю историю</div></div>
+    <div class="it"><div class="in">🛍️ Пт — мега-рынок Торревьехи</div><div class="im">500+ прилавков</div></div>
+  </div>
+  <a class="btn" href="#">📱 Подпишись — детали на этой неделе!</a>
+  <div class="rx"><span>🔥 61</span><span>📌 42</span></div>
+  <div class="ft"><span>10:00</span><span>👁 3.8K</span></div>
+</div>
+</div>
+
+<!-- POST 25 -->
+<div class="tg sep">
+<span class="day">Вс 19 апреля · 10:00</span><span class="pnum">#25</span>
+<div class="msg">
+  <div class="img"><img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=800" alt=""><div class="ov">🍽️ Розовое озеро | Торревьеха</div></div>
+  <div class="bd">
+    <span class="tt">📸 РОЗОВОЕ ОЗЕРО ТОРРЕВЬЕХИ: что это и зачем ехать</span>
+    <p>Laguna Rosa — солёное озеро, которое реально розовое! Цвет даёт водоросль Dunaliella salina. Плюс фламинго — двойная фотогеничность.</p>
+    <div class="mt">📍 <a href="https://www.google.com/maps/place/Laguna+Rosa+de+Torrevieja/">Laguna Rosa de Torrevieja</a><br>💰 Бесплатно · Парковка есть<br>📸 Лучшее время — закат (розовое небо + розовая вода)</div>
+    <div class="tp">💡 НЕ входите в воду — это охраняемая территория. Фотки с берега получаются потрясающие!</div>
+    <div class="au">🎯 📸 фотографам · 👯‍♀️ с подружками · 💑 парам</div>
+  </div>
+  <a class="btn" href="#">🔗 Подробнее на сайте</a>
+  <div class="rx"><span>😍 78</span><span>📸 45</span></div>
+  <div class="ft"><span>10:00</span><span>👁 6.7K</span></div>
+</div>
+</div>
+
+<!-- POST 26 -->
+<div class="tg sep">
+<span class="day">Пн 20 апреля · 10:00</span><span class="pnum">#26</span>
+<div class="msg">
+  <div class="img"><img src="https://images.pexels.com/photos/13598504/pexels-photo-13598504.jpeg?auto=compress&cs=tinysrgb&w=800" alt=""><div class="ov">🎭 25-27 апреля | Алькой</div></div>
+  <div class="bd">
+    <span class="tt">🎭 25-27 АПРЕЛЯ: Moros y Cristianos — юбилей 750 лет!</span>
+    <p>Самый грандиозный костюмированный праздник Испании. Через 5 дней!</p>
+    <div class="mt">📅 <b>25 апр:</b> Парад Христиан 10:30 · Парад Мавров 17:00<br>📅 <b>26 апр:</b> Процессия реликвии 11:00<br>📅 <b>27 апр:</b> Битва 11:00 + 17:30 · Св. Георгий 21:30<br><br>📍 <a href="https://www.google.com/maps/place/Alcoy,+Alicante/">Алькой</a> (55 мин) · 💰 Бесплатно</div>
+    <div class="tp">💡 Самое зрелищное — парады 25-го. К 10 утра! Парковка на окраине + шаттлы. Беруши детям!</div>
+    <div class="au">🎯 👨‍👩‍👧 семьям · 📸 фотографам · 👥 всем</div>
+  </div>
+  <a class="btn" href="#">🔗 Подробнее — расписание, маршрут, парковка</a>
+  <div class="rx"><span>🔥 89</span><span>📌 51</span></div>
+  <div class="ft"><span>10:00</span><span>👁 7.8K</span></div>
+</div>
+</div>
+
+<!-- POST 27 -->
+<div class="tg sep">
+<span class="day">Вт 21 апреля · 10:00</span><span class="pnum">#27</span>
+<div class="msg">
+  <div class="bd">
+    <span class="tt">👨‍👩‍👧 С ДЕТЬМИ: идеи на эту неделю</span>
+    <div class="it"><div class="in">1️⃣ 🎭 Moros y Cristianos (Сб-Пн!) <a href="https://www.google.com/maps/place/Alcoy,+Alicante/">📍</a></div><div class="im">Бесплатно! Костюмы, марши, фейерверки. Беруши!</div></div>
+    <div class="it"><div class="in">2️⃣ 🦩 Фламинго <a href="https://www.google.com/maps/place/Parque+Natural+de+las+Salinas+de+Santa+Pola/">📍</a></div><div class="im">Пик сезона — стаи растут каждый день</div></div>
+    <div class="it"><div class="in">3️⃣ 🌲 Дюны → пляж <a href="https://www.google.com/maps/place/Parque+Alfonso+XIII,+Guardamar+del+Segura/">📍</a></div><div class="im">Лёгкая прогулка + купание</div></div>
+    <div class="it"><div class="in">4️⃣ 🚴 Via Verde на великах <a href="https://www.google.com/maps/place/V%C3%ADa+Verde+de+Torrevieja/">📍</a></div><div class="im">6.7 км, плоская, асфальт → пляж</div></div>
+  </div>
+  <a class="btn" href="#">📱 Подпишись @afishaCB</a>
+  <div class="rx"><span>❤️ 38</span><span>👨‍👩‍👧 24</span></div>
+  <div class="ft"><span>10:00</span><span>👁 3.2K</span></div>
+</div>
+</div>
+
+<!-- POST 28 -->
+<div class="tg sep">
+<span class="day">Ср 22 апреля · 18:00</span><span class="pnum">#28</span>
+<div class="msg">
+  <div class="bd">
+    <span class="tt">🌟 ВЫХОДНЫЕ 25-27 АПРЕЛЯ: самые яркие! 🔥</span>
+    <div class="it"><div class="in">1️⃣ 🎭 Moros y Cristianos — Алькой <a href="https://www.google.com/maps/place/Alcoy,+Alicante/">📍</a></div><div class="im">Юбилей 750 лет! Пт-Вс · Бесплатно</div><div class="iw">→ MUST SEE. Семьям, фотографам, всем</div></div>
+    <div class="it"><div class="in">2️⃣ 🍽️ «A Todo Tren!» тапас — Торревьеха</div><div class="im">Пт-Сб · 3-4€ за тапу + напиток + розыгрыш!</div><div class="iw">→ С подружками, парам, гурманам</div></div>
+    <div class="it"><div class="in">3️⃣ 🦩 Фламинго — Санта-Пола <a href="https://www.google.com/maps/place/Parque+Natural+de+las+Salinas+de+Santa+Pola/">📍</a></div><div class="im">Бесплатно · Максимальные стаи!</div><div class="iw">→ С собакой, вдвоём</div></div>
+    <div class="it"><div class="in">4️⃣ 🛍️ El Campico (Вс) <a href="https://www.google.com/maps/place/Guardamar+del+Segura/">📍</a></div><div class="im">500+ прилавков · 8:00-15:00</div><div class="iw">→ С подружками</div></div>
+  </div>
+  <a class="btn" href="#">📱 @afishaCB — лучшие выходные апреля!</a>
+  <div class="rx"><span>🔥 78</span><span>📌 52</span></div>
+  <div class="ft"><span>18:00</span><span>👁 6.9K</span></div>
+</div>
+</div>
+
+<!-- POST 29 -->
+<div class="tg sep">
+<span class="day">Чт 23 апреля · 10:00</span><span class="pnum">#29</span>
+<div class="msg">
+  <div class="img"><img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=800" alt=""><div class="ov">🍽️ 24-25 апреля | Тапас</div></div>
+  <div class="bd">
+    <span class="tt">🍽️ ЗАВТРА: «A Todo Tren!» — тапас-маршрут Торревьехи!</span>
+    <p>Бары и рестораны готовят специальные тапас!</p>
+    <div class="mt">🍴 <b>Тапа + напиток</b> — 3-4€<br>🍰 <b>Десерт + кофе</b> — 3-4€<br>🍹 <b>Коктейль</b> — 3-4€<br><br>📅 Пт-Сб, 24-25 апреля · 📍 Центр Торревьехи<br>🎰 QR → розыгрыш: хамон, телефон, твой вес в пиве! 🍺</div>
+    <div class="tp">💡 Начните с вечера пятницы — атмосфернее!</div>
+    <div class="au">🎯 💑 парам · 👯‍♀️ подружками · 🍽️ гурманам</div>
+  </div>
+  <a class="btn" href="#">📱 Подпишись — напомним завтра!</a>
+  <div class="rx"><span>🍽️ 65</span><span>🔥 41</span></div>
+  <div class="ft"><span>10:00</span><span>👁 5.8K</span></div>
+</div>
+</div>
+
+<!-- POST 30 -->
+<div class="tg sep">
+<span class="day">Пт 24 апреля · 08:00</span><span class="pnum">#30</span>
+<div class="msg">
+  <div class="bd">
+    <span class="tt">🍽️ СЕГОДНЯ: «A Todo Tren!» стартует + мега-рынок!</span>
+    <p>Двойной удар! Утром — рынок (500+ прилавков, до 14:00). Вечером — тапас-маршрут по барам!</p>
+    <div class="mt">🛍️ Рынок: 8:00-14:00<br>🍽️ Тапас: с вечера · 3-4€ за тапу</div>
+  </div>
+  <div class="rx"><span>🔥 52</span><span>🍽️ 34</span></div>
+  <div class="ft"><span>08:00</span><span>👁 4.1K</span></div>
+</div>
+</div>
+
+<!-- POST 31 -->
+<div class="tg sep">
+<span class="day">Сб 25 апреля · 08:00</span><span class="pnum">#31</span>
+<div class="msg">
+  <div class="bd">
+    <span class="tt">🎭 СЕГОДНЯ: Moros y Cristianos начинаются!</span>
+    <p>Алькой ждёт! Юбилей 750 лет!</p>
+    <div class="mt">⏰ <b>10:30</b> — Парад Христиан (начало!)<br>⏰ <b>17:00</b> — Парад Мавров (самый зрелищный!)<br><br>📍 <a href="https://www.google.com/maps/place/Alcoy,+Alicante/">Алькой</a> · 💰 Бесплатно<br>🅿️ Парковка на окраине + шаттлы</div>
+    <div class="tp">💡 К 10 утра! Беруши детям! Жарко — берите воду и шляпу.</div>
+  </div>
+  <div class="rx"><span>🎭 98</span><span>🔥 67</span></div>
+  <div class="ft"><span>08:00</span><span>👁 8.2K</span></div>
+</div>
+</div>
+
+<!-- POST 32 -->
+<div class="tg sep">
+<span class="day">Сб 25 апреля · вечер</span><span class="pnum">#32</span>
+<div class="msg">
+  <div class="bd">
+    <span class="tt">📅 МАЙ НА ПОДХОДЕ: что нас ждёт</span>
+    <p>Апрель был огонь! А май будет ещё круче:</p>
+    <div class="mt">🌸 <b>1-4 мая:</b> Cruces de Mayo — цветочная сказка в Аликанте<br>🍽️ <b>11-17 мая:</b> Croqueteando — конкурс крокет в Торревьехе<br>🎪 <b>13-17 мая:</b> Feria de Mayo — андалузская ярмарка в порту<br>🏰 <b>8-10 мая:</b> Средневековый рынок Вильяхойосы<br>💃 <b>28 апр - 3 мая:</b> Benidorm Tango Festival<br><br>🌡️ Май: +24-28°C · Море теплеет · Пляжный сезон близко!</div>
+  </div>
+  <a class="btn" href="#">📱 Подпишись @afishaCB — дайджест мая скоро!</a>
+  <div class="rx"><span>📌 56</span><span>🔥 38</span></div>
+  <div class="ft"><span>18:00</span><span>👁 4.6K</span></div>
+</div>
+</div>
+
+<div style="height: 80px; text-align: center; color: #556; font-size: 12px; padding-top: 20px;">
+  Конец мокапа · 32 поста · @afishaCB Апрель 2026
+</div>
+
+</body>
+</html>

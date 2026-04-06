@@ -1,0 +1,40 @@
+{
+  "type": "audience_digest",
+  "audience_key": "families",
+  "events": [
+    {
+      "category_emoji": "🌸",
+      "title_short": "Cruces de Mayo",
+      "city": "Аликанте",
+      "date_short": "30 апр – 3 мая",
+      "price": "Бесплатно",
+      "why_this_audience": "Детские игры, конкурсы костюмов, красивейшие улочки — дети в восторге"
+    },
+    {
+      "category_emoji": "🎭",
+      "title_short": "Romería de la Santa Faz",
+      "city": "Аликанте",
+      "date_short": "16 апреля",
+      "price": "Бесплатно",
+      "why_this_audience": "8 км пешком — дети обожают лотки с бубликами на каждом шагу"
+    },
+    {
+      "category_emoji": "🎭",
+      "title_short": "Moros y Cristianos",
+      "city": "Алькой",
+      "date_short": "24–27 апреля",
+      "price": "Бесплатно",
+      "why_this_audience": "Живое средневековье! Но возьмите беруши — залпы оч. громкие"
+    },
+    {
+      "category_emoji": "🎬",
+      "title_short": "Skyline Film Festival",
+      "city": "Бенидорм",
+      "date_short": "18–25 апреля",
+      "price": "Бесплатно",
+      "why_this_audience": "Есть секция анимации — детям понравятся мультики на большом экране"
+    }
+  ],
+  "image_url": null,
+  "published": false
+}

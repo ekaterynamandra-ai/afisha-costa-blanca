@@ -1,0 +1,2 @@
+- [Project context](project_costa_blanca.md) — Afisha CB: event aggregator, user in Guardamar, strict content filters
+- [Approval required](feedback_publish_approval.md) — Never publish without explicit user approval

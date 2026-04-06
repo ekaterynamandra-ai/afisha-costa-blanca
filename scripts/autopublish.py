@@ -1,0 +1,192 @@
+"""
+Автопубликация постов по расписанию.
+
+Проверяет schedule/*.json, публикует посты с status="approved"
+у которых дата+время <= сейчас, помечает как published.
+
+Запуск: python autopublish.py
+  - Вручную: запустить когда нужно
+  - Автоматически: через cron / Task Scheduler / GitHub Actions
+
+Логика:
+  1. Читает все файлы schedule/*.json
+  2. Проверяет: approved=true (неделя согласована)
+  3. Для каждого поста: status="approved" и datetime <= now → публикует
+  4. Обновляет status → "published", добавляет published_at
+"""
+
+import json
+import os
+import sys
+import time
+import requests
+from datetime import datetime, timezone
+from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv(Path(__file__).parent.parent / ".env")
+BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+CHANNEL_ID = os.getenv("TELEGRAM_CHANNEL")
+API = f"https://api.telegram.org/bot{BOT_TOKEN}"
+SCHEDULE_DIR = Path(__file__).parent.parent / "content" / "schedule"
+
+DRY_RUN = "--dry" in sys.argv
+
+
+def send(text, photo=None):
+    """Отправить пост в канал."""
+    if DRY_RUN:
+        print(f"  [DRY RUN] Would send: {text[:60]}...")
+        return {"ok": True, "result": {"message_id": 0}}
+
+    if photo:
+        r = requests.post(f"{API}/sendPhoto", data={
+            "chat_id": CHANNEL_ID, "photo": photo,
+            "caption": text, "parse_mode": "HTML"
+        })
+    else:
+        r = requests.post(f"{API}/sendMessage", data={
+            "chat_id": CHANNEL_ID, "text": text,
+            "parse_mode": "HTML", "disable_web_page_preview": True
+        })
+
+    d = r.json()
+    if not d.get("ok") and photo:
+        print(f"  Photo failed ({d.get('description','')}), retrying text-only...")
+        r = requests.post(f"{API}/sendMessage", data={
+            "chat_id": CHANNEL_ID, "text": text,
+            "parse_mode": "HTML", "disable_web_page_preview": True
+        })
+        d = r.json()
+
+    return d
+
+
+def process_schedule():
+    """Обработать все файлы расписания."""
+    if not SCHEDULE_DIR.exists():
+        print("No schedule directory found.")
+        return
+
+    now = datetime.now()
+    published_count = 0
+    skipped_count = 0
+
+    for f in sorted(SCHEDULE_DIR.glob("*.json")):
+        with open(f, "r", encoding="utf-8") as fh:
+            schedule = json.load(fh)
+
+        week_name = schedule.get("week", f.stem)
+
+        if not schedule.get("approved"):
+            print(f"\n⏸️  {week_name} — NOT APPROVED, skipping")
+            continue
+
+        print(f"\n✅ {week_name} — approved")
+
+        for post in schedule.get("posts", []):
+            post_id = post.get("id", "?")
+            title = post.get("title", "???")
+            status = post.get("status", "draft")
+
+            if status == "published":
+                continue
+
+            if status != "approved":
+                skipped_count += 1
+                continue
+
+            # Проверяем дату/время
+            post_date = post.get("date", "")
+            post_time = post.get("time", "10:00")
+            try:
+                post_dt = datetime.strptime(f"{post_date} {post_time}", "%Y-%m-%d %H:%M")
+            except ValueError:
+                print(f"  ⚠️  #{post_id} {title} — bad date format, skipping")
+                continue
+
+            if post_dt > now:
+                print(f"  ⏰ #{post_id} {title} — scheduled {post_date} {post_time} (not yet)")
+                skipped_count += 1
+                continue
+
+            # Публикуем!
+            text = post.get("text", "")
+            if not text:
+                print(f"  ⚠️  #{post_id} {title} — no text, skipping")
+                continue
+
+            photo = post.get("photo")
+            print(f"  📤 #{post_id} {title}...")
+
+            result = send(text, photo)
+
+            if result.get("ok"):
+                post["status"] = "published"
+                post["published_at"] = now.isoformat()
+                if result.get("result", {}).get("message_id"):
+                    post["message_id"] = result["result"]["message_id"]
+                published_count += 1
+                print(f"  ✅ Published!")
+            else:
+                print(f"  ❌ Failed: {result.get('description', '?')}")
+
+            time.sleep(4)  # Пауза между постами
+
+        # Сохраняем обновлённый файл
+        with open(f, "w", encoding="utf-8") as fh:
+            json.dump(schedule, fh, ensure_ascii=False, indent=2)
+
+    print(f"\n{'='*40}")
+    print(f"Published: {published_count} | Skipped/Waiting: {skipped_count}")
+    if DRY_RUN:
+        print("(DRY RUN — nothing was actually sent)")
+
+
+def show_status():
+    """Показать статус всех постов."""
+    if not SCHEDULE_DIR.exists():
+        print("No schedule directory.")
+        return
+
+    for f in sorted(SCHEDULE_DIR.glob("*.json")):
+        with open(f, "r", encoding="utf-8") as fh:
+            schedule = json.load(fh)
+
+        week = schedule.get("week", f.stem)
+        approved = "✅" if schedule.get("approved") else "⏸️"
+        print(f"\n{approved} {week}")
+
+        for post in schedule.get("posts", []):
+            pid = post.get("id", "?")
+            title = post.get("title", "?")
+            date = post.get("date", "?")
+            time_str = post.get("time", "?")
+            status = post.get("status", "?")
+            pub_at = post.get("published_at", "")
+
+            icon = {"published": "✅", "approved": "🟢", "draft": "📝", "rejected": "❌"}.get(status, "❓")
+            pub_info = f" (at {pub_at[:16]})" if pub_at else ""
+            print(f"  {icon} #{pid} {date} {time_str} | {title}{pub_info}")
+
+
+if __name__ == "__main__":
+    if not BOT_TOKEN:
+        print("ERROR: TELEGRAM_BOT_TOKEN not set")
+        sys.exit(1)
+
+    if "--status" in sys.argv:
+        show_status()
+    elif "--approve" in sys.argv:
+        # Quick approve: python autopublish.py --approve week2-apr-7-13.json
+        idx = sys.argv.index("--approve") + 1
+        if idx < len(sys.argv):
+            fpath = SCHEDULE_DIR / sys.argv[idx]
+            with open(fpath, "r", encoding="utf-8") as fh:
+                data = json.load(fh)
+            data["approved"] = True
+            with open(fpath, "w", encoding="utf-8") as fh:
+                json.dump(data, fh, ensure_ascii=False, indent=2)
+            print(f"✅ Approved: {sys.argv[idx]}")
+    else:
+        process_schedule()

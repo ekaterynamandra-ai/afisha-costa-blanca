@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мокап недели @afishaCB — 12 постов</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background: #0e1621; color: #fff;
+    padding: 20px;
+    display: flex; flex-direction: column; align-items: center; gap: 32px;
+  }
+  h1 { color: #aaa; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; margin-top: 16px; }
+  h2 { color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .tg-container { width: 390px; max-width: 95vw; }
+  .tg-channel-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; padding: 8px 0; }
+  .tg-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, #1A365D, #F6AD55); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700; color: #fff; flex-shrink: 0; }
+  .tg-channel-name { font-weight: 600; font-size: 15px; color: #fff; }
+  .tg-channel-sub { font-size: 12px; color: #708499; }
+  .tg-message { background: #182533; border-radius: 12px; border-top-left-radius: 4px; overflow: hidden; margin-bottom: 12px; }
+  .tg-img-wrap { position: relative; width: 100%; height: 200px; overflow: hidden; }
+  .tg-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .tg-image-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 8px 12px; background: linear-gradient(transparent, rgba(0,0,0,0.75)); font-size: 11px; color: rgba(255,255,255,0.85); text-transform: uppercase; letter-spacing: 1px; }
+  .tg-body { padding: 10px 14px 8px; }
+  .tg-body p { font-size: 14.5px; line-height: 1.45; color: #e4e6ea; margin-bottom: 6px; }
+  .tg-title { font-weight: 700; font-size: 15px; margin-bottom: 8px; color: #fff; }
+  .tg-section-title { font-weight: 700; font-size: 13.5px; color: #F6AD55; margin: 10px 0 4px; }
+  .tg-meta { font-size: 13.5px; color: #8dabc4; line-height: 1.6; }
+  .tg-meta a { color: #5b9bd5; text-decoration: none; }
+  .tg-meta b { color: #c0d8f0; }
+  .tg-tip { background: rgba(246,173,85,0.12); border-left: 3px solid #F6AD55; padding: 6px 10px; border-radius: 0 6px 6px 0; margin: 8px 0; font-size: 13.5px; color: #ccd6e0; }
+  .tg-tip b { color: #F6AD55; }
+  .tg-tags { color: #5b9bd5; font-size: 13px; margin-top: 8px; }
+  .tg-audience { background: rgba(91,155,213,0.08); border-radius: 8px; padding: 6px 10px; margin: 8px 0; font-size: 13px; color: #8dabc4; }
+  .tg-audience b { color: #a0c4e8; }
+  .tg-footer { display: flex; justify-content: space-between; align-items: center; padding: 4px 14px 10px; }
+  .tg-time { font-size: 12px; color: #708499; }
+  .tg-views { font-size: 12px; color: #708499; }
+  .tg-reactions { display: flex; gap: 6px; padding: 2px 14px 10px; flex-wrap: wrap; }
+  .tg-reaction { background: rgba(91,155,213,0.15); border: 1px solid rgba(91,155,213,0.25); border-radius: 20px; padding: 3px 10px; font-size: 13px; color: #5b9bd5; }
+  .tg-btn-row { padding: 4px 14px 12px; }
+  .tg-btn { display: block; background: rgba(91,155,213,0.15); border: 1px solid rgba(91,155,213,0.3); border-radius: 8px; padding: 8px 16px; text-align: center; color: #5b9bd5; font-size: 14px; font-weight: 500; text-decoration: none; margin-bottom: 6px; }
+  .divider { width: 390px; max-width: 95vw; border-top: 1px solid #2a3a4a; padding-top: 24px; }
+  .day-label { color: #F6AD55; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; background: rgba(246,173,85,0.1); border-radius: 4px; padding: 4px 10px; margin-bottom: 8px; display: inline-block; }
+  .hl-box { background: rgba(246,173,85,0.08); border: 1px solid rgba(246,173,85,0.2); border-radius: 8px; padding: 8px 12px; margin: 6px 0; }
+  .hl-box .hl-title { font-weight: 700; font-size: 14px; color: #fff; }
+  .hl-box .hl-desc { font-size: 13px; color: #ccd6e0; margin-top: 2px; }
+  .item { margin-bottom: 10px; }
+  .item-title { font-weight: 700; font-size: 14px; color: #e4e6ea; }
+  .item-title a { color: #5b9bd5; font-weight: 400; font-size: 12px; text-decoration: none; }
+  .item-meta { font-size: 13px; color: #8dabc4; margin-top: 2px; }
+  .item-why { font-size: 12.5px; color: #7a99b5; font-style: italic; margin-top: 2px; }
+  .red-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #e53e3e; margin-right: 4px; vertical-align: middle; }
+</style>
+</head>
+<body>
+
+<h1>Мокап @afishaCB — Тестовая неделя · 12 постов</h1>
+
+<div class="tg-container">
+  <div class="tg-channel-header">
+    <div class="tg-avatar">CB</div>
+    <div>
+      <div class="tg-channel-name">Афиша Costa Blanca</div>
+      <div class="tg-channel-sub">@afishaCB</div>
+    </div>
+  </div>
+</div>
+
+<!-- ======== СУББОТА: Дайджест недели ======== -->
+<div class="tg-container divider">
+  <span class="day-label">Сб · утро</span>
+  <h2>1/12 — Дайджест на неделю вперёд</h2>
+  <div class="tg-message">
+    <div class="tg-img-wrap">
+      <img src="https://images.pexels.com/photos/29837765/pexels-photo-29837765.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+      <div class="tg-image-overlay">📋 Неделя | 14–20 апреля 2026</div>
+    </div>
+    <div class="tg-body">
+      <p class="tg-title">📋 НЕДЕЛЯ 14–20 АПРЕЛЯ: что интересного</p>
+      <div class="item">
+        <div class="item-title">🔴 Пн 14 — выходной! San Vicente Ferrer</div>
+        <div class="item-meta">Торревьеха, Эльче и ещё 10+ городов отдыхают</div>
+      </div>
+      <div class="item">
+        <div class="item-title">🕊️ Чт 16 — Santa Faz (выходной в Аликанте)</div>
+        <div class="item-meta">Крупнейшее паломничество провинции</div>
+      </div>
+      <div class="item">
+        <div class="item-title">🎵 Чт 17 — DJ Symphonic + оркестр</div>
+        <div class="item-meta">Auditorio Internacional, Торревьеха · Платно</div>
+      </div>
+      <div class="item">
+        <div class="item-title">🦩 Весь месяц — пик фламинго</div>
+        <div class="item-meta">Салинас Санта-Пола · Бесплатно</div>
+      </div>
+      <div class="item">
+        <div class="item-title">🛍️ Пт — мега-рынок Торревьехи (500+ прилавков)</div>
+        <div class="item-meta">Каждую пятницу · 8:00-14:00 · Бесплатно</div>
+      </div>
+    </div>
+    <div class="tg-btn-row">
+      <a class="tg-btn" href="#">📱 Подпишись @afishaCB</a>
+    </div>
+    <div class="tg-reactions">
+      <span class="tg-reaction">📌 45</span>
+      <span class="tg-reaction">🔥 22</span>
+    </div>
+    <div class="tg-footer"><span class="tg-time">09:00</span><span class="tg-views">👁 1.8K</span></div>
+  </div>
+</div>
+
+<!-- ======== ВОСКРЕСЕНЬЕ: Сезонное — Фламинго ======== -->
+<div class="tg-container divider">
+  <span class="day-label">Вс · утро</span>
+  <h2>2/12 — Сезонное акцентное: Фламинго</h2>
+  <div class="tg-message">
+    <div class="tg-img-wrap">
+      <img src="https://images.pexels.com/photos/1680214/pexels-photo-1680214.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+      <div class="tg-image-overlay">🦩 Сезон | Фламинго</div>
+    </div>
+    <div class="tg-body">
+      <p class="tg-title">🦩 ФЛАМИНГО: пик сезона прямо у нас!</p>
+      <p>Апрель — начало гнездования. Стаи растут с 2000 до 8000 птиц! Розовые облака на фоне солёных озёр — зрелище невероятное.</p>
+
+      <p class="tg-section-title">Где смотреть:</p>
+      <div class="item">
+        <div class="item-title">1️⃣ Салинас де Санта-Пола <a href="https://maps.google.com/?q=38.1647,-0.6283">📍 карта</a></div>
+        <div class="item-meta">15 мин от Гуардамара. Смотровые площадки, центр интерпретации.</div>
+      </div>
+      <div class="item">
+        <div class="item-title">2️⃣ Лагуна Ла-Мата <a href="https://maps.google.com/?q=38.0456,-0.6567">📍 карта</a></div>
+        <div class="item-meta">10 мин от Торревьехи. Дорожки вдоль лагуны.</div>
+      </div>
+      <div class="item">
+        <div class="item-title">3️⃣ Розовое озеро Торревьехи <a href="https://maps.google.com/?q=37.9831,-0.7008">📍 карта</a></div>
+        <div class="item-meta">Само озеро розовое от соли + фламинго = двойное чудо!</div>
+      </div>
+
+      <div class="tg-tip">
+        💡 <b>Совет:</b> Лучшее время — раннее утро или закат. Бинокль делает разницу! С собакой можно по дорожкам Ла-Маты.
+      </div>
+
+      <div class="tg-audience">
+        🎯 <b>Подойдёт:</b> 👨‍👩‍👧 семьям · 📸 фотографам · 🐕 с собакой · 💑 парам
+      </div>
+
+      <div class="tg-tags">#фламинго #CostaBlanca #СантаПола #природа</div>
+    </div>
+    <div class="tg-btn-row">
+      <a class="tg-btn" href="#">📱 Подпишись @afishaCB</a>
+    </div>
+    <div class="tg-reactions">
+      <span class="tg-reaction">😍 89</span>
+      <span class="tg-reaction">❤️ 52</span>
+      <span class="tg-reaction">📌 34</span>
+    </div>
+    <div class="tg-footer"><span class="tg-time">10:00</span><span class="tg-views">👁 7.2K</span></div>
+  </div>
+</div>
+
+<!-- ======== ПОНЕДЕЛЬНИК: Акцент — Expo + ComarCON ======== -->
+<div class="tg-container divider">
+  <span class="day-label">Пн · утро</span>
+  <h2>3/12 — Акцент: Expo + ComarCON (через 4 дня!)</h2>
+  <div class="tg-message">
+    <div class="tg-img-wrap">
+      <img src="https://images.pexels.com/photos/1293120/pexels-photo-1293120.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+      <div class="tg-image-overlay">🎮 Торревьеха | 18–19 апреля</div>
+    </div>
+    <div class="tg-body">
+      <p class="tg-title">🎮 EXPO TORREVIEJA + ComarCON — в эту субботу!</p>
+      <p>Два огромных события в один уикенд, оба бесплатные!</p>
+
+      <div class="hl-box">
+        <div class="hl-title">🏢 Expo Torrevieja</div>
+        <div class="hl-desc">180+ стендов, классические авто (Вс), 10 000 посетителей. <a href="https://maps.google.com/?q=37.9789,-0.6827" style="color:#5b9bd5;">📍 Auditorio</a></div>
+      </div>
+      <div class="hl-box">
+        <div class="hl-title">🎮 ComarCON (XII фестиваль!)</div>
+        <div class="hl-desc">Аниме, косплей, настолки, K-Pop, турниры. 6000+ фанатов. <a href="https://maps.google.com/?q=37.9875,-0.6798" style="color:#5b9bd5;">📍 Palacio Deportes</a></div>
+      </div>
+
+      <div class="tg-meta" style="margin-top: 8px;">
+        📅 Сб-Вс 18-19 апреля<br>
+        💰 Бесплатно (вход + парковка)
+      </div>
+
+      <div class="tg-audience">
+        🎯 <b>Подойдёт:</b> 👨‍👩‍👧 семьям · 🧑‍🤝‍🧑 подросткам · 🎉 компанией
+      </div>
+    </div>
+    <div class="tg-btn-row">
+      <a class="tg-btn" href="#">📱 Подпишись @afishaCB</a>
+    </div>
+    <div class="tg-reactions">
+      <span class="tg-reaction">🔥 38</span>
+      <span class="tg-reaction">🎮 24</span>
+    </div>
+    <div class="tg-footer"><span class="tg-time">10:00</span><span class="tg-views">👁 3.1K</span></div>
+  </div>
+</div>
+
+<!-- ======== ПОНЕДЕЛЬНИК вечер: Рынки ======== -->
+<div class="tg-container divider">
+  <span class="day-label">Пн · вечер</span>
+  <h2>4/12 — Регулярное: рынки</h2>
+  <div class="tg-message">
+    <div class="tg-img-wrap">
+      <img src="https://images.pexels.com/photos/868110/pexels-photo-868110.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+      <div class="tg-image-overlay">🛍️ Рынки | Расписание</div>
+    </div>
+    <div class="tg-body">
+      <p class="tg-title">🛍️ РЫНКИ: куда на этой неделе</p>
+      <div class="tg-meta">
+        📅 <b>Вт</b> — <a href="https://maps.google.com/?q=38.0849,-0.9434">Орихуэла</a> (~400 прилавков, продукты с уэрт!)<br>
+        📅 <b>Ср</b> — <a href="https://maps.google.com/?q=38.0889,-0.6544">Гуардамар</a> (район Santa Ana)<br>
+        📅 <b>Пт</b> — <a href="https://maps.google.com/?q=37.9836,-0.6744">Торревьеха</a> 🔥 500+! 8:00-14:00<br>
+        📅 <b>Сб</b> — <a href="https://maps.google.com/?q=38.1919,-0.5553">Санта-Пола</a> (фрукты, цветы)<br>
+        📅 <b>Вс</b> — <a href="https://maps.google.com/?q=38.0702,-0.6376">El Campico</a> 🔥 ~500! 8:00-15:00
+      </div>
+      <div class="tg-tip">
+        💡 Пятничный рынок Торревьехи — бесплатный автобус каждые 20 мин!
+      </div>
+    </div>
+    <div class="tg-btn-row">
+      <a class="tg-btn" href="#">📱 Подпишись @afishaCB</a>
+    </div>
+    <div class="tg-reactions">
+      <span class="tg-reaction">📌 56</span>
+      <span class="tg-reaction">🛍️ 18</span>
+    </div>
+    <div class="tg-footer"><span class="tg-time">18:00</span><span class="tg-views">👁 4.5K</span></div>
+  </div>
+</div>
+
+<!-- ======== ВТОРНИК: С детьми ======== -->
+<div class="tg-container divider">
+  <span class="day-label">Вт · утро</span>
+  <h2>5/12 — Аудитория: с детьми</h2>
+  <div class="tg-message">
+    <div class="tg-img-wrap">
+      <img src="https://images.pexels.com/photos/1231365/pexels-photo-1231365.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+      <div class="tg-image-overlay">👨‍👩‍👧 С детьми | На этой неделе</div>
+    </div>
+    <div class="tg-body">
+      <p class="tg-title">👨‍👩‍👧 С ДЕТЬМИ: 5 идей на эту неделю</p>
+
+      <div class="item">
+        <div class="item-title">1️⃣ 🦩 Фламинго в Салинас <a href="https://maps.google.com/?q=38.1647,-0.6283">📍</a></div>
+        <div class="item-meta">Бесплатно · 15 мин от Гуардамара · Дети обожают считать розовых птиц!</div>
+      </div>
+      <div class="item">
+        <div class="item-title">2️⃣ 🎮 ComarCON <a href="https://maps.google.com/?q=37.9875,-0.6798">📍</a></div>
+        <div class="item-meta">Бесплатно · Сб-Вс · Косплей, настолки, аниме</div>
+      </div>
+      <div class="item">
+        <div class="item-title">3️⃣ 🌲 Дюны Гуардамара <a href="https://maps.google.com/?q=38.0905,-0.6476">📍</a></div>
+        <div class="item-meta">Бесплатно · Тенистые тропы, финикийские раскопки</div>
+      </div>
+      <div class="item">
+        <div class="item-title">4️⃣ 🛍️ Рынок El Campico (Вс) <a href="https://maps.google.com/?q=38.0702,-0.6376">📍</a></div>
+        <div class="item-meta">Бесплатно · Дети любят выбирать фрукты!</div>
+      </div>
+      <div class="item">
+        <div class="item-title">5️⃣ 🏖️ Пляж + мороженое в Торревьехе</div>
+        <div class="item-meta">Апрель: 22°C, не жарко, без толп</div>
+      </div>
+
+      <div class="tg-tags">#сдетьми #CostaBlanca #Гуардамар #Торревьеха</div>
+    </div>
+    <div class="tg-btn-row">
+      <a class="tg-btn" href="#">📱 Подпишись @afishaCB</a>
+    </div>
+    <div class="tg-reactions">
+      <span class="tg-reaction">❤️ 41</span>
+      <span class="tg-reaction">👨‍👩‍👧 28</span>
+    </div>
+    <div class="tg-footer"><span class="tg-time">10:00</span><span class="tg-views">👁 3.8K</span></div>
+  </div>
+</div>
+
+<!-- ======== СРЕДА: Подборка выходных ======== -->
+<div class="tg-container divider">
+  <span class="day-label">Ср · вечер</span>
+  <h2>6/12 — Подборка выходных</h2>
+  <div class="tg-message">
+    <div class="tg-body">
+      <p class="tg-title">🌟 ВЫХОДНЫЕ 18-19 АПРЕЛЯ: топ-5</p>
+      <div class="item">
+        <div class="item-title">1️⃣ 🎮 Expo + ComarCON — Торревьеха <a href="https://maps.google.com/?q=37.9789,-0.6827">📍</a></div>
+        <div class="item-meta">Сб-Вс · Бесплатно · 180+ стендов + аниме-фест</div>
+        <div class="item-why">→ С детьми, подростками, компанией</div>
+      </div>
+      <div class="item">
+        <div class="item-title">2️⃣ 🦩 Фламинго — Санта-Пола <a href="https://maps.google.com/?q=38.1647,-0.6283">📍</a></div>
+        <div class="item-meta">Любой день · Бесплатно · Пик сезона!</div>
+        <div class="item-why">→ С собакой, вдвоём, с детьми</div>
+      </div>
+      <div class="item">
+        <div class="item-title">3️⃣ 🛍️ El Campico — Гуардамар <a href="https://maps.google.com/?q=38.0702,-0.6376">📍</a></div>
+        <div class="item-meta">Вс 8:00-15:00 · 500+ прилавков</div>
+        <div class="item-why">→ С подружками, семьёй</div>
+      </div>
+      <div class="item">
+        <div class="item-title">4️⃣ 🌲 Дюны + пляж — Гуардамар <a href="https://maps.google.com/?q=38.0905,-0.6476">📍</a></div>
+        <div class="item-meta">Бесплатно · Лес → пляж за 10 мин пешком</div>
+        <div class="item-why">→ Активным, с собакой, вдвоём</div>
+      </div>
+      <div class="item">
+        <div class="item-title">5️⃣ 🍽️ Тапас в Торревьехе — набережная</div>
+        <div class="item-meta">Paseo Vista Alegre · вечер · от €3 за тапу</div>
+        <div class="item-why">→ С подружками, вдвоём</div>
+      </div>
+    </div>
+    <div class="tg-btn-row">
+      <a class="tg-btn" href="#">📱 @afishaCB — подборки каждую среду!</a>
+    </div>
+    <div class="tg-reactions">
+      <span class="tg-reaction">🔥 52</span>
+      <span class="tg-reaction">📌 31</span>
+    </div>
+    <div class="tg-footer"><span class="tg-time">18:00</span><span class="tg-views">👁 5.1K</span></div>
+  </div>
+</div>
+
+<!-- ======== СРЕДА 2: С подружками ======== -->
+<div class="tg-container divider">
+  <span class="day-label">Ср · утро</span>
+  <h2>7/12 — Аудитория: с подружками</h2>
+  <div class="tg-message">
+    <div class="tg-img-wrap">
+      <img src="https://images.pexels.com/photos/1267696/pexels-photo-1267696.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+      <div class="tg-image-overlay">👯‍♀️ С подружками | Идеи</div>
+    </div>
+    <div class="tg-body">
+      <p class="tg-title">👯‍♀️ С ПОДРУЖКАМИ: как провести время</p>
+      <div class="item">
+        <div class="item-title">1️⃣ 🛍️ Пятничный мега-рынок <a href="https://maps.google.com/?q=37.9836,-0.6744">📍</a></div>
+        <div class="item-meta">Торревьеха · 500+ прилавков · Одежда, аксессуары, сумки</div>
+      </div>
+      <div class="item">
+        <div class="item-title">2️⃣ 🍷 Тапас-прогулка по набережной</div>
+        <div class="item-meta">Торревьеха, Paseo Vista Alegre · Вечер · от €3</div>
+      </div>
+      <div class="item">
+        <div class="item-title">3️⃣ 📸 Фотосессия у розового озера <a href="https://maps.google.com/?q=37.9831,-0.7008">📍</a></div>
+        <div class="item-meta">Торревьеха · Бесплатно · Инстаграм-мечта!</div>
+      </div>
+      <div class="item">
+        <div class="item-title">4️⃣ 🧘 Йога на пляже (Сб утро)</div>
+        <div class="item-meta">Playa del Cura, Торревьеха · Бесплатные группы</div>
+      </div>
+
+      <div class="tg-tags">#сподружками #CostaBlanca #Торревьеха #девичник</div>
+    </div>
+    <div class="tg-btn-row">
+      <a class="tg-btn" href="#">📱 Подпишись @afishaCB</a>
+    </div>
+    <div class="tg-reactions">
+      <span class="tg-reaction">💅 44</span>
+      <span class="tg-reaction">❤️ 36</span>
+    </div>
+    <div class="tg-footer"><span class="tg-time">10:00</span><span class="tg-views">👁 4.4K</span></div>
+  </div>
+</div>
+
+<!-- ======== ЧЕТВЕРГ: С собакой ======== -->
+<div class="tg-container divider">
+  <span class="day-label">Чт · утро</span>
+  <h2>8/12 — Рубрика: с собакой</h2>
+  <div class="tg-message">
+    <div class="tg-img-wrap">
+      <img src="https://images.pexels.com/photos/2253275/pexels-photo-2253275.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+      <div class="tg-image-overlay">🐕 С собакой | Пляжи + маршруты</div>
+    </div>
+    <div class="tg-body">
+      <p class="tg-title">🐕 С СОБАКОЙ: лучшие пляжи и маршруты</p>
+      <p>Апрель — идеально: тепло, пляжи пустые, без ограничений.</p>
+
+      <p class="tg-section-title">Пляжи для собак:</p>
+      <div class="item">
+        <div class="item-title">🏖️ Playa Los Tusales <a href="https://maps.google.com/?q=38.1012,-0.6312">📍</a></div>
+        <div class="item-meta">Гуардамар · Песчаный, рядом с дюнами</div>
+      </div>
+      <div class="item">
+        <div class="item-title">🏖️ Cala Ferrís <a href="https://maps.google.com/?q=37.9478,-0.6801">📍</a></div>
+        <div class="item-meta">Торревьеха · Аджилити-площадка + душ!</div>
+      </div>
+      <div class="item">
+        <div class="item-title">🏖️ Caleta dels Gossets <a href="https://maps.google.com/?q=38.1762,-0.5289">📍</a></div>
+        <div class="item-meta">Санта-Пола · Бухта у скал, фотогеничная</div>
+      </div>
+
+      <p class="tg-section-title">Маршруты:</p>
+      <div class="item">
+        <div class="item-title">🌲 Парк Альфонсо XIII <a href="https://maps.google.com/?q=38.0905,-0.6476">📍</a></div>
+        <div class="item-meta">Гуардамар · 800 га тенистого леса</div>
+      </div>
+      <div class="item">
+        <div class="item-title">🦩 Лагуна Ла-Мата <a href="https://maps.google.com/?q=38.0456,-0.6567">📍</a></div>
+        <div class="item-meta">Торревьеха · Дорожки + фламинго!</div>
+      </div>
+
+      <div class="tg-tags">#ссобакой #CostaBlanca #собачийпляж</div>
+    </div>
+    <div class="tg-btn-row">
+      <a class="tg-btn" href="#">📱 Подпишись @afishaCB</a>
+    </div>
+    <div class="tg-reactions">
+      <span class="tg-reaction">🐕 68</span>
+      <span class="tg-reaction">❤️ 41</span>
+      <span class="tg-reaction">📌 22</span>
+    </div>
+    <div class="tg-footer"><span class="tg-time">10:00</span><span class="tg-views">👁 5.8K</span></div>
+  </div>
+</div>
+
+<!-- ======== ЧЕТВЕРГ вечер: Природа ======== -->
+<div class="tg-container divider">
+  <span class="day-label">Чт · вечер</span>
+  <h2>9/12 — Природа / сезонное</h2>
+  <div class="tg-message">
+    <div class="tg-body">
+      <p class="tg-title">🌿 ПРИРОДА В АПРЕЛЕ: 3 маршрута рядом</p>
+      <div class="item">
+        <div class="item-title">1️⃣ 🌲 Дюны Гуардамара <a href="https://maps.google.com/?q=38.0905,-0.6476">📍</a></div>
+        <div class="item-meta">800 га леса, весенние цветы, финикийские раскопки. Лёгкий маршрут.</div>
+        <div class="item-why">→ Семьям, с собакой, вдвоём</div>
+      </div>
+      <div class="item">
+        <div class="item-title">2️⃣ 🦆 Парк Эль-Ондо <a href="https://maps.google.com/?q=38.1689,-0.7517">📍</a></div>
+        <div class="item-meta">Между Эльче и Гуардамаром. Птицы, черепахи, тишина. Бинокль!</div>
+        <div class="item-why">→ Фотографам, парам, с детьми</div>
+      </div>
+      <div class="item">
+        <div class="item-title">3️⃣ ⛰️ Сьерра-де-Эскалона <a href="https://maps.google.com/?q=38.0167,-0.8833">📍</a></div>
+        <div class="item-meta">30 мин от Торревьехи. Горная сосна, птицы, виды. Средняя сложность.</div>
+        <div class="item-why">→ Активным, с собакой</div>
+      </div>
+
+      <div class="tg-tags">#природа #CostaBlanca #походы #Гуардамар</div>
+    </div>
+    <div class="tg-btn-row">
+      <a class="tg-btn" href="#">📱 Подпишись @afishaCB</a>
+    </div>
+    <div class="tg-reactions">
+      <span class="tg-reaction">🌿 34</span>
+      <span class="tg-reaction">❤️ 19</span>
+    </div>
+    <div class="tg-footer"><span class="tg-time">18:00</span><span class="tg-views">👁 2.9K</span></div>
+  </div>
+</div>
+
+<!-- ======== ПЯТНИЦА утро: Напоминание рынок ======== -->
+<div class="tg-container divider">
+  <span class="day-label">Пт · утро</span>
+  <h2>10/12 — Напоминание: рынок сегодня!</h2>
+  <div class="tg-message">
+    <div class="tg-body">
+      <p class="tg-title">🛍️ СЕГОДНЯ: мега-рынок Торревьехи!</p>
+      <p>500+ прилавков · 8:00-14:00<br>
+      Бесплатный автобус каждые 20 мин 🚌<br>
+      Бесплатная парковка</p>
+      <div class="tg-meta">📍 <a href="https://maps.google.com/?q=37.9836,-0.6744">Av. Delfina Viudes, Торревьеха</a></div>
+      <div class="tg-tip">💡 Лучшие фрукты — в первых рядах справа от входа. Приходите до 10:00!</div>
+    </div>
+    <div class="tg-reactions">
+      <span class="tg-reaction">🛍️ 42</span>
+      <span class="tg-reaction">👏 18</span>
+    </div>
+    <div class="tg-footer"><span class="tg-time">08:00</span><span class="tg-views">👁 3.2K</span></div>
+  </div>
+</div>
+
+<!-- ======== ПЯТНИЦА вечер: Гастро ======== -->
+<div class="tg-container divider">
+  <span class="day-label">Пт · вечер</span>
+  <h2>11/12 — Рубрика: гастро</h2>
+  <div class="tg-message">
+    <div class="tg-img-wrap">
+      <img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+      <div class="tg-image-overlay">🍽️ Гастро | Куда на ужин</div>
+    </div>
+    <div class="tg-body">
+      <p class="tg-title">🍽️ ГАСТРО: куда на ужин в этот уикенд</p>
+      <p>Апрель — сезон свежих морепродуктов и террас!</p>
+
+      <div class="item">
+        <div class="item-title">🦐 Набережная Торревьехи</div>
+        <div class="item-meta">Paseo Juan Aparicio · Креветки, кальмары, паэлья с видом на море</div>
+      </div>
+      <div class="item">
+        <div class="item-title">🍷 Тапас-бары Гуардамара</div>
+        <div class="item-meta">Plaza de la Constitución · Местная классика, от €2 за тапу</div>
+      </div>
+      <div class="item">
+        <div class="item-title">🥘 Arroz a banda в Санта-Поле</div>
+        <div class="item-meta">Рыбацкий порт · Знаменитый рис с морепродуктами</div>
+      </div>
+
+      <div class="tg-tip">
+        💡 <b>Совет:</b> В Испании ужинают с 20:30-21:00. До 20:00 вам дадут «меню дель дия» (дешевле!).
+      </div>
+
+      <div class="tg-tags">#гастро #тапас #CostaBlanca #морепродукты</div>
+    </div>
+    <div class="tg-btn-row">
+      <a class="tg-btn" href="#">📱 Подпишись @afishaCB</a>
+    </div>
+    <div class="tg-reactions">
+      <span class="tg-reaction">🍽️ 55</span>
+      <span class="tg-reaction">❤️ 32</span>
+    </div>
+    <div class="tg-footer"><span class="tg-time">18:00</span><span class="tg-views">👁 4.7K</span></div>
+  </div>
+</div>
+
+<!-- ======== СУББОТА: Акцент на следующую неделю ======== -->
+<div class="tg-container divider">
+  <span class="day-label">Сб (следующая) · утро</span>
+  <h2>12/12 — Анонс: Moros y Cristianos через неделю!</h2>
+  <div class="tg-message">
+    <div class="tg-img-wrap">
+      <img src="https://images.pexels.com/photos/13598504/pexels-photo-13598504.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+      <div class="tg-image-overlay">🎭 Алькой | 25–27 апреля</div>
+    </div>
+    <div class="tg-body">
+      <p class="tg-title">🎭 ЧЕРЕЗ НЕДЕЛЮ: Moros y Cristianos — юбилей 750 лет!</p>
+      <p>Самый грандиозный костюмированный праздник Испании. 2026 — юбилейный год, такого масштаба не будет ещё долго!</p>
+
+      <div class="tg-meta">
+        📅 25-27 апреля 2026<br>
+        📍 <a href="https://maps.google.com/?q=38.6986,-0.4746">Алькой</a> (55 мин от Аликанте)<br>
+        💰 Бесплатно
+      </div>
+
+      <div class="tg-tip">
+        💡 На следующей неделе — детальный пост с расписанием, лучшими точками и советами!
+      </div>
+
+      <div class="tg-audience">
+        🎯 <b>Подойдёт:</b> 👨‍👩‍👧 семьям · 📸 фотографам · 🎨 культура · 👥 всем
+      </div>
+    </div>
+    <div class="tg-btn-row">
+      <a class="tg-btn" href="#">📱 Подпишись @afishaCB — детали на следующей неделе!</a>
+    </div>
+    <div class="tg-reactions">
+      <span class="tg-reaction">🔥 67</span>
+      <span class="tg-reaction">❤️ 38</span>
+      <span class="tg-reaction">📌 29</span>
+    </div>
+    <div class="tg-footer"><span class="tg-time">10:00</span><span class="tg-views">👁 5.5K</span></div>
+  </div>
+</div>
+
+<div style="height: 60px;"></div>
+
+</body>
+</html>

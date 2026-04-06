@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Афиша Costa Blanca — Website Mockup</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #FFFAF0;
+    color: #2D3748;
+    line-height: 1.5;
+  }
+
+  /* === NAVIGATION === */
+  nav {
+    background: #1A365D;
+    padding: 0 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+  }
+  .nav-logo span {
+    color: #F6AD55;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .nav-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: #F6AD55; }
+  .lang-toggle {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 6px;
+    padding: 4px 2px;
+    display: flex;
+    gap: 2px;
+  }
+  .lang-toggle button {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.6);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .lang-toggle button.active {
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+  }
+
+  /* === HERO === */
+  .hero {
+    background: linear-gradient(135deg, #1A365D 0%, #2B6CB0 40%, #F6AD55 100%);
+    padding: 80px 24px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero h1 {
+    color: #fff;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .hero p {
+    color: rgba(255,255,255,0.9);
+    font-size: clamp(16px, 2.5vw, 20px);
+    max-width: 600px;
+    margin: 0 auto 32px;
+    position: relative;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .btn-primary {
+    background: #F6AD55;
+    color: #1A365D;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(246, 173, 85, 0.4);
+  }
+  .btn-secondary {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    border: 2px solid rgba(255,255,255,0.3);
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(4px);
+  }
+
+  /* === SECTIONS === */
+  .section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 24px;
+  }
+  .section-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1A365D;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .badge {
+    background: #F6AD55;
+    color: #1A365D;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+
+  /* === EVENT CARDS === */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 0 1px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+  .card-image {
+    height: 180px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+  }
+  .card-image.festival { background: linear-gradient(135deg, #9B2335, #E74C3C, #F39C12); }
+  .card-image.nature { background: linear-gradient(135deg, #1a5c2a, #27AE60, #F1C40F); }
+  .card-image.gastro { background: linear-gradient(135deg, #5D3A1A, #D35400, #F39C12); }
+  .card-image.music { background: linear-gradient(135deg, #3B1F7A, #9B59B6, #E91E63); }
+  .card-image.market { background: linear-gradient(135deg, #7B3F00, #E67E22, #F6AD55); }
+  .card-image.kids { background: linear-gradient(135deg, #1565C0, #3498DB, #81D4FA); }
+  .card-image.sport { background: linear-gradient(135deg, #004D40, #1ABC9C, #A7FFEB); }
+  .card-image.fireworks { background: linear-gradient(135deg, #880E4F, #E91E63, #FFC107); }
+
+  .card-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .card-badge.festival { background: #E74C3C; }
+  .card-badge.nature { background: #27AE60; }
+  .card-badge.gastro { background: #F39C12; }
+  .card-badge.music { background: #9B59B6; }
+  .card-badge.market { background: #E67E22; }
+  .card-badge.kids { background: #3498DB; }
+  .card-badge.sport { background: #1ABC9C; }
+  .card-badge.fireworks { background: #E91E63; }
+
+  .card-price {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+  }
+  .card-price.free { background: #38A169; }
+
+  .card-body {
+    padding: 16px;
+  }
+  .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1A365D;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .card-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 13.5px;
+    color: #718096;
+    margin-bottom: 10px;
+  }
+  .card-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .card-desc {
+    font-size: 14px;
+    color: #4A5568;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .card-link {
+    color: #2B6CB0;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .card-link:hover { color: #F6AD55; }
+  .card-score {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #F6AD55;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  /* === CATEGORIES === */
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .cat-chip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 18px;
+    border-radius: 12px;
+    background: #fff;
+    border: 2px solid #E2E8F0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2D3748;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+  .cat-chip:hover {
+    border-color: #F6AD55;
+    background: #FFF8ED;
+    transform: translateY(-2px);
+  }
+  .cat-chip .cat-icon {
+    font-size: 20px;
+  }
+  .cat-chip .cat-count {
+    background: #EDF2F7;
+    color: #718096;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+
+  /* === TELEGRAM CTA === */
+  .tg-cta {
+    background: linear-gradient(135deg, #1A365D, #2B6CB0);
+    border-radius: 20px;
+    padding: 48px 32px;
+    text-align: center;
+    margin: 32px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .tg-cta::before {
+    content: '📱';
+    position: absolute;
+    font-size: 200px;
+    opacity: 0.05;
+    right: -20px;
+    top: -40px;
+  }
+  .tg-cta h2 {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    position: relative;
+  }
+  .tg-cta p {
+    color: rgba(255,255,255,0.8);
+    font-size: 16px;
+    margin-bottom: 24px;
+    position: relative;
+  }
+  .tg-cta .btn-tg {
+    background: #F6AD55;
+    color: #1A365D;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    position: relative;
+  }
+
+  /* === FILTERS BAR === */
+  .filters {
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+  .filter-select {
+    padding: 8px 14px;
+    border: 2px solid #E2E8F0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #2D3748;
+    background: #fff;
+    cursor: pointer;
+  }
+  .filter-search {
+    flex: 1;
+    min-width: 200px;
+    padding: 8px 14px;
+    border: 2px solid #E2E8F0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #2D3748;
+  }
+  .filter-search::placeholder { color: #A0AEC0; }
+  .filter-count {
+    font-size: 14px;
+    color: #718096;
+    font-weight: 500;
+    margin-left: auto;
+  }
+
+  /* === FOOTER === */
+  footer {
+    background: #1A365D;
+    color: rgba(255,255,255,0.7);
+    padding: 32px 24px;
+    text-align: center;
+    font-size: 14px;
+  }
+  footer a {
+    color: #F6AD55;
+    text-decoration: none;
+  }
+  footer .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 16px;
+  }
+
+  /* === EVENT DETAIL PAGE === */
+  .detail-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+  .detail-back {
+    color: #2B6CB0;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+  .detail-hero {
+    height: 320px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+  }
+  .detail-info-row {
+    display: flex;
+    gap: 12px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+  .detail-info-card {
+    flex: 1;
+    min-width: 140px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    text-align: center;
+  }
+  .detail-info-card .icon { font-size: 24px; margin-bottom: 6px; }
+  .detail-info-card .label { font-size: 12px; color: #718096; }
+  .detail-info-card .value { font-size: 15px; font-weight: 700; color: #1A365D; }
+  .detail-desc {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #2D3748;
+    margin: 24px 0;
+  }
+  .detail-tip {
+    background: #FFF8ED;
+    border-left: 4px solid #F6AD55;
+    border-radius: 0 12px 12px 0;
+    padding: 16px 20px;
+    margin: 20px 0;
+  }
+  .detail-tip .tip-title {
+    font-weight: 700;
+    color: #C05621;
+    margin-bottom: 4px;
+  }
+  .detail-map {
+    background: #E2E8F0;
+    height: 200px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #718096;
+    font-size: 14px;
+    margin: 20px 0;
+  }
+  .detail-share {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  .detail-share a {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .detail-share .share-tg {
+    background: #0088cc;
+    color: #fff;
+  }
+  .detail-share .share-copy {
+    background: #EDF2F7;
+    color: #2D3748;
+  }
+
+  /* Page separator */
+  .page-separator {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    border-top: 3px dashed #E2E8F0;
+    text-align: center;
+  }
+  .page-separator h2 {
+    color: #A0AEC0;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: #FFFAF0;
+    display: inline-block;
+    padding: 0 16px;
+    margin-top: -28px;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links a:not(.lang-toggle) { display: none; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .filters { flex-direction: column; }
+    .detail-info-row { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <a class="nav-logo" href="#">
+    ☀️ Афиша <span>Costa Blanca</span>
+  </a>
+  <div class="nav-links">
+    <a href="#">Главная</a>
+    <a href="#">Все события</a>
+    <a href="#">Категории</a>
+    <div class="lang-toggle">
+      <button class="active">RU</button>
+      <button>EN</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <h1>Откройте для себя лучшие<br>события Costa Blanca</h1>
+  <p>Фестивали, природа, гастрономия — всё интересное в радиусе 2 часов от Аликанте</p>
+  <div class="hero-actions">
+    <a class="btn-primary" href="#">🔍 Найти события</a>
+    <a class="btn-secondary" href="#">📱 Telegram-канал</a>
+  </div>
+</div>
+
+<!-- ===== THIS WEEKEND ===== -->
+<div class="section">
+  <div class="section-title">
+    🌟 На этих выходных
+    <span class="badge">18–19 апреля</span>
+  </div>
+  <div class="cards-grid">
+
+    <div class="card">
+      <div class="card-image festival">
+        🎭
+        <span class="card-badge festival">🎭 Фестиваль</span>
+        <span class="card-price free">Бесплатно</span>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Moros y Cristianos, Алькой</div>
+        <div class="card-meta">
+          <span>📍 Алькой · 55 мин от Аликанте</span>
+          <span>📅 23–25 апреля 2026</span>
+        </div>
+        <div class="card-desc">Грандиозный костюмированный праздник — тысячи участников, средневековые марши и фейерверки</div>
+        <div class="card-footer">
+          <a class="card-link" href="#">Подробнее →</a>
+          <div class="card-score">⭐ 9/10</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image gastro">
+        🍷
+        <span class="card-badge gastro">🍷 Гастрономия</span>
+        <span class="card-price">от €10</span>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Винный фестиваль D.O. Alicante</div>
+        <div class="card-meta">
+          <span>📍 Puerto de Alicante · центр</span>
+          <span>📅 12 мая 2026 · 18:00–23:00</span>
+        </div>
+        <div class="card-desc">40 виноделен региона в одном месте — пробуйте Muscat, Monastrell и Giró прямо у моря</div>
+        <div class="card-footer">
+          <a class="card-link" href="#">Подробнее →</a>
+          <div class="card-score">⭐ 8/10</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image nature">
+        🌸
+        <span class="card-badge nature">🌸 Природа</span>
+        <span class="card-price free">Бесплатно</span>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Цветение миндаля, долина Хавеи</div>
+        <div class="card-meta">
+          <span>📍 Хавеа · 1 ч от Аликанте</span>
+          <span>📅 1–28 февраля 2026</span>
+        </div>
+        <div class="card-desc">Розовое облако цветущего миндаля на фоне гор — идеальная прогулка с потрясающими фото</div>
+        <div class="card-footer">
+          <a class="card-link" href="#">Подробнее →</a>
+          <div class="card-score">⭐ 9/10</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== COMING SOON ===== -->
+<div class="section">
+  <div class="section-title">📅 Скоро</div>
+  <div class="cards-grid">
+
+    <div class="card">
+      <div class="card-image music">
+        🎵
+        <span class="card-badge music">🎵 Музыка</span>
+        <span class="card-price">от €15</span>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Jazz Festival Alicante</div>
+        <div class="card-meta">
+          <span>📍 Аликанте · центр</span>
+          <span>📅 18 апреля 2026 · 18:00</span>
+        </div>
+        <div class="card-desc">Международные джазовые музыканты на открытых площадках старого города</div>
+        <div class="card-footer">
+          <a class="card-link" href="#">Подробнее →</a>
+          <div class="card-score">⭐ 7/10</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image market">
+        🛍️
+        <span class="card-badge market">🛍️ Рынки</span>
+        <span class="card-price free">Бесплатно</span>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Блошиный рынок, Бенидорм</div>
+        <div class="card-meta">
+          <span>📍 Бенидорм · 40 мин</span>
+          <span>📅 Каждое воскресенье · 9:00–14:00</span>
+        </div>
+        <div class="card-desc">Антиквариат, винтаж, рукоделие и местные деликатесы на набережной</div>
+        <div class="card-footer">
+          <a class="card-link" href="#">Подробнее →</a>
+          <div class="card-score">⭐ 6/10</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image kids">
+        👨‍👩‍👧
+        <span class="card-badge kids">👨‍👩‍👧 Для детей</span>
+        <span class="card-price free">Бесплатно</span>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Детский фестиваль, Торревьеха</div>
+        <div class="card-meta">
+          <span>📍 Торревьеха · 45 мин</span>
+          <span>📅 18 апреля 2026 · 11:00–18:00</span>
+        </div>
+        <div class="card-desc">Аниматоры, батуты, мастер-классы, кукольный театр — весь день развлечений для малышей</div>
+        <div class="card-footer">
+          <a class="card-link" href="#">Подробнее →</a>
+          <div class="card-score">⭐ 8/10</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image fireworks">
+        🎆
+        <span class="card-badge fireworks">🎆 Фейерверки</span>
+        <span class="card-price free">Бесплатно</span>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Hogueras de San Juan, Аликанте</div>
+        <div class="card-meta">
+          <span>📍 Аликанте · центр</span>
+          <span>📅 20–24 июня 2026</span>
+        </div>
+        <div class="card-desc">Главный праздник Аликанте — огромные скульптуры, парады, фейерверки и ночь костров</div>
+        <div class="card-footer">
+          <a class="card-link" href="#">Подробнее →</a>
+          <div class="card-score">⭐ 10/10</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== CATEGORIES ===== -->
+<div class="section">
+  <div class="section-title">🎯 Категории</div>
+  <div class="categories">
+    <a class="cat-chip" href="#"><span class="cat-icon">🎭</span> Фестивали <span class="cat-count">12</span></a>
+    <a class="cat-chip" href="#"><span class="cat-icon">🌸</span> Природа <span class="cat-count">8</span></a>
+    <a class="cat-chip" href="#"><span class="cat-icon">🍷</span> Гастрономия <span class="cat-count">15</span></a>
+    <a class="cat-chip" href="#"><span class="cat-icon">👨‍👩‍👧‍👦</span> Для детей <span class="cat-count">6</span></a>
+    <a class="cat-chip" href="#"><span class="cat-icon">🎵</span> Музыка <span class="cat-count">9</span></a>
+    <a class="cat-chip" href="#"><span class="cat-icon">🛍️</span> Рынки <span class="cat-count">11</span></a>
+    <a class="cat-chip" href="#"><span class="cat-icon">⚽</span> Спорт <span class="cat-count">4</span></a>
+    <a class="cat-chip" href="#"><span class="cat-icon">🏛️</span> Культура <span class="cat-count">7</span></a>
+    <a class="cat-chip" href="#"><span class="cat-icon">🎆</span> Фейерверки <span class="cat-count">3</span></a>
+  </div>
+</div>
+
+<!-- ===== TELEGRAM CTA ===== -->
+<div class="section">
+  <div class="tg-cta">
+    <h2>Не пропустите интересное!</h2>
+    <p>Подпишитесь на наш Telegram-канал — мы отправляем<br>лучшие события каждую пятницу</p>
+    <a class="btn-tg" href="#">📱 Подписаться на Telegram</a>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-links">
+    <a href="#">Главная</a>
+    <a href="#">Все события</a>
+    <a href="#">Telegram</a>
+    <a href="#">О проекте</a>
+  </div>
+  <p>Афиша Costa Blanca — лучшие события региона на русском языке</p>
+  <p style="margin-top: 8px; opacity: 0.6;">© 2026</p>
+</footer>
+
+<!-- ========================================== -->
+<!-- PAGE 2: CATALOG -->
+<!-- ========================================== -->
+
+<div class="page-separator">
+  <h2>Страница 2: Каталог событий (/events)</h2>
+</div>
+
+<div class="section">
+  <div class="section-title">📋 Все события</div>
+
+  <div class="filters">
+    <select class="filter-select">
+      <option>Все категории</option>
+      <option>🎭 Фестивали</option>
+      <option>🌸 Природа</option>
+      <option>🍷 Гастрономия</option>
+      <option>👨‍👩‍👧 Для детей</option>
+      <option>🎵 Музыка</option>
+    </select>
+    <select class="filter-select">
+      <option>Когда угодно</option>
+      <option>Эта неделя</option>
+      <option>Этот месяц</option>
+      <option>Выбрать дату</option>
+    </select>
+    <select class="filter-select">
+      <option>Любое расстояние</option>
+      <option>до 30 минут</option>
+      <option>до 1 часа</option>
+      <option>до 2 часов</option>
+    </select>
+    <input class="filter-search" type="text" placeholder="🔍 Поиск по названию или городу...">
+    <span class="filter-count">Найдено: 24 события</span>
+  </div>
+
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-image festival">🎭<span class="card-badge festival">🎭 Фестиваль</span><span class="card-price free">Бесплатно</span></div>
+      <div class="card-body">
+        <div class="card-title">Moros y Cristianos, Алькой</div>
+        <div class="card-meta"><span>📍 55 мин от Аликанте</span><span>📅 23–25 апреля 2026</span></div>
+        <div class="card-desc">Грандиозный костюмированный праздник — тысячи участников</div>
+        <div class="card-footer"><a class="card-link" href="#">Подробнее →</a><div class="card-score">⭐ 9/10</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image sport">⚽<span class="card-badge sport">⚽ Спорт</span><span class="card-price">от €5</span></div>
+      <div class="card-body">
+        <div class="card-title">Марафон Costa Blanca Trail</div>
+        <div class="card-meta"><span>📍 Альтеа · 50 мин</span><span>📅 3 мая 2026 · 08:00</span></div>
+        <div class="card-desc">Горный трейл с видом на море — дистанции 10, 21 и 42 км</div>
+        <div class="card-footer"><a class="card-link" href="#">Подробнее →</a><div class="card-score">⭐ 7/10</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- PAGE 3: EVENT DETAIL -->
+<!-- ========================================== -->
+
+<div class="page-separator">
+  <h2>Страница 3: Детали события (/events/moros-y-cristianos)</h2>
+</div>
+
+<div class="detail-page">
+  <a class="detail-back" href="#">← Назад к событиям</a>
+
+  <div class="detail-hero card-image festival" style="border-radius:16px;">
+    🎭
+  </div>
+
+  <span class="card-badge festival" style="position:static; display:inline-flex; margin-bottom:12px;">🎭 Фестиваль</span>
+
+  <h1 style="font-size:32px; font-weight:800; color:#1A365D; line-height:1.2; margin-bottom:8px;">
+    Moros y Cristianos en Alcoy
+  </h1>
+  <p style="font-size:15px; color:#718096;">Один из самых грандиозных праздников Испании</p>
+
+  <div class="detail-info-row">
+    <div class="detail-info-card">
+      <div class="icon">📍</div>
+      <div class="value">Алькой</div>
+      <div class="label">55 мин от Аликанте</div>
+    </div>
+    <div class="detail-info-card">
+      <div class="icon">📅</div>
+      <div class="value">23–25 апреля</div>
+      <div class="label">2026</div>
+    </div>
+    <div class="detail-info-card">
+      <div class="icon">💰</div>
+      <div class="value">Бесплатно</div>
+      <div class="label">вход свободный</div>
+    </div>
+  </div>
+
+  <div class="detail-desc">
+    Один из самых грандиозных праздников Испании. Три дня город Алькой превращается в средневековую арену — тысячи участников в роскошных исторических костюмах воспроизводят битвы между маврами и христианами.
+    <br><br>
+    Праздник включает торжественные марши по улицам города, театрализованные сражения на главной площади, оглушительные мушкетные залпы (conocidos como «arcabucería»), и грандиозный финал со штурмом замка.
+    <br><br>
+    Алькой считается родиной этого праздника — здесь самые масштабные и зрелищные шествия во всей Испании. ЮНЕСКО включила Moros y Cristianos в список нематериального культурного наследия.
+  </div>
+
+  <div class="detail-tip">
+    <div class="tip-title">💡 Совет</div>
+    Приезжайте к 10 утра, чтобы занять хорошее место на главной площади. Парковка на окраине города — от центра ходят бесплатные шаттлы. Возьмите беруши для детей — мушкетные залпы очень громкие!
+  </div>
+
+  <div class="detail-map">
+    🗺️ Google Maps — Alcoy, Alicante, Spain
+  </div>
+
+  <p style="font-size:14px; color:#718096; margin: 12px 0;">
+    🔗 Источник: <a href="#" style="color:#2B6CB0;">costablancaup.com</a>
+  </p>
+
+  <div class="detail-share">
+    <a class="share-tg" href="#">📱 Поделиться в Telegram</a>
+    <a class="share-copy" href="#">📋 Скопировать ссылку</a>
+  </div>
+
+  <div style="margin-top: 40px;">
+    <div class="section-title">Похожие события</div>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-image fireworks">🎆<span class="card-badge fireworks">🎆 Фейерверки</span><span class="card-price free">Бесплатно</span></div>
+        <div class="card-body">
+          <div class="card-title">Hogueras de San Juan</div>
+          <div class="card-meta"><span>📍 Аликанте · центр</span><span>📅 20–24 июня</span></div>
+          <div class="card-footer"><a class="card-link" href="#">Подробнее →</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-image festival">🎭<span class="card-badge festival">🎭 Фестиваль</span><span class="card-price free">Бесплатно</span></div>
+        <div class="card-body">
+          <div class="card-title">Semana Santa, Крейвиллент</div>
+          <div class="card-meta"><span>📍 Крейвиллент · 30 мин</span><span>📅 Апрель</span></div>
+          <div class="card-footer"><a class="card-link" href="#">Подробнее →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer style="margin-top: 48px;">
+  <div class="footer-links">
+    <a href="#">Главная</a>
+    <a href="#">Все события</a>
+    <a href="#">Telegram</a>
+    <a href="#">О проекте</a>
+  </div>
+  <p>Афиша Costa Blanca — лучшие события региона на русском языке</p>
+</footer>
+
+</body>
+</html>

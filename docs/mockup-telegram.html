@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telegram Post Mockups — Афиша Costa Blanca</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background: #0e1621;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  h1 {
+    color: #aaa;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 20px;
+  }
+  h2 {
+    color: #888;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  /* Telegram message bubble */
+  .tg-container {
+    width: 380px;
+    max-width: 95vw;
+  }
+  .tg-channel-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding: 8px 0;
+  }
+  .tg-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1A365D, #F6AD55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .tg-channel-name {
+    font-weight: 600;
+    font-size: 15px;
+    color: #fff;
+  }
+  .tg-channel-sub {
+    font-size: 12px;
+    color: #708499;
+  }
+  .tg-message {
+    background: #182533;
+    border-radius: 12px;
+    border-top-left-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .tg-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    background: linear-gradient(135deg, #1a3a5c 0%, #2d6a9f 50%, #e8a547 100%);
+    position: relative;
+  }
+  .tg-image-placeholder {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    position: relative;
+  }
+  .tg-image-placeholder.festival {
+    background: linear-gradient(135deg, #1a1a3e 0%, #3d1a6e 40%, #e74c3c 100%);
+  }
+  .tg-image-placeholder.nature {
+    background: linear-gradient(135deg, #0d3b0d 0%, #1e7a1e 50%, #f0c040 100%);
+  }
+  .tg-image-placeholder.gastro {
+    background: linear-gradient(135deg, #3d1f00 0%, #8b4513 50%, #f39c12 100%);
+  }
+  .tg-image-placeholder.weekend {
+    background: linear-gradient(135deg, #1A365D 0%, #2B6CB0 50%, #F6AD55 100%);
+  }
+  .tg-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 8px 12px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    font-size: 11px;
+    color: rgba(255,255,255,0.8);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .tg-body {
+    padding: 10px 14px 8px;
+  }
+  .tg-body p {
+    font-size: 14.5px;
+    line-height: 1.45;
+    color: #e4e6ea;
+    margin-bottom: 6px;
+  }
+  .tg-body .tg-title {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+  .tg-body .tg-meta {
+    font-size: 13.5px;
+    color: #8dabc4;
+    line-height: 1.6;
+  }
+  .tg-body .tg-tip {
+    background: rgba(246, 173, 85, 0.12);
+    border-left: 3px solid #F6AD55;
+    padding: 6px 10px;
+    border-radius: 0 6px 6px 0;
+    margin: 8px 0;
+    font-size: 13.5px;
+    color: #ccd6e0;
+  }
+  .tg-body .tg-link {
+    color: #5b9bd5;
+    font-size: 13px;
+    text-decoration: none;
+    display: block;
+    margin: 6px 0;
+  }
+  .tg-body .tg-tags {
+    color: #5b9bd5;
+    font-size: 13px;
+    margin-top: 8px;
+  }
+  .tg-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 14px 10px;
+  }
+  .tg-time {
+    font-size: 12px;
+    color: #708499;
+  }
+  .tg-views {
+    font-size: 12px;
+    color: #708499;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .tg-reactions {
+    display: flex;
+    gap: 6px;
+    padding: 2px 14px 10px;
+  }
+  .tg-reaction {
+    background: rgba(91, 155, 213, 0.15);
+    border: 1px solid rgba(91, 155, 213, 0.25);
+    border-radius: 20px;
+    padding: 3px 10px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #5b9bd5;
+  }
+  .tg-btn-row {
+    padding: 4px 14px 12px;
+  }
+  .tg-btn {
+    display: block;
+    background: rgba(91, 155, 213, 0.15);
+    border: 1px solid rgba(91, 155, 213, 0.3);
+    border-radius: 8px;
+    padding: 8px 16px;
+    text-align: center;
+    color: #5b9bd5;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    margin-bottom: 6px;
+  }
+
+  .section-divider {
+    width: 380px;
+    max-width: 95vw;
+    border-top: 1px solid #2a3a4a;
+    padding-top: 30px;
+  }
+
+  /* Weekend digest numbering */
+  .digest-item {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+  }
+  .digest-num {
+    flex-shrink: 0;
+    font-size: 14px;
+  }
+  .digest-content {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #e4e6ea;
+  }
+  .digest-content .meta {
+    font-size: 13px;
+    color: #8dabc4;
+    margin-top: 2px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Макеты Telegram-постов — Афиша Costa Blanca</h1>
+
+<!-- CHANNEL HEADER -->
+<div class="tg-container">
+  <div class="tg-channel-header">
+    <div class="tg-avatar">CB</div>
+    <div>
+      <div class="tg-channel-name">Афиша Costa Blanca</div>
+      <div class="tg-channel-sub">1,234 подписчика</div>
+    </div>
+  </div>
+</div>
+
+<!-- POST 1: Festival -->
+<div class="tg-container">
+  <h2>Тип 1: Событие (фестиваль)</h2>
+  <div class="tg-message">
+    <div class="tg-image-placeholder festival">
+      🎭
+      <div class="tg-image-overlay">Фестиваль | Алькой</div>
+    </div>
+    <div class="tg-body">
+      <p class="tg-title">🎭 Moros y Cristianos — самый грандиозный костюмированный праздник Испании!</p>
+      <p>Три дня город превращается в средневековую арену — тысячи участников в роскошных костюмах, марши, музыка и фейерверки.</p>
+      <div class="tg-meta">
+        📅 23–25 апреля 2026<br>
+        📍 Алькой (55 мин от Аликанте)<br>
+        💰 Бесплатно
+      </div>
+      <div class="tg-tip">
+        💡 <b>Совет:</b> Приезжайте к 10 утра, чтобы занять хорошее место. Парковка на окраине — от центра ходят шаттлы.
+      </div>
+      <a class="tg-link" href="#">🔗 Подробнее на сайте →</a>
+      <div class="tg-tags">#фестиваль #алькой #бесплатно #CostaBlanca</div>
+    </div>
+    <div class="tg-reactions">
+      <span class="tg-reaction">🔥 24</span>
+      <span class="tg-reaction">❤️ 12</span>
+      <span class="tg-reaction">👏 8</span>
+    </div>
+    <div class="tg-footer">
+      <span class="tg-time">10:30</span>
+      <span class="tg-views">👁 847</span>
+    </div>
+  </div>
+</div>
+
+<!-- POST 2: Nature -->
+<div class="tg-container">
+  <h2>Тип 2: Событие (природа)</h2>
+  <div class="tg-message">
+    <div class="tg-image-placeholder nature">
+      🌸
+      <div class="tg-image-overlay">Природа | Хавеа</div>
+    </div>
+    <div class="tg-body">
+      <p class="tg-title">🌸 Цветение миндаля в долине Хавеи — розовое облако на фоне гор!</p>
+      <p>Каждый февраль долины вокруг Хавеи покрываются бело-розовым цветом. Идеальная прогулка на пару часов с потрясающими фото.</p>
+      <div class="tg-meta">
+        📅 1–28 февраля 2026<br>
+        📍 Хавеа (1 ч от Аликанте)<br>
+        💰 Бесплатно<br>
+        🚗 Координаты парковки в описании
+      </div>
+      <div class="tg-tip">
+        💡 <b>Совет:</b> Лучшее время — раннее утро, когда туман рассеивается. Берите тёплую кофту, в горах прохладнее.
+      </div>
+      <a class="tg-link" href="#">🔗 Маршрут и фото на сайте →</a>
+      <div class="tg-tags">#природа #хавеа #цветение #бесплатно</div>
+    </div>
+    <div class="tg-reactions">
+      <span class="tg-reaction">😍 31</span>
+      <span class="tg-reaction">❤️ 18</span>
+    </div>
+    <div class="tg-footer">
+      <span class="tg-time">09:15</span>
+      <span class="tg-views">1.2K</span>
+    </div>
+  </div>
+</div>
+
+<!-- POST 3: Gastro -->
+<div class="tg-container">
+  <h2>Тип 3: Событие (гастрономия)</h2>
+  <div class="tg-message">
+    <div class="tg-image-placeholder gastro">
+      🍷
+      <div class="tg-image-overlay">Гастрономия | Аликанте</div>
+    </div>
+    <div class="tg-body">
+      <p class="tg-title">🍷 Винный фестиваль D.O. Alicante — 40 виноделен в одном месте</p>
+      <p>Пробуйте лучшие вина региона прямо у моря! Muscat, Monastrell, Giró — все автохтонные сорта в бокалах от €2. Живая музыка и тапас.</p>
+      <div class="tg-meta">
+        📅 12 мая 2026 | 18:00–23:00<br>
+        📍 Puerto de Alicante (центр)<br>
+        💰 Вход: €10 (включает бокал + 3 дегустации)
+      </div>
+      <div class="tg-tip">
+        💡 <b>Совет:</b> Билеты онлайн дешевле на €3. Ехать лучше на трамвае — парковки не будет.
+      </div>
+      <a class="tg-link" href="#">🔗 Купить билеты →</a>
+      <div class="tg-tags">#вино #аликанте #гастро #CostaBlanca</div>
+    </div>
+    <div class="tg-reactions">
+      <span class="tg-reaction">🍷 42</span>
+      <span class="tg-reaction">🔥 15</span>
+      <span class="tg-reaction">❤️ 9</span>
+    </div>
+    <div class="tg-footer">
+      <span class="tg-time">12:00</span>
+      <span class="tg-views">2.1K</span>
+    </div>
+  </div>
+</div>
+
+<!-- POST 4: Weekend Digest -->
+<div class="section-divider"></div>
+<div class="tg-container">
+  <h2>Тип 4: Дайджест выходных (пятничный)</h2>
+  <div class="tg-message">
+    <div class="tg-image-placeholder weekend">
+      🌟
+      <div class="tg-image-overlay">Дайджест | 18–19 апреля 2026</div>
+    </div>
+    <div class="tg-body">
+      <p class="tg-title">🌟 ЧТО ДЕЛАТЬ НА ВЫХОДНЫХ<br>18–19 апреля 2026</p>
+
+      <div style="margin: 12px 0;">
+        <div class="digest-item">
+          <span class="digest-num">1️⃣</span>
+          <div class="digest-content">
+            <b>🎵 Jazz Festival</b> — Аликанте
+            <div class="meta">📅 Сб 18:00 · 💰 от €15 · 📍 10 мин</div>
+          </div>
+        </div>
+        <div class="digest-item">
+          <span class="digest-num">2️⃣</span>
+          <div class="digest-content">
+            <b>🌸 Цветение миндаля</b> — Хавеа
+            <div class="meta">📅 Сб–Вс весь день · 💰 Бесплатно · 📍 1 ч</div>
+          </div>
+        </div>
+        <div class="digest-item">
+          <span class="digest-num">3️⃣</span>
+          <div class="digest-content">
+            <b>🛍️ Блошиный рынок</b> — Бенидорм
+            <div class="meta">📅 Вс 9:00–14:00 · 💰 Бесплатно · 📍 40 мин</div>
+          </div>
+        </div>
+        <div class="digest-item">
+          <span class="digest-num">4️⃣</span>
+          <div class="digest-content">
+            <b>👨‍👩‍👧 Детский фестиваль</b> — Торревьеха
+            <div class="meta">📅 Сб 11:00–18:00 · 💰 Бесплатно · 📍 45 мин</div>
+          </div>
+        </div>
+        <div class="digest-item">
+          <span class="digest-num">5️⃣</span>
+          <div class="digest-content">
+            <b>🍷 Дегустация вин D.O.</b> — Аликанте
+            <div class="meta">📅 Сб 19:00 · 💰 €10 · 📍 центр</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tg-btn-row">
+      <a class="tg-btn" href="#">📱 Все события на сайте →</a>
+    </div>
+    <div class="tg-reactions">
+      <span class="tg-reaction">🔥 56</span>
+      <span class="tg-reaction">❤️ 23</span>
+      <span class="tg-reaction">👏 14</span>
+    </div>
+    <div class="tg-footer">
+      <span class="tg-time">Пт 18:00</span>
+      <span class="tg-views">3.4K</span>
+    </div>
+  </div>
+</div>
+
+<!-- POST 5: Quick alert -->
+<div class="section-divider"></div>
+<div class="tg-container">
+  <h2>Тип 5: Срочное / горячее событие</h2>
+  <div class="tg-message">
+    <div class="tg-body">
+      <p class="tg-title">🔥 СЕГОДНЯ! Бесплатный концерт на пляже Postiguet</p>
+      <p>Группа <b>Chambao</b> выступает бесплатно на набережной Аликанте. Начало в 21:00, приходите пораньше — места займут быстро!</p>
+      <div class="tg-meta" style="margin-top: 8px;">
+        📅 Сегодня, 21:00<br>
+        📍 Playa del Postiguet, Аликанте<br>
+        💰 Бесплатно
+      </div>
+    </div>
+    <div class="tg-reactions">
+      <span class="tg-reaction">🔥 89</span>
+      <span class="tg-reaction">❤️ 34</span>
+    </div>
+    <div class="tg-footer">
+      <span class="tg-time">16:45</span>
+      <span class="tg-views">5.2K</span>
+    </div>
+  </div>
+</div>
+
+<div style="height: 40px;"></div>
+
+</body>
+</html>

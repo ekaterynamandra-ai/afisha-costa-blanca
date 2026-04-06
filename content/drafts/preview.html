@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мокап — Неделя 6-13 апреля @afishaCB</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background: #0e1621;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  h1 {
+    color: #aaa;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 20px;
+  }
+  h2 {
+    color: #888;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .tg-container { width: 380px; max-width: 95vw; }
+
+  .tg-channel-header {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 12px; padding: 8px 0;
+  }
+  .tg-avatar {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: linear-gradient(135deg, #1A365D, #F6AD55);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; font-weight: 700; color: #fff; flex-shrink: 0;
+  }
+  .tg-channel-name { font-weight: 600; font-size: 15px; color: #fff; }
+  .tg-channel-sub { font-size: 12px; color: #708499; }
+
+  .tg-message {
+    background: #182533;
+    border-radius: 12px; border-top-left-radius: 4px;
+    overflow: hidden; margin-bottom: 16px;
+  }
+  .tg-image {
+    width: 100%; height: 200px; object-fit: cover; display: block;
+    position: relative;
+  }
+  .tg-image-overlay {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 8px 12px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    font-size: 11px; color: rgba(255,255,255,0.8);
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .tg-img-wrap {
+    position: relative; width: 100%; height: 200px; overflow: hidden;
+  }
+  .tg-img-wrap img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+
+  .tg-body { padding: 10px 14px 8px; }
+  .tg-body p {
+    font-size: 14.5px; line-height: 1.45; color: #e4e6ea; margin-bottom: 6px;
+  }
+  .tg-body .tg-title {
+    font-weight: 700; font-size: 15px; margin-bottom: 8px;
+  }
+  .tg-body .tg-section-title {
+    font-weight: 700; font-size: 14px; color: #F6AD55; margin: 10px 0 4px;
+  }
+  .tg-body .tg-meta {
+    font-size: 13.5px; color: #8dabc4; line-height: 1.6;
+  }
+  .tg-body .tg-tip {
+    background: rgba(246, 173, 85, 0.12);
+    border-left: 3px solid #F6AD55;
+    padding: 6px 10px; border-radius: 0 6px 6px 0;
+    margin: 8px 0; font-size: 13.5px; color: #ccd6e0;
+  }
+  .tg-body .tg-link {
+    color: #5b9bd5; font-size: 13px; text-decoration: none;
+    display: block; margin: 6px 0;
+  }
+  .tg-body .tg-tags {
+    color: #5b9bd5; font-size: 13px; margin-top: 8px;
+  }
+  .tg-body .tg-audience {
+    background: rgba(91, 155, 213, 0.08);
+    border-radius: 8px; padding: 6px 10px; margin: 8px 0;
+    font-size: 13px; color: #8dabc4;
+  }
+  .tg-body .tg-audience b { color: #a0c4e8; }
+
+  .tg-footer {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 4px 14px 10px;
+  }
+  .tg-time { font-size: 12px; color: #708499; }
+  .tg-views { font-size: 12px; color: #708499; display: flex; align-items: center; gap: 4px; }
+
+  .tg-reactions { display: flex; gap: 6px; padding: 2px 14px 10px; }
+  .tg-reaction {
+    background: rgba(91, 155, 213, 0.15);
+    border: 1px solid rgba(91, 155, 213, 0.25);
+    border-radius: 20px; padding: 3px 10px; font-size: 13px;
+    display: flex; align-items: center; gap: 4px; color: #5b9bd5;
+  }
+
+  .tg-btn-row { padding: 4px 14px 12px; }
+  .tg-btn {
+    display: block;
+    background: rgba(91, 155, 213, 0.15);
+    border: 1px solid rgba(91, 155, 213, 0.3);
+    border-radius: 8px; padding: 8px 16px; text-align: center;
+    color: #5b9bd5; font-size: 14px; font-weight: 500;
+    text-decoration: none; margin-bottom: 6px;
+  }
+
+  .section-divider {
+    width: 380px; max-width: 95vw;
+    border-top: 1px solid #2a3a4a; padding-top: 30px;
+  }
+
+  .day-label {
+    color: #F6AD55; font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.5px;
+    background: rgba(246, 173, 85, 0.1);
+    border-radius: 4px; padding: 4px 10px; margin-bottom: 10px;
+    display: inline-block;
+  }
+
+  .item { margin-bottom: 10px; }
+  .item-title { font-weight: 700; font-size: 14px; color: #e4e6ea; }
+  .item-meta { font-size: 13px; color: #8dabc4; margin-top: 2px; }
+  .item-why { font-size: 12.5px; color: #7a99b5; font-style: italic; margin-top: 2px; }
+
+  .highlight-box {
+    background: rgba(246, 173, 85, 0.08);
+    border: 1px solid rgba(246, 173, 85, 0.2);
+    border-radius: 8px; padding: 8px 12px; margin: 6px 0;
+  }
+  .highlight-box .medal { font-size: 16px; }
+  .highlight-box .hl-title { font-weight: 700; font-size: 14px; color: #fff; }
+  .highlight-box .hl-desc { font-size: 13px; color: #ccd6e0; margin-top: 2px; }
+
+  .red-dot {
+    display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+    background: #e53e3e; margin-right: 4px; vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+
+<h1>Мокап постов @afishaCB — Неделя 6–13 апреля 2026</h1>
+
+<!-- Channel header -->
+<div class="tg-container">
+  <div class="tg-channel-header">
+    <div class="tg-avatar">CB</div>
+    <div>
+      <div class="tg-channel-name">Афиша Costa Blanca</div>
+      <div class="tg-channel-sub">@afishaCB · 1,234 подписчика</div>
+    </div>
+  </div>
+</div>
+
+<!-- =============== ПОСТ 1: Календарь апреля =============== -->
+<div class="tg-container section-divider">
+  <span class="day-label">Вс 6 апреля · 10:00</span>
+  <h2>Пост 1 — Календарь месяца</h2>
+  <div class="tg-message">
+    <div class="tg-img-wrap">
+      <img src="https://images.pexels.com/photos/29837765/pexels-photo-29837765.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+      <div class="tg-image-overlay">📅 Календарь | Апрель 2026</div>
+    </div>
+    <div class="tg-body">
+      <p class="tg-title">📅 АПРЕЛЬ 2026: все важные даты Costa Blanca</p>
+      <p>Сохраняйте, чтобы не пропустить!</p>
+
+      <p class="tg-section-title">Праздники и выходные:</p>
+      <div class="tg-meta">
+        <span class="red-dot"></span> 3 апреля — Страстная пятница (выходной)<br>
+        <span class="red-dot"></span> 6 апреля — Пасхальный понедельник (выходной)<br>
+        <span class="red-dot"></span> 13 апреля — San Vicente Ferrer (Торревьеха, Эльче)<br>
+        <span class="red-dot"></span> 16 апреля — Santa Faz (Аликанте)
+      </div>
+
+      <p class="tg-section-title">Главные события:</p>
+      <div class="tg-meta">
+        🕊️ 29 мар – 5 апр — Semana Santa<br>
+        🎨 5 апреля — RODEARTE, арт-рынок (Рохалес)<br>
+        📚 до 6 апреля — Книжная ярмарка (Торревьеха)<br>
+        🎮 11-12 апреля — Expo Torrevieja + ComarCON<br>
+        🎭 25-27 апреля — Moros y Cristianos (Алькой!)<br>
+        🌸 1-4 мая — Cruces de Mayo (Аликанте)
+      </div>
+
+      <p class="tg-section-title">Каждую неделю:</p>
+      <div class="tg-meta">
+        🛍️ Ср — рынок Гуардамар<br>
+        🛍️ Пт — мега-рынок Торревьеха (500+ прилавков!)<br>
+        🛍️ Вс — El Campico, Гуардамар (~500 прилавков)<br>
+        🦩 Весь месяц — пик фламинго (Салинас)
+      </div>
+
+      <div class="tg-tags">#апрель #CostaBlanca #календарь #праздники</div>
+    </div>
+    <div class="tg-btn-row">
+      <a class="tg-btn" href="#">📱 Подпишись @afishaCB</a>
+    </div>
+    <div class="tg-reactions">
+      <span class="tg-reaction">📌 72</span>
+      <span class="tg-reaction">🔥 34</span>
+      <span class="tg-reaction">❤️ 15</span>
+    </div>
+    <div class="tg-footer">
+      <span class="tg-time">10:00</span>
+      <span class="tg-views">👁 1.2K</span>
+    </div>
+  </div>
+</div>
+
+<!-- =============== ПОСТ 2: Semana Santa обзор =============== -->
+<div class="tg-container section-divider">
+  <span class="day-label">Пн 7 апреля · 10:00</span>
+  <h2>Пост 2 — Semana Santa: где и что смотреть</h2>
+  <div class="tg-message">
+    <div class="tg-img-wrap">
+      <img src="https://images.pexels.com/photos/13598504/pexels-photo-13598504.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+      <div class="tg-image-overlay">🕊️ Semana Santa | Costa Blanca</div>
+    </div>
+    <div class="tg-body">
+      <p class="tg-title">🕊️ SEMANA SANTA НА COSTA BLANCA: где и что смотреть</p>
+      <p>Процессии идут во всех городах, но не все одинаково зрелищные. Наш рейтинг:</p>
+
+      <div class="highlight-box">
+        <span class="medal">🏆</span> <span class="hl-title">ОРИХУЭЛА</span> — лучшая на всей Costa Blanca!
+        <div class="hl-desc">Единственная с титулом «Международный туристический интерес». Скульптуры XVI века. Ночная процессия при свечах — мурашки по коже.</div>
+      </div>
+
+      <div class="highlight-box">
+        <span class="medal">🥈</span> <span class="hl-title">КРЕЙВИЛЛЕНТ</span> — «Национальный интерес»
+        <div class="hl-desc">На рассвете в Страстную пятницу — «Abrazo de la Morquera»: встреча Иисуса и Марии. Тысячи зрителей в полной тишине.</div>
+      </div>
+
+      <div class="highlight-box">
+        <span class="medal">🥉</span> <span class="hl-title">АЛИКАНТЕ</span> — 28 процессий за неделю
+        <div class="hl-desc">Особенно атмосферно в старом районе Санта-Крус.</div>
+      </div>
+
+      <div class="tg-meta" style="margin-top: 10px;">
+        📍 <b>ГУАРДАМАР</b> — живой театр! Пт 3 апр 20:30. Вс 5 апр 10:00.<br>
+        📍 <b>ТОРРЕВЬЕХА</b> — новинка 2026: новый маршрут.<br>
+        📍 <b>ЭЛЬЧЕ</b> — юбилей 325 лет!
+      </div>
+
+      <div class="tg-tip">
+        💡 <b>Совет:</b> Самое зрелищное — Страстная пятница (3 апреля). Орихуэла стоит поездки!
+      </div>
+
+      <div class="tg-audience">
+        🎯 <b>Подойдёт:</b> 👨‍👩‍👧 семьям · 💑 парам · 📸 фотографам · 🎨 культура
+      </div>
+
+      <div class="tg-tags">#SemanaSanta #CostaBlanca #Орихуэла #Пасха</div>
+    </div>
+    <div class="tg-reactions">
+      <span class="tg-reaction">🕊️ 42</span>
+      <span class="tg-reaction">❤️ 21</span>
+      <span class="tg-reaction">📌 18</span>
+    </div>
+    <div class="tg-footer">
+      <span class="tg-time">10:00</span>
+      <span class="tg-views">👁 2.8K</span>
+    </div>
+  </div>
+</div>
+
+<!-- =============== ПОСТ 3: Акцент — Орихуэла =============== -->
+<div class="tg-container section-divider">
+  <span class="day-label">Вт 8 апреля · 10:00</span>
+  <h2>Пост 3 — Акцент: Орихуэла</h2>
+  <div class="tg-message">
+    <div class="tg-img-wrap">
+      <img src="https://images.pexels.com/photos/31715517/pexels-photo-31715517.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+      <div class="tg-image-overlay">🏆 Орихуэла | Semana Santa</div>
+    </div>
+    <div class="tg-body">
+      <p class="tg-title">🏆 Semana Santa в Орихуэле — зачем ехать и что не пропустить</p>
+      <p>Единственный город на Costa Blanca с титулом «Международный туристический интерес». Это уровень Севильи!</p>
+
+      <p class="tg-section-title">Что увидите:</p>
+      <div class="tg-meta">
+        🎨 Скульптуры XVI века мастера Сальсильо<br>
+        👤 Сотни участников в capirotes (остроконечные капюшоны)<br>
+        🔥 Факельные ночные процессии<br>
+        🎵 Живые оркестры
+      </div>
+
+      <p class="tg-section-title">Расписание:</p>
+      <div class="tg-meta">
+        📅 Пт 3 апреля, 19:15 — «Convocatoria» (десятки колоколов!)<br>
+        📅 Пт 3 апреля, 01:00 — Ночная процессия при свечах 🕯️<br>
+        📅 Сб 4 апреля, 20:15 — «Santo Entierro» в стиле XVIII века
+      </div>
+
+      <div class="tg-meta" style="margin-top: 10px;">
+        📍 Орихуэла (30 мин от Торревьехи, 40 мин от Гуардамара)<br>
+        💰 Бесплатно (стулья — аренда на месте)
+      </div>
+
+      <div class="tg-tip">
+        💡 <b>Совет:</b> Приезжайте за час до начала. Лучшие точки — Plaza de las Salesas и улицы у Catedral. Ночная в 1:00 — невероятная, но оденьтесь тепло!
+      </div>
+
+      <div class="tg-audience">
+        🎯 <b>Подойдёт:</b> 💑 парам · 📸 фотографам · 🎨 культура · 👨‍👩‍👧 семьям (днём)
+      </div>
+
+      <div class="tg-tags">#SemanaSanta #Орихуэла #CostaBlanca</div>
+    </div>
+    <div class="tg-reactions">
+      <span class="tg-reaction">🔥 56</span>
+      <span class="tg-reaction">❤️ 29</span>
+      <span class="tg-reaction">👏 12</span>
+    </div>
+    <div class="tg-footer">
+      <span class="tg-time">10:00</span>
+      <span class="tg-views">👁 3.4K</span>
+    </div>
+  </div>
+</div>
+
+<!-- =============== ПОСТ 4: Рынки =============== -->
+<div class="tg-container section-divider">
+  <span class="day-label">Ср 9 апреля · 09:00</span>
+  <h2>Пост 4 — Расписание рынков</h2>
+  <div class="tg-message">
+    <div class="tg-img-wrap">
+      <img src="https://images.pexels.com/photos/868110/pexels-photo-868110.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+      <div class="tg-image-overlay">🛍️ Рынки | Расписание</div>
+    </div>
+    <div class="tg-body">
+      <p class="tg-title">🛍️ РЫНКИ COSTA BLANCA: расписание на апрель</p>
+      <p>Сохраняйте!</p>
+
+      <div class="tg-meta" style="margin-top: 6px;">
+        📅 <b>Пн</b> — Санта-Пола (~450 прилавков)<br>
+        📅 <b>Вт</b> — Орихуэла центр (~400, продукты с уэрт!)<br>
+        📅 <b>Ср</b> — Гуардамар · Бенидорм<br>
+        📅 <b>Чт</b> — Аликанте (Calle Teulada, ~375)<br>
+        📅 <b>Пт</b> — <b>ТОРРЕВЬЕХА</b> 🔥 500+ прилавков! Самый большой. Бесплатный автобус. 8:00-14:00<br>
+        📅 <b>Сб</b> — Санта-Пола (фрукты, цветы) · Аликанте<br>
+        📅 <b>Вс</b> — <b>Гуардамар El Campico</b> 🔥 ~500 прилавков! 8:00-15:00 · Бенидорм
+      </div>
+
+      <div class="tg-tip">
+        💡 Рынки работают в дождь и в праздники! Пятничный в Торревьехе — даже в Страстную пятницу.
+      </div>
+
+      <div class="tg-tags">#рынки #mercadillo #CostaBlanca #Торревьеха #Гуардамар</div>
+    </div>
+    <div class="tg-reactions">
+      <span class="tg-reaction">📌 72</span>
+      <span class="tg-reaction">❤️ 28</span>
+      <span class="tg-reaction">🛍️ 14</span>
+    </div>
+    <div class="tg-footer">
+      <span class="tg-time">09:00</span>
+      <span class="tg-views">👁 6.8K</span>
+    </div>
+  </div>
+</div>
+
+<!-- =============== ПОСТ 5: С собакой =============== -->
+<div class="tg-container section-divider">
+  <span class="day-label">Чт 10 апреля · 12:00</span>
+  <h2>Пост 5 — С собакой: 5 мест</h2>
+  <div class="tg-message">
+    <div class="tg-img-wrap">
+      <img src="https://images.pexels.com/photos/4603185/pexels-photo-4603185.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+      <div class="tg-image-overlay">🐕 С собакой | Топ-5 мест</div>
+    </div>
+    <div class="tg-body">
+      <p class="tg-title">🐕 С СОБАКОЙ: 5 лучших мест в апреле</p>
+      <p>Апрель — идеальное время: тепло, но пляжи ещё не забиты.</p>
+
+      <div class="item">
+        <div class="item-title">1️⃣ Playa Los Tusales — Гуардамар</div>
+        <div class="item-meta">🏖️ Песчаный пляж для собак, рядом с дюнами. Круглый год.</div>
+      </div>
+      <div class="item">
+        <div class="item-title">2️⃣ Cala Ferrís — Торревьеха (юг)</div>
+        <div class="item-meta">🏖️ Площадка с аджилити и душ для собак!</div>
+      </div>
+      <div class="item">
+        <div class="item-title">3️⃣ Caleta dels Gossets — Санта-Пола</div>
+        <div class="item-meta">🏖️ Маленькая бухта у подножия скал. Очень фотогеничная.</div>
+      </div>
+      <div class="item">
+        <div class="item-title">4️⃣ Парк Альфонсо XIII — Гуардамар</div>
+        <div class="item-meta">🌲 800 га соснового леса. Тенистые тропы.</div>
+      </div>
+      <div class="item">
+        <div class="item-title">5️⃣ Лагуна Ла-Мата — Торревьеха</div>
+        <div class="item-meta">🦩 Дорожки вдоль лагуны с видом на фламинго!</div>
+      </div>
+
+      <div class="tg-tip">
+        💡 <b>Совет:</b> В апреле все собачьи пляжи свободны — лучшее время до летнего наплыва!
+      </div>
+
+      <div class="tg-audience">
+        🎯 <b>Для:</b> 🐕 с собакой · 🏃 активным · 👨‍👩‍👧 семьям с питомцем
+      </div>
+
+      <div class="tg-tags">#ссобакой #CostaBlanca #собачийпляж #Гуардамар</div>
+    </div>
+    <div class="tg-reactions">
+      <span class="tg-reaction">🐕 61</span>
+      <span class="tg-reaction">❤️ 33</span>
+      <span class="tg-reaction">📌 19</span>
+    </div>
+    <div class="tg-footer">
+      <span class="tg-time">12:00</span>
+      <span class="tg-views">👁 5.2K</span>
+    </div>
+  </div>
+</div>
+
+<!-- =============== ПОСТ 6: Выходные =============== -->
+<div class="tg-container section-divider">
+  <span class="day-label">Пт 11 апреля · 18:00</span>
+  <h2>Пост 6 — Подборка выходных</h2>
+  <div class="tg-message">
+    <div class="tg-img-wrap">
+      <img src="https://images.pexels.com/photos/1680214/pexels-photo-1680214.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+      <div class="tg-image-overlay">🌟 Выходные | 11–12 апреля</div>
+    </div>
+    <div class="tg-body">
+      <p class="tg-title">🌟 ВЫХОДНЫЕ 11-12 АПРЕЛЯ: куда пойти</p>
+
+      <div class="item">
+        <div class="item-title">1️⃣ 🎮 Expo Torrevieja + ComarCON — Торревьеха</div>
+        <div class="item-meta">📅 Сб-Вс · 💰 Бесплатно</div>
+        <div class="item-meta">Две площадки! Expo — 180+ стендов, классические авто. ComarCON — аниме, косплей, игры.</div>
+        <div class="item-why">→ С детьми, подростками, компанией</div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">2️⃣ 🦩 Фламинго в Салинас — Санта-Пола</div>
+        <div class="item-meta">📅 Любой день · 💰 Бесплатно · 📍 15 мин</div>
+        <div class="item-meta">Пик сезона! До 8000 фламинго.</div>
+        <div class="item-why">→ С собакой, с детьми, вдвоём</div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">3️⃣ 🛍️ Воскресный рынок El Campico — Гуардамар</div>
+        <div class="item-meta">📅 Вс 8:00-15:00 · 💰 Бесплатно</div>
+        <div class="item-meta">500+ прилавков — одежда, фрукты, специи.</div>
+        <div class="item-why">→ С подружками, семьёй</div>
+      </div>
+
+      <div class="item">
+        <div class="item-title">4️⃣ 🌲 Прогулка в дюнах — Гуардамар</div>
+        <div class="item-meta">📅 Любой день · 💰 Бесплатно</div>
+        <div class="item-meta">800 га соснового леса, тенистые тропы, раскопки.</div>
+        <div class="item-why">→ С собакой, вдвоём, с детьми</div>
+      </div>
+    </div>
+    <div class="tg-btn-row">
+      <a class="tg-btn" href="#">📱 @afishaCB — подборки каждую пятницу!</a>
+    </div>
+    <div class="tg-reactions">
+      <span class="tg-reaction">🔥 48</span>
+      <span class="tg-reaction">❤️ 22</span>
+      <span class="tg-reaction">🦩 16</span>
+    </div>
+    <div class="tg-footer">
+      <span class="tg-time">18:00</span>
+      <span class="tg-views">👁 4.1K</span>
+    </div>
+  </div>
+</div>
+
+<div style="height: 60px;"></div>
+
+</body>
+</html>
