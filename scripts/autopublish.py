@@ -159,45 +159,76 @@ def notify_error(title, error_msg):
 def check_planning_reminders():
     """Напоминания о планировании."""
     now = datetime.now(TZ_SPAIN)
+    today = now.date()
     reminders = []
 
-    # Найти последнюю одобренную неделю
-    last_approved_end = None
-    has_unapproved = False
+    # Собираем все недели
+    approved_ends = []
+    unapproved_weeks = []
+    all_ends = []
+
     for f in sorted(SCHEDULE_DIR.glob("*.json")):
         with open(f, "r", encoding="utf-8") as fh:
             schedule = json.load(fh)
         week = schedule.get("week", "")
-        if " to " in week:
-            end_str = week.split(" to ")[1].strip()
-            try:
-                end_date = datetime.strptime(end_str, "%Y-%m-%d").date()
-            except ValueError:
-                continue
-            if schedule.get("approved"):
-                if not last_approved_end or end_date > last_approved_end:
-                    last_approved_end = end_date
+        if " to " not in week:
+            continue
+        end_str = week.split(" to ")[1].strip()
+        try:
+            end_date = datetime.strptime(end_str, "%Y-%m-%d").date()
+        except ValueError:
+            continue
+        all_ends.append(end_date)
+        if schedule.get("approved"):
+            approved_ends.append(end_date)
+        else:
+            unapproved_weeks.append(week)
+
+    last_approved = max(approved_ends) if approved_ends else None
+    last_any = max(all_ends) if all_ends else None
+
+    # Проверяем статус планирования
+    if last_approved:
+        days_covered = (last_approved - today).days
+
+        if days_covered > 14:
+            # Всё ок, план есть на 2+ недели вперёд
+            reminders.append(f"✅ <b>План одобрен</b> до {last_approved.strftime('%d.%m.%Y')} ({days_covered} дней)")
+        elif days_covered > 2:
+            # План есть, но скоро кончится
+            if unapproved_weeks:
+                reminders.append(f"📋 Есть неутверждённый план — нужно согласовать!")
             else:
-                has_unapproved = True
-
-    today = now.date()
-
-    # Напоминание: план на неделю (если до конца одобренной недели < 3 дней)
-    if last_approved_end:
-        days_left = (last_approved_end - today).days
-        if days_left <= 2:
-            if has_unapproved:
-                reminders.append("📋 <b>Напоминание:</b> Есть неутверждённый план на неделю — нужно согласовать!")
+                reminders.append(f"✅ План одобрен до {last_approved.strftime('%d.%m.%Y')} ({days_covered} дн.)")
+        else:
+            # Критично — план заканчивается
+            if unapproved_weeks:
+                reminders.append(f"⚠️ <b>Срочно:</b> план заканчивается {last_approved.strftime('%d.%m')}! Есть черновик — нужно согласовать!")
             else:
-                reminders.append("📋 <b>Напоминание:</b> Через пару дней закончится текущий план — нужен план на следующую неделю!")
+                reminders.append(f"⚠️ <b>Срочно:</b> план заканчивается {last_approved.strftime('%d.%m')}! Нужен план на следующую неделю!")
+    else:
+        reminders.append("⚠️ <b>Нет одобренного плана!</b> Нужно согласовать расписание.")
 
-    # Напоминание: план на месяц (25-е число — пора планировать следующий месяц)
+    # Напоминание: план на месяц (25-е число)
     if today.day >= 25:
-        next_month = (today.replace(day=1) + timedelta(days=32)).strftime("%B")
-        reminders.append(f"📅 <b>Напоминание:</b> Конец месяца — пора сделать план на {next_month}!")
+        next_month_date = today.replace(day=1) + timedelta(days=32)
+        month_names_ru = {
+            1: "январь", 2: "февраль", 3: "март", 4: "апрель",
+            5: "май", 6: "июнь", 7: "июль", 8: "август",
+            9: "сентябрь", 10: "октябрь", 11: "ноябрь", 12: "декабрь"
+        }
+        next_month = month_names_ru.get(next_month_date.month, "?")
+
+        # Проверяем есть ли план на следующий месяц
+        next_month_start = next_month_date.replace(day=1)
+        has_next_month = last_any and last_any >= next_month_start
+        if has_next_month:
+            reminders.append(f"📅 План на {next_month} — есть ✅")
+        else:
+            reminders.append(f"📅 <b>Напоминание:</b> конец месяца — пора сделать план на {next_month}!")
 
     if reminders:
-        send_admin("\n\n".join(reminders))
+        send_admin("\n".join(reminders))
 
 
 def process_schedule():
