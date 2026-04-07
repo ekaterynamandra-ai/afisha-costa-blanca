@@ -122,18 +122,32 @@ def send_album(text, photos):
     return d
 
 
-def notify_admin(published, skipped, errs):
+def notify_admin(published, skipped, errs, published_titles=None, tomorrow_titles=None):
     """Отправить отчёт админу в личку."""
     now_str = datetime.now(TZ_SPAIN).strftime("%d.%m.%Y %H:%M")
+    lines = []
 
     if errs:
-        text = f"❌ <b>Ошибка публикации</b> ({now_str})\n\n"
+        lines.append(f"❌ <b>Ошибка публикации</b> ({now_str})")
         for e in errs:
-            text += f"• {e}\n"
-        if published:
-            text += f"\n✅ Опубликовано: {published}"
-    else:
-        text = f"✅ <b>Опубликовано: {published}</b> ({now_str})"
+            lines.append(f"• {e}")
+
+    if published and published_titles:
+        lines.append(f"\n✅ <b>Опубликовано сегодня ({published}):</b>")
+        for t in published_titles:
+            lines.append(f"• {t}")
+    elif published:
+        lines.append(f"✅ <b>Опубликовано: {published}</b> ({now_str})")
+
+    if tomorrow_titles:
+        lines.append(f"\n📅 <b>Завтра:</b>")
+        for t in tomorrow_titles:
+            lines.append(f"• {t}")
+
+    if not lines:
+        return "nothing to report"
+
+    text = "\n".join(lines)
 
     try:
         r = requests.post(f"{API}/sendMessage", data={
@@ -153,9 +167,12 @@ def process_schedule():
         return
 
     now = datetime.now(TZ_SPAIN)
+    tomorrow = (now + timedelta(days=1)).date()
     published_count = 0
     skipped_count = 0
     errors = []
+    published_titles = []
+    tomorrow_titles = []
 
     for f in sorted(SCHEDULE_DIR.glob("*.json")):
         with open(f, "r", encoding="utf-8") as fh:
@@ -195,6 +212,9 @@ def process_schedule():
                 if FORCE_TODAY and post_dt.date() == now.date():
                     print(f"  🔵 #{post_id} {title} — today (forced)")
                 else:
+                    # Собираем завтрашние посты для отчёта
+                    if post_dt.date() == tomorrow:
+                        tomorrow_titles.append(f"{post_time} — {title}")
                     print(f"  ⏰ #{post_id} {title} — scheduled {post_date} {post_time} (not yet)")
                     skipped_count += 1
                     continue
@@ -224,6 +244,7 @@ def process_schedule():
                 elif isinstance(res, dict):
                     post["message_id"] = res.get("message_id")
                 published_count += 1
+                published_titles.append(f"{post_time} — {title}")
                 print(f"  ✅ Published!")
 
                 # Сохраняем СРАЗУ после каждой публикации
@@ -248,7 +269,7 @@ def process_schedule():
 
     # Отправить отчёт админу в личку
     if ADMIN_ID and not DRY_RUN and (published_count > 0 or errors):
-        report = notify_admin(published_count, skipped_count, errors)
+        report = notify_admin(published_count, skipped_count, errors, published_titles, tomorrow_titles)
         print(f"Admin report: {report}")
 
 
