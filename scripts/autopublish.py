@@ -122,42 +122,82 @@ def send_album(text, photos):
     return d
 
 
-def notify_admin(published, skipped, errs, published_titles=None, tomorrow_titles=None):
-    """Отправить отчёт админу в личку."""
-    now_str = datetime.now(TZ_SPAIN).strftime("%d.%m.%Y %H:%M")
-    lines = []
-
-    if errs:
-        lines.append(f"❌ <b>Ошибка публикации</b> ({now_str})")
-        for e in errs:
-            lines.append(f"• {e}")
-
-    if published and published_titles:
-        lines.append(f"\n✅ <b>Опубликовано сегодня ({published}):</b>")
-        for t in published_titles:
-            lines.append(f"• {t}")
-    elif published:
-        lines.append(f"✅ <b>Опубликовано: {published}</b> ({now_str})")
-
-    if tomorrow_titles:
-        lines.append(f"\n📅 <b>Завтра:</b>")
-        for t in tomorrow_titles:
-            lines.append(f"• {t}")
-
-    if not lines:
-        return "nothing to report"
-
-    text = "\n".join(lines)
-
+def send_admin(text):
+    """Отправить сообщение админу в личку."""
+    if not ADMIN_ID or DRY_RUN:
+        print(f"  [ADMIN] {text[:80]}...")
+        return
     try:
-        r = requests.post(f"{API}/sendMessage", data={
-            "chat_id": ADMIN_ID,
-            "text": text,
-            "parse_mode": "HTML"
+        requests.post(f"{API}/sendMessage", data={
+            "chat_id": ADMIN_ID, "text": text, "parse_mode": "HTML"
         })
-        return "sent" if r.json().get("ok") else r.json().get("description", "?")
     except Exception as e:
-        return f"notify error: {e}"
+        print(f"  Admin notify error: {e}")
+
+
+def notify_published(title, next_post=None, tomorrow_posts=None, is_last_today=False):
+    """Отчёт после каждой публикации."""
+    now_str = datetime.now(TZ_SPAIN).strftime("%H:%M")
+    lines = [f"✅ <b>Опубликовано</b> ({now_str}):", f"• {title}"]
+
+    if is_last_today and tomorrow_posts:
+        lines.append(f"\n📅 <b>Завтра:</b>")
+        for t in tomorrow_posts:
+            lines.append(f"• {t}")
+    elif next_post:
+        lines.append(f"\n⏭ <b>Следующий:</b> {next_post}")
+
+    send_admin("\n".join(lines))
+
+
+def notify_error(title, error_msg):
+    """Отчёт об ошибке."""
+    now_str = datetime.now(TZ_SPAIN).strftime("%H:%M")
+    send_admin(f"❌ <b>Ошибка публикации</b> ({now_str})\n• {title}\n• {error_msg}")
+
+
+def check_planning_reminders():
+    """Напоминания о планировании."""
+    now = datetime.now(TZ_SPAIN)
+    reminders = []
+
+    # Найти последнюю одобренную неделю
+    last_approved_end = None
+    has_unapproved = False
+    for f in sorted(SCHEDULE_DIR.glob("*.json")):
+        with open(f, "r", encoding="utf-8") as fh:
+            schedule = json.load(fh)
+        week = schedule.get("week", "")
+        if " to " in week:
+            end_str = week.split(" to ")[1].strip()
+            try:
+                end_date = datetime.strptime(end_str, "%Y-%m-%d").date()
+            except ValueError:
+                continue
+            if schedule.get("approved"):
+                if not last_approved_end or end_date > last_approved_end:
+                    last_approved_end = end_date
+            else:
+                has_unapproved = True
+
+    today = now.date()
+
+    # Напоминание: план на неделю (если до конца одобренной недели < 3 дней)
+    if last_approved_end:
+        days_left = (last_approved_end - today).days
+        if days_left <= 2:
+            if has_unapproved:
+                reminders.append("📋 <b>Напоминание:</b> Есть неутверждённый план на неделю — нужно согласовать!")
+            else:
+                reminders.append("📋 <b>Напоминание:</b> Через пару дней закончится текущий план — нужен план на следующую неделю!")
+
+    # Напоминание: план на месяц (25-е число — пора планировать следующий месяц)
+    if today.day >= 25:
+        next_month = (today.replace(day=1) + timedelta(days=32)).strftime("%B")
+        reminders.append(f"📅 <b>Напоминание:</b> Конец месяца — пора сделать план на {next_month}!")
+
+    if reminders:
+        send_admin("\n\n".join(reminders))
 
 
 def process_schedule():
@@ -170,9 +210,30 @@ def process_schedule():
     tomorrow = (now + timedelta(days=1)).date()
     published_count = 0
     skipped_count = 0
-    errors = []
-    published_titles = []
-    tomorrow_titles = []
+
+    # Собираем ВСЕ одобренные посты для анализа "что дальше"
+    all_approved = []
+    for f in sorted(SCHEDULE_DIR.glob("*.json")):
+        with open(f, "r", encoding="utf-8") as fh:
+            schedule = json.load(fh)
+        if not schedule.get("approved"):
+            continue
+        for post in schedule.get("posts", []):
+            if post.get("status") == "approved":
+                post["_file"] = str(f)
+                all_approved.append(post)
+
+    # Сортируем по дате
+    def post_sort_key(p):
+        return f"{p.get('date','')} {p.get('time','10:00')}"
+    all_approved.sort(key=post_sort_key)
+
+    # Завтрашние посты
+    tomorrow_posts = [
+        f"{p.get('time','10:00')} — {p.get('title','?')}"
+        for p in all_approved
+        if p.get("date", "") == str(tomorrow)
+    ]
 
     for f in sorted(SCHEDULE_DIR.glob("*.json")):
         with open(f, "r", encoding="utf-8") as fh:
@@ -190,6 +251,7 @@ def process_schedule():
             post_id = post.get("id", "?")
             title = post.get("title", "???")
             status = post.get("status", "draft")
+            post_time = post.get("time", "10:00")
 
             if status == "published":
                 continue
@@ -200,7 +262,6 @@ def process_schedule():
 
             # Проверяем дату/время
             post_date = post.get("date", "")
-            post_time = post.get("time", "10:00")
             try:
                 post_dt = datetime.strptime(f"{post_date} {post_time}", "%Y-%m-%d %H:%M").replace(tzinfo=TZ_SPAIN)
             except ValueError:
@@ -208,13 +269,9 @@ def process_schedule():
                 continue
 
             if post_dt > now:
-                # --today: publish if same date, ignore time
                 if FORCE_TODAY and post_dt.date() == now.date():
                     print(f"  🔵 #{post_id} {title} — today (forced)")
                 else:
-                    # Собираем завтрашние посты для отчёта
-                    if post_dt.date() == tomorrow:
-                        tomorrow_titles.append(f"{post_time} — {title}")
                     print(f"  ⏰ #{post_id} {title} — scheduled {post_date} {post_time} (not yet)")
                     skipped_count += 1
                     continue
@@ -225,8 +282,8 @@ def process_schedule():
                 print(f"  ⚠️  #{post_id} {title} — no text, skipping")
                 continue
 
-            photos = post.get("photos")  # album (list)
-            photo = post.get("photo")    # single photo (string)
+            photos = post.get("photos")
+            photo = post.get("photo")
             print(f"  📤 #{post_id} {title}...")
 
             if photos and len(photos) > 1:
@@ -237,40 +294,59 @@ def process_schedule():
             if result.get("ok"):
                 post["status"] = "published"
                 post["published_at"] = now.isoformat()
-                # Album returns list, single photo returns dict
                 res = result.get("result", {})
                 if isinstance(res, list) and len(res) > 0:
                     post["message_id"] = res[0].get("message_id")
                 elif isinstance(res, dict):
                     post["message_id"] = res.get("message_id")
                 published_count += 1
-                published_titles.append(f"{post_time} — {title}")
                 print(f"  ✅ Published!")
 
-                # Сохраняем СРАЗУ после каждой публикации
-                # чтобы при ошибке дальше пост не отправился повторно
+                # Сохраняем СРАЗУ
                 with open(f, "w", encoding="utf-8") as fh:
                     json.dump(schedule, fh, ensure_ascii=False, indent=2)
+
+                # Определяем: это последний пост сегодня?
+                remaining_today = [
+                    p for p in all_approved
+                    if p.get("date") == post_date
+                    and p.get("status") == "approved"
+                    and p.get("id") != post_id
+                ]
+                # Убираем текущий из списка
+                all_approved = [p for p in all_approved if p.get("id") != post_id]
+
+                is_last_today = len(remaining_today) == 0
+
+                # Следующий пост (если не последний сегодня)
+                next_post = None
+                if not is_last_today and remaining_today:
+                    np = remaining_today[0]
+                    next_post = f"{np.get('time','?')} — {np.get('title','?')}"
+
+                # Отчёт после каждого поста
+                notify_published(
+                    title=f"{post_time} — {title}",
+                    next_post=next_post,
+                    tomorrow_posts=tomorrow_posts if is_last_today else None,
+                    is_last_today=is_last_today
+                )
             else:
                 err_msg = result.get('description', '?')
-                errors.append(f"#{post_id} {title}: {err_msg}")
+                notify_error(title, err_msg)
                 print(f"  ❌ Failed: {err_msg}")
 
-            time.sleep(4)  # Пауза между постами
+            time.sleep(4)
 
-        # Финальное сохранение (на случай если ничего не публиковалось)
+        # Финальное сохранение
         with open(f, "w", encoding="utf-8") as fh:
             json.dump(schedule, fh, ensure_ascii=False, indent=2)
 
     print(f"\n{'='*40}")
     print(f"Published: {published_count} | Skipped/Waiting: {skipped_count}")
-    if DRY_RUN:
-        print("(DRY RUN — nothing was actually sent)")
 
-    # Отправить отчёт админу в личку
-    if ADMIN_ID and not DRY_RUN and (published_count > 0 or errors):
-        report = notify_admin(published_count, skipped_count, errors, published_titles, tomorrow_titles)
-        print(f"Admin report: {report}")
+    # Проверяем напоминания о планировании
+    check_planning_reminders()
 
 
 def show_status():
