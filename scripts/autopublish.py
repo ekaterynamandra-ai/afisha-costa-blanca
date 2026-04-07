@@ -35,6 +35,7 @@ if env_path.exists():
 
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 CHANNEL_ID = os.getenv("TELEGRAM_CHANNEL")
+ADMIN_ID = os.getenv("TELEGRAM_ADMIN_ID")
 API = f"https://api.telegram.org/bot{BOT_TOKEN}"
 SCHEDULE_DIR = Path(__file__).parent.parent / "content" / "schedule"
 
@@ -121,6 +122,30 @@ def send_album(text, photos):
     return d
 
 
+def notify_admin(published, skipped, errs):
+    """Отправить отчёт админу в личку."""
+    now_str = datetime.now(TZ_SPAIN).strftime("%d.%m.%Y %H:%M")
+
+    if errs:
+        text = f"❌ <b>Ошибка публикации</b> ({now_str})\n\n"
+        for e in errs:
+            text += f"• {e}\n"
+        if published:
+            text += f"\n✅ Опубликовано: {published}"
+    else:
+        text = f"✅ <b>Опубликовано: {published}</b> ({now_str})"
+
+    try:
+        r = requests.post(f"{API}/sendMessage", data={
+            "chat_id": ADMIN_ID,
+            "text": text,
+            "parse_mode": "HTML"
+        })
+        return "sent" if r.json().get("ok") else r.json().get("description", "?")
+    except Exception as e:
+        return f"notify error: {e}"
+
+
 def process_schedule():
     """Обработать все файлы расписания."""
     if not SCHEDULE_DIR.exists():
@@ -130,6 +155,7 @@ def process_schedule():
     now = datetime.now(TZ_SPAIN)
     published_count = 0
     skipped_count = 0
+    errors = []
 
     for f in sorted(SCHEDULE_DIR.glob("*.json")):
         with open(f, "r", encoding="utf-8") as fh:
@@ -205,7 +231,9 @@ def process_schedule():
                 with open(f, "w", encoding="utf-8") as fh:
                     json.dump(schedule, fh, ensure_ascii=False, indent=2)
             else:
-                print(f"  ❌ Failed: {result.get('description', '?')}")
+                err_msg = result.get('description', '?')
+                errors.append(f"#{post_id} {title}: {err_msg}")
+                print(f"  ❌ Failed: {err_msg}")
 
             time.sleep(4)  # Пауза между постами
 
@@ -217,6 +245,11 @@ def process_schedule():
     print(f"Published: {published_count} | Skipped/Waiting: {skipped_count}")
     if DRY_RUN:
         print("(DRY RUN — nothing was actually sent)")
+
+    # Отправить отчёт админу в личку
+    if ADMIN_ID and not DRY_RUN and (published_count > 0 or errors):
+        report = notify_admin(published_count, skipped_count, errors)
+        print(f"Admin report: {report}")
 
 
 def show_status():
