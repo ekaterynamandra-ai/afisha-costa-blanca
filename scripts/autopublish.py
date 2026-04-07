@@ -20,9 +20,13 @@ import os
 import sys
 import time
 import requests
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
+from zoneinfo import ZoneInfo
 from dotenv import load_dotenv
+
+# Все даты/время в расписании — по времени Испании (Europe/Madrid)
+TZ_SPAIN = ZoneInfo("Europe/Madrid")
 
 # Load .env if exists (local), otherwise use env vars (GitHub Actions)
 env_path = Path(__file__).parent.parent / ".env"
@@ -123,7 +127,7 @@ def process_schedule():
         print("No schedule directory found.")
         return
 
-    now = datetime.now()
+    now = datetime.now(TZ_SPAIN)
     published_count = 0
     skipped_count = 0
 
@@ -155,7 +159,7 @@ def process_schedule():
             post_date = post.get("date", "")
             post_time = post.get("time", "10:00")
             try:
-                post_dt = datetime.strptime(f"{post_date} {post_time}", "%Y-%m-%d %H:%M")
+                post_dt = datetime.strptime(f"{post_date} {post_time}", "%Y-%m-%d %H:%M").replace(tzinfo=TZ_SPAIN)
             except ValueError:
                 print(f"  ⚠️  #{post_id} {title} — bad date format, skipping")
                 continue

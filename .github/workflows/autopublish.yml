@@ -2,8 +2,8 @@ name: Auto-publish Telegram posts
 
 on:
   schedule:
-    # Every hour at :00
-    - cron: '0 * * * *'
+    # Every 15 min — checks if any post is due
+    - cron: '*/15 * * * *'
   workflow_dispatch:
     # Manual trigger from GitHub UI
 
