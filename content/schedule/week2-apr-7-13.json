@@ -29,7 +29,8 @@
       "title": "🏖️ Дюны Гуардамара: песчаные дюны и лес у моря",
       "type": "place_intro",
       "format": "album",
-      "status": "approved",
+      "status": "published",
+      "published_at": "2026-04-07T10:00:00",
       "photos": [
         "https://images.pexels.com/photos/1001435/pexels-photo-1001435.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "content/photos/April/dunes1.jpg",

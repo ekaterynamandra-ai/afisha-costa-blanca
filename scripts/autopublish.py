@@ -187,8 +187,12 @@ def process_schedule():
             if result.get("ok"):
                 post["status"] = "published"
                 post["published_at"] = now.isoformat()
-                if result.get("result", {}).get("message_id"):
-                    post["message_id"] = result["result"]["message_id"]
+                # Album returns list, single photo returns dict
+                res = result.get("result", {})
+                if isinstance(res, list) and len(res) > 0:
+                    post["message_id"] = res[0].get("message_id")
+                elif isinstance(res, dict):
+                    post["message_id"] = res.get("message_id")
                 published_count += 1
                 print(f"  ✅ Published!")
             else:
