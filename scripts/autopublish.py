@@ -199,12 +199,17 @@ def process_schedule():
                     post["message_id"] = res.get("message_id")
                 published_count += 1
                 print(f"  ✅ Published!")
+
+                # Сохраняем СРАЗУ после каждой публикации
+                # чтобы при ошибке дальше пост не отправился повторно
+                with open(f, "w", encoding="utf-8") as fh:
+                    json.dump(schedule, fh, ensure_ascii=False, indent=2)
             else:
                 print(f"  ❌ Failed: {result.get('description', '?')}")
 
             time.sleep(4)  # Пауза между постами
 
-        # Сохраняем обновлённый файл
+        # Финальное сохранение (на случай если ничего не публиковалось)
         with open(f, "w", encoding="utf-8") as fh:
             json.dump(schedule, fh, ensure_ascii=False, indent=2)
 
