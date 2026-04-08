@@ -2,10 +2,14 @@ name: Auto-publish Telegram posts
 
 on:
   schedule:
-    # Every hour at :00 (Spanish time posts will publish within ~1h of scheduled time)
-    - cron: '0 * * * *'
+    # Run at 8:00, 10:00, 14:00, 18:00 UTC = 10:00, 12:00, 16:00, 20:00 Spanish time (CEST)
+    # Covers typical post times: 10:00, 14:00, 18:00 Spanish
+    - cron: '0 8,10,14,18 * * *'
   workflow_dispatch:
     # Manual trigger from GitHub UI
+
+permissions:
+  contents: write
 
 jobs:
   publish:
@@ -14,6 +18,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -21,7 +27,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install requests python-dotenv
+        run: pip install requests python-dotenv tzdata
 
       - name: Run autopublish
         env:

@@ -376,8 +376,10 @@ def process_schedule():
     print(f"\n{'='*40}")
     print(f"Published: {published_count} | Skipped/Waiting: {skipped_count}")
 
-    # Проверяем напоминания о планировании
-    check_planning_reminders()
+    # Напоминания о планировании — только если что-то опубликовалось
+    # (чтобы не спамить каждый час когда нечего публиковать)
+    if published_count > 0:
+        check_planning_reminders()
 
 
 def show_status():
