@@ -80,9 +80,11 @@
       "time": "18:00",
       "title": "🏃 Активный апрель: падель, теннис, велосипед",
       "type": "sport_rubric",
-      "status": "approved",
+      "status": "published",
       "photo": "https://images.pexels.com/photos/33641987/pexels-photo-33641987.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "text": "🏃 <b>АКТИВНЫЙ АПРЕЛЬ: падель, теннис, велосипед</b>\n\n+22°C — идеальный сезон для спорта на улице!\n\n<b>🎾 Муниципальные корты:</b>\n\n<b>Ciudad Deportiva Torrevieja</b> <a href=\"https://www.google.com/maps/place/Ciudad+Deportiva+de+Torrevieja/\">📍</a>\nПадель 6€/30мин · Теннис 4€/час · ☎️ 966 111 222\n\n<b>Polideportivo Guardamar</b> <a href=\"https://www.google.com/maps/place/Polideportivo+Municipal+Guardamar+del+Segura/\">📍</a>\nПадель + теннис 4€/час · ☎️ 965 729 014\n\n<b>🚴 Велосипед:</b>\n<b>Via Verde de Torrevieja</b> <a href=\"https://www.google.com/maps/place/V%C3%ADa+Verde+de+Torrevieja/\">📍</a>\n6.7 км, асфальт, плоская → пляж\n\n<b>🛶 На воде:</b>\nКаяк / SUP от 15€/час <a href=\"https://www.google.com/maps/place/Torrevieja+Surf+%26+SUP+School/\">📍</a>\n\n💡 Корты бронируйте за день — утренние слоты разбирают!\n\n#спорт #падель #велосипед #CostaBlanca"
+      "text": "🏃 <b>АКТИВНЫЙ АПРЕЛЬ: падель, теннис, велосипед</b>\n\n+22°C — идеальный сезон для спорта на улице!\n\n<b>🎾 Муниципальные корты:</b>\n\n<b>Ciudad Deportiva Torrevieja</b> <a href=\"https://www.google.com/maps/place/Ciudad+Deportiva+de+Torrevieja/\">📍</a>\nПадель 6€/30мин · Теннис 4€/час · ☎️ 966 111 222\n\n<b>Polideportivo Guardamar</b> <a href=\"https://www.google.com/maps/place/Polideportivo+Municipal+Guardamar+del+Segura/\">📍</a>\nПадель + теннис 4€/час · ☎️ 965 729 014\n\n<b>🚴 Велосипед:</b>\n<b>Via Verde de Torrevieja</b> <a href=\"https://www.google.com/maps/place/V%C3%ADa+Verde+de+Torrevieja/\">📍</a>\n6.7 км, асфальт, плоская → пляж\n\n<b>🛶 На воде:</b>\nКаяк / SUP от 15€/час <a href=\"https://www.google.com/maps/place/Torrevieja+Surf+%26+SUP+School/\">📍</a>\n\n💡 Корты бронируйте за день — утренние слоты разбирают!\n\n#спорт #падель #велосипед #CostaBlanca",
+      "published_at": "2026-04-09T19:47:40.001559+02:00",
+      "message_id": 65
     },
     {
       "id": "test-1",
