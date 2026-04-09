@@ -2,9 +2,12 @@ name: Auto-publish Telegram posts
 
 on:
   schedule:
-    # Run at 8:00, 10:00, 14:00, 18:00 UTC = 10:00, 12:00, 16:00, 20:00 Spanish time (CEST)
-    # Covers typical post times: 10:00, 14:00, 18:00 Spanish
-    - cron: '0 8,10,14,18 * * *'
+    # Spanish summer time (CEST = UTC+2):
+    # 06:00 UTC = 08:00 CEST (rynok)
+    # 08:00 UTC = 10:00 CEST (utro)
+    # 12:00 UTC = 14:00 CEST (den)
+    # 16:00 UTC = 18:00 CEST (vecher)
+    - cron: '0 6,8,12,16 * * *'
   workflow_dispatch:
     # Manual trigger from GitHub UI
 
