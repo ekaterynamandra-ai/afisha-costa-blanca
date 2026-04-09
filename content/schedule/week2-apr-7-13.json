@@ -91,9 +91,11 @@
       "title": "🧪 Тестовый пост (только в личку)",
       "type": "test",
       "test_mode": true,
-      "status": "approved",
+      "status": "published",
       "photo": "https://images.pexels.com/photos/1680214/pexels-photo-1680214.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "text": "Это тестовый пост автопубликации.\n\n📅 Запланирован на 16:20\n🎯 Отправляется только админу (test_mode=true)\n\nЕсли видишь это сообщение — система работает!"
+      "text": "Это тестовый пост автопубликации.\n\n📅 Запланирован на 16:20\n🎯 Отправляется только админу (test_mode=true)\n\nЕсли видишь это сообщение — система работает!",
+      "published_at": "2026-04-09T17:08:28.561825+02:00",
+      "message_id": 15
     },
     {
       "id": 17,
