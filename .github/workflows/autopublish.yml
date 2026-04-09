@@ -8,6 +8,8 @@ on:
     # 12:00 UTC = 14:00 CEST (den)
     # 16:00 UTC = 18:00 CEST (vecher)
     - cron: '0 6,8,12,16 * * *'
+    # TEST: 14:20 UTC = 16:20 CEST (one-off, remove after test)
+    - cron: '20 14 * * *'
   workflow_dispatch:
     # Manual trigger from GitHub UI
 

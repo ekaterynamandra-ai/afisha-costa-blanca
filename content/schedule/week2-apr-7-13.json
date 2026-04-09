@@ -85,6 +85,17 @@
       "text": "🏃 <b>АКТИВНЫЙ АПРЕЛЬ: падель, теннис, велосипед</b>\n\n+22°C — идеальный сезон для спорта на улице!\n\n<b>🎾 Муниципальные корты:</b>\n\n<b>Ciudad Deportiva Torrevieja</b> <a href=\"https://www.google.com/maps/place/Ciudad+Deportiva+de+Torrevieja/\">📍</a>\nПадель 6€/30мин · Теннис 4€/час · ☎️ 966 111 222\n\n<b>Polideportivo Guardamar</b> <a href=\"https://www.google.com/maps/place/Polideportivo+Municipal+Guardamar+del+Segura/\">📍</a>\nПадель + теннис 4€/час · ☎️ 965 729 014\n\n<b>🚴 Велосипед:</b>\n<b>Via Verde de Torrevieja</b> <a href=\"https://www.google.com/maps/place/V%C3%ADa+Verde+de+Torrevieja/\">📍</a>\n6.7 км, асфальт, плоская → пляж\n\n<b>🛶 На воде:</b>\nКаяк / SUP от 15€/час <a href=\"https://www.google.com/maps/place/Torrevieja+Surf+%26+SUP+School/\">📍</a>\n\n💡 Корты бронируйте за день — утренние слоты разбирают!\n\n#спорт #падель #велосипед #CostaBlanca"
     },
     {
+      "id": "test-1",
+      "date": "2026-04-09",
+      "time": "16:20",
+      "title": "🧪 Тестовый пост (только в личку)",
+      "type": "test",
+      "test_mode": true,
+      "status": "approved",
+      "photo": "https://images.pexels.com/photos/1680214/pexels-photo-1680214.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "text": "Это тестовый пост автопубликации.\n\n📅 Запланирован на 16:20\n🎯 Отправляется только админу (test_mode=true)\n\nЕсли видишь это сообщение — система работает!"
+    },
+    {
       "id": 17,
       "date": "2026-04-10",
       "time": "08:00",

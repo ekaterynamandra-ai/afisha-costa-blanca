@@ -46,20 +46,24 @@ FORCE_TODAY = "--today" in sys.argv  # publish all approved posts for today rega
 PROJECT_ROOT = Path(__file__).parent.parent
 
 
-def send(text, photo=None):
-    """Отправить пост с одним фото или без."""
+def send(text, photo=None, test_mode=False):
+    """Отправить пост с одним фото или без. test_mode=True → отправка админу в личку."""
     if DRY_RUN:
         print(f"  [DRY RUN] Would send: {text[:60]}...")
         return {"ok": True, "result": {"message_id": 0}}
 
+    target = ADMIN_ID if test_mode else CHANNEL_ID
+    if test_mode:
+        text = f"🧪 <b>ТЕСТ:</b>\n\n{text}"
+
     if photo:
         r = requests.post(f"{API}/sendPhoto", data={
-            "chat_id": CHANNEL_ID, "photo": photo,
+            "chat_id": target, "photo": photo,
             "caption": text, "parse_mode": "HTML"
         })
     else:
         r = requests.post(f"{API}/sendMessage", data={
-            "chat_id": CHANNEL_ID, "text": text,
+            "chat_id": target, "text": text,
             "parse_mode": "HTML", "disable_web_page_preview": True
         })
 
@@ -67,7 +71,7 @@ def send(text, photo=None):
     if not d.get("ok") and photo:
         print(f"  Photo failed ({d.get('description','')}), retrying text-only...")
         r = requests.post(f"{API}/sendMessage", data={
-            "chat_id": CHANNEL_ID, "text": text,
+            "chat_id": target, "text": text,
             "parse_mode": "HTML", "disable_web_page_preview": True
         })
         d = r.json()
@@ -320,7 +324,8 @@ def process_schedule():
             if photos and len(photos) > 1:
                 result = send_album(text, photos)
             else:
-                result = send(text, photo)
+                test_mode = post.get("test_mode", False)
+                result = send(text, photo, test_mode=test_mode)
 
             if result.get("ok"):
                 post["status"] = "published"
