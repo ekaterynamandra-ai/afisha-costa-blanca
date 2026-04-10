@@ -105,9 +105,11 @@
       "time": "08:00",
       "title": "🛍️ СЕГОДНЯ: мега-рынок Торревьехи!",
       "type": "reminder",
-      "status": "approved",
+      "status": "published",
       "photo": "https://images.pexels.com/photos/868110/pexels-photo-868110.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "text": "🛍️ <b>СЕГОДНЯ: мега-рынок Торревьехи!</b>\n\n500+ прилавков · 8:00-14:00\n🅿️ Бесплатная парковка\n\n<b>🚌 Автобус Línea H (каждые 20 мин):</b>\nEras de la Sal → Hotel Fontana → C/ Patricio Zammit → Автовокзал → Gasolinera BP → <b>Mercadillo</b>\nОбратно: Mercadillo → Hotel Juan Carlos → Av. Diego Ramírez → Eras de la Sal\n💰 1.50€ · Приложение: Autocares Costa Azul\n\n📍 <a href=\"https://www.google.com/maps/place/Mercadillo+de+Torrevieja/\">Parque Antonio Soria, Av. Delfina Viudes</a>\n\n💡 Лучшие фрукты — первые ряды справа. Приходите до 10!\n\n#рынки #Торревьеха #CostaBlanca"
+      "text": "🛍️ <b>СЕГОДНЯ: мега-рынок Торревьехи!</b>\n\n500+ прилавков · 8:00-14:00\n🅿️ Бесплатная парковка\n\n<b>🚌 Автобус Línea H (каждые 20 мин):</b>\nEras de la Sal → Hotel Fontana → C/ Patricio Zammit → Автовокзал → Gasolinera BP → <b>Mercadillo</b>\nОбратно: Mercadillo → Hotel Juan Carlos → Av. Diego Ramírez → Eras de la Sal\n💰 1.50€ · Приложение: Autocares Costa Azul\n\n📍 <a href=\"https://www.google.com/maps/place/Mercadillo+de+Torrevieja/\">Parque Antonio Soria, Av. Delfina Viudes</a>\n\n💡 Лучшие фрукты — первые ряды справа. Приходите до 10!\n\n#рынки #Торревьеха #CostaBlanca",
+      "published_at": "2026-04-10T11:54:42.153717+02:00",
+      "message_id": 66
     }
   ]
 }
