@@ -1,0 +1,9 @@
+BEGIN:VCARD 
+VERSION:3.0 
+PRODID:-//Apple Inc.//iPhone OS 15.6//EN 
+N:;Елена массажист ;;; 
+FN:Елена массажист  
+TEL;type=CELL;type=VOICE;type=pref:+380 96 735 1877 
+item1.URL;type=pref:https://t.me/@idId(rawValue: 1575561233) 
+item1.X-ABLabel:Telegram 
+END:VCARD 

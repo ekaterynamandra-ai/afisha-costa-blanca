@@ -1,0 +1,1817 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
+          -0.4935930,
+          38.3473322
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2026-04-04T11:33:07Z",
+        "google_maps_url": "http://maps.google.com/?cid=14114113442723885542",
+        "location": {
+          "address": "Avinguda Benito Perez Galdos, 70, 03005 Alacant, Alicante, Іспанія",
+          "name": "PuntoRepair"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.4897380,
+          38.3439170
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2026-04-04T11:32:32Z",
+        "google_maps_url": "http://maps.google.com/?cid=15759979628389238446",
+        "location": {
+          "address": "Stand Soluciones y Servicios, Av. de Federico Soto, 1, 03003 Alicante, Іспанія",
+          "name": "Save Store - Reparación de móviles en Alicante"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.4870623,
+          38.3446785
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2026-04-04T11:31:48Z",
+        "google_maps_url": "http://maps.google.com/?cid=15185421690527132085",
+        "location": {
+          "address": "Carrer Colon, 16, 03001 Alacant, Alicante, Іспанія",
+          "name": "MovilYa! Express Repair - Reparaciones de móviles, tablets, videoconsolas y ordenadores en Alicante"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.4915089,
+          38.3419788
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2026-04-04T11:31:24Z",
+        "google_maps_url": "http://maps.google.com/?cid=7938043545916211831",
+        "location": {
+          "address": "C. Reyes Católicos, 32, 03003 Alicante, Іспанія",
+          "name": "ROOLAYMO"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.4897729,
+          38.3430477
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2026-04-04T11:31:04Z",
+        "google_maps_url": "http://maps.google.com/?cid=13085995409900611741",
+        "location": {
+          "address": "Carrer Alemania, 34, Derecha, 03003 Alicante, Іспанія",
+          "name": "TecnoPhone | Reparación de Móviles, Tablets, Ordenadores en Alicante"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -1.1302564,
+          37.9891313
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2025-12-10T14:10:24Z",
+        "google_maps_url": "http://maps.google.com/?cid=15168388715234283794",
+        "location": {
+          "address": "Gran Vía Alfonso X el Sabio, 7, 30008 Murcia, Іспанія",
+          "country_code": "ES",
+          "name": "Goiko"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -1.1267835,
+          37.9883400
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2025-12-10T14:08:06Z",
+        "google_maps_url": "http://maps.google.com/?cid=486501238789060017",
+        "location": {
+          "address": "Pl. de la Universidad, 1, 30001 Murcia, Іспанія",
+          "country_code": "ES",
+          "name": "El Rincón de los Faroles"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -1.1289435,
+          37.9870465
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2025-12-10T14:06:41Z",
+        "google_maps_url": "http://maps.google.com/?cid=10034034232803351856",
+        "location": {
+          "address": "Pl. de Santo Domingo, 16, 30008 Murcia, Іспанія",
+          "country_code": "ES",
+          "name": "Up Chicken Murcia"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -1.1289210,
+          37.9861239
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2025-12-10T14:05:47Z",
+        "google_maps_url": "http://maps.google.com/?cid=17385832196896606919",
+        "location": {
+          "address": "C. San Cristobal, 3, 30001 Murcia, Іспанія",
+          "country_code": "ES",
+          "name": "UDON Murcia"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.9460396,
+          38.0910051
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2025-12-10T10:37:52Z",
+        "google_maps_url": "http://maps.google.com/?cid=2192158640569216076",
+        "location": {
+          "address": "03300 Orihuela, Alicante, Іспанія",
+          "country_code": "ES",
+          "name": "Castillo de Orihuela"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -1.1302666,
+          37.9831817
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2025-12-10T07:02:54Z",
+        "google_maps_url": "http://maps.google.com/?cid=5968724698007202103",
+        "location": {
+          "address": "Gta. de España, 30004 Murcia, Іспанія",
+          "country_code": "ES",
+          "name": "Glorieta de España"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.6983882,
+          38.2657040
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2025-11-13T12:11:12Z",
+        "google_maps_url": "http://maps.google.com/?cid=436071375762714294",
+        "location": {
+          "address": "Plaça de la Fruita, 24, 03202 Elx, Alicante, Іспанія",
+          "country_code": "ES",
+          "name": "Shuka Coffee"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.6967955,
+          38.1168129
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2025-11-10T16:11:08Z",
+        "google_maps_url": "http://maps.google.com/?cid=13610580854372969422",
+        "location": {
+          "address": "Polígono Industrial Los Moras, C. Isla de Ibiza, 12-14, 03177 San Fulgencio, Alicante, Іспанія",
+          "name": "Toldos Guardamar -Toldos Awnings Markisen"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          30.2335687,
+          48.7508741
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2025-09-18T11:05:00Z",
+        "google_maps_url": "http://maps.google.com/?cid=14370470179932437766",
+        "location": {
+          "address": "провулок Пушкіна, 21б, Умань, Черкаська область, Україна, 20300",
+          "name": "Уманська районна державна лікарня ветеринарної медицини"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.6793382,
+          37.9836387
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2025-08-24T09:52:19Z",
+        "google_maps_url": "http://maps.google.com/?cid=6745907666946200106",
+        "location": {
+          "address": "C. Apolo, 80, 03182 Torrevieja, Alicante, Іспанія",
+          "country_code": "ES",
+          "name": "Estanco Torrevieja 7 Tobacco Shop Tabacos Exchange"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.6530556,
+          38.0833333
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2025-08-07T05:52:29Z",
+        "google_maps_url": "http://maps.google.com/?cid=7366942749887211326",
+        "location": {
+          "address": "Avinguda del Mediterrani, 14, 03140 Guardamar del Segura, Alicante, Іспанія",
+          "country_code": "ES",
+          "name": "Mercadona"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.6020500,
+          38.2176820
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2025-07-31T16:03:26Z",
+        "google_maps_url": "http://maps.google.com/?cid=11582308772949890075",
+        "location": {
+          "address": "Poligono 1 Carretera Elche-Santa Pola Partida, Bajo, 102, 03139 Valverde, Alicante, Іспанія",
+          "country_code": "ES",
+          "name": "Riu Safari Elx"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          4.8839765,
+          52.3752182
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2025-07-06T04:52:15Z",
+        "google_maps_url": "http://maps.google.com/?cid=15319659771873942282",
+        "location": {
+          "address": "Westermarkt 20, 1016 GV Amsterdam, Нідерланди",
+          "country_code": "NL",
+          "name": "Будинок-музей Анни Франк"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          4.8230456,
+          52.3773382
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2025-07-05T19:28:42Z",
+        "google_maps_url": "http://maps.google.com/?cid=17250634925589181646",
+        "location": {
+          "address": "Slauerhoffstraat 9 h, 1064 TA Amsterdam, Нідерланди",
+          "country_code": "NL",
+          "name": "Street Art Museum Amsterdam"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          4.8939908,
+          52.3300655
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2025-07-05T19:27:48Z",
+        "google_maps_url": "http://maps.google.com/?cid=5016454106384489300",
+        "location": {
+          "address": "Arent Janszoon Ernststraat 1, 1083 GA Amsterdam, Нідерланди",
+          "country_code": "NL",
+          "name": "Amstelpark"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          4.8990206,
+          52.3736815
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2025-07-05T19:24:56Z",
+        "google_maps_url": "http://maps.google.com/?cid=2080204606597770313",
+        "location": {
+          "address": "Oudezijds Achterburgwal 60, 1012 DP Amsterdam, Нідерланди",
+          "country_code": "NL",
+          "name": "Музей Проституції - Таємниці Червоних Ліхтарів"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.4937911,
+          38.3423446
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2025-03-22T12:39:56Z",
+        "google_maps_url": "http://maps.google.com/?cid=5940863858639407419",
+        "location": {
+          "address": "C. Castellar, Av. Maisonnave, 6, 03003 Alicante, Іспанія",
+          "country_code": "ES",
+          "name": "SABA Maisonnave"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.4915424,
+          38.3403058
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2025-03-22T12:36:38Z",
+        "google_maps_url": "http://maps.google.com/?cid=4320391092772575166",
+        "location": {
+          "address": "C/ Italia, 24, 03003 Alacant, Alicante, Іспанія",
+          "country_code": "ES",
+          "name": "Parking Centro Alicante Calle Italia Telpark"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2025-03-09T07:45:18Z",
+        "google_maps_url": "http://maps.google.com/?q=%D0%A1%D0%B0%D0%BA%D1%80%D0%B0%D0%BC%D0%B5%D0%BD%D1%82%D0%BE,+%D0%9A%D0%B0%D0%BB%D1%96%D1%84%D0%BE%D1%80%D0%BD%D1%96%D1%8F,+%D0%A1%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D1%96+%D0%A8%D1%82%D0%B0%D1%82%D0%B8+%D0%90%D0%BC%D0%B5%D1%80%D0%B8%D0%BA%D0%B8&ftid=0x809ac672b28397f9:0x921f6aaa74197fdb",
+        "Comment": "Немає геоданих про це збережене місце"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.4915941,
+          38.3467798
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2025-03-06T16:54:00Z",
+        "google_maps_url": "http://maps.google.com/?cid=3746039832761566256",
+        "location": {
+          "address": "Carrer Sant Joan Bosco, 1, 03005 Alacant, Alicante, Іспанія",
+          "country_code": "ES",
+          "name": "Tienda Maverick"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          55.3284054,
+          25.2543136
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2025-02-15T17:52:01Z",
+        "google_maps_url": "http://maps.google.com/?cid=1760898481983227815",
+        "location": {
+          "address": "Baniyas Rd - Port Saeed - Deira - Dubai - Обʼєднані Арабські Емірати",
+          "country_code": "AE",
+          "name": "Dampa Seafood Grill - Dubai"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.0513988,
+          38.5991195
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2025-01-03T11:42:12Z",
+        "google_maps_url": "http://maps.google.com/?cid=10250345831177506384",
+        "location": {
+          "address": "Carrer Major, 3, 03590 Altea, Alicante, Іспанія",
+          "country_code": "ES",
+          "name": "In Bocca al Lupo altea"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.0513391,
+          38.5985380
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2025-01-03T11:41:28Z",
+        "google_maps_url": "http://maps.google.com/?cid=9571740731805354245",
+        "location": {
+          "address": "C. Sta. Bárbara, 4, 03590 Altea, Alicante, Іспанія",
+          "country_code": "ES",
+          "name": "El Negro Parrilla Restaurante"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.3752618,
+          39.4740228
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-09-27T21:32:32Z",
+        "google_maps_url": "http://maps.google.com/?cid=6194499701516028807",
+        "location": {
+          "address": "Ciutat Vella, Pça. de la Reina, s/n, Ciutat Vella, 46002 València, Valencia, Іспанія",
+          "country_code": "ES",
+          "name": "Parking"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.3658540,
+          39.4680300
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-09-27T21:24:10Z",
+        "google_maps_url": "http://maps.google.com/?cid=4837627397740246307",
+        "location": {
+          "address": "Plaça de Cánovas del Castillo, s/n, L'Eixample, 46005 València, Valencia, Іспанія",
+          "country_code": "ES",
+          "name": "Parking Plaza de Cánovas"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.3816460,
+          39.4839140
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-09-27T21:19:46Z",
+        "google_maps_url": "http://maps.google.com/?cid=8705042743496024387",
+        "location": {
+          "address": "Carrer de l'Arquebisbe Fabián y Fuero, 21, Bajo Derecha, La Zaidía, 46009 València, Valencia, Іспанія",
+          "country_code": "ES",
+          "name": "e-parkings.com"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.3553350,
+          39.4698052
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-09-27T21:09:37Z",
+        "google_maps_url": "http://maps.google.com/?cid=358968910983828836",
+        "location": {
+          "address": "Avinguda del Cardenal Benlloch, 45, El Pla del Real, 46021 València, Valencia, Іспанія",
+          "country_code": "ES",
+          "name": "Parking Saba Cardenal Benlloch"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.3666975,
+          39.4823532
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-09-27T16:40:42Z",
+        "google_maps_url": "http://maps.google.com/?cid=10609513576201184672",
+        "location": {
+          "address": "FJJM+W8, La Saïdia, 46010 València, Valencia, Іспанія",
+          "name": "Homenaje a Ausias March"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.3790343,
+          39.4734632
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-09-27T16:35:05Z",
+        "google_maps_url": "http://maps.google.com/?cid=1315899186325249421",
+        "location": {
+          "address": "C/ de Palafox, 13, Ciutat Vella, 46001 València, Valencia, Іспанія",
+          "country_code": "ES",
+          "name": "Центральний ринок Валенсії"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.7511245,
+          38.1178244
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-09-27T08:24:48Z",
+        "google_maps_url": "http://maps.google.com/?cid=7115801668452054331",
+        "location": {
+          "address": "Diseminado Rincon, 11, 03150, Alicante, Іспанія",
+          "name": "La Fábrica Dolores Art Living Events \"Adults 14+\""
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-09-24T11:23:22Z",
+        "google_maps_url": "http://maps.google.com/?q=35340+Lanzarote,+%D0%9B%D0%B0%D1%81-%D0%9F%D0%B0%D0%BB%D1%8C%D0%BC%D0%B0%D1%81,+%D0%86%D1%81%D0%BF%D0%B0%D0%BD%D1%96%D1%8F&ftid=0xc4091efc97e6dd1:0x661ed48b0559d704",
+        "Comment": "Немає геоданих про це збережене місце"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-09-23T20:41:26Z",
+        "google_maps_url": "http://maps.google.com/?q=Los+Muertos+Beach,+%D0%90%D0%BB%D1%8C%D0%BC%D0%B5%D1%80%D1%96%D1%8F,+%D0%86%D1%81%D0%BF%D0%B0%D0%BD%D1%96%D1%8F&ftid=0xd7ade11a7b41b5b:0xf4c982b9a5ae1bf",
+        "Comment": "Немає геоданих про це збережене місце"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.6540593,
+          38.0924402
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-09-23T14:52:21Z",
+        "google_maps_url": "http://maps.google.com/?cid=14718513371893051401",
+        "location": {
+          "address": "Carrer Colon, 60, 03140 Guardamar del Segura, Alicante, Іспанія",
+          "country_code": "ES",
+          "name": "Archeological Museum of Guardamar del Segura"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.1228217,
+          51.5116016
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-09-15T18:02:25Z",
+        "google_maps_url": "http://maps.google.com/?cid=4654373558163014390",
+        "location": {
+          "address": "46 The Market, London WC2E 8RD, Велика Британія",
+          "country_code": "GB",
+          "name": "Dolce VyTA by Matteo Manzotti"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.1586111,
+          51.4933333
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-09-15T18:01:06Z",
+        "google_maps_url": "http://maps.google.com/?cid=9761281078483121418",
+        "location": {
+          "address": "249 Pavilion Rd, London SW1X 0BP, Велика Британія",
+          "country_code": "GB",
+          "name": "Bread Ahead Bakery Pavilion Road"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.1242042,
+          51.5228207
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-09-15T18:00:16Z",
+        "google_maps_url": "http://maps.google.com/?cid=4671419946386772792",
+        "location": {
+          "address": "35 Colonnade, London WC1N 1JD, Велика Британія",
+          "country_code": "GB",
+          "name": "Fortitude Bakehouse"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.1652479,
+          51.5147041
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-09-15T17:59:43Z",
+        "google_maps_url": "http://maps.google.com/?cid=4445167416246254730",
+        "location": {
+          "address": "12 Connaught St, St George's Fields, London W2 2AF, Велика Британія",
+          "country_code": "GB",
+          "name": "La Maritxu Connaught - Basque Cheesecake"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.1114807,
+          51.5180151
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-09-14T18:25:58Z",
+        "google_maps_url": "http://maps.google.com/?cid=17314137359523829122",
+        "location": {
+          "address": "335 High Holborn, High Street, London WC1V 7PX, Велика Британія",
+          "country_code": "GB",
+          "name": "Joe & the Juice High Holborn"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.1534556,
+          51.5134870
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-09-14T18:25:53Z",
+        "google_maps_url": "http://maps.google.com/?cid=2315567194688444776",
+        "location": {
+          "address": "Street, 20 N Audley St, London W1K 6LX, Велика Британія",
+          "country_code": "GB",
+          "name": "JOE & THE JUICE"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.1425524,
+          51.5162067
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-09-14T18:25:49Z",
+        "google_maps_url": "http://maps.google.com/?cid=12204686650336138329",
+        "location": {
+          "address": "281 Regent St., High Street, London W1B 2HE, Велика Британія",
+          "country_code": "GB",
+          "name": "JOE & THE JUICE"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          115.1506838,
+          -8.8201357
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-09-08T13:35:10Z",
+        "google_maps_url": "http://maps.google.com/?cid=2684992866443581673",
+        "location": {
+          "address": "ULU ARTISAN, Jl. Raya Uluwatu, Ungasan, Kec. Kuta Sel., Kabupaten Badung, Bali 80361, Індонезія",
+          "country_code": "ID",
+          "name": "Artisan - Ungasan"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          115.0928944,
+          -8.8163584
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-09-08T13:34:54Z",
+        "google_maps_url": "http://maps.google.com/?cid=4212881761120654586",
+        "location": {
+          "address": "Jl. Labuansait, Pecatu, Kec. Kuta Sel., Kabupaten Badung, Bali 80361, Індонезія",
+          "country_code": "ID",
+          "name": "Artisan - Uluwatu"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          6.9329215,
+          61.8403557
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-09-08T09:34:34Z",
+        "google_maps_url": "http://maps.google.com/?cid=2967125613702693964",
+        "location": {
+          "address": "Lovatnet 6789, 6789 Loen, Норвегія",
+          "country_code": "NO",
+          "name": "Lake Lovatnet"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-09-07T21:35:54Z",
+        "google_maps_url": "http://maps.google.com/?q=F%C3%B8rde,+%D0%9D%D0%BE%D1%80%D0%B2%D0%B5%D0%B3%D1%96%D1%8F&ftid=0x461633dc05644d33:0x11d181c2d933c5d0",
+        "Comment": "Немає геоданих про це збережене місце"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          1.8123031,
+          41.2365287
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-08-28T17:00:43Z",
+        "google_maps_url": "http://maps.google.com/?cid=16302541640324662308",
+        "location": {
+          "address": "Carrer Sant Damià, 14, 08870 Sitges, Barcelona, Іспанія",
+          "country_code": "ES",
+          "name": "LaPunta"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -5.9822519,
+          37.4014014
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-08-22T19:29:03Z",
+        "google_maps_url": "http://maps.google.com/?cid=15744437501590967740",
+        "location": {
+          "address": "Calle Medalla Milagrosa, 3, 41009 Sevilla, Іспанія",
+          "country_code": "ES",
+          "name": "Bar Yebra"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-08-20T14:57:11Z",
+        "google_maps_url": "http://maps.google.com/?q=37.9834722,-0.65725",
+        "Comment": "Немає геоданих про це збережене місце"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          8.6635483,
+          50.1071987
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-08-09T16:29:03Z",
+        "google_maps_url": "http://maps.google.com/?cid=11531371676896499044",
+        "location": {
+          "address": "Am Hauptbahnhof 1, 60329 Frankfurt am Main, Німеччина",
+          "country_code": "DE",
+          "name": "Blumen Schmidt"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.6736186,
+          37.9867667
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-07-02T07:06:42Z",
+        "google_maps_url": "http://maps.google.com/?cid=13289362961211717816",
+        "location": {
+          "address": "C. Marcelina, 44, Nueva, 03183 Torrevieja, Alicante, Іспанія",
+          "country_code": "ES",
+          "name": "Mundo Pequeño"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-06-29T09:48:13Z",
+        "google_maps_url": "http://maps.google.com/?q=C.+de+Pedro+Lorca,+69,+03182+Torrevieja,+Alicante,+%D0%86%D1%81%D0%BF%D0%B0%D0%BD%D1%96%D1%8F&ftid=0xd63aa000e245bed:0x8000d8db0eafd692",
+        "Comment": "Немає геоданих про це збережене місце"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.7239342,
+          37.9349473
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-04-14T09:03:22Z",
+        "google_maps_url": "http://maps.google.com/?cid=6700759472967324529",
+        "location": {
+          "address": "C.Niágara, 63, 03189 Dehesa de Campoamor, Alicante, Іспанія",
+          "country_code": "ES",
+          "name": "Flamenca Beach Centro Comercial"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-04-11T06:39:15Z",
+        "google_maps_url": "http://maps.google.com/?q=Avinguda+Callosa+D'Ensarri%C3%A0,+2,+03502+Benidorm,+Alacant,+%D0%86%D1%81%D0%BF%D0%B0%D0%BD%D1%96%D1%8F&ftid=0xd6204c1cc618d91:0xc82d320e6b8377e9",
+        "Comment": "Немає геоданих про це збережене місце"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-01-06T12:57:00Z",
+        "google_maps_url": "http://maps.google.com/?q=25599+Arties,+%D0%9B%D0%BB%D0%B5%D0%B9%D0%B4%D0%B0,+%D0%86%D1%81%D0%BF%D0%B0%D0%BD%D1%96%D1%8F&ftid=0x12a8982c1c6b14dd:0x866ceaa724ed98c4",
+        "Comment": "Немає геоданих про це збережене місце"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-12-29T21:57:33Z",
+        "google_maps_url": "http://maps.google.com/?q=Cuevas+de+Za%C3%A9n,+30196,+Murcia,+%D0%86%D1%81%D0%BF%D0%B0%D0%BD%D1%96%D1%8F&ftid=0xd65bebadbd53955:0x12462e8a1da6be72",
+        "Comment": "Немає геоданих про це збережене місце"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.4909065,
+          38.3450621
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-12-29T17:39:48Z",
+        "google_maps_url": "http://maps.google.com/?cid=16184303322808505438",
+        "location": {
+          "address": "C. Pintor Cabrera, 8, 03003 Alicante, Іспанія",
+          "country_code": "ES",
+          "name": "Kenay Home"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -1.1055883,
+          38.0125758
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-12-29T14:04:45Z",
+        "google_maps_url": "http://maps.google.com/?cid=3061717661585685153",
+        "location": {
+          "address": "Camino viejo de Monteagudo s/n, parcela 5, nave D, 30160 Murcia, Іспанія",
+          "country_code": "ES",
+          "name": "CentroSofá Outlet (Murcia)"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -1.1076338,
+          38.0055897
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-12-29T14:03:38Z",
+        "google_maps_url": "http://maps.google.com/?cid=14893372794932433996",
+        "location": {
+          "address": "Av. de Alicante, 219, 30007 Murcia, Іспанія",
+          "country_code": "ES",
+          "name": "Ahorro Total"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.8176124,
+          38.5401522
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-12-28T16:29:22Z",
+        "google_maps_url": "http://maps.google.com/?cid=7214038862337243829",
+        "location": {
+          "address": "03630 Sax, Alicante, Іспанія",
+          "country_code": "ES",
+          "name": "Castell de Saix"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.3779955,
+          39.4157875
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-12-27T23:26:53Z",
+        "google_maps_url": "http://maps.google.com/?cid=6356173453333499437",
+        "location": {
+          "address": "Carrer Rabisancho, 2, 46910 Alfafar, Valencia, Іспанія",
+          "country_code": "ES",
+          "name": "VIDAFEL Sofás"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.3798565,
+          39.4626329
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-12-27T18:31:45Z",
+        "google_maps_url": "http://maps.google.com/?cid=18300651246285585838",
+        "location": {
+          "address": "C/ de Bailèn, 66, Extramurs, 46007 València, Valencia, Іспанія",
+          "country_code": "ES",
+          "name": "Hotelito Boutique Valencia Estación"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.3798316,
+          39.4711782
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-12-27T17:14:01Z",
+        "google_maps_url": "http://maps.google.com/?cid=16572914986710088029",
+        "location": {
+          "address": "C. del Hospital, 1, Ciutat Vella, 46001 València, Valencia, Іспанія",
+          "country_code": "ES",
+          "name": "Aparcament Avinguda de l'Oest (Pavapark)"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.6760030,
+          37.9895960
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-12-26T14:10:06Z",
+        "google_maps_url": "http://maps.google.com/?cid=2013150865207478658",
+        "location": {
+          "address": "Av. de las Cortes Valencianas, 48, 03183 Torrevieja, Alicante, Іспанія",
+          "country_code": "ES",
+          "name": "Shops Anticrisis Torrevieja"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.6888660,
+          37.9946990
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-12-26T14:09:57Z",
+        "google_maps_url": "http://maps.google.com/?cid=11502442037041537961",
+        "location": {
+          "address": "C. Joaquín García Sánchez, 2, 03184 Torrevieja, Alicante, Іспанія",
+          "country_code": "ES",
+          "name": "Muebles Hnos. García"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-12-23T08:54:51Z",
+        "google_maps_url": "http://maps.google.com/?q=38.009415,-0.694805",
+        "Comment": "Немає геоданих про це збережене місце"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.4646764,
+          38.3703922
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-11-14T15:30:35Z",
+        "google_maps_url": "http://maps.google.com/?cid=8107867228413534477",
+        "location": {
+          "address": "Av. de Antonio Ramos Carratalá, 56-60, 03015 Alicante, Іспанія",
+          "country_code": "ES",
+          "name": "Maison Du Monde"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-11-11T19:05:31Z",
+        "google_maps_url": "http://maps.google.com/?q=Viale+Beatrice+d'Este,+37,+20122+Milano+MI,+%D0%86%D1%82%D0%B0%D0%BB%D1%96%D1%8F&ftid=0x4786c41b84b51ec3:0xe174727f4e69ba5b",
+        "Comment": "Немає геоданих про це збережене місце"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.5539324,
+          38.2878090
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-10-16T19:13:54Z",
+        "google_maps_url": "http://maps.google.com/?cid=3512614276758707544",
+        "location": {
+          "address": "03195 L'Altet, Alicante, Іспанія",
+          "country_code": "ES",
+          "name": "pl"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.5644172,
+          38.2906085
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-10-16T19:03:53Z",
+        "google_maps_url": "http://maps.google.com/?cid=4386202230341083202",
+        "location": {
+          "address": "Carr. de Torrellano al Aeropuerto, Km. 0.2, 03320 Torrellano, Alicante, Іспанія",
+          "country_code": "ES",
+          "name": "Lowcostparking.es Alicante"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-09-12T13:44:46Z",
+        "google_maps_url": "http://maps.google.com/?q=45.48564326749701,9.20481663197279",
+        "Comment": "Немає геоданих про це збережене місце"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-09-12T09:32:07Z",
+        "google_maps_url": "http://maps.google.com/?q=P.za+del+Duomo,+Milano+MI,+%D0%86%D1%82%D0%B0%D0%BB%D1%96%D1%8F&ftid=0x4786c6ae939351df:0xd445dec2978d0e3f",
+        "Comment": "Немає геоданих про це збережене місце"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          28.8425700,
+          47.0140510
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-09-08T19:21:21Z",
+        "google_maps_url": "http://maps.google.com/?cid=3934656615505799978",
+        "location": {
+          "address": "Strada Ismail 17, Chișinău, Молдова",
+          "country_code": "MD",
+          "name": "London Boutique Hotel"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -3.7030011,
+          40.4144084
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-04-23T10:27:36Z",
+        "google_maps_url": "http://maps.google.com/?cid=13911670040191564629",
+        "location": {
+          "address": "Plaza de Jacinto Benavente, 2, Centro, 28012 Madrid, Іспанія",
+          "country_code": "ES",
+          "name": "San Pablo Bookshop"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-04-02T19:13:36Z",
+        "google_maps_url": "http://maps.google.com/?q=%D0%90%D0%BD%D0%B4%D0%BE%D1%80%D1%80%D0%B0&ftid=0x12a5f52e989ef095:0x7c93ed778ea7f92",
+        "Comment": "Немає геоданих про це збережене місце"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-04-02T19:11:12Z",
+        "google_maps_url": "http://maps.google.com/?q=84017+%D0%9F%D0%BE%D0%B7%D1%96%D1%82%D0%B0%D0%BD%D0%BE,+%D0%A1%D0%B0%D0%BB%D0%B5%D1%80%D0%BD%D0%BE,+%D0%86%D1%82%D0%B0%D0%BB%D1%96%D1%8F&ftid=0x133b9768a710d21b:0x8cde0b2863cede31",
+        "Comment": "Немає геоданих про це збережене місце"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-04-02T19:09:49Z",
+        "google_maps_url": "http://maps.google.com/?q=22100+%D0%9A%D0%BE%D0%BC%D0%BE,+%D0%86%D1%82%D0%B0%D0%BB%D1%96%D1%8F&ftid=0x47869c481027ed63:0xb99b96af785ff524",
+        "Comment": "Немає геоданих про це збережене місце"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.6779332,
+          37.9773581
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-04-01T13:45:17Z",
+        "google_maps_url": "http://maps.google.com/?cid=6678684247212135233",
+        "location": {
+          "address": "C. Ramón Gallud, 90, 03182 Torrevieja, Alicante, Іспанія",
+          "country_code": "ES",
+          "name": "Acceso Peatonal Parking"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.1708076,
+          38.5533057
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-03-28T11:16:41Z",
+        "google_maps_url": "http://maps.google.com/?cid=12667699949211150654",
+        "location": {
+          "address": "Terra Mítica, Rotonda del Fuego, 03502 Finestrat, Alicante, Іспанія",
+          "country_code": "ES",
+          "name": "Asia Gardens Hotel & Thai Spa"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-03-22T17:02:57Z",
+        "google_maps_url": "http://maps.google.com/?q=Carrer+Tabarca,+7,+03140+Guardamar+del+Segura,+Alacant,+%D0%86%D1%81%D0%BF%D0%B0%D0%BD%D1%96%D1%8F&ftid=0xd63ac4253f66c5b:0xa8bd81010ee13071",
+        "Comment": "Немає геоданих про це збережене місце"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.5047272,
+          38.3815573
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-03-04T21:18:34Z",
+        "google_maps_url": "http://maps.google.com/?cid=6971100964335373151",
+        "location": {
+          "address": "C/ Alicante, 94, 03690 Sant Vicent del Raspeig, Alicante, Іспанія",
+          "country_code": "ES",
+          "name": "Restaurante KFC"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.4934513,
+          38.3430346
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-03-04T18:01:07Z",
+        "google_maps_url": "http://maps.google.com/?cid=1915826105303148656",
+        "location": {
+          "address": "Av. Maisonnave, 53, 03003 Alicante, Іспанія",
+          "country_code": "ES",
+          "name": "MAC Cosmetics, El Corte Inglés Alicante"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.6553914,
+          38.0890225
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2022-08-27T09:04:11Z",
+        "google_maps_url": "http://maps.google.com/?cid=7008206170792395176",
+        "location": {
+          "address": "Carrer Sant Pere, 16, 03140 Guardamar del Segura, Alicante, Іспанія",
+          "name": "José Antonio Rodríguez Sánchez"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.6539185,
+          38.0833607
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2022-08-19T08:38:34Z",
+        "google_maps_url": "http://maps.google.com/?cid=34150166090160825",
+        "location": {
+          "address": "Carrer Miguel Hernández, 127, 03140 Guardamar del Segura, Alicante, Іспанія",
+          "country_code": "ES",
+          "name": "Panadería Bolero"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2022-08-19T08:26:59Z",
+        "google_maps_url": "http://maps.google.com/?q=38.085911201889616,-0.6542313471436502",
+        "Comment": "Немає геоданих про це збережене місце"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.6737210,
+          38.0067749
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2022-08-17T05:27:55Z",
+        "google_maps_url": "http://maps.google.com/?cid=3382101819829987901",
+        "location": {
+          "address": "Partida de la Loma, S/N, 03184 Torrevieja, Alicante, Іспанія",
+          "country_code": "ES",
+          "name": "Hospital Quirón Torrevieja"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.7155770,
+          37.9634460
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2022-08-17T05:26:36Z",
+        "google_maps_url": "http://maps.google.com/?cid=9311606774741093391",
+        "location": {
+          "address": "03185, Аліканте, Іспанія",
+          "country_code": "ES",
+          "name": "Hospital de Torrevieja"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2022-08-02T09:56:34Z",
+        "google_maps_url": "http://maps.google.com/?q=38.08855772072216,-0.6561685726046562",
+        "Comment": "Немає геоданих про це збережене місце"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -1.1725344,
+          38.0291203
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2022-07-25T07:26:38Z",
+        "google_maps_url": "http://maps.google.com/?cid=17742033450350923272",
+        "location": {
+          "address": "N-301, km 388, 30100 El Puntal, Murcia, Іспанія",
+          "country_code": "ES",
+          "name": "Oficina de extranjeros"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.4229306,
+          38.4081161
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2022-07-07T09:08:07Z",
+        "google_maps_url": "http://maps.google.com/?cid=9440227785453081783",
+        "location": {
+          "address": "Carretera de Valencia km 89 - Centro Comercial Carrefour, 03550 Sant Joan d'Alacant, Alicante, Іспанія",
+          "name": "Imo Car Wash"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.4579615,
+          38.3687821
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2022-07-07T09:06:48Z",
+        "google_maps_url": "http://maps.google.com/?cid=6725749044137948159",
+        "location": {
+          "address": "Avinguda de Dénia, 126, 03016 Alacant, Alicante, Іспанія",
+          "name": "Lavadero El 5"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -0.4793388,
+          38.3639735
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2022-07-07T09:00:49Z",
+        "google_maps_url": "http://maps.google.com/?cid=14835707218946864072",
+        "location": {
+          "address": "40, C/ Alonso Cano, 38, 03015 Alacant, Alicante, Іспанія",
+          "name": "Duck Car Wash"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2022-05-10T13:07:52Z",
+        "google_maps_url": "http://maps.google.com/?q=Carrer+Panama,+03140+Guardamar+del+Segura,+Alacant,+%D0%86%D1%81%D0%BF%D0%B0%D0%BD%D1%96%D1%8F&ftid=0xd63ac5d5c1c9481:0xdcb61695926c1239",
+        "Comment": "Немає геоданих про це збережене місце"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2022-03-04T11:24:19Z",
+        "google_maps_url": "http://maps.google.com/?q=%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%9D%D0%B5%D0%B7%D0%B0%D0%BB%D0%B5%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%96,+20,+%D0%A2%D0%B0%D1%82%D0%B0%D1%80%D1%96%D0%B2,+%D0%86%D0%B2%D0%B0%D0%BD%D0%BE-%D0%A4%D1%80%D0%B0%D0%BD%D0%BA%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C&ftid=0x4737203cdca8682f:0x45621bc46094716d",
+        "Comment": "Немає геоданих про це збережене місце"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          30.4063060,
+          50.4703777
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2021-08-30T15:47:30Z",
+        "google_maps_url": "http://maps.google.com/?cid=11493673500000485730",
+        "location": {
+          "address": "вулиця Данила Щербаківського, 52, Київ, Україна, 04111",
+          "name": "Ювелирная мастерская. Ювелірна майстерня."
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2021-08-24T09:31:07Z",
+        "google_maps_url": "http://maps.google.com/?q=C.+de+Sant+Vicent+M%C3%A0rtir,+34,+46002+Val%C3%A8ncia,+%D0%86%D1%81%D0%BF%D0%B0%D0%BD%D1%96%D1%8F&ftid=0xd604f4c66853ee5:0x6ba1f947e4f85ef2",
+        "Comment": "Немає геоданих про це збережене місце"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          30.4874015,
+          50.4464519
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2021-03-06T09:52:42Z",
+        "google_maps_url": "http://maps.google.com/?cid=11033593422409354321",
+        "location": {
+          "address": "вулиця Жилянська, 148 Б, Київ, Україна, 01135",
+          "name": "Центр сучасної ветеринарної медицини"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2014-10-22T10:44:55Z",
+        "google_maps_url": "http://maps.google.com/?q=вул. Володимирська, 101, Київ, місто Київ&ftid=0x40d4cee371090683:0xa8c4f06e6b7a6836",
+        "Comment": "Немає геоданих про це збережене місце"
+      },
+      "type": "Feature"
+    }
+  ]
+}

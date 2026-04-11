@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Палитры — Costa Blanca</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #F4F1EC;
+    color: #2B2420;
+    padding: 40px 24px;
+    line-height: 1.5;
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .subtitle { color: #7A6D60; margin-bottom: 32px; max-width: 720px; }
+
+  .palettes {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .palette {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px 22px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05), 0 0 1px rgba(0,0,0,0.08);
+  }
+  .palette.current { box-shadow: 0 0 0 2px #C96F4A, 0 6px 24px rgba(201,111,74,0.15); }
+
+  .palette-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .palette-name {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 700;
+  }
+  .palette-num {
+    font-size: 13px;
+    color: #999;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+  .current-tag {
+    background: #C96F4A;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-left: 10px;
+    letter-spacing: 0.05em;
+  }
+  .palette-desc {
+    font-size: 14px;
+    color: #7A6D60;
+    margin-bottom: 14px;
+  }
+
+  .swatches {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+  }
+  .swatch {
+    border-radius: 8px;
+    padding: 14px 10px;
+    min-height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 11px;
+    font-weight: 600;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .swatch .role {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0.8;
+  }
+  .swatch .hex {
+    font-family: 'Menlo', 'Consolas', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    opacity: 0.85;
+  }
+
+  /* Mini preview chip showing how a button/card would look */
+  .mini-preview {
+    margin-top: 14px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .mini-title {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-weight: 700;
+  }
+  .mini-btn {
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    border: none;
+  }
+  .mini-btn.secondary {
+    background: transparent;
+    border: 1.5px solid;
+  }
+
+  @media (max-width: 700px) {
+    .swatches { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<h1>Палитры — Costa Blanca</h1>
+<p class="subtitle">
+  Восемь тёплых средиземноморских направлений. Каждая палитра показывает: фон страницы, цвет карточки, основной текст, два акцента и приглушённый. Внизу — мини-превью, как будет выглядеть заголовок + кнопка на этой палитре.
+</p>
+
+<div class="palettes">
+
+  <!-- ========= 1. Terracotta & Cream (CURRENT) ========= -->
+  <div class="palette current">
+    <div class="palette-head">
+      <div>
+        <span class="palette-name">Terracotta &amp; Cream</span>
+        <span class="current-tag">СЕЙЧАС</span>
+      </div>
+      <span class="palette-num">Палитра 1</span>
+    </div>
+    <div class="palette-desc">Тёплая средиземноморская: крем, терракота, мёд, шалфей. Уютно, уютно-editorial.</div>
+    <div class="swatches">
+      <div class="swatch" style="background:#FBF7F0;color:#3B2E26">
+        <span class="role">BG</span><span class="hex">#FBF7F0</span>
+      </div>
+      <div class="swatch" style="background:#FFFFFF;color:#3B2E26">
+        <span class="role">SURFACE</span><span class="hex">#FFFFFF</span>
+      </div>
+      <div class="swatch" style="background:#3B2E26;color:#FBF7F0">
+        <span class="role">TEXT</span><span class="hex">#3B2E26</span>
+      </div>
+      <div class="swatch" style="background:#C96F4A;color:#fff">
+        <span class="role">ACCENT 1</span><span class="hex">#C96F4A</span>
+      </div>
+      <div class="swatch" style="background:#E8C07D;color:#3B2E26">
+        <span class="role">ACCENT 2</span><span class="hex">#E8C07D</span>
+      </div>
+      <div class="swatch" style="background:#8B9A7B;color:#fff">
+        <span class="role">MUTED</span><span class="hex">#8B9A7B</span>
+      </div>
+    </div>
+    <div class="mini-preview" style="background:#FBF7F0">
+      <span class="mini-title" style="color:#3B2E26">Откройте Costa Blanca</span>
+      <button class="mini-btn" style="background:#C96F4A;color:#FBF7F0">🔍 Найти события</button>
+      <button class="mini-btn secondary" style="color:#3B2E26;border-color:#3B2E26">Telegram</button>
+    </div>
+  </div>
+
+  <!-- ========= 2. Warm Clay ========= -->
+  <div class="palette">
+    <div class="palette-head">
+      <div><span class="palette-name">Warm Clay</span></div>
+      <span class="palette-num">Палитра 2</span>
+    </div>
+    <div class="palette-desc">Более насыщенный и "глиняный" вариант первой — тёплее, ближе к обожжённой керамике Мдины.</div>
+    <div class="swatches">
+      <div class="swatch" style="background:#F5ECDD;color:#3A241A"><span class="role">BG</span><span class="hex">#F5ECDD</span></div>
+      <div class="swatch" style="background:#FFFFFF;color:#3A241A"><span class="role">SURFACE</span><span class="hex">#FFFFFF</span></div>
+      <div class="swatch" style="background:#3A241A;color:#F5ECDD"><span class="role">TEXT</span><span class="hex">#3A241A</span></div>
+      <div class="swatch" style="background:#B04A2E;color:#fff"><span class="role">ACCENT 1</span><span class="hex">#B04A2E</span></div>
+      <div class="swatch" style="background:#D79C5E;color:#3A241A"><span class="role">ACCENT 2</span><span class="hex">#D79C5E</span></div>
+      <div class="swatch" style="background:#7A8563;color:#fff"><span class="role">MUTED</span><span class="hex">#7A8563</span></div>
+    </div>
+    <div class="mini-preview" style="background:#F5ECDD">
+      <span class="mini-title" style="color:#3A241A">Откройте Costa Blanca</span>
+      <button class="mini-btn" style="background:#B04A2E;color:#F5ECDD">🔍 Найти события</button>
+      <button class="mini-btn secondary" style="color:#3A241A;border-color:#3A241A">Telegram</button>
+    </div>
+  </div>
+
+  <!-- ========= 3. Linen & Rust ========= -->
+  <div class="palette">
+    <div class="palette-head">
+      <div><span class="palette-name">Linen &amp; Rust</span></div>
+      <span class="palette-num">Палитра 3</span>
+    </div>
+    <div class="palette-desc">Более светлая и нейтральная база — льняной фон, ржавчина как акцент. Самый спокойный и "дорогой" минимал.</div>
+    <div class="swatches">
+      <div class="swatch" style="background:#F7F2EA;color:#2C251E"><span class="role">BG</span><span class="hex">#F7F2EA</span></div>
+      <div class="swatch" style="background:#FFFFFF;color:#2C251E"><span class="role">SURFACE</span><span class="hex">#FFFFFF</span></div>
+      <div class="swatch" style="background:#2C251E;color:#F7F2EA"><span class="role">TEXT</span><span class="hex">#2C251E</span></div>
+      <div class="swatch" style="background:#A0482A;color:#fff"><span class="role">ACCENT 1</span><span class="hex">#A0482A</span></div>
+      <div class="swatch" style="background:#C8A87A;color:#2C251E"><span class="role">ACCENT 2</span><span class="hex">#C8A87A</span></div>
+      <div class="swatch" style="background:#6B6A5E;color:#fff"><span class="role">MUTED</span><span class="hex">#6B6A5E</span></div>
+    </div>
+    <div class="mini-preview" style="background:#F7F2EA">
+      <span class="mini-title" style="color:#2C251E">Откройте Costa Blanca</span>
+      <button class="mini-btn" style="background:#A0482A;color:#F7F2EA">🔍 Найти события</button>
+      <button class="mini-btn secondary" style="color:#2C251E;border-color:#2C251E">Telegram</button>
+    </div>
+  </div>
+
+  <!-- ========= 4. Olive & Honey ========= -->
+  <div class="palette">
+    <div class="palette-head">
+      <div><span class="palette-name">Olive &amp; Honey</span></div>
+      <span class="palette-num">Палитра 4</span>
+    </div>
+    <div class="palette-desc">Оливково-медовая: главный акцент не красный, а тёплый мёд. Более сельская, "под оливы Аликанте".</div>
+    <div class="swatches">
+      <div class="swatch" style="background:#FAF5E9;color:#2F2A1C"><span class="role">BG</span><span class="hex">#FAF5E9</span></div>
+      <div class="swatch" style="background:#FFFFFF;color:#2F2A1C"><span class="role">SURFACE</span><span class="hex">#FFFFFF</span></div>
+      <div class="swatch" style="background:#2F2A1C;color:#FAF5E9"><span class="role">TEXT</span><span class="hex">#2F2A1C</span></div>
+      <div class="swatch" style="background:#B8862C;color:#fff"><span class="role">ACCENT 1</span><span class="hex">#B8862C</span></div>
+      <div class="swatch" style="background:#E8C07D;color:#2F2A1C"><span class="role">ACCENT 2</span><span class="hex">#E8C07D</span></div>
+      <div class="swatch" style="background:#6B7248;color:#fff"><span class="role">MUTED</span><span class="hex">#6B7248</span></div>
+    </div>
+    <div class="mini-preview" style="background:#FAF5E9">
+      <span class="mini-title" style="color:#2F2A1C">Откройте Costa Blanca</span>
+      <button class="mini-btn" style="background:#B8862C;color:#FAF5E9">🔍 Найти события</button>
+      <button class="mini-btn secondary" style="color:#2F2A1C;border-color:#2F2A1C">Telegram</button>
+    </div>
+  </div>
+
+  <!-- ========= 5. Santorini White ========= -->
+  <div class="palette">
+    <div class="palette-head">
+      <div><span class="palette-name">Santorini White</span></div>
+      <span class="palette-num">Палитра 5</span>
+    </div>
+    <div class="palette-desc">Чистый курортный: белые стены + средиземноморский синий + тёплое золото. Как фото с женщиной в голубом на белой стене.</div>
+    <div class="swatches">
+      <div class="swatch" style="background:#FDFDFC;color:#1B2A41"><span class="role">BG</span><span class="hex">#FDFDFC</span></div>
+      <div class="swatch" style="background:#FFFFFF;color:#1B2A41"><span class="role">SURFACE</span><span class="hex">#FFFFFF</span></div>
+      <div class="swatch" style="background:#1B2A41;color:#FDFDFC"><span class="role">TEXT</span><span class="hex">#1B2A41</span></div>
+      <div class="swatch" style="background:#2E86AB;color:#fff"><span class="role">ACCENT 1</span><span class="hex">#2E86AB</span></div>
+      <div class="swatch" style="background:#E6A756;color:#1B2A41"><span class="role">ACCENT 2</span><span class="hex">#E6A756</span></div>
+      <div class="swatch" style="background:#8A9BB0;color:#fff"><span class="role">MUTED</span><span class="hex">#8A9BB0</span></div>
+    </div>
+    <div class="mini-preview" style="background:#FDFDFC;border:1px solid #E4E9EF">
+      <span class="mini-title" style="color:#1B2A41">Откройте Costa Blanca</span>
+      <button class="mini-btn" style="background:#2E86AB;color:#FDFDFC">🔍 Найти события</button>
+      <button class="mini-btn secondary" style="color:#1B2A41;border-color:#1B2A41">Telegram</button>
+    </div>
+  </div>
+
+  <!-- ========= 6. Sunset Coral ========= -->
+  <div class="palette">
+    <div class="palette-head">
+      <div><span class="palette-name">Sunset Coral</span></div>
+      <span class="palette-num">Палитра 6</span>
+    </div>
+    <div class="palette-desc">"Закатная": песок + коралл + амбер + пыльный синий. Тёплее 1-й, но живее и романтичнее.</div>
+    <div class="swatches">
+      <div class="swatch" style="background:#FBF6EF;color:#2C2420"><span class="role">BG</span><span class="hex">#FBF6EF</span></div>
+      <div class="swatch" style="background:#FFFFFF;color:#2C2420"><span class="role">SURFACE</span><span class="hex">#FFFFFF</span></div>
+      <div class="swatch" style="background:#2C2420;color:#FBF6EF"><span class="role">TEXT</span><span class="hex">#2C2420</span></div>
+      <div class="swatch" style="background:#E07856;color:#fff"><span class="role">ACCENT 1</span><span class="hex">#E07856</span></div>
+      <div class="swatch" style="background:#D9A25F;color:#2C2420"><span class="role">ACCENT 2</span><span class="hex">#D9A25F</span></div>
+      <div class="swatch" style="background:#5B7A8C;color:#fff"><span class="role">MUTED</span><span class="hex">#5B7A8C</span></div>
+    </div>
+    <div class="mini-preview" style="background:#FBF6EF">
+      <span class="mini-title" style="color:#2C2420">Откройте Costa Blanca</span>
+      <button class="mini-btn" style="background:#E07856;color:#FBF6EF">🔍 Найти события</button>
+      <button class="mini-btn secondary" style="color:#2C2420;border-color:#2C2420">Telegram</button>
+    </div>
+  </div>
+
+  <!-- ========= 7. Dusty Rose ========= -->
+  <div class="palette">
+    <div class="palette-head">
+      <div><span class="palette-name">Dusty Rose</span></div>
+      <span class="palette-num">Палитра 7</span>
+    </div>
+    <div class="palette-desc">Пыльно-розовая: в духе кухонь из мудборда. Самая мягкая, женственная и editorial.</div>
+    <div class="swatches">
+      <div class="swatch" style="background:#FAF3EC;color:#36261F"><span class="role">BG</span><span class="hex">#FAF3EC</span></div>
+      <div class="swatch" style="background:#FFFFFF;color:#36261F"><span class="role">SURFACE</span><span class="hex">#FFFFFF</span></div>
+      <div class="swatch" style="background:#36261F;color:#FAF3EC"><span class="role">TEXT</span><span class="hex">#36261F</span></div>
+      <div class="swatch" style="background:#B8605F;color:#fff"><span class="role">ACCENT 1</span><span class="hex">#B8605F</span></div>
+      <div class="swatch" style="background:#E8B8A8;color:#36261F"><span class="role">ACCENT 2</span><span class="hex">#E8B8A8</span></div>
+      <div class="swatch" style="background:#8B9A7B;color:#fff"><span class="role">MUTED</span><span class="hex">#8B9A7B</span></div>
+    </div>
+    <div class="mini-preview" style="background:#FAF3EC">
+      <span class="mini-title" style="color:#36261F">Откройте Costa Blanca</span>
+      <button class="mini-btn" style="background:#B8605F;color:#FAF3EC">🔍 Найти события</button>
+      <button class="mini-btn secondary" style="color:#36261F;border-color:#36261F">Telegram</button>
+    </div>
+  </div>
+
+  <!-- ========= 8. Deep Amalfi ========= -->
+  <div class="palette">
+    <div class="palette-head">
+      <div><span class="palette-name">Deep Amalfi</span></div>
+      <span class="palette-num">Палитра 8</span>
+    </div>
+    <div class="palette-desc">Контрастная: глубокий синий + тёплый лимон + крем. Vogue Travel, более "дорогая журналистика".</div>
+    <div class="swatches">
+      <div class="swatch" style="background:#FAF5EA;color:#0F2436"><span class="role">BG</span><span class="hex">#FAF5EA</span></div>
+      <div class="swatch" style="background:#FFFFFF;color:#0F2436"><span class="role">SURFACE</span><span class="hex">#FFFFFF</span></div>
+      <div class="swatch" style="background:#0F2436;color:#FAF5EA"><span class="role">TEXT</span><span class="hex">#0F2436</span></div>
+      <div class="swatch" style="background:#14587A;color:#fff"><span class="role">ACCENT 1</span><span class="hex">#14587A</span></div>
+      <div class="swatch" style="background:#E8B948;color:#0F2436"><span class="role">ACCENT 2</span><span class="hex">#E8B948</span></div>
+      <div class="swatch" style="background:#7A8F85;color:#fff"><span class="role">MUTED</span><span class="hex">#7A8F85</span></div>
+    </div>
+    <div class="mini-preview" style="background:#FAF5EA">
+      <span class="mini-title" style="color:#0F2436">Откройте Costa Blanca</span>
+      <button class="mini-btn" style="background:#14587A;color:#FAF5EA">🔍 Найти события</button>
+      <button class="mini-btn secondary" style="color:#0F2436;border-color:#0F2436">Telegram</button>
+    </div>
+  </div>
+
+</div>
+
+<p style="max-width:1100px;margin:40px auto 0;color:#7A6D60;font-size:14px;text-align:center;">
+  Скажи номер палитры (1–8) — применю её к сайту. Или укажи несколько, если хочешь сравнить в реальном макете.
+</p>
+
+</body>
+</html>

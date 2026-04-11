@@ -1,0 +1,9 @@
+BEGIN:VCARD 
+VERSION:3.0 
+PRODID:-//Apple Inc.//iPhone OS 14.8.1//EN 
+N:Елена;Вытегорова;;; 
+FN:Вытегорова Елена 
+TEL;type=CELL;type=VOICE;type=pref:+380 93 771 2807 
+item1.URL;type=pref:https://t.me/@idId(rawValue: 1123137356) 
+item1.X-ABLabel:Telegram 
+END:VCARD 

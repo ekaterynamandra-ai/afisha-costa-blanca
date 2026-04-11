@@ -1,0 +1,9 @@
+BEGIN:VCARD 
+VERSION:3.0 
+PRODID:-//Apple Inc.//iPhone OS 15.6.1//EN 
+N:Rostoka;Tanya;;; 
+FN:Tanya Rostoka 
+TEL;type=CELL;type=VOICE;type=pref:+380 95 830 5239 
+item1.URL;type=pref:https://t.me/@idId(rawValue: 910751103) 
+item1.X-ABLabel:Telegram 
+END:VCARD 

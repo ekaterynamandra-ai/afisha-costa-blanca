@@ -5,19 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Афиша Costa Blanca — Website Mockup</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap');
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: 'Inter', -apple-system, sans-serif;
-    background: #FFFAF0;
-    color: #2D3748;
+    background: #FBF6EF;
+    color: #2C2420;
     line-height: 1.5;
   }
 
   /* === NAVIGATION === */
   nav {
-    background: #1A365D;
+    background: #2C2420;
     padding: 0 24px;
     height: 64px;
     display: flex;
@@ -38,7 +38,7 @@
     text-decoration: none;
   }
   .nav-logo span {
-    color: #F6AD55;
+    color: #E07856;
   }
   .nav-links {
     display: flex;
@@ -52,7 +52,7 @@
     font-weight: 500;
     transition: color 0.2s;
   }
-  .nav-links a:hover { color: #F6AD55; }
+  .nav-links a:hover { color: #E07856; }
   .lang-toggle {
     background: rgba(255,255,255,0.15);
     border: 1px solid rgba(255,255,255,0.25);
@@ -78,7 +78,7 @@
 
   /* === HERO === */
   .hero {
-    background: linear-gradient(135deg, #1A365D 0%, #2B6CB0 40%, #F6AD55 100%);
+    background: linear-gradient(135deg, #2C2420 0%, #E07856 45%, #D9A25F 100%);
     padding: 80px 24px 60px;
     text-align: center;
     position: relative;
@@ -113,8 +113,8 @@
     position: relative;
   }
   .btn-primary {
-    background: #F6AD55;
-    color: #1A365D;
+    background: #E07856;
+    color: #2C2420;
     border: none;
     padding: 14px 28px;
     border-radius: 10px;
@@ -156,15 +156,15 @@
   .section-title {
     font-size: 24px;
     font-weight: 800;
-    color: #1A365D;
+    color: #2C2420;
     margin-bottom: 24px;
     display: flex;
     align-items: center;
     gap: 10px;
   }
   .section-title .badge {
-    background: #F6AD55;
-    color: #1A365D;
+    background: #E07856;
+    color: #2C2420;
     font-size: 12px;
     font-weight: 700;
     padding: 4px 10px;
@@ -197,14 +197,19 @@
     justify-content: center;
     font-size: 48px;
   }
-  .card-image.festival { background: linear-gradient(135deg, #9B2335, #E74C3C, #F39C12); }
-  .card-image.nature { background: linear-gradient(135deg, #1a5c2a, #27AE60, #F1C40F); }
-  .card-image.gastro { background: linear-gradient(135deg, #5D3A1A, #D35400, #F39C12); }
-  .card-image.music { background: linear-gradient(135deg, #3B1F7A, #9B59B6, #E91E63); }
-  .card-image.market { background: linear-gradient(135deg, #7B3F00, #E67E22, #F6AD55); }
-  .card-image.kids { background: linear-gradient(135deg, #1565C0, #3498DB, #81D4FA); }
-  .card-image.sport { background: linear-gradient(135deg, #004D40, #1ABC9C, #A7FFEB); }
-  .card-image.fireworks { background: linear-gradient(135deg, #880E4F, #E91E63, #FFC107); }
+  /* === Card image gradients: 4 tonal families in Sunset Coral palette === */
+  /* Family 1: Coral sunset (festival, fireworks) */
+  .card-image.festival  { background: linear-gradient(135deg, #8B2F1E 0%, #E07856 50%, #F2B89A 100%); }
+  .card-image.fireworks { background: linear-gradient(135deg, #6B2418 0%, #C4522C 50%, #EFA078 100%); }
+  /* Family 2: Amber / caramel (gastro, market) */
+  .card-image.gastro { background: linear-gradient(135deg, #6B3D1E 0%, #C98A3E 50%, #E8CC90 100%); }
+  .card-image.market { background: linear-gradient(135deg, #5C3620 0%, #A87240 50%, #E8CC90 100%); }
+  /* Family 3: Dusty blue / sage (nature, sport) */
+  .card-image.nature { background: linear-gradient(135deg, #3A4E5C 0%, #5B7A8C 50%, #A8C0CC 100%); }
+  .card-image.sport  { background: linear-gradient(135deg, #2F4550 0%, #4F6B7A 50%, #94B0BC 100%); }
+  /* Family 4: Dusty rose (music, kids) */
+  .card-image.music { background: linear-gradient(135deg, #5A2A3A 0%, #A0586F 50%, #D4A58A 100%); }
+  .card-image.kids  { background: linear-gradient(135deg, #7A3A44 0%, #B87380 50%, #E8CBD0 100%); }
 
   .card-badge {
     position: absolute;
@@ -219,14 +224,14 @@
     align-items: center;
     gap: 4px;
   }
-  .card-badge.festival { background: #E74C3C; }
-  .card-badge.nature { background: #27AE60; }
-  .card-badge.gastro { background: #F39C12; }
-  .card-badge.music { background: #9B59B6; }
-  .card-badge.market { background: #E67E22; }
-  .card-badge.kids { background: #3498DB; }
-  .card-badge.sport { background: #1ABC9C; }
-  .card-badge.fireworks { background: #E91E63; }
+  .card-badge.festival  { background: #E07856; }
+  .card-badge.fireworks { background: #C4522C; }
+  .card-badge.gastro    { background: #C98A3E; }
+  .card-badge.market    { background: #A87240; }
+  .card-badge.nature    { background: #5B7A8C; }
+  .card-badge.sport     { background: #4F6B7A; }
+  .card-badge.music     { background: #A0586F; }
+  .card-badge.kids      { background: #B87380; }
 
   .card-price {
     position: absolute;
@@ -240,7 +245,7 @@
     font-weight: 600;
     backdrop-filter: blur(4px);
   }
-  .card-price.free { background: #38A169; }
+  .card-price.free { background: #8B9A7B; }
 
   .card-body {
     padding: 16px;
@@ -248,7 +253,7 @@
   .card-title {
     font-size: 17px;
     font-weight: 700;
-    color: #1A365D;
+    color: #2C2420;
     margin-bottom: 8px;
     line-height: 1.3;
   }
@@ -257,7 +262,7 @@
     flex-direction: column;
     gap: 4px;
     font-size: 13.5px;
-    color: #718096;
+    color: #7A6D60;
     margin-bottom: 10px;
   }
   .card-meta span {
@@ -267,7 +272,7 @@
   }
   .card-desc {
     font-size: 14px;
-    color: #4A5568;
+    color: #5A4E44;
     line-height: 1.5;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -281,17 +286,17 @@
     align-items: center;
   }
   .card-link {
-    color: #2B6CB0;
+    color: #E07856;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
   }
-  .card-link:hover { color: #F6AD55; }
+  .card-link:hover { color: #E07856; }
   .card-score {
     display: flex;
     align-items: center;
     gap: 4px;
-    color: #F6AD55;
+    color: #E07856;
     font-size: 13px;
     font-weight: 600;
   }
@@ -310,25 +315,25 @@
     padding: 10px 18px;
     border-radius: 12px;
     background: #fff;
-    border: 2px solid #E2E8F0;
+    border: 2px solid #E8DFD3;
     font-size: 14px;
     font-weight: 600;
-    color: #2D3748;
+    color: #2C2420;
     cursor: pointer;
     transition: all 0.2s;
     text-decoration: none;
   }
   .cat-chip:hover {
-    border-color: #F6AD55;
-    background: #FFF8ED;
+    border-color: #E07856;
+    background: #F5EDDC;
     transform: translateY(-2px);
   }
   .cat-chip .cat-icon {
     font-size: 20px;
   }
   .cat-chip .cat-count {
-    background: #EDF2F7;
-    color: #718096;
+    background: #F0E7D8;
+    color: #7A6D60;
     font-size: 12px;
     padding: 2px 8px;
     border-radius: 10px;
@@ -336,7 +341,7 @@
 
   /* === TELEGRAM CTA === */
   .tg-cta {
-    background: linear-gradient(135deg, #1A365D, #2B6CB0);
+    background: linear-gradient(135deg, #2C2420 0%, #8B4530 50%, #E07856 100%);
     border-radius: 20px;
     padding: 48px 32px;
     text-align: center;
@@ -366,8 +371,8 @@
     position: relative;
   }
   .tg-cta .btn-tg {
-    background: #F6AD55;
-    color: #1A365D;
+    background: #E07856;
+    color: #2C2420;
     border: none;
     padding: 14px 32px;
     border-radius: 12px;
@@ -395,11 +400,11 @@
   }
   .filter-select {
     padding: 8px 14px;
-    border: 2px solid #E2E8F0;
+    border: 2px solid #E8DFD3;
     border-radius: 8px;
     font-size: 14px;
     font-family: inherit;
-    color: #2D3748;
+    color: #2C2420;
     background: #fff;
     cursor: pointer;
   }
@@ -407,30 +412,30 @@
     flex: 1;
     min-width: 200px;
     padding: 8px 14px;
-    border: 2px solid #E2E8F0;
+    border: 2px solid #E8DFD3;
     border-radius: 8px;
     font-size: 14px;
     font-family: inherit;
-    color: #2D3748;
+    color: #2C2420;
   }
-  .filter-search::placeholder { color: #A0AEC0; }
+  .filter-search::placeholder { color: #A89585; }
   .filter-count {
     font-size: 14px;
-    color: #718096;
+    color: #7A6D60;
     font-weight: 500;
     margin-left: auto;
   }
 
   /* === FOOTER === */
   footer {
-    background: #1A365D;
+    background: #2C2420;
     color: rgba(255,255,255,0.7);
     padding: 32px 24px;
     text-align: center;
     font-size: 14px;
   }
   footer a {
-    color: #F6AD55;
+    color: #E07856;
     text-decoration: none;
   }
   footer .footer-links {
@@ -447,7 +452,7 @@
     padding: 24px;
   }
   .detail-back {
-    color: #2B6CB0;
+    color: #E07856;
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
@@ -482,34 +487,34 @@
     text-align: center;
   }
   .detail-info-card .icon { font-size: 24px; margin-bottom: 6px; }
-  .detail-info-card .label { font-size: 12px; color: #718096; }
-  .detail-info-card .value { font-size: 15px; font-weight: 700; color: #1A365D; }
+  .detail-info-card .label { font-size: 12px; color: #7A6D60; }
+  .detail-info-card .value { font-size: 15px; font-weight: 700; color: #2C2420; }
   .detail-desc {
     font-size: 16px;
     line-height: 1.7;
-    color: #2D3748;
+    color: #2C2420;
     margin: 24px 0;
   }
   .detail-tip {
-    background: #FFF8ED;
-    border-left: 4px solid #F6AD55;
+    background: #F5EDDC;
+    border-left: 4px solid #E07856;
     border-radius: 0 12px 12px 0;
     padding: 16px 20px;
     margin: 20px 0;
   }
   .detail-tip .tip-title {
     font-weight: 700;
-    color: #C05621;
+    color: #8B3A2A;
     margin-bottom: 4px;
   }
   .detail-map {
-    background: #E2E8F0;
+    background: #E8DFD3;
     height: 200px;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #718096;
+    color: #7A6D60;
     font-size: 14px;
     margin: 20px 0;
   }
@@ -533,8 +538,8 @@
     color: #fff;
   }
   .detail-share .share-copy {
-    background: #EDF2F7;
-    color: #2D3748;
+    background: #F0E7D8;
+    color: #2C2420;
   }
 
   /* Page separator */
@@ -542,15 +547,15 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 24px;
-    border-top: 3px dashed #E2E8F0;
+    border-top: 3px dashed #E8DFD3;
     text-align: center;
   }
   .page-separator h2 {
-    color: #A0AEC0;
+    color: #A89585;
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    background: #FFFAF0;
+    background: #FBF6EF;
     display: inline-block;
     padding: 0 16px;
     margin-top: -28px;
@@ -565,16 +570,19 @@
   /* --- HERO: photo + CSS parallax + overlay --- */
   .hero.hero-photo {
     position: relative;
-    min-height: 580px;
-    padding: 140px 24px 120px;
+    min-height: 620px;
+    padding: 150px 24px 130px;
     display: flex;
     align-items: center;
     justify-content: center;
     /* Замени URL на своё фото Costa Blanca (Unsplash / Pexels / собственное) */
     background:
-      linear-gradient(135deg, rgba(26,54,93,0.72) 0%, rgba(26,54,93,0.40) 45%, rgba(246,173,85,0.42) 100%),
-      url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80&auto=format&fit=crop') center/cover no-repeat fixed,
-      linear-gradient(135deg, #1A365D 0%, #2B6CB0 40%, #F6AD55 100%);
+      linear-gradient(135deg,
+        rgba(44,36,32,0.58) 0%,
+        rgba(44,36,32,0.22) 40%,
+        rgba(224,120,86,0.38) 100%),
+      url('https://images.unsplash.com/photo-1504512485720-7d83a16ee930?w=1920&q=85&auto=format&fit=crop') center/cover no-repeat fixed,
+      linear-gradient(135deg, #2C2420 0%, #8B3E28 45%, #E07856 100%);
     overflow: hidden;
   }
   .hero.hero-photo::before { display: none; } /* убираем svg-паттерн старой hero */
@@ -629,26 +637,77 @@
     backdrop-filter: blur(14px) saturate(1.08);
     -webkit-backdrop-filter: blur(14px) saturate(1.08);
     border: 1px solid rgba(255,255,255,0.55);
-    box-shadow: 0 4px 20px rgba(26,54,93,0.08), 0 1px 2px rgba(26,54,93,0.05);
+    box-shadow: 0 4px 20px rgba(44,36,32,0.08), 0 1px 2px rgba(44,36,32,0.05);
     transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
                 box-shadow 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
   }
   .card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 18px 44px rgba(26,54,93,0.18), 0 4px 10px rgba(26,54,93,0.06);
+    box-shadow: 0 18px 44px rgba(44,36,32,0.18), 0 4px 10px rgba(44,36,32,0.06);
   }
 
   /* --- Cursor tilt (desktop only) on weekend section --- */
   @media (hover: hover) and (pointer: fine) {
-    .tilt-group { perspective: 1200px; }
+    .tilt-group { perspective: 1100px; }
     .tilt-group .card {
       transform-style: preserve-3d;
       will-change: transform;
+      transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1),
+                  box-shadow 0.35s ease;
+    }
+    /* Отключаем базовый :hover translate — JS полностью управляет transform */
+    .tilt-group .card:hover {
+      transform: none;
+      box-shadow: 0 26px 55px rgba(44,36,32,0.22),
+                  0 8px 18px rgba(44,36,32,0.10);
+    }
+    /* Во время наведения transform реагирует мгновенно */
+    .tilt-group .card.is-tilting {
+      transition: transform 0.06s linear, box-shadow 0.35s ease;
     }
   }
 
   /* --- Lang toggle: clickable feedback --- */
   .lang-toggle button { transition: all 0.2s; }
+
+  /* --- Typography: Fraunces for headings, Inter for body --- */
+  h1, h2,
+  .section-title,
+  .card-title,
+  .tg-cta h2,
+  .hero.hero-photo h1,
+  .detail-info-card .value,
+  .nav-logo {
+    font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+    font-feature-settings: 'ss01', 'ss02';
+  }
+  .hero.hero-photo h1 {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .section-title {
+    font-weight: 700;
+  }
+  .card-title {
+    font-weight: 700;
+    letter-spacing: -0.005em;
+  }
+
+  /* --- Button contrast: cream text on terracotta for readability --- */
+  .btn-primary,
+  .tg-cta .btn-tg {
+    color: #FBF6EF;
+  }
+  .section-title .badge {
+    background: #D9A25F;   /* honey для badge: контраст с cocoa текстом */
+    color: #2C2420;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* --- Borderless softer nav on cocoa --- */
+  nav {
+    background: #2C2420;
+  }
 
   /* --- Mobile parallax fallback (fixed attachment breaks iOS) --- */
   @media (max-width: 768px) {
@@ -966,10 +1025,10 @@
 
   <span class="card-badge festival" style="position:static; display:inline-flex; margin-bottom:12px;">🎭 Фестиваль</span>
 
-  <h1 style="font-size:32px; font-weight:800; color:#1A365D; line-height:1.2; margin-bottom:8px;">
+  <h1 style="font-size:32px; font-weight:800; color:#2C2420; line-height:1.2; margin-bottom:8px;">
     Moros y Cristianos en Alcoy
   </h1>
-  <p style="font-size:15px; color:#718096;">Один из самых грандиозных праздников Испании</p>
+  <p style="font-size:15px; color:#7A6D60;">Один из самых грандиозных праздников Испании</p>
 
   <div class="detail-info-row">
     <div class="detail-info-card">
@@ -1006,8 +1065,8 @@
     🗺️ Google Maps — Alcoy, Alicante, Spain
   </div>
 
-  <p style="font-size:14px; color:#718096; margin: 12px 0;">
-    🔗 Источник: <a href="#" style="color:#2B6CB0;">costablancaup.com</a>
+  <p style="font-size:14px; color:#7A6D60; margin: 12px 0;">
+    🔗 Источник: <a href="#" style="color:#E07856;">costablancaup.com</a>
   </p>
 
   <div class="detail-share">
@@ -1075,24 +1134,36 @@
 (function () {
   const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   if (!canHover) return;
+
   const groups = document.querySelectorAll('.tilt-group');
   groups.forEach((group) => {
-    group.querySelectorAll('.card').forEach((card) => {
+    const cards = group.querySelectorAll('.card');
+    cards.forEach((card) => {
       let raf = null;
+
+      card.addEventListener('mouseenter', () => {
+        card.classList.add('is-tilting');
+      });
+
       card.addEventListener('mousemove', (ev) => {
         const r = card.getBoundingClientRect();
         const px = (ev.clientX - r.left) / r.width;
         const py = (ev.clientY - r.top) / r.height;
-        const rotY = (px - 0.5) * 8;   // max 4deg each side
-        const rotX = (0.5 - py) * 6;   // max 3deg each side
+        const rotY = (px - 0.5) * 14;  // max ~7deg each side
+        const rotX = (0.5 - py) * 10;  // max ~5deg each side
         if (raf) cancelAnimationFrame(raf);
         raf = requestAnimationFrame(() => {
           card.style.transform =
-            `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-6px)`;
+            'perspective(900px) ' +
+            'rotateX(' + rotX.toFixed(2) + 'deg) ' +
+            'rotateY(' + rotY.toFixed(2) + 'deg) ' +
+            'translateY(-10px) scale(1.012)';
         });
       });
+
       card.addEventListener('mouseleave', () => {
         if (raf) cancelAnimationFrame(raf);
+        card.classList.remove('is-tilting');
         card.style.transform = '';
       });
     });
