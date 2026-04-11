@@ -4,3 +4,8 @@ __pycache__/
 node_modules/
 .DS_Store
 Thumbs.db
+
+# Archived after publication (still on disk)
+content/photos/April/dunes1.jpg
+content/photos/April/dunes2.jpg
+content/photos/April/dunes3.jpg

@@ -1,0 +1,6 @@
+# Photos archived from git (still on disk locally)
+# Format: relative path from project root
+
+content/photos/April/dunes1.jpg
+content/photos/April/dunes2.jpg
+content/photos/April/dunes3.jpg
