@@ -556,11 +556,112 @@
     margin-top: -28px;
   }
 
+  /* ============================================ */
+  /* ============ v2 DESIGN UPGRADES ============= */
+  /* ============================================ */
+
+  html { scroll-behavior: smooth; }
+
+  /* --- HERO: photo + CSS parallax + overlay --- */
+  .hero.hero-photo {
+    position: relative;
+    min-height: 580px;
+    padding: 140px 24px 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Замени URL на своё фото Costa Blanca (Unsplash / Pexels / собственное) */
+    background:
+      linear-gradient(135deg, rgba(26,54,93,0.72) 0%, rgba(26,54,93,0.40) 45%, rgba(246,173,85,0.42) 100%),
+      url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80&auto=format&fit=crop') center/cover no-repeat fixed,
+      linear-gradient(135deg, #1A365D 0%, #2B6CB0 40%, #F6AD55 100%);
+    overflow: hidden;
+  }
+  .hero.hero-photo::before { display: none; } /* убираем svg-паттерн старой hero */
+  .hero-inner {
+    max-width: 820px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  .hero.hero-photo h1 {
+    font-size: clamp(34px, 6vw, 60px);
+    font-weight: 900;
+    letter-spacing: -0.025em;
+    line-height: 1.08;
+    text-shadow: 0 2px 24px rgba(0,0,0,0.35);
+    margin-bottom: 22px;
+  }
+  .hero.hero-photo p {
+    font-size: clamp(16px, 2.3vw, 21px);
+    line-height: 1.5;
+    text-shadow: 0 1px 10px rgba(0,0,0,0.35);
+    margin-bottom: 38px;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* --- Section spacing / typography polish --- */
+  .section { padding: 80px 24px; }
+  .section-title {
+    font-size: clamp(22px, 3vw, 30px);
+    letter-spacing: -0.015em;
+    margin-bottom: 32px;
+  }
+
+  /* --- Reveal on scroll --- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+                transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .cards-grid .reveal.card:nth-child(2) { transition-delay: 0.08s; }
+  .cards-grid .reveal.card:nth-child(3) { transition-delay: 0.16s; }
+  .cards-grid .reveal.card:nth-child(4) { transition-delay: 0.24s; }
+
+  /* --- Glassmorphism cards (override) --- */
+  .card {
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: blur(14px) saturate(1.08);
+    -webkit-backdrop-filter: blur(14px) saturate(1.08);
+    border: 1px solid rgba(255,255,255,0.55);
+    box-shadow: 0 4px 20px rgba(26,54,93,0.08), 0 1px 2px rgba(26,54,93,0.05);
+    transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+                box-shadow 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 44px rgba(26,54,93,0.18), 0 4px 10px rgba(26,54,93,0.06);
+  }
+
+  /* --- Cursor tilt (desktop only) on weekend section --- */
+  @media (hover: hover) and (pointer: fine) {
+    .tilt-group { perspective: 1200px; }
+    .tilt-group .card {
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+  }
+
+  /* --- Lang toggle: clickable feedback --- */
+  .lang-toggle button { transition: all 0.2s; }
+
+  /* --- Mobile parallax fallback (fixed attachment breaks iOS) --- */
   @media (max-width: 768px) {
     .nav-links a:not(.lang-toggle) { display: none; }
     .cards-grid { grid-template-columns: 1fr; }
     .filters { flex-direction: column; }
     .detail-info-row { flex-direction: column; }
+    .hero.hero-photo {
+      background-attachment: scroll, scroll, scroll;
+      min-height: 480px;
+      padding: 100px 20px 80px;
+    }
+    .section { padding: 56px 20px; }
   }
 </style>
 </head>
@@ -569,92 +670,94 @@
 <!-- ===== NAVIGATION ===== -->
 <nav>
   <a class="nav-logo" href="#">
-    ☀️ Афиша <span>Costa Blanca</span>
+    ☀️ <span data-i18n="navBrand">Афиша</span> <span>Costa Blanca</span>
   </a>
   <div class="nav-links">
-    <a href="#">Главная</a>
-    <a href="#">Все события</a>
-    <a href="#">Категории</a>
+    <a href="#" data-i18n="navHome">Главная</a>
+    <a href="#" data-i18n="navEvents">Все события</a>
+    <a href="#" data-i18n="navCategories">Категории</a>
     <div class="lang-toggle">
-      <button class="active">RU</button>
-      <button>EN</button>
+      <button class="active" data-lang="ru">RU</button>
+      <button data-lang="en">EN</button>
     </div>
   </div>
 </nav>
 
 <!-- ===== HERO ===== -->
-<div class="hero">
-  <h1>Откройте для себя лучшие<br>события Costa Blanca</h1>
-  <p>Фестивали, природа, гастрономия — всё интересное в радиусе 2 часов от Аликанте</p>
-  <div class="hero-actions">
-    <a class="btn-primary" href="#">🔍 Найти события</a>
-    <a class="btn-secondary" href="#">📱 Telegram-канал</a>
+<div class="hero hero-photo">
+  <div class="hero-inner">
+    <h1 data-i18n-html="heroTitle">Откройте для себя лучшие<br>события Costa Blanca</h1>
+    <p data-i18n="heroSubtitle">Фестивали, природа, гастрономия — всё интересное в радиусе 2 часов от Аликанте</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#" data-i18n="heroBtnPrimary">🔍 Найти события</a>
+      <a class="btn-secondary" href="#" data-i18n="heroBtnSecondary">📱 Telegram-канал</a>
+    </div>
   </div>
 </div>
 
 <!-- ===== THIS WEEKEND ===== -->
-<div class="section">
+<div class="section reveal">
   <div class="section-title">
-    🌟 На этих выходных
-    <span class="badge">18–19 апреля</span>
+    <span data-i18n="weekendTitle">🌟 На этих выходных</span>
+    <span class="badge" data-i18n="weekendBadge">18–19 апреля</span>
   </div>
-  <div class="cards-grid">
+  <div class="cards-grid tilt-group">
 
-    <div class="card">
+    <div class="card reveal">
       <div class="card-image festival">
         🎭
-        <span class="card-badge festival">🎭 Фестиваль</span>
-        <span class="card-price free">Бесплатно</span>
+        <span class="card-badge festival" data-i18n="catFestival">🎭 Фестиваль</span>
+        <span class="card-price free" data-i18n="priceFree">Бесплатно</span>
       </div>
       <div class="card-body">
-        <div class="card-title">Moros y Cristianos, Алькой</div>
+        <div class="card-title" data-i18n="card1Title">Moros y Cristianos, Алькой</div>
         <div class="card-meta">
-          <span>📍 Алькой · 55 мин от Аликанте</span>
-          <span>📅 23–25 апреля 2026</span>
+          <span data-i18n="card1Loc">📍 Алькой · 55 мин от Аликанте</span>
+          <span data-i18n="card1Date">📅 23–25 апреля 2026</span>
         </div>
-        <div class="card-desc">Грандиозный костюмированный праздник — тысячи участников, средневековые марши и фейерверки</div>
+        <div class="card-desc" data-i18n="card1Desc">Грандиозный костюмированный праздник — тысячи участников, средневековые марши и фейерверки</div>
         <div class="card-footer">
-          <a class="card-link" href="#">Подробнее →</a>
+          <a class="card-link" href="#" data-i18n="cardMore">Подробнее →</a>
           <div class="card-score">⭐ 9/10</div>
         </div>
       </div>
     </div>
 
-    <div class="card">
+    <div class="card reveal">
       <div class="card-image gastro">
         🍷
-        <span class="card-badge gastro">🍷 Гастрономия</span>
-        <span class="card-price">от €10</span>
+        <span class="card-badge gastro" data-i18n="catGastro">🍷 Гастрономия</span>
+        <span class="card-price" data-i18n="card2Price">от €10</span>
       </div>
       <div class="card-body">
-        <div class="card-title">Винный фестиваль D.O. Alicante</div>
+        <div class="card-title" data-i18n="card2Title">Винный фестиваль D.O. Alicante</div>
         <div class="card-meta">
-          <span>📍 Puerto de Alicante · центр</span>
-          <span>📅 12 мая 2026 · 18:00–23:00</span>
+          <span data-i18n="card2Loc">📍 Puerto de Alicante · центр</span>
+          <span data-i18n="card2Date">📅 12 мая 2026 · 18:00–23:00</span>
         </div>
-        <div class="card-desc">40 виноделен региона в одном месте — пробуйте Muscat, Monastrell и Giró прямо у моря</div>
+        <div class="card-desc" data-i18n="card2Desc">40 виноделен региона в одном месте — пробуйте Muscat, Monastrell и Giró прямо у моря</div>
         <div class="card-footer">
-          <a class="card-link" href="#">Подробнее →</a>
+          <a class="card-link" href="#" data-i18n="cardMore">Подробнее →</a>
           <div class="card-score">⭐ 8/10</div>
         </div>
       </div>
     </div>
 
-    <div class="card">
+    <div class="card reveal">
       <div class="card-image nature">
         🌸
-        <span class="card-badge nature">🌸 Природа</span>
-        <span class="card-price free">Бесплатно</span>
+        <span class="card-badge nature" data-i18n="catNature">🌸 Природа</span>
+        <span class="card-price free" data-i18n="priceFree">Бесплатно</span>
       </div>
       <div class="card-body">
-        <div class="card-title">Цветение миндаля, долина Хавеи</div>
+        <div class="card-title" data-i18n="card3Title">Цветение миндаля, долина Хавеи</div>
         <div class="card-meta">
-          <span>📍 Хавеа · 1 ч от Аликанте</span>
-          <span>📅 1–28 февраля 2026</span>
+          <span data-i18n="card3Loc">📍 Хавеа · 1 ч от Аликанте</span>
+          <span data-i18n="card3Date">📅 1–28 февраля 2026</span>
         </div>
-        <div class="card-desc">Розовое облако цветущего миндаля на фоне гор — идеальная прогулка с потрясающими фото</div>
+        <div class="card-desc" data-i18n="card3Desc">Розовое облако цветущего миндаля на фоне гор — идеальная прогулка с потрясающими фото</div>
         <div class="card-footer">
-          <a class="card-link" href="#">Подробнее →</a>
+          <a class="card-link" href="#" data-i18n="cardMore">Подробнее →</a>
           <div class="card-score">⭐ 9/10</div>
         </div>
       </div>
@@ -664,85 +767,85 @@
 </div>
 
 <!-- ===== COMING SOON ===== -->
-<div class="section">
-  <div class="section-title">📅 Скоро</div>
+<div class="section reveal">
+  <div class="section-title" data-i18n="comingTitle">📅 Скоро</div>
   <div class="cards-grid">
 
-    <div class="card">
+    <div class="card reveal">
       <div class="card-image music">
         🎵
-        <span class="card-badge music">🎵 Музыка</span>
-        <span class="card-price">от €15</span>
+        <span class="card-badge music" data-i18n="catMusic">🎵 Музыка</span>
+        <span class="card-price" data-i18n="card4Price">от €15</span>
       </div>
       <div class="card-body">
-        <div class="card-title">Jazz Festival Alicante</div>
+        <div class="card-title" data-i18n="card4Title">Jazz Festival Alicante</div>
         <div class="card-meta">
-          <span>📍 Аликанте · центр</span>
-          <span>📅 18 апреля 2026 · 18:00</span>
+          <span data-i18n="card4Loc">📍 Аликанте · центр</span>
+          <span data-i18n="card4Date">📅 18 апреля 2026 · 18:00</span>
         </div>
-        <div class="card-desc">Международные джазовые музыканты на открытых площадках старого города</div>
+        <div class="card-desc" data-i18n="card4Desc">Международные джазовые музыканты на открытых площадках старого города</div>
         <div class="card-footer">
-          <a class="card-link" href="#">Подробнее →</a>
+          <a class="card-link" href="#" data-i18n="cardMore">Подробнее →</a>
           <div class="card-score">⭐ 7/10</div>
         </div>
       </div>
     </div>
 
-    <div class="card">
+    <div class="card reveal">
       <div class="card-image market">
         🛍️
-        <span class="card-badge market">🛍️ Рынки</span>
-        <span class="card-price free">Бесплатно</span>
+        <span class="card-badge market" data-i18n="catMarket">🛍️ Рынки</span>
+        <span class="card-price free" data-i18n="priceFree">Бесплатно</span>
       </div>
       <div class="card-body">
-        <div class="card-title">Блошиный рынок, Бенидорм</div>
+        <div class="card-title" data-i18n="card5Title">Блошиный рынок, Бенидорм</div>
         <div class="card-meta">
-          <span>📍 Бенидорм · 40 мин</span>
-          <span>📅 Каждое воскресенье · 9:00–14:00</span>
+          <span data-i18n="card5Loc">📍 Бенидорм · 40 мин</span>
+          <span data-i18n="card5Date">📅 Каждое воскресенье · 9:00–14:00</span>
         </div>
-        <div class="card-desc">Антиквариат, винтаж, рукоделие и местные деликатесы на набережной</div>
+        <div class="card-desc" data-i18n="card5Desc">Антиквариат, винтаж, рукоделие и местные деликатесы на набережной</div>
         <div class="card-footer">
-          <a class="card-link" href="#">Подробнее →</a>
+          <a class="card-link" href="#" data-i18n="cardMore">Подробнее →</a>
           <div class="card-score">⭐ 6/10</div>
         </div>
       </div>
     </div>
 
-    <div class="card">
+    <div class="card reveal">
       <div class="card-image kids">
         👨‍👩‍👧
-        <span class="card-badge kids">👨‍👩‍👧 Для детей</span>
-        <span class="card-price free">Бесплатно</span>
+        <span class="card-badge kids" data-i18n="catKids">👨‍👩‍👧 Для детей</span>
+        <span class="card-price free" data-i18n="priceFree">Бесплатно</span>
       </div>
       <div class="card-body">
-        <div class="card-title">Детский фестиваль, Торревьеха</div>
+        <div class="card-title" data-i18n="card6Title">Детский фестиваль, Торревьеха</div>
         <div class="card-meta">
-          <span>📍 Торревьеха · 45 мин</span>
-          <span>📅 18 апреля 2026 · 11:00–18:00</span>
+          <span data-i18n="card6Loc">📍 Торревьеха · 45 мин</span>
+          <span data-i18n="card6Date">📅 18 апреля 2026 · 11:00–18:00</span>
         </div>
-        <div class="card-desc">Аниматоры, батуты, мастер-классы, кукольный театр — весь день развлечений для малышей</div>
+        <div class="card-desc" data-i18n="card6Desc">Аниматоры, батуты, мастер-классы, кукольный театр — весь день развлечений для малышей</div>
         <div class="card-footer">
-          <a class="card-link" href="#">Подробнее →</a>
+          <a class="card-link" href="#" data-i18n="cardMore">Подробнее →</a>
           <div class="card-score">⭐ 8/10</div>
         </div>
       </div>
     </div>
 
-    <div class="card">
+    <div class="card reveal">
       <div class="card-image fireworks">
         🎆
-        <span class="card-badge fireworks">🎆 Фейерверки</span>
-        <span class="card-price free">Бесплатно</span>
+        <span class="card-badge fireworks" data-i18n="catFireworks">🎆 Фейерверки</span>
+        <span class="card-price free" data-i18n="priceFree">Бесплатно</span>
       </div>
       <div class="card-body">
-        <div class="card-title">Hogueras de San Juan, Аликанте</div>
+        <div class="card-title" data-i18n="card7Title">Hogueras de San Juan, Аликанте</div>
         <div class="card-meta">
-          <span>📍 Аликанте · центр</span>
-          <span>📅 20–24 июня 2026</span>
+          <span data-i18n="card7Loc">📍 Аликанте · центр</span>
+          <span data-i18n="card7Date">📅 20–24 июня 2026</span>
         </div>
-        <div class="card-desc">Главный праздник Аликанте — огромные скульптуры, парады, фейерверки и ночь костров</div>
+        <div class="card-desc" data-i18n="card7Desc">Главный праздник Аликанте — огромные скульптуры, парады, фейерверки и ночь костров</div>
         <div class="card-footer">
-          <a class="card-link" href="#">Подробнее →</a>
+          <a class="card-link" href="#" data-i18n="cardMore">Подробнее →</a>
           <div class="card-score">⭐ 10/10</div>
         </div>
       </div>
@@ -752,39 +855,39 @@
 </div>
 
 <!-- ===== CATEGORIES ===== -->
-<div class="section">
-  <div class="section-title">🎯 Категории</div>
+<div class="section reveal">
+  <div class="section-title" data-i18n="categoriesTitle">🎯 Категории</div>
   <div class="categories">
-    <a class="cat-chip" href="#"><span class="cat-icon">🎭</span> Фестивали <span class="cat-count">12</span></a>
-    <a class="cat-chip" href="#"><span class="cat-icon">🌸</span> Природа <span class="cat-count">8</span></a>
-    <a class="cat-chip" href="#"><span class="cat-icon">🍷</span> Гастрономия <span class="cat-count">15</span></a>
-    <a class="cat-chip" href="#"><span class="cat-icon">👨‍👩‍👧‍👦</span> Для детей <span class="cat-count">6</span></a>
-    <a class="cat-chip" href="#"><span class="cat-icon">🎵</span> Музыка <span class="cat-count">9</span></a>
-    <a class="cat-chip" href="#"><span class="cat-icon">🛍️</span> Рынки <span class="cat-count">11</span></a>
-    <a class="cat-chip" href="#"><span class="cat-icon">⚽</span> Спорт <span class="cat-count">4</span></a>
-    <a class="cat-chip" href="#"><span class="cat-icon">🏛️</span> Культура <span class="cat-count">7</span></a>
-    <a class="cat-chip" href="#"><span class="cat-icon">🎆</span> Фейерверки <span class="cat-count">3</span></a>
+    <a class="cat-chip" href="#"><span class="cat-icon">🎭</span> <span data-i18n="chipFestivals">Фестивали</span> <span class="cat-count">12</span></a>
+    <a class="cat-chip" href="#"><span class="cat-icon">🌸</span> <span data-i18n="chipNature">Природа</span> <span class="cat-count">8</span></a>
+    <a class="cat-chip" href="#"><span class="cat-icon">🍷</span> <span data-i18n="chipGastro">Гастрономия</span> <span class="cat-count">15</span></a>
+    <a class="cat-chip" href="#"><span class="cat-icon">👨‍👩‍👧‍👦</span> <span data-i18n="chipKids">Для детей</span> <span class="cat-count">6</span></a>
+    <a class="cat-chip" href="#"><span class="cat-icon">🎵</span> <span data-i18n="chipMusic">Музыка</span> <span class="cat-count">9</span></a>
+    <a class="cat-chip" href="#"><span class="cat-icon">🛍️</span> <span data-i18n="chipMarkets">Рынки</span> <span class="cat-count">11</span></a>
+    <a class="cat-chip" href="#"><span class="cat-icon">⚽</span> <span data-i18n="chipSport">Спорт</span> <span class="cat-count">4</span></a>
+    <a class="cat-chip" href="#"><span class="cat-icon">🏛️</span> <span data-i18n="chipCulture">Культура</span> <span class="cat-count">7</span></a>
+    <a class="cat-chip" href="#"><span class="cat-icon">🎆</span> <span data-i18n="chipFireworks">Фейерверки</span> <span class="cat-count">3</span></a>
   </div>
 </div>
 
 <!-- ===== TELEGRAM CTA ===== -->
-<div class="section">
+<div class="section reveal">
   <div class="tg-cta">
-    <h2>Не пропустите интересное!</h2>
-    <p>Подпишитесь на наш Telegram-канал — мы отправляем<br>лучшие события каждую пятницу</p>
-    <a class="btn-tg" href="#">📱 Подписаться на Telegram</a>
+    <h2 data-i18n="ctaTitle">Не пропустите интересное!</h2>
+    <p data-i18n-html="ctaText">Подпишитесь на наш Telegram-канал — мы отправляем<br>лучшие события каждую пятницу</p>
+    <a class="btn-tg" href="#" data-i18n="ctaBtn">📱 Подписаться на Telegram</a>
   </div>
 </div>
 
 <!-- ===== FOOTER ===== -->
 <footer>
   <div class="footer-links">
-    <a href="#">Главная</a>
-    <a href="#">Все события</a>
-    <a href="#">Telegram</a>
-    <a href="#">О проекте</a>
+    <a href="#" data-i18n="navHome">Главная</a>
+    <a href="#" data-i18n="navEvents">Все события</a>
+    <a href="#" data-i18n="footerTelegram">Telegram</a>
+    <a href="#" data-i18n="footerAbout">О проекте</a>
   </div>
-  <p>Афиша Costa Blanca — лучшие события региона на русском языке</p>
+  <p data-i18n="footerTagline">Афиша Costa Blanca — лучшие события региона на русском языке</p>
   <p style="margin-top: 8px; opacity: 0.6;">© 2026</p>
 </footer>
 
@@ -944,6 +1047,251 @@
   </div>
   <p>Афиша Costa Blanca — лучшие события региона на русском языке</p>
 </footer>
+
+<script>
+/* ============================================ */
+/* ========= v2 INTERACTIONS (vanilla) ======== */
+/* ============================================ */
+
+/* --- 1. Reveal on scroll (IntersectionObserver) --- */
+(function () {
+  const items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(el => el.classList.add('visible'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  items.forEach((el) => io.observe(el));
+})();
+
+/* --- 2. Cursor tilt (desktop only) on .tilt-group > .card --- */
+(function () {
+  const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (!canHover) return;
+  const groups = document.querySelectorAll('.tilt-group');
+  groups.forEach((group) => {
+    group.querySelectorAll('.card').forEach((card) => {
+      let raf = null;
+      card.addEventListener('mousemove', (ev) => {
+        const r = card.getBoundingClientRect();
+        const px = (ev.clientX - r.left) / r.width;
+        const py = (ev.clientY - r.top) / r.height;
+        const rotY = (px - 0.5) * 8;   // max 4deg each side
+        const rotX = (0.5 - py) * 6;   // max 3deg each side
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+          card.style.transform =
+            `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-6px)`;
+        });
+      });
+      card.addEventListener('mouseleave', () => {
+        if (raf) cancelAnimationFrame(raf);
+        card.style.transform = '';
+      });
+    });
+  });
+})();
+
+/* --- 3. RU/EN i18n with localStorage --- */
+(function () {
+  const translations = {
+    ru: {
+      navBrand: 'Афиша',
+      navHome: 'Главная',
+      navEvents: 'Все события',
+      navCategories: 'Категории',
+      heroTitle: 'Откройте для себя лучшие<br>события Costa Blanca',
+      heroSubtitle: 'Фестивали, природа, гастрономия — всё интересное в радиусе 2 часов от Аликанте',
+      heroBtnPrimary: '🔍 Найти события',
+      heroBtnSecondary: '📱 Telegram-канал',
+
+      weekendTitle: '🌟 На этих выходных',
+      weekendBadge: '18–19 апреля',
+      comingTitle: '📅 Скоро',
+      categoriesTitle: '🎯 Категории',
+
+      cardMore: 'Подробнее →',
+      priceFree: 'Бесплатно',
+
+      catFestival: '🎭 Фестиваль',
+      catGastro: '🍷 Гастрономия',
+      catNature: '🌸 Природа',
+      catMusic: '🎵 Музыка',
+      catMarket: '🛍️ Рынки',
+      catKids: '👨‍👩‍👧 Для детей',
+      catFireworks: '🎆 Фейерверки',
+
+      card1Title: 'Moros y Cristianos, Алькой',
+      card1Loc: '📍 Алькой · 55 мин от Аликанте',
+      card1Date: '📅 23–25 апреля 2026',
+      card1Desc: 'Грандиозный костюмированный праздник — тысячи участников, средневековые марши и фейерверки',
+
+      card2Title: 'Винный фестиваль D.O. Alicante',
+      card2Loc: '📍 Puerto de Alicante · центр',
+      card2Date: '📅 12 мая 2026 · 18:00–23:00',
+      card2Desc: '40 виноделен региона в одном месте — пробуйте Muscat, Monastrell и Giró прямо у моря',
+      card2Price: 'от €10',
+
+      card3Title: 'Цветение миндаля, долина Хавеи',
+      card3Loc: '📍 Хавеа · 1 ч от Аликанте',
+      card3Date: '📅 1–28 февраля 2026',
+      card3Desc: 'Розовое облако цветущего миндаля на фоне гор — идеальная прогулка с потрясающими фото',
+
+      card4Title: 'Jazz Festival Alicante',
+      card4Loc: '📍 Аликанте · центр',
+      card4Date: '📅 18 апреля 2026 · 18:00',
+      card4Desc: 'Международные джазовые музыканты на открытых площадках старого города',
+      card4Price: 'от €15',
+
+      card5Title: 'Блошиный рынок, Бенидорм',
+      card5Loc: '📍 Бенидорм · 40 мин',
+      card5Date: '📅 Каждое воскресенье · 9:00–14:00',
+      card5Desc: 'Антиквариат, винтаж, рукоделие и местные деликатесы на набережной',
+
+      card6Title: 'Детский фестиваль, Торревьеха',
+      card6Loc: '📍 Торревьеха · 45 мин',
+      card6Date: '📅 18 апреля 2026 · 11:00–18:00',
+      card6Desc: 'Аниматоры, батуты, мастер-классы, кукольный театр — весь день развлечений для малышей',
+
+      card7Title: 'Hogueras de San Juan, Аликанте',
+      card7Loc: '📍 Аликанте · центр',
+      card7Date: '📅 20–24 июня 2026',
+      card7Desc: 'Главный праздник Аликанте — огромные скульптуры, парады, фейерверки и ночь костров',
+
+      chipFestivals: 'Фестивали',
+      chipNature: 'Природа',
+      chipGastro: 'Гастрономия',
+      chipKids: 'Для детей',
+      chipMusic: 'Музыка',
+      chipMarkets: 'Рынки',
+      chipSport: 'Спорт',
+      chipCulture: 'Культура',
+      chipFireworks: 'Фейерверки',
+
+      ctaTitle: 'Не пропустите интересное!',
+      ctaText: 'Подпишитесь на наш Telegram-канал — мы отправляем<br>лучшие события каждую пятницу',
+      ctaBtn: '📱 Подписаться на Telegram',
+
+      footerTelegram: 'Telegram',
+      footerAbout: 'О проекте',
+      footerTagline: 'Афиша Costa Blanca — лучшие события региона на русском языке'
+    },
+    en: {
+      navBrand: 'Guide',
+      navHome: 'Home',
+      navEvents: 'All Events',
+      navCategories: 'Categories',
+      heroTitle: 'Discover the best<br>events on the Costa Blanca',
+      heroSubtitle: 'Festivals, nature, gastronomy — everything worth seeing within 2 hours of Alicante',
+      heroBtnPrimary: '🔍 Find events',
+      heroBtnSecondary: '📱 Telegram channel',
+
+      weekendTitle: '🌟 This weekend',
+      weekendBadge: 'April 18–19',
+      comingTitle: '📅 Coming soon',
+      categoriesTitle: '🎯 Categories',
+
+      cardMore: 'Details →',
+      priceFree: 'Free',
+
+      catFestival: '🎭 Festival',
+      catGastro: '🍷 Gastronomy',
+      catNature: '🌸 Nature',
+      catMusic: '🎵 Music',
+      catMarket: '🛍️ Markets',
+      catKids: '👨‍👩‍👧 Kids',
+      catFireworks: '🎆 Fireworks',
+
+      card1Title: 'Moros y Cristianos, Alcoy',
+      card1Loc: '📍 Alcoy · 55 min from Alicante',
+      card1Date: '📅 April 23–25, 2026',
+      card1Desc: 'A huge costumed fiesta — thousands of participants, medieval marches and fireworks',
+
+      card2Title: 'D.O. Alicante Wine Festival',
+      card2Loc: '📍 Puerto de Alicante · center',
+      card2Date: '📅 May 12, 2026 · 18:00–23:00',
+      card2Desc: '40 regional wineries in one place — taste Muscat, Monastrell and Giró right by the sea',
+      card2Price: 'from €10',
+
+      card3Title: 'Almond blossom, Jávea valley',
+      card3Loc: '📍 Jávea · 1 h from Alicante',
+      card3Date: '📅 February 1–28, 2026',
+      card3Desc: 'A pink cloud of almond blossom against the mountains — a perfect walk with stunning photos',
+
+      card4Title: 'Jazz Festival Alicante',
+      card4Loc: '📍 Alicante · city center',
+      card4Date: '📅 April 18, 2026 · 18:00',
+      card4Desc: 'International jazz musicians on open-air stages in the old town',
+      card4Price: 'from €15',
+
+      card5Title: 'Flea market, Benidorm',
+      card5Loc: '📍 Benidorm · 40 min',
+      card5Date: '📅 Every Sunday · 9:00–14:00',
+      card5Desc: 'Antiques, vintage, crafts and local delicacies on the seafront promenade',
+
+      card6Title: 'Kids festival, Torrevieja',
+      card6Loc: '📍 Torrevieja · 45 min',
+      card6Date: '📅 April 18, 2026 · 11:00–18:00',
+      card6Desc: 'Animators, bouncy castles, workshops, puppet theatre — a full day for little ones',
+
+      card7Title: 'Hogueras de San Juan, Alicante',
+      card7Loc: '📍 Alicante · city center',
+      card7Date: '📅 June 20–24, 2026',
+      card7Desc: 'Alicante\u2019s biggest fiesta — huge sculptures, parades, fireworks and the Night of Bonfires',
+
+      chipFestivals: 'Festivals',
+      chipNature: 'Nature',
+      chipGastro: 'Gastronomy',
+      chipKids: 'Kids',
+      chipMusic: 'Music',
+      chipMarkets: 'Markets',
+      chipSport: 'Sport',
+      chipCulture: 'Culture',
+      chipFireworks: 'Fireworks',
+
+      ctaTitle: 'Don\u2019t miss out!',
+      ctaText: 'Subscribe to our Telegram channel — we send<br>the best events every Friday',
+      ctaBtn: '📱 Subscribe on Telegram',
+
+      footerTelegram: 'Telegram',
+      footerAbout: 'About',
+      footerTagline: 'Costa Blanca Guide — the best events of the region, curated'
+    }
+  };
+
+  function applyLang(lang) {
+    const dict = translations[lang] || translations.ru;
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] != null) el.textContent = dict[key];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+      const key = el.getAttribute('data-i18n-html');
+      if (dict[key] != null) el.innerHTML = dict[key];
+    });
+    document.querySelectorAll('.lang-toggle button').forEach((btn) => {
+      btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+    try { localStorage.setItem('cbLang', lang); } catch (_) {}
+  }
+
+  let saved = 'ru';
+  try { saved = localStorage.getItem('cbLang') || 'ru'; } catch (_) {}
+  applyLang(saved);
+
+  document.querySelectorAll('.lang-toggle button').forEach((btn) => {
+    btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang')));
+  });
+})();
+</script>
 
 </body>
 </html>

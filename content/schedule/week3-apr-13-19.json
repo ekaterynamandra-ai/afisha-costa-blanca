@@ -1,87 +1,157 @@
 {
   "week": "2026-04-13 to 2026-04-19",
   "approved": false,
-  "_notes": "Неделя Пн-Вс. Главные события: San Vicente Ferrer выходной 13, Santa Faz 16, Moros y Cristianos San Vicente del Raspeig 7-19. На согласование!",
+  "_notes": "v2: 2-3 поста в день, рынки в дайджесте, романтическая рубрика, культурные посты, учёт праздников. На согласование!",
   "posts": [
     {
-      "id": 18,
+      "id": "w3-mon-1",
       "date": "2026-04-13",
-      "time": "10:00",
-      "title": "📋 Неделя 13-19 апреля: что интересного",
+      "time": "09:00",
+      "title": "📋 Дайджест недели 13-19 апреля",
       "type": "weekly_digest",
       "status": "approved",
       "photo": "https://images.pexels.com/photos/29837765/pexels-photo-29837765.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750",
-      "text": "📋 <b>НЕДЕЛЯ 13-19 АПРЕЛЯ: что интересного</b>\n\n🔴 <b>Сегодня Пн 13:</b> San Vicente Ferrer — выходной в Торревьехе, Эльче, Дении и других городах\n\n🎭 <b>Вс 12 уже было — продолжается:</b> Moros y Cristianos в San Vicente del Raspeig (до 19 апреля!) — рядом с Аликанте\n\n🕊️ <b>Чт 16:</b> Santa Faz — крупнейшее паломничество провинции (выходной в Аликанте). 300 000 человек!\n\n🎵 <b>Сб 18:</b> Опера «Турандот», Teatro Circo Atanasio Die (Орихуэла) + Certamen Juvenil de Habaneras (Торревьеха)\n\n🎵 <b>Вс 19:</b> Опера «Турандот», Teatro Municipal de Torrevieja\n\n🛍️ <b>Каждый день:</b>\n• Ср — рынок Гуардамар\n• Пт — мега-рынок Торревьехи (500+ прилавков)\n• Вс — El Campico Гуардамар (500+)\n\n🦩 <b>Весь месяц:</b> пик сезона фламинго в Салинас\n\n📱 Подпишись <b>@afishaCB</b> — подборки каждую неделю!"
+      "text": "📋 <b>НЕДЕЛЯ 13-19 АПРЕЛЯ: что интересного</b>\n\n<b>🔴 СЕГОДНЯ — выходной!</b>\nSan Vicente Ferrer в Торревьехе, Эльче, Дении. Магазины и банки закрыты, рестораны и рынки работают. Идеальный день для природы.\n\n<b>🎭 Главное событие — Moros y Cristianos в San Vicente del Raspeig</b> (продолжается до 19!)\n• Чт 9 апр — Спуск San Vicente Ferrer (10:00)\n• Вс 12 апр — Большой парад Мавров (18:00)\n• 40 мин от Гуардамара · Бесплатно\n\n<b>🕊️ Чт 16 — Santa Faz</b>\nКрупнейшее паломничество провинции, 300 000 человек. Выходной в Аликанте.\n\n<b>🎵 Сб 18 + Вс 19 — Опера «Турандот»</b>\n• Сб — Орихуэла (Teatro Circo Atanasio Die)\n• Вс — Торревьеха (Teatro Municipal)\n\n<b>🛍 Рынки этой недели:</b>\n• <b>Главный — Пт</b> мега-рынок Торревьехи (500+ прилавков)\n• <b>Свежие продукты — Вс</b> El Campico Гуардамар\n• <b>Антикварный — Вс</b> Polop (500+ прилавков!) — для коллекционеров\n\n<b>🍓 Сейчас в сезоне:</b> nísperos (мушмула), артишоки, клубника, спаржа\n\n<b>🦩 Весь месяц</b> — пик фламинго в Салинас Санта-Полы\n\n📱 <b>@afishaCB</b> — каждую неделю подборки!"
     },
     {
-      "id": 19,
-      "date": "2026-04-14",
-      "time": "10:00",
-      "title": "🎓 Что такое Semana Santa и почему это важно",
+      "id": "w3-mon-2",
+      "date": "2026-04-13",
+      "time": "13:00",
+      "title": "🎓 Что такое Semana Santa — для иммигрантов",
       "type": "cultural_context",
       "status": "approved",
       "photo": "https://images.pexels.com/photos/13598504/pexels-photo-13598504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750",
-      "text": "🎓 <b>SEMANA SANTA: что это и почему важно — для иммигрантов</b>\n\nМы только что отметили её — давайте разберёмся, что это такое на самом деле.\n\n<b>🕯 Что это</b>\nСтрастная неделя — главный религиозный праздник Испании. Семь дней процессий перед Пасхой. Идёт во всех городах, но в каждом по-своему.\n\n<b>👤 Кто эти люди в остроконечных капюшонах?</b>\nЭто <b>nazarenos</b> — кающиеся. Капюшоны (capirotes) скрывают лицо: чтобы покаяние было анонимным. Традиции — со средневековья. Многие идут босиком или с цепями на ногах. Это НЕ страшно — это символ смирения.\n\n<b>⚓ Что они несут?</b>\nОгромные платформы — <b>pasos</b>. Весят 1+ тонну! Под платформой прячутся 24-48 человек — <b>costaleros</b>. Снаружи кажется, что paso идёт сам.\n\n<b>🎭 Что на платформах</b>\nСцены последних дней Иисуса: вход в Иерусалим, арест, путь на Голгофу, распятие, Воскресение. Скульптуры XVII-XVIII веков, шедевры барокко.\n\n<b>💡 Зачем это знать</b>\nКогда в следующем году увидишь процессию — поймёшь, что происходит. Это не \"мрачное шествие\", а часть культуры, которой 500+ лет.\n\n<b>🏆 Где смотреть лучше всего на Costa Blanca:</b>\n• <b>Орихуэла</b> — единственная с титулом International Tourist Interest\n• <b>Крейвиллент</b> — National Tourist Interest, скульптуры Бенльюре\n• <b>Аликанте</b> — 28 процессий, район Санта-Крус\n\n📱 Сохрани на следующий год!\n\n#SemanaSanta #культура #традиции #CostaBlanca"
+      "text": "🎓 <b>SEMANA SANTA: что это такое — кратко для иммигрантов</b>\n\nМы только что её отметили. Давайте разберёмся, что вы видели.\n\n<b>👤 Люди в остроконечных капюшонах</b>\nЭто <b>nazarenos</b> — кающиеся. Капюшоны (capirotes) скрывают лицо: чтобы покаяние было анонимным. Традиция — со средневековья. Это НЕ страшно, это символ смирения. Многие идут босиком.\n\n<b>⚓ Огромные платформы</b>\n<b>Pasos</b> — платформы со скульптурами. Весят 1+ тонну! Под платформой прячутся 24-48 человек — <b>costaleros</b>. Снаружи кажется, что paso идёт сам. Это считается священным трудом.\n\n<b>🎭 Что на платформах</b>\nСцены последних дней Иисуса. Скульптуры XVII-XVIII веков — настоящие шедевры барокко.\n\n<b>🏆 Где смотреть лучше всего:</b>\n• Орихуэла — единственная с титулом International Tourist Interest\n• Крейвиллент — National Tourist Interest, скульптуры Бенльюре\n• Аликанте — 28 процессий за неделю\n\n📱 Сохрани на следующий год!\n\n#SemanaSanta #культура #традиции #CostaBlanca"
     },
     {
-      "id": 20,
-      "date": "2026-04-15",
-      "time": "10:00",
-      "title": "🐕 С собакой: 4 крутых маршрута на эту неделю",
-      "type": "audience_dogs",
-      "status": "approved",
-      "photo": "https://images.pexels.com/photos/2253275/pexels-photo-2253275.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750",
-      "text": "🐕 <b>С СОБАКОЙ: 4 крутых маршрута на эту неделю</b>\n\nАпрель — золотое время: тепло, нет толп. Идеально для прогулок с питомцем.\n\n1️⃣ <b>Paseo de Cabo Roig</b> 🏆 <a href=\"https://www.google.com/maps/place/Cabo+Roig/\">📍</a>\n16 км по скалам у моря. Sendero Azul (голубой сертификат). Несколько смотровых, скамейки, виды.\n📍 Orihuela Costa · 15 мин от Торревьехи\n→ <i>Можно делать кусочками. Стартуй с порта</i>\n\n2️⃣ <b>Lagunas de La Mata</b> <a href=\"https://www.google.com/maps/place/Parque+Natural+de+las+Lagunas+de+La+Mata+y+Torrevieja/\">📍</a>\nКилометры дороги вдоль лагуны + виды на фламинго. Природный парк.\n📍 La Mata · 10 мин от Торревьехи\n→ <i>Возьми бинокль</i>\n\n3️⃣ <b>Дюны Гуардамара</b> <a href=\"https://www.google.com/maps/place/Parque+Alfonso+XIII,+Guardamar+del+Segura/\">📍</a>\n800 га соснового леса с песчаными дюнами. Тропа ~3 км, тенистая, выход на пляж.\n📍 Гуардамар\n→ <i>Идеально в жару — тень</i>\n\n4️⃣ <b>Faro del Albir</b> <a href=\"https://www.google.com/maps/place/Faro+de+l'Albir/\">📍</a>\n5 км туда-обратно по асфальту, без машин. Маяк на 112 м над морем. Виды.\n📍 L'Alfàs del Pi · 1 ч 15 мин от Торревьехи\n→ <i>Стоит дальней поездки!</i>\n\n💡 <b>Лайфхак:</b> Все эти места — собачьи (на поводке). На пляжах для собак сейчас никого — лучшее время до лета!\n\n#ссобакой #прогулки #природа #CostaBlanca"
-    },
-    {
-      "id": 21,
-      "date": "2026-04-16",
-      "time": "08:00",
-      "title": "🕊️ СЕГОДНЯ: Santa Faz — что это и зачем туда идти",
-      "type": "today_event",
-      "status": "approved",
-      "photo": "https://images.pexels.com/photos/13598504/pexels-photo-13598504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750",
-      "text": "🕊️ <b>СЕГОДНЯ: Santa Faz — что это и зачем туда идти</b>\n\nКрупнейшее паломничество провинции. <b>300 000 человек</b> идут пешком в один день. Сегодня выходной в Аликанте.\n\n<b>🎭 Что это на самом деле</b>\nЭто НЕ религиозная процессия (хотя началось так). Это огромный народный праздник под открытым небом. Атмосфера как на огромном пикнике.\n\n<b>📜 История (если интересно)</b>\nС 1489 года! Тогда в Аликанте была страшная засуха. Принесли из Рима святыню — Veil of Veronica (плат с лицом Христа). Когда молились — на иконе появилась слеза. Дождь пошёл. С тех пор — каждый год, 500+ лет.\n\n<b>🥖 Главные традиции</b>\n• <b>Rosquillas</b> — традиционные местные бублики. Покупают на стопах вдоль маршрута.\n• <b>Mistela</b> — сладкое местное вино из винограда Moscatel. К росильяс — идеальная пара.\n• По дороге — десятки лотков, музыка, друзья, семьи.\n\n<b>📍 Маршрут</b>\nСтарт: <a href=\"https://www.google.com/maps/place/Concatedral+de+San+Nicol%C3%A1s+de+Bari\">Concatedral de San Nicolás</a> (центр Аликанте, 8:00)\nФиниш: <a href=\"https://www.google.com/maps/place/Monasterio+de+la+Santa+Faz/\">Monasterio de la Santa Faz</a>\n\n<b>🚌 Как добраться</b>\nСпец-автобусы каждые 5 мин с Plaza del Mar (8:00–21:30)\n\n<b>💡 Важно</b>\nИдти 7 км в один конец — это много! Можно поехать сразу к монастырю и просто погулять там, попробовать росильяс и атмосферу. Не обязательно идти весь маршрут.\n\n🎯 <b>Подойдёт:</b> 👨‍👩‍👧 семьям · 💑 парам · 📸 фотографам · 👯‍♀️ компанией\n\n#SantaFaz #культура #Аликанте #традиции"
-    },
-    {
-      "id": 22,
-      "date": "2026-04-16",
+      "id": "w3-mon-3",
+      "date": "2026-04-13",
       "time": "18:00",
-      "title": "🌟 Выходные 18-19 апреля: куда пойти",
-      "type": "weekend_picks",
+      "title": "🌅 Закатное место недели: Mirador церкви Альтеа",
+      "type": "romantic_place",
       "status": "approved",
       "photo": "https://images.pexels.com/photos/14747485/pexels-photo-14747485.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750",
-      "text": "🌟 <b>ВЫХОДНЫЕ 18-19 АПРЕЛЯ: куда пойти</b>\n\n1️⃣ 🎭 <b>Moros y Cristianos San Vicente del Raspeig</b> (последние дни!)\nС 7 апреля идут — 19-го финал. Большие парады мавров и христиан, костюмы, мушкеты, фейерверки.\n📍 <a href=\"https://www.google.com/maps/place/San+Vicente+del+Raspeig/\">San Vicente del Raspeig</a> (40 мин от Гуардамара) · Бесплатно\n→ <i>Семьям, фотографам, компанией</i>\n\n2️⃣ 🛍️ <b>Rastro de Polop</b> — антикварный мега-рынок\n500+ прилавков антиквариата и second-hand! Самый большой блошиный рынок Costa Blanca.\n📍 <a href=\"https://www.google.com/maps/place/Polop/\">Polop</a> (1 ч 30 мин) · Воскресенье 8:00\n→ <i>Подружкам, коллекционерам, парам</i>\n\n3️⃣ 🛍️ <b>El Campico (Гуардамар)</b> <a href=\"https://www.google.com/maps/place/Guardamar+del+Segura/\">📍</a>\n500+ прилавков. Сейчас в сезоне: <b>nísperos (мушмула), клубника, артишоки, спаржа</b>!\n📅 Вс 8:00-15:00 · Бесплатно\n→ <i>Семьям, за свежими продуктами</i>\n\n4️⃣ 🎭 <b>Опера «Турандот»</b>\nВ рамках III Festival de Grandes Compositores.\n📅 Сб 18 — Орихуэла (Teatro Circo Atanasio Die)\n📅 Вс 19 — Торревьеха (Teatro Municipal)\n→ <i>Любителям оперы, парам</i>\n\n5️⃣ 🦩 <b>Розовое озеро Торревьехи</b> <a href=\"https://www.google.com/maps/place/Laguna+Rosa+de+Torrevieja/\">📍</a>\nПик сезона фламинго. На закате — двойное розовое чудо.\n→ <i>Фотографам, парам, подружкам</i>\n\n📱 <b>@afishaCB</b> — подборки каждую среду!\n\n#выходные #CostaBlanca"
+      "text": "🌅 <b>ЗАКАТНОЕ МЕСТО НЕДЕЛИ: Mirador церкви Альтеа</b>\n\nДля пар, которые хотят красивый вечер без планирования.\n\n<b>📍 Что это</b>\nПлощадь перед церковью <b>Nuestra Señora del Consuelo</b> в старом городе Альтеа. Сама церковь — с голубыми куполами, символ Costa Blanca. Стоит на холме над морем.\n\n<b>🌅 Почему сюда</b>\n• Голубые купола + закат над морем = открытка\n• Узкие улочки старого города (белые дома, цветы)\n• Много маленьких ресторанов вокруг\n• Бесплатно\n\n<b>📍 Как добраться</b>\n<a href=\"https://www.google.com/maps/place/Iglesia+Nuestra+Se%C3%B1ora+del+Consuelo,+Altea/\">Iglesia Nuestra Señora del Consuelo, Altea</a>\n• От Бенидорма: 15 мин\n• От Аликанте: 50 мин\n• От Гуардамара: 1 ч 20 мин\n\n<b>💡 Совет</b>\nПриходите к 19:30 — будет золотой свет на куполах. После заката — ужин в одном из ресторанов старого города. Узкие улочки → атмосферно.\n\n🎯 <b>Подойдёт:</b> 💑 парам · 📸 фотографам · 🍷 любителям атмосферы\n\n#Altea #романтика #закат #CostaBlanca"
     },
     {
-      "id": 23,
-      "date": "2026-04-17",
-      "time": "08:00",
-      "title": "🛍️ СЕГОДНЯ: мега-рынок Торревьехи + что в сезоне",
-      "type": "reminder_market",
-      "status": "approved",
-      "photo": "https://images.pexels.com/photos/868110/pexels-photo-868110.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750",
-      "text": "🛍️ <b>СЕГОДНЯ: мега-рынок Торревьехи! 500+ прилавков</b>\n\n📅 8:00-14:00 · Бесплатная парковка\n📍 <a href=\"https://www.google.com/maps/place/Mercadillo+de+Torrevieja/\">Av. Delfina Viudes, Торревьеха</a>\n\n<b>🍓 Что покупать в апреле:</b>\n\n🍊 <b>Nísperos (мушмула)</b> — фирменный фрукт Аликанте! Сезон только сейчас. Если не пробовала — обязательно. Сладкая, как абрикос с легкой кислинкой. DO Nísperos Callosa d'en Sarrià\n\n🍓 <b>Fresas</b> — клубника на пике! Самая сладкая\n\n🍒 <b>Cerezas</b> — черешня (конец апреля – май)\n\n🥬 <b>Alcachofas</b> — артишоки! Аликанте — главный производитель Испании. Местный продукт #1\n\n🌱 <b>Espárragos verdes</b> — зелёная спаржа, очень нежная весной\n\n🥬 <b>Acelgas, espinacas, puerros</b> — мангольд, шпинат, лук-порей\n\n<b>🚌 Автобус Línea H</b> (каждые 20 мин · 1.50€):\n<b>Туда:</b> Eras de la Sal → Hotel Fontana → Calle Patricio Zammit → Автовокзал → BP → Mercadillo\n<b>Обратно:</b> Mercadillo → Hotel Juan Carlos → Av. Diego Ramírez → Eras de la Sal\nПриложение: Autocares Costa Azul\n\n💡 <b>Лайфхак:</b> Лучшие фрукты и овощи — первые ряды справа от входа. Приходите до 10!\n\n#рынки #сезон #Торревьеха #CostaBlanca"
-    },
-    {
-      "id": 24,
-      "date": "2026-04-18",
+      "id": "w3-tue-1",
+      "date": "2026-04-14",
       "time": "10:00",
-      "title": "🏆 Cabo Roig — пешеходная зона по скалам у моря",
+      "title": "🆕 Cabo Roig — пешеходная зона по скалам",
       "type": "place_intro",
       "status": "approved",
       "photo": "https://images.pexels.com/photos/29837765/pexels-photo-29837765.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750",
-      "text": "🏆 <b>CABO ROIG: пешеходная зона по скалам у моря</b>\n\nСегодня про место, которое мало кто знает у нас, но оно реально красивое.\n\n<b>📍 Что это</b>\nPaseo de Cabo Roig — длинная пешеходная дорога по скалам прямо у моря. В 2025 получила <b>Sendero Azul</b> (голубой сертификат) — это типа \"знака качества\" для прогулочных троп Испании.\n\n<b>🌊 Что увидишь</b>\n• Дорогу по обрыву над морем\n• Несколько естественных смотровых на скалах\n• Скамейки на самых красивых точках (присесть и медитировать на море)\n• Спортивную марину Cabo Roig внизу\n• 5 пляжей и бухт по дороге\n• На ясный день — далёкие виды до островов\n\n<b>📏 Длина</b>\n16 км по всему побережью Орихуэлы — НО можно идти кусочками! Не обязательно весь.\n\n<b>📍 Где</b>\n<a href=\"https://www.google.com/maps/place/Cabo+Roig/\">Cabo Roig</a>, Orihuela Costa\n• От Торревьехи — 15 мин\n• От Гуардамара — 25 мин\n• От Аликанте — 50 мин\n\n<b>💰 Бесплатно</b>\n\n💡 <b>Лайфхак:</b> Стартуй с порта Cabo Roig — там парковка. Иди в сторону Punta Prima (на север) или Campoamor (на юг) — оба варианта красивые. По 3-5 км в одну сторону — уже отличная прогулка.\n\n🎯 <b>Подойдёт:</b> 💑 парам · 👨‍👩‍👧 семьям · 🐕 с собакой · 📸 фотографам · 🏃 бегунам\n\n#CaboRoig #прогулки #море #CostaBlanca"
+      "text": "🆕 <b>МЕСТО НЕДЕЛИ: Cabo Roig — пешеходная зона по скалам у моря</b>\n\nПохоже на одно из лучших открытий апреля.\n\n<b>📍 Что это</b>\nPaseo de Cabo Roig — длинная пешеходная дорога по скалам прямо у моря. В 2025 получила <b>Sendero Azul</b> — голубой сертификат качества.\n\n<b>🌊 Что увидишь</b>\n• Дорогу по обрыву над морем\n• Несколько естественных смотровых на скалах\n• Скамейки на самых красивых точках\n• Спортивную марину Cabo Roig\n• 5 пляжей и бухт по дороге\n• На ясный день — далёкие виды до островов\n\n<b>📏 Длина:</b> 16 км по всему побережью Орихуэлы. НО можно идти кусочками!\n\n<b>📍 Как добраться</b>\n<a href=\"https://www.google.com/maps/place/Cabo+Roig/\">Cabo Roig, Orihuela Costa</a>\n• От Торревьехи: 15 мин\n• От Гуардамара: 25 мин\n• От Аликанте: 50 мин\n💰 Бесплатно · Парковка у порта\n\n<b>💡 Совет</b>\nСтартуй с порта Cabo Roig. Иди в сторону Punta Prima (на север) или Campoamor (на юг) — 3-5 км в одну сторону уже отличная прогулка.\n\n🎯 <b>Подойдёт:</b> 💑 парам · 👨‍👩‍👧 семьям · 🐕 с собакой · 📸 фотографам · 🏃 бегунам\n\n#CaboRoig #прогулки #море #CostaBlanca"
     },
     {
-      "id": 25,
-      "date": "2026-04-19",
+      "id": "w3-tue-2",
+      "date": "2026-04-14",
+      "time": "18:00",
+      "title": "👨‍👩‍👧 С детьми: 5 идей на эту неделю",
+      "type": "audience_kids",
+      "status": "approved",
+      "photo": "https://images.pexels.com/photos/29851089/pexels-photo-29851089.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750",
+      "text": "👨‍👩‍👧 <b>С ДЕТЬМИ: 5 идей на эту неделю</b>\n\n1️⃣ <b>🎭 Moros y Cristianos в San Vicente del Raspeig</b> (продолжается до 19!)\nКостюмы, парады, фейерверки. Бесплатно. 40 мин от Гуардамара. Беруши детям!\n📍 <a href=\"https://www.google.com/maps/place/San+Vicente+del+Raspeig/\">📍</a>\n\n2️⃣ <b>🦩 Фламинго в Салинас</b>\nПик сезона! До 8000 розовых птиц. Дети считают.\n📍 <a href=\"https://www.google.com/maps/place/Parque+Natural+de+las+Salinas+de+Santa+Pola/\">Санта-Пола</a> · 15 мин\n\n3️⃣ <b>🌴 Palmeral de Elche (UNESCO)</b>\n200 000 пальм! Внутри Huerto del Cura — уникальная 7-веточная пальма (€6 для входа в Huerto, парк сам бесплатный).\n📍 <a href=\"https://www.google.com/maps/place/Palmeral+de+Elche/\">Эльче</a> · 20 мин\n\n4️⃣ <b>🚂 Via Verde на велосипедах</b>\n6.7 км плоской асфальтированной дороги от Albatera до Торревьехи. Бывшая ж/д. Идеально для семей с маленькими.\n📍 <a href=\"https://www.google.com/maps/place/V%C3%ADa+Verde+de+Torrevieja/\">📍</a>\n\n5️⃣ <b>🏰 Замок Santa Bárbara в Аликанте</b>\nБесплатный лифт от пляжа Postiguet → виды на весь Аликанте. Замок с историей.\n📍 <a href=\"https://www.google.com/maps/place/Castillo+de+Santa+B%C3%A1rbara/\">📍</a>\n\n💡 <b>Сегодня выходной (San Vicente Ferrer)</b> — магазины закрыты, но всё перечисленное работает!\n\n#сдетьми #семья #CostaBlanca"
+    },
+    {
+      "id": "w3-wed-1",
+      "date": "2026-04-15",
       "time": "10:00",
-      "title": "🏰 Sendero Azul Costa Blanca: 5 голубых троп региона",
-      "type": "places_collection",
+      "title": "🌟 Подборка выходных 18-19 апреля",
+      "type": "weekend_picks",
+      "status": "approved",
+      "photo": "https://images.pexels.com/photos/14747485/pexels-photo-14747485.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750",
+      "text": "🌟 <b>ВЫХОДНЫЕ 18-19 АПРЕЛЯ: куда пойти</b>\n\n1️⃣ 🎭 <b>Moros y Cristianos San Vicente del Raspeig</b> (последние дни!)\nС 7 апреля идут — 19-го финал. Парады мавров и христиан, костюмы, фейерверки.\n📍 <a href=\"https://www.google.com/maps/place/San+Vicente+del+Raspeig/\">San Vicente del Raspeig</a> · 40 мин · Бесплатно\n→ <i>Семьям, фотографам, компанией</i>\n\n2️⃣ 🛍 <b>Rastro de Polop — антикварный мега-рынок</b>\n500+ прилавков антиквариата и second-hand! Самый большой блошиный рынок Costa Blanca. Стоит дальней поездки.\n📍 <a href=\"https://www.google.com/maps/place/Polop/\">Polop</a> · 1 ч 30 мин · Воскресенье 8:00\n→ <i>Подружкам, коллекционерам</i>\n\n3️⃣ 🛍 <b>El Campico (Гуардамар)</b>\n500+ прилавков. В сезоне: <b>nísperos (мушмула), артишоки, клубника, спаржа</b>!\n📍 <a href=\"https://www.google.com/maps/place/Guardamar+del+Segura/\">📍</a> · Вс 8:00-15:00\n→ <i>Семьям, за свежими продуктами</i>\n\n4️⃣ 🎭 <b>Опера «Турандот»</b>\nIII Festival de Grandes Compositores.\n• Сб 18 — Орихуэла (Teatro Circo Atanasio Die)\n• Вс 19 — Торревьеха (Teatro Municipal)\n→ <i>Любителям классики, парам</i>\n\n5️⃣ 🏆 <b>Cabo Roig пешеходная зона</b>\n16 км по скалам у моря. Можно идти кусочками. Идеальная прогулка.\n📍 <a href=\"https://www.google.com/maps/place/Cabo+Roig/\">📍</a> · 15 мин от Торревьехи\n→ <i>Парам, с собакой, всем</i>\n\n📱 <b>@afishaCB</b> — подборки каждую среду!\n\n#выходные #CostaBlanca"
+    },
+    {
+      "id": "w3-wed-2",
+      "date": "2026-04-15",
+      "time": "18:00",
+      "title": "🍷 Винодельни DO Alicante: куда поехать на дегустацию",
+      "type": "wineries",
+      "status": "approved",
+      "photo": "https://images.pexels.com/photos/434311/pexels-photo-434311.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750",
+      "text": "🍷 <b>ВИНОДЕЛЬНИ DO ALICANTE: куда поехать на дегустацию</b>\n\nЗнала ли ты, что у Аликанте — собственный винодельческий регион с 1932 года? И своё уникальное вино, которое больше нигде не делают?\n\n<b>🍇 Что особенное в винах Аликанте</b>\nГлавный сорт — <b>Monastrell</b> (мощные красные). Но самое уникальное — <b>Fondillón</b>: десертное вино из перезревшего Monastrell, выдержка минимум 10 лет в бочках. Делают только тут!\n\n<b>🏆 Топ-3 винодельни с турами:</b>\n\n1️⃣ <b>Bodegas Bocopa</b> (Petrer)\nОт <b>€9.50</b> за тур + дегустация 3 вин. Идеально для первого знакомства. 1 ч от Аликанте.\n\n2️⃣ <b>Bodegas Enrique Mendoza</b> (L'Alfàs del Pi, рядом с Бенидормом)\nGold Tour ~€20, 2 часа: поле + бутылочный завод + подземный погреб. Премиум опыт. Их вино Santa Rosa — 94 балла Peñín!\n\n3️⃣ <b>Bodegas Heretat de Cesilia</b> (Novelda)\nИсторическая бодега, атмосферное место. 30 мин от Аликанте.\n\n<b>💡 Совет</b>\nЛучшее время для туров — <b>октябрь</b> (мягкая погода, иногда сбор). Но и сейчас работают! Бронировать через сайты или GetYourGuide. Если планируешь несколько дегустаций — бери гида с трансфером (вино + руль = плохо).\n\n🎯 <b>Подойдёт:</b> 💑 парам · 🍷 ценителям · 👯‍♀️ компанией\n\n#вино #DOAlicante #винодельни #Costa Blanca"
+    },
+    {
+      "id": "w3-thu-1",
+      "date": "2026-04-16",
+      "time": "08:00",
+      "title": "🕊️ СЕГОДНЯ: Santa Faz — что это и зачем туда",
+      "type": "today_event",
+      "status": "approved",
+      "photo": "https://images.pexels.com/photos/13598504/pexels-photo-13598504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750",
+      "text": "🕊️ <b>СЕГОДНЯ: Santa Faz — что это и зачем туда</b>\n\nКрупнейшее паломничество провинции. <b>300 000 человек</b> идут пешком в один день. Сегодня выходной в Аликанте — магазины и банки закрыты, но рестораны работают.\n\n<b>🎭 Что это на самом деле</b>\nЭто НЕ религиозная процессия (хотя началось так). Это огромный народный праздник под открытым небом. Атмосфера — как на огромном пикнике, где все друг друга знают.\n\n<b>📜 История (если интересно)</b>\nС 1489 года! Тогда в Аликанте была страшная засуха. Принесли из Рима святыню — Veil of Veronica (плат с лицом Христа). Когда молились — на иконе появилась слеза. И дождь пошёл. С тех пор — каждый год, 500+ лет.\n\n<b>🥖 Главные традиции</b>\n• <b>Rosquillas</b> — традиционные местные бублики. Покупают на стопах вдоль маршрута.\n• <b>Mistela</b> — сладкое вино из винограда Moscatel. К росильяс — идеальная пара.\n• По дороге — десятки лотков, музыка, друзья, семьи.\n\n<b>📍 Маршрут</b>\nСтарт: <a href=\"https://www.google.com/maps/place/Concatedral+de+San+Nicol%C3%A1s+de+Bari\">Concatedral de San Nicolás</a>, Аликанте, 8:00\nФиниш: <a href=\"https://www.google.com/maps/place/Monasterio+de+la+Santa+Faz/\">Monasterio de la Santa Faz</a>\n\n<b>🚌 Как добраться</b>\nСпец-автобусы каждые 5 мин с Plaza del Mar (8:00–21:30)\n\n<b>💡 Важно</b>\nИдти 7 км в один конец — это много! Можно поехать сразу к монастырю, погулять там, попробовать росильяс и атмосферу. Не обязательно идти весь маршрут.\n\n⚠️ <b>Что закрыто сегодня в Аликанте:</b> магазины, банки, почта, госучреждения\n✅ <b>Работает:</b> рестораны, бары, такси, Метро Аликанте\n\n🎯 <b>Подойдёт:</b> 👨‍👩‍👧 семьям · 💑 парам · 📸 фотографам · 👯‍♀️ компанией\n\n#SantaFaz #культура #Аликанте #традиции"
+    },
+    {
+      "id": "w3-thu-2",
+      "date": "2026-04-16",
+      "time": "18:00",
+      "title": "🏛 Подводная лодка Isaac Peral — ехать в Картахену",
+      "type": "place_intro",
       "status": "approved",
       "photo": "https://images.pexels.com/photos/29837765/pexels-photo-29837765.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750",
-      "text": "🏖️ <b>5 САМЫХ КРАСИВЫХ ПРИБРЕЖНЫХ ПРОГУЛОК Costa Blanca</b>\n\nНе \"иди на пляж\", а конкретные маршруты с панорамами:\n\n1️⃣ <b>Paseo de Cabo Roig (Sendero Azul)</b> 🏆\n16 км по скалам, 5 пляжей в одной прогулке. Голубой сертификат.\n📍 <a href=\"https://www.google.com/maps/place/Cabo+Roig/\">Orihuela Costa</a> · 15 мин от Торревьехи\n\n2️⃣ <b>Faro del Albir</b>\n5 км туда-обратно, асфальт без машин, маяк на 112 м над морем. Доступно для колясок!\n📍 <a href=\"https://www.google.com/maps/place/Faro+de+l'Albir/\">L'Alfàs del Pi</a> · 1 ч 15 мин\n\n3️⃣ <b>Lagunas de La Mata</b>\nКилометры дорог вдоль природного парка ЮНЕСКО. Виды на фламинго.\n📍 <a href=\"https://www.google.com/maps/place/Parque+Natural+de+las+Lagunas+de+La+Mata+y+Torrevieja/\">La Mata</a> · 10 мин\n\n4️⃣ <b>Дюны Гуардамара</b>\n800 га соснового леса на песчаных дюнах. Тропы → выход на пляж.\n📍 <a href=\"https://www.google.com/maps/place/Parque+Alfonso+XIII,+Guardamar+del+Segura/\">Гуардамар</a>\n\n5️⃣ <b>Paseo Ecológico de Benissa</b>\nДеревянные променады по скалам, соединяет 5 диких бухт.\n📍 <a href=\"https://www.google.com/maps/place/Benissa/\">Benissa</a> · 1 ч 15 мин\n\n💡 <b>Совет:</b> Все маршруты бесплатные, апрель — идеальный месяц (+22°C, не жарко).\n\n📱 Сохрани — будем добавлять новые места каждую неделю!\n\n#прогулки #природа #море #CostaBlanca"
+      "text": "🏛 <b>ПОДВОДНАЯ ЛОДКА ISAAC PERAL — ехать в Картахену</b>\n\nКартахена — это уже Costa Cálida (Мурсия), не Costa Blanca. НО это всего 50 мин от Торревьехи. И там стоит первая в мире электрическая подводная лодка.\n\n<b>🚢 Что это</b>\nПодводная лодка <b>Isaac Peral</b>, построенная в 1888 году. Первая электрическая субмарина в мире! Революция военно-морского дела. Стоит в Museo Naval de Cartagena.\n\n<b>📍 Где</b>\n<a href=\"https://www.google.com/maps/place/Museo+Naval+de+Cartagena/\">Museo Naval de Cartagena</a>\n• От Гуардамара: 1 ч\n• От Торревьехи: 50 мин\n• От Аликанте: 1 ч 20\n\n<b>💰 БЕСПЛАТНО</b> (рекомендовано пожертвование €3)\n\n<b>⏰ Часы работы</b>\n⚠️ <b>Только субботы 10:00-14:00!</b> Воскресенье и понедельник — закрыто.\n\n<b>💡 Что ещё в Картахене</b>\nКартахена сама по себе — один из лучших городов юга. Стоит целого дня:\n• Римский театр (раскопки)\n• Архитектура Modernismo (как Барселона)\n• Старый порт\n• Военно-морская история\n\n🎯 <b>Подойдёт:</b> 💑 парам · 👨‍👩‍👧 семьям с подростками · 🎓 любителям истории\n\n#Картахена #музей #история #CostaCalida"
+    },
+    {
+      "id": "w3-fri-1",
+      "date": "2026-04-17",
+      "time": "08:00",
+      "title": "🛍 СЕГОДНЯ рынок + что в сезоне",
+      "type": "reminder_market",
+      "status": "approved",
+      "photo": "https://images.pexels.com/photos/868110/pexels-photo-868110.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750",
+      "text": "🛍 <b>СЕГОДНЯ: мега-рынок Торревьехи! 500+ прилавков</b>\n\n📅 8:00-14:00 · Бесплатная парковка\n📍 <a href=\"https://www.google.com/maps/place/Mercadillo+de+Torrevieja/\">Av. Delfina Viudes, Торревьеха</a>\n\n<b>🍓 Что покупать в апреле:</b>\n\n🍊 <b>Nísperos (мушмула)</b> — фирменный фрукт Аликанте! Сезон только сейчас. Сладкая, как абрикос с лёгкой кислинкой. DO Nísperos Callosa d'en Sarrià\n\n🍓 <b>Fresas</b> — клубника на пике сезона. Самая сладкая.\n\n🍒 <b>Cerezas</b> — черешня (конец апреля – май)\n\n🥬 <b>Alcachofas</b> — артишоки! Аликанте — главный производитель Испании.\n\n🌱 <b>Espárragos verdes</b> — зелёная спаржа, очень нежная.\n\n🥬 <b>Acelgas, espinacas, puerros</b> — мангольд, шпинат, лук-порей\n\n<b>🚌 Автобус Línea H</b> (каждые 20 мин · 1.50€):\nEras de la Sal → Hotel Fontana → Patricio Zammit → Автовокзал → BP → <b>Mercadillo</b>\nОбратно: Mercadillo → Hotel Juan Carlos → Av. Diego Ramírez → Eras de la Sal\n\n💡 <b>Лайфхак:</b> Свежие продукты — первые ряды справа. Приходите до 10!\n\n#рынки #сезон #Торревьеха"
+    },
+    {
+      "id": "w3-fri-2",
+      "date": "2026-04-17",
+      "time": "18:00",
+      "title": "👯‍♀️ С подружками: куда пойти на этой неделе",
+      "type": "audience_friends",
+      "status": "approved",
+      "photo": "https://images.pexels.com/photos/1267696/pexels-photo-1267696.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750",
+      "text": "👯‍♀️ <b>С ПОДРУЖКАМИ: куда пойти на этой неделе</b>\n\n1️⃣ <b>📸 Розовое озеро Торревьехи на закате</b>\nДвойное розовое чудо — озеро + небо. Идеальная фотосессия. Бесплатно.\n📍 <a href=\"https://www.google.com/maps/place/Laguna+Rosa+de+Torrevieja/\">📍</a>\n\n2️⃣ <b>🛍 Антикварный рынок Polop (Вс)</b>\n500+ прилавков! Винтаж, украшения, посуда, виниловые пластинки. На целый день.\n📍 <a href=\"https://www.google.com/maps/place/Polop/\">Polop</a> · 1 ч 30 мин\n\n3️⃣ <b>🎾 Падель вчетвером</b>\nМуниципальные корты Ciudad Deportiva Torrevieja — €6 за 30 мин на четверых = €1.50 с человека. Веселее некуда!\n📍 <a href=\"https://www.google.com/maps/place/Ciudad+Deportiva+de+Torrevieja/\">📍</a>\n\n4️⃣ <b>🍷 Дегустация в Bodegas Bocopa</b>\nВинный тур от €9.50 + дегустация 3 вин. Petrer, 1 час от Аликанте. Узнаете что такое Monastrell и Fondillón.\n\n5️⃣ <b>🌅 Закат + ужин в старом городе Альтеа</b>\nСначала на mirador церкви с голубыми куполами, потом ужин в одном из ресторанов Casco Antiguo. Узкие улочки → атмосфера.\n📍 <a href=\"https://www.google.com/maps/place/Iglesia+Nuestra+Se%C3%B1ora+del+Consuelo,+Altea/\">📍</a>\n\n#сподружками #девичник #CostaBlanca"
+    },
+    {
+      "id": "w3-sat-1",
+      "date": "2026-04-18",
+      "time": "10:00",
+      "title": "🎭 Сегодня: финал Moros y Cristianos San Vicente",
+      "type": "today_event",
+      "status": "approved",
+      "photo": "https://images.pexels.com/photos/13598504/pexels-photo-13598504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750",
+      "text": "🎭 <b>СЕГОДНЯ-ЗАВТРА: финал Moros y Cristianos в San Vicente del Raspeig</b>\n\nС 7 апреля идут праздники, сегодня и завтра — финал! Если ещё не были, успевайте.\n\n<b>🎪 Что это</b>\nMoros y Cristianos — реконструкция средневековых битв между маврами и христианами. Тысячи участников в роскошных костюмах, парады, мушкеты, фейерверки.\n\n<b>📅 Программа Сб-Вс:</b>\nКаждый вечер — большие парады, музыка, дискотеки на улице, фейерверки.\n\n<b>📍 Где</b>\n<a href=\"https://www.google.com/maps/place/San+Vicente+del+Raspeig/\">San Vicente del Raspeig</a>\n• От Гуардамара: 40 мин\n• От Торревьехи: 50 мин\n• От Аликанте: 15 мин (рядом!)\n\n<b>💰 Бесплатно</b>\n\n<b>💡 Совет</b>\nЛучше всего вечером — парады зрелищнее с подсветкой. Возьмите беруши для маленьких — мушкетные залпы громкие. Парковаться в центре сложно — лучше окраина.\n\n🎯 <b>Подойдёт:</b> 👨‍👩‍👧 семьям · 📸 фотографам · 🎉 компанией\n\n#MorosCristianos #фестиваль #SanVicente #CostaBlanca"
+    },
+    {
+      "id": "w3-sat-2",
+      "date": "2026-04-18",
+      "time": "18:00",
+      "title": "📸 Топ-5 закатных точек Costa Blanca",
+      "type": "places_collection",
+      "status": "approved",
+      "photo": "https://images.pexels.com/photos/14747485/pexels-photo-14747485.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750",
+      "text": "📸 <b>ТОП-5 ЗАКАТНЫХ ТОЧЕК Costa Blanca</b>\n\nДля идеального вечера — не нужно платить. Просто приехать вовремя.\n\n1️⃣ <b>Mirador церкви Альтеа</b> 🏆\nГолубые купола + закат над морем = открытка Costa Blanca. Идеально для пар.\n📍 <a href=\"https://www.google.com/maps/place/Iglesia+Nuestra+Se%C3%B1ora+del+Consuelo,+Altea/\">Старый город Альтеа</a>\n\n2️⃣ <b>Розовое озеро Торревьехи</b>\nДвойное розовое: вода + небо. С фламинго.\n📍 <a href=\"https://www.google.com/maps/place/Laguna+Rosa+de+Torrevieja/\">Laguna Rosa</a>\n\n3️⃣ <b>Cabo de Santa Pola (маяк)</b>\nЗакат над морем + остров Tabarca на горизонте.\n📍 <a href=\"https://www.google.com/maps/place/Faro+de+Santa+Pola/\">Faro de Santa Pola</a>\n\n4️⃣ <b>Castillo de Santa Bárbara, Аликанте</b>\nЗакат над портом и центром Аликанте. Бесплатный лифт от пляжа Postiguet.\n📍 <a href=\"https://www.google.com/maps/place/Castillo+de+Santa+B%C3%A1rbara/\">📍</a>\n\n5️⃣ <b>Cabo de la Nao (Хавеа)</b>\nСамая восточная точка Costa Blanca. Драматичные скалы, маяк.\n📍 <a href=\"https://www.google.com/maps/place/Cabo+de+la+Nao/\">📍</a>\n\n💡 <b>Совет:</b> Закат в апреле — около 20:30. Приходите за 30-40 мин для золотого часа.\n\n📱 Сохрани — пригодится для романтического вечера!\n\n#закат #романтика #прогулки #CostaBlanca"
+    },
+    {
+      "id": "w3-sun-1",
+      "date": "2026-04-19",
+      "time": "10:00",
+      "title": "🌳 Природа: Parque Natural El Hondo",
+      "type": "place_intro",
+      "status": "approved",
+      "photo": "https://images.pexels.com/photos/29837765/pexels-photo-29837765.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750",
+      "text": "🌳 <b>ПРИРОДА НЕДЕЛИ: Parque Natural El Hondo</b>\n\nМесто, которое мало кто из иммигрантов знает. И зря.\n\n<b>📍 Что это</b>\nПриродный парк между Эльче и Кревильенте. Две большие лагуны (450 и 650 га). Болота, тростниковые поля. Один из самых важных птичьих заповедников Испании.\n\n<b>🦆 Что увидишь</b>\n• Сотни видов птиц (утки, цапли, фламинго)\n• Черепахи в каналах\n• Полная тишина\n• 3 маршрута разной длины\n• Обсерватория La Anguila для bird-watching\n\n<b>📍 Где</b>\n<a href=\"https://www.google.com/maps/place/Parque+Natural+El+Hondo/\">Parque Natural El Hondo</a>\n• От Гуардамара: 25 мин\n• От Аликанте: 30 мин\n• От Эльче: 15 мин\n\n<b>💰 Бесплатно</b>\n\n<b>💡 Совет</b>\nБинокль обязателен! Без него половину пропустите. Лучшее время — раннее утро (птицы активнее) или вечер. В жару днём — никого не увидите. Возьмите воду — на территории нет ничего.\n\n🎯 <b>Подойдёт:</b> 📸 фотографам · 💑 парам · 👨‍👩‍👧 семьям с детьми (которые любят природу) · 🌿 любителям тишины\n\n#природа #птицы #ElHondo #CostaBlanca"
+    },
+    {
+      "id": "w3-sun-2",
+      "date": "2026-04-19",
+      "time": "18:00",
+      "title": "📋 Анонс следующей недели + Moros в Алькое скоро",
+      "type": "next_week_preview",
+      "status": "approved",
+      "photo": "https://images.pexels.com/photos/13598504/pexels-photo-13598504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750",
+      "text": "📋 <b>СЛЕДУЮЩАЯ НЕДЕЛЯ 20-26 АПРЕЛЯ — самая яркая в апреле!</b>\n\n<b>🎭 Главное событие — Moros y Cristianos в Алькое</b>\n📅 25-27 апреля\n📍 <a href=\"https://www.google.com/maps/place/Alcoy,+Alicante/\">Alcoy</a> · 55 мин от Аликанте\n💰 Бесплатно\n\nЭто не просто праздник — это <b>ЮБИЛЕЙ 750 лет</b>! Самый грандиозный костюмированный фестиваль Испании. Тысячи участников, мушкетные залпы, штурм замка, фейерверки.\n\n<b>🍽 Тапас-маршрут «A Todo Tren!»</b>\n📅 24-25 апреля (Пт-Сб)\n📍 Торревьеха центр\nГастро-маршрут по барам. 3-4€ за тапу + напиток. С розыгрышем (хамон, твой вес в пиве!).\n\n<b>📋 Также на неделе:</b>\n• Регулярные рынки\n• Фламинго в Салинас\n• Опера и культурные события Торревьехи\n\n📱 <b>@afishaCB</b> — детальный план в понедельник!\n\n#анонс #следующаянеделя #MorosCristianos"
     }
   ]
 }
