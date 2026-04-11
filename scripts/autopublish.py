@@ -160,11 +160,24 @@ def notify_error(title, error_msg):
     send_admin(f"❌ <b>Ошибка публикации</b> ({now_str})\n• {title}\n• {error_msg}")
 
 
-def check_planning_reminders():
-    """Напоминания о планировании."""
+def check_planning_reminders(force=False):
+    """Напоминания о планировании.
+
+    Логика:
+    - Неделя = понедельник–воскресенье
+    - Напоминания приходят только в пятницу/субботу/воскресенье
+    - К воскресенью план на следующую неделю должен быть готов
+    - force=True — отправить даже если не пт/сб/вс
+    """
     now = datetime.now(TZ_SPAIN)
     today = now.date()
+    weekday = today.weekday()  # 0=Mon, 6=Sun
     reminders = []
+
+    # Напоминания о неделе — только пт(4)/сб(5)/вс(6) или force
+    is_planning_day = weekday in (4, 5, 6)
+    if not is_planning_day and not force:
+        return  # Молчим в будние дни
 
     # Собираем все недели
     approved_ends = []
@@ -191,27 +204,35 @@ def check_planning_reminders():
     last_approved = max(approved_ends) if approved_ends else None
     last_any = max(all_ends) if all_ends else None
 
-    # Проверяем статус планирования
-    if last_approved:
-        days_covered = (last_approved - today).days
+    # Считаем когда заканчивается текущая ПОЛНАЯ неделя (вс)
+    days_until_sunday = (6 - weekday) % 7  # 0 if Sunday
+    next_sunday = today + timedelta(days=days_until_sunday)
 
-        if days_covered > 14:
-            # Всё ок, план есть на 2+ недели вперёд
-            reminders.append(f"✅ <b>План одобрен</b> до {last_approved.strftime('%d.%m.%Y')} ({days_covered} дней)")
-        elif days_covered > 2:
-            # План есть, но скоро кончится
-            if unapproved_weeks:
-                reminders.append(f"📋 Есть неутверждённый план — нужно согласовать!")
-            else:
-                reminders.append(f"✅ План одобрен до {last_approved.strftime('%d.%m.%Y')} ({days_covered} дн.)")
+    # Покрывает ли план текущую неделю целиком?
+    week_covered = last_approved and last_approved >= next_sunday
+    # Покрывает ли план СЛЕДУЮЩУЮ неделю?
+    next_week_end = next_sunday + timedelta(days=7)
+    next_week_covered = last_approved and last_approved >= next_week_end
+
+    weekday_name = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"][weekday]
+
+    if next_week_covered:
+        days_covered = (last_approved - today).days
+        reminders.append(f"✅ <b>План одобрен</b> до {last_approved.strftime('%d.%m')} ({days_covered} дн.)")
+    elif unapproved_weeks:
+        # Есть черновик но не одобрен
+        if weekday == 6:  # Воскресенье
+            reminders.append(f"⚠️ <b>{weekday_name}:</b> срочно одобри план на следующую неделю! Есть черновик.")
         else:
-            # Критично — план заканчивается
-            if unapproved_weeks:
-                reminders.append(f"⚠️ <b>Срочно:</b> план заканчивается {last_approved.strftime('%d.%m')}! Есть черновик — нужно согласовать!")
-            else:
-                reminders.append(f"⚠️ <b>Срочно:</b> план заканчивается {last_approved.strftime('%d.%m')}! Нужен план на следующую неделю!")
+            reminders.append(f"📋 <b>{weekday_name}:</b> есть неутверждённый план на следующую неделю — нужно согласовать!")
     else:
-        reminders.append("⚠️ <b>Нет одобренного плана!</b> Нужно согласовать расписание.")
+        # Нет даже черновика
+        if weekday == 6:  # Воскресенье — критично
+            reminders.append(f"⚠️ <b>{weekday_name}:</b> завтра новая неделя — НЕТ плана! Нужен план срочно!")
+        elif weekday == 5:  # Суббота
+            reminders.append(f"📋 <b>{weekday_name}:</b> к завтра нужен план на следующую неделю (Пн–Вс)")
+        else:  # Пятница
+            reminders.append(f"📋 <b>{weekday_name}:</b> пора готовить план на следующую неделю (Пн–Вс)")
 
     # Напоминание: план на месяц (25-е число)
     if today.day >= 25:
@@ -232,7 +253,26 @@ def check_planning_reminders():
             reminders.append(f"📅 <b>Напоминание:</b> конец месяца — пора сделать план на {next_month}!")
 
     if reminders:
+        # Дедупликация: не отправлять одно и то же напоминание дважды в день
+        # Маркер хранится в schedule/ чтобы коммититься Actions
+        marker_file = SCHEDULE_DIR / ".last-reminder"
+        marker_text = f"{today.isoformat()}|{hash(tuple(reminders))}"
+
+        if marker_file.exists():
+            try:
+                last_marker = marker_file.read_text().strip()
+                if last_marker == marker_text:
+                    print(f"  ⏭ Reminder already sent today, skipping")
+                    return
+            except Exception:
+                pass
+
         send_admin("\n".join(reminders))
+
+        try:
+            marker_file.write_text(marker_text)
+        except Exception as e:
+            print(f"  Warning: couldn't save reminder marker: {e}")
 
 
 def process_schedule():
@@ -381,9 +421,11 @@ def process_schedule():
     print(f"\n{'='*40}")
     print(f"Published: {published_count} | Skipped/Waiting: {skipped_count}")
 
-    # Напоминания о планировании — только если что-то опубликовалось
-    # (чтобы не спамить каждый час когда нечего публиковать)
-    if published_count > 0:
+    # Напоминания о планировании
+    # Логика: пт/сб/вс — всегда. Остальные дни — только если что-то опубликовалось
+    now = datetime.now(TZ_SPAIN)
+    is_planning_day = now.weekday() in (4, 5, 6)  # Fri/Sat/Sun
+    if is_planning_day or published_count > 0:
         check_planning_reminders()
 
 

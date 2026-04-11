@@ -3,7 +3,7 @@
 ## Границы проекта
 
 **ВАЖНО**: При работе в этом проекте — работай ТОЛЬКО с файлами этого каталога:
-`C:\Users\ekate\OneDrive\Claude Code\My Projects\Costa Blanca\`
+`C:\Claude Code\My Projects\Costa Blanca\`
 
 НЕ сканируй и НЕ читай:
 - `My Projects/Carousels/` (другой проект)

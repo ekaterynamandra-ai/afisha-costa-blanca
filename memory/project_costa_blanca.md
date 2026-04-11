@@ -5,7 +5,7 @@ type: project
 ---
 
 Project: Афиша Costa Blanca (@afishaCB Telegram + website)
-Location: C:\Users\ekate\OneDrive\Claude Code\My Projects\Costa Blanca
+Location: C:\Claude Code\My Projects\Costa Blanca
 
 **Key rules:**
 - NEVER publish to Telegram without Katya's explicit approval
