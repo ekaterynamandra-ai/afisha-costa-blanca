@@ -47,7 +47,12 @@ PROJECT_ROOT = Path(__file__).parent.parent
 
 
 def send(text, photo=None, test_mode=False):
-    """Отправить пост с одним фото или без. test_mode=True → отправка админу в личку."""
+    """Отправить пост с одним фото или без. test_mode=True → отправка админу в личку.
+
+    photo может быть:
+    - URL (http://...) → передаётся как ссылка
+    - локальный путь (content/photos/...) → загружается как файл
+    """
     if DRY_RUN:
         print(f"  [DRY RUN] Would send: {text[:60]}...")
         return {"ok": True, "result": {"message_id": 0}}
@@ -57,10 +62,27 @@ def send(text, photo=None, test_mode=False):
         text = f"🧪 <b>ТЕСТ:</b>\n\n{text}"
 
     if photo:
-        r = requests.post(f"{API}/sendPhoto", data={
-            "chat_id": target, "photo": photo,
-            "caption": text, "parse_mode": "HTML"
-        })
+        # Локальный файл
+        if not photo.startswith("http"):
+            full_path = Path(photo)
+            if not full_path.is_absolute():
+                full_path = PROJECT_ROOT / photo
+            with open(full_path, "rb") as f:
+                r = requests.post(
+                    f"{API}/sendPhoto",
+                    data={
+                        "chat_id": target,
+                        "caption": text,
+                        "parse_mode": "HTML"
+                    },
+                    files={"photo": f}
+                )
+        else:
+            # URL
+            r = requests.post(f"{API}/sendPhoto", data={
+                "chat_id": target, "photo": photo,
+                "caption": text, "parse_mode": "HTML"
+            })
     else:
         r = requests.post(f"{API}/sendMessage", data={
             "chat_id": target, "text": text,
