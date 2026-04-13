@@ -1,12 +1,9 @@
 name: Auto-publish Telegram posts
 
 on:
-  schedule:
-    # Spanish summer time (CEST = UTC+2). Покрываем все слоты постов из content/schedule/:
-    # 06 UTC=08, 07=09, 08=10, 11=13, 12=14, 16=18 CEST
-    - cron: '0 6,7,8,11,12,16 * * *'
-  # cron-job.org также может дёргать workflow_dispatch как внешний failover.
-  # Оба триггера безопасны — autopublish.py идемпотентен (status-guard в JSON).
+  # Единственный триггер — cron-job.org (ежечасно 08-20 Europe/Madrid, crontab `0 8-20 * * *`).
+  # GitHub schedule удалён: ненадёжен + дублирование расписания вызывало расхождения.
+  # См. docs/publishing-logic.md.
   workflow_dispatch:
 
 permissions:
