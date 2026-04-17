@@ -129,9 +129,11 @@
       "time": "08:00",
       "title": "🛍 Сегодня рынок Торревьехи + что в сезоне",
       "type": "reminder_market",
-      "status": "approved",
+      "status": "published",
       "photo": "content/photos/places/mercadillo-torrevieja.jpg",
-      "text": "🛍 <b>СЕГОДНЯ: мега-рынок Торревьехи! 500+ прилавков</b>\n\nСамый большой рынок юга Costa Blanca.\n\n📅 8:00-14:00 · Бесплатная парковка\n📍 <a href=\"https://www.google.com/maps/place/Mercadillo+de+Torrevieja/\">Av. Delfina Viudes, Торревьеха</a> · 40 мин от Аликанте\n\n<b>🍓 Что покупать в апреле:</b>\n\n🍊 <b>Nísperos (мушмула)</b> — фирменный фрукт Аликанте! DO Nísperos Callosa d'en Sarrià. Сезон только сейчас. Сладкая, как абрикос с лёгкой кислинкой.\n\n🍓 <b>Fresas</b> — клубника на пике сезона. Самая сладкая.\n\n🍒 <b>Cerezas</b> — черешня (конец апреля – май)\n\n🥬 <b>Alcachofas</b> — артишоки! Аликанте — главный производитель Испании.\n\n🌱 <b>Espárragos verdes</b> — зелёная спаржа, очень нежная.\n\n🥬 <b>Acelgas, espinacas, puerros</b> — мангольд, шпинат, лук-порей\n\n<b>🚌 Автобус Línea H</b> (каждые 20 мин · 1.50€):\nEras de la Sal → Hotel Fontana → Patricio Zammit → Автовокзал → BP → <b>Mercadillo</b>\n\n💡 <b>Лайфхак:</b> Свежие продукты — первые ряды справа. До 10!\n\n#рынки #сезон #Торревьеха"
+      "text": "🛍 <b>СЕГОДНЯ: мега-рынок Торревьехи! 500+ прилавков</b>\n\nСамый большой рынок юга Costa Blanca.\n\n📅 8:00-14:00 · Бесплатная парковка\n📍 <a href=\"https://www.google.com/maps/place/Mercadillo+de+Torrevieja/\">Av. Delfina Viudes, Торревьеха</a> · 40 мин от Аликанте\n\n<b>🍓 Что покупать в апреле:</b>\n\n🍊 <b>Nísperos (мушмула)</b> — фирменный фрукт Аликанте! DO Nísperos Callosa d'en Sarrià. Сезон только сейчас. Сладкая, как абрикос с лёгкой кислинкой.\n\n🍓 <b>Fresas</b> — клубника на пике сезона. Самая сладкая.\n\n🍒 <b>Cerezas</b> — черешня (конец апреля – май)\n\n🥬 <b>Alcachofas</b> — артишоки! Аликанте — главный производитель Испании.\n\n🌱 <b>Espárragos verdes</b> — зелёная спаржа, очень нежная.\n\n🥬 <b>Acelgas, espinacas, puerros</b> — мангольд, шпинат, лук-порей\n\n<b>🚌 Автобус Línea H</b> (каждые 20 мин · 1.50€):\nEras de la Sal → Hotel Fontana → Patricio Zammit → Автовокзал → BP → <b>Mercadillo</b>\n\n💡 <b>Лайфхак:</b> Свежие продукты — первые ряды справа. До 10!\n\n#рынки #сезон #Торревьеха",
+      "published_at": "2026-04-17T08:00:42.548530+02:00",
+      "message_id": 81
     },
     {
       "id": "w3-fri-2",
