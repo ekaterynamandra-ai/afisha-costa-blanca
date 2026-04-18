@@ -15,6 +15,7 @@
   4. Обновляет status → "published", добавляет published_at
 """
 
+import hashlib
 import json
 import os
 import sys
@@ -278,7 +279,8 @@ def check_planning_reminders(force=False):
         # Дедупликация: не отправлять одно и то же напоминание дважды в день
         # Маркер хранится в schedule/ чтобы коммититься Actions
         marker_file = SCHEDULE_DIR / ".last-reminder"
-        marker_text = f"{today.isoformat()}|{hash(tuple(reminders))}"
+        content_hash = hashlib.md5("\n".join(reminders).encode()).hexdigest()[:12]
+        marker_text = f"{today.isoformat()}|{content_hash}"
 
         if marker_file.exists():
             try:
