@@ -454,6 +454,22 @@ def process_schedule():
                 test_mode = post.get("test_mode", False)
                 result = send(text, photo, test_mode=test_mode)
 
+            # Followup: если есть поле "followup" с текстом, шлём его сразу после
+            # как text-only message (без фото). Для технических деталей которые
+            # не влезли в caption ≤1024.
+            followup = post.get("followup", "").strip()
+            if result.get("ok") and followup:
+                if DRY_RUN:
+                    print(f"    [DRY RUN] Would send followup ({len(followup)} chars)")
+                else:
+                    target = ADMIN_ID if post.get("test_mode", False) else CHANNEL_ID
+                    fr = requests.post(f"{API}/sendMessage", data={
+                        "chat_id": target, "text": followup,
+                        "parse_mode": "HTML", "disable_web_page_preview": True
+                    }).json()
+                    if not fr.get("ok"):
+                        print(f"    ⚠️  Followup failed: {fr.get('description','')}")
+
             if result.get("ok"):
                 post["status"] = "published"
                 post["published_at"] = now.isoformat()
