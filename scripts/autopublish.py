@@ -47,66 +47,117 @@ FORCE_TODAY = "--today" in sys.argv  # publish all approved posts for today rega
 PROJECT_ROOT = Path(__file__).parent.parent
 
 
+TELEGRAM_CAPTION_LIMIT = 1024
+
+
+def _send_photo_only(target, photo):
+    """Отправить только фото без подписи (для случая когда текст длиннее 1024)."""
+    if not photo.startswith("http"):
+        full_path = Path(photo)
+        if not full_path.is_absolute():
+            full_path = PROJECT_ROOT / photo
+        with open(full_path, "rb") as f:
+            return requests.post(
+                f"{API}/sendPhoto",
+                data={"chat_id": target},
+                files={"photo": f}
+            ).json()
+    return requests.post(f"{API}/sendPhoto", data={
+        "chat_id": target, "photo": photo
+    }).json()
+
+
+def _send_photo_with_caption(target, photo, caption):
+    """Отправить фото с подписью (текст ≤ 1024 символов)."""
+    if not photo.startswith("http"):
+        full_path = Path(photo)
+        if not full_path.is_absolute():
+            full_path = PROJECT_ROOT / photo
+        with open(full_path, "rb") as f:
+            return requests.post(
+                f"{API}/sendPhoto",
+                data={
+                    "chat_id": target,
+                    "caption": caption,
+                    "parse_mode": "HTML"
+                },
+                files={"photo": f}
+            ).json()
+    return requests.post(f"{API}/sendPhoto", data={
+        "chat_id": target, "photo": photo,
+        "caption": caption, "parse_mode": "HTML"
+    }).json()
+
+
 def send(text, photo=None, test_mode=False):
     """Отправить пост с одним фото или без. test_mode=True → отправка админу в личку.
 
     photo может быть:
     - URL (http://...) → передаётся как ссылка
     - локальный путь (content/photos/...) → загружается как файл
+
+    Если текст ≤ 1024 chars → одно сообщение фото+caption.
+    Если текст > 1024 chars → фото без подписи + отдельное текстовое сообщение
+    (обходит Telegram caption limit, иначе фото теряется).
     """
     if DRY_RUN:
-        print(f"  [DRY RUN] Would send: {text[:60]}...")
+        print(f"  [DRY RUN] Would send: {text[:60]}... (photo={'yes' if photo else 'no'}, len={len(text)})")
         return {"ok": True, "result": {"message_id": 0}}
 
     target = ADMIN_ID if test_mode else CHANNEL_ID
     if test_mode:
         text = f"🧪 <b>ТЕСТ:</b>\n\n{text}"
 
-    if photo:
-        # Локальный файл
-        if not photo.startswith("http"):
-            full_path = Path(photo)
-            if not full_path.is_absolute():
-                full_path = PROJECT_ROOT / photo
-            with open(full_path, "rb") as f:
-                r = requests.post(
-                    f"{API}/sendPhoto",
-                    data={
-                        "chat_id": target,
-                        "caption": text,
-                        "parse_mode": "HTML"
-                    },
-                    files={"photo": f}
-                )
-        else:
-            # URL
-            r = requests.post(f"{API}/sendPhoto", data={
-                "chat_id": target, "photo": photo,
-                "caption": text, "parse_mode": "HTML"
-            })
-    else:
+    if not photo:
+        # Только текст
         r = requests.post(f"{API}/sendMessage", data={
             "chat_id": target, "text": text,
             "parse_mode": "HTML", "disable_web_page_preview": True
         })
+        return r.json()
 
-    d = r.json()
-    if not d.get("ok") and photo:
-        print(f"  Photo failed ({d.get('description','')}), retrying text-only...")
-        r = requests.post(f"{API}/sendMessage", data={
-            "chat_id": target, "text": text,
-            "parse_mode": "HTML", "disable_web_page_preview": True
-        })
-        d = r.json()
+    # Есть фото
+    if len(text) <= TELEGRAM_CAPTION_LIMIT:
+        # Короткий текст → одно сообщение с подписью
+        d = _send_photo_with_caption(target, photo, text)
+        if not d.get("ok"):
+            print(f"  Photo failed ({d.get('description','')}), retrying text-only...")
+            r = requests.post(f"{API}/sendMessage", data={
+                "chat_id": target, "text": text,
+                "parse_mode": "HTML", "disable_web_page_preview": True
+            })
+            d = r.json()
+        return d
+
+    # Длинный текст → фото без подписи + текст отдельно
+    print(f"  Long text ({len(text)} chars > {TELEGRAM_CAPTION_LIMIT}), sending photo + text separately...")
+    photo_result = _send_photo_only(target, photo)
+    if not photo_result.get("ok"):
+        print(f"  Photo failed ({photo_result.get('description','')}), sending text only...")
+    # Текст отправляем независимо от того, ушло фото или нет
+    text_result = requests.post(f"{API}/sendMessage", data={
+        "chat_id": target, "text": text,
+        "parse_mode": "HTML", "disable_web_page_preview": True
+    }).json()
+    # Возвращаем результат текстового сообщения (там message_id для логов)
+    return text_result if text_result.get("ok") else photo_result
 
     return d
 
 
 def send_album(text, photos):
-    """Отправить альбом (несколько фото) с подписью."""
+    """Отправить альбом (несколько фото) с подписью.
+
+    Если текст ≤ 1024 → подпись на первом фото альбома.
+    Если текст > 1024 → альбом без подписи + текст отдельным сообщением.
+    """
     if DRY_RUN:
-        print(f"  [DRY RUN] Would send album ({len(photos)} photos): {text[:60]}...")
+        print(f"  [DRY RUN] Would send album ({len(photos)} photos): {text[:60]}... (len={len(text)})")
         return {"ok": True, "result": [{"message_id": 0}]}
+
+    long_text = len(text) > TELEGRAM_CAPTION_LIMIT
+    if long_text:
+        print(f"  Long text ({len(text)} chars > {TELEGRAM_CAPTION_LIMIT}), album without caption + text separately...")
 
     media = []
     files = {}
@@ -122,7 +173,8 @@ def send_album(text, photos):
             files[key] = open(full_path, "rb")
             entry = {"type": "photo", "media": f"attach://{key}"}
 
-        if i == 0:
+        # Caption только на первом фото и только если текст помещается
+        if i == 0 and not long_text:
             entry["caption"] = text
             entry["parse_mode"] = "HTML"
         media.append(entry)
@@ -139,12 +191,23 @@ def send_album(text, photos):
 
     if not d.get("ok"):
         print(f"  Album failed ({d.get('description','')}), retrying single photo...")
-        # Fallback: send first photo only
+        # Fallback: send first photo only через стандартный send (тот учитывает long_text)
         first = photos[0]
         if first.startswith("http"):
             return send(text, photo=first)
         else:
-            return send(text)
+            return send(text, photo=first)
+
+    # Альбом ушёл — теперь, если был длинный текст, добавляем его отдельным сообщением
+    if long_text:
+        text_result = requests.post(f"{API}/sendMessage", data={
+            "chat_id": CHANNEL_ID, "text": text,
+            "parse_mode": "HTML", "disable_web_page_preview": True
+        }).json()
+        if not text_result.get("ok"):
+            print(f"  Text-after-album failed: {text_result.get('description','')}")
+        # Возвращаем text_result для message_id
+        return text_result if text_result.get("ok") else d
 
     return d
 
