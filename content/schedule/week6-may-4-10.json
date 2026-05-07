@@ -47,7 +47,7 @@
       "time": "18:00",
       "title": "🏛 5 скрытых бесплатных музеев Аликанте",
       "type": "hidden_free_museums",
-      "status": "approved",
+      "status": "published",
       "photos": [
         "content/photos/places/museum-1-cigarreras.png",
         "content/photos/places/museum-2-hogueras.jpg",
@@ -55,7 +55,9 @@
         "content/photos/places/museum-4-architectural.jpg"
       ],
       "text": "🏛 <b>5 СКРЫТЫХ БЕСПЛАТНЫХ МУЗЕЕВ АЛИКАНТЕ</b>\n\nИммигранты часто проходят мимо. Зря — каждый из них стоит часа времени и обоих свободного входа.\n\n<b>1️⃣ MUSA — Museo de la Ciudad</b>\nВ замке Castillo Santa Bárbara. История города от иберов до современности. Виды на Аликанте + бухту.\n💰 БЕСПЛАТНО\n\n<b>2️⃣ Museo de Aguas «Garrigós»</b>\nВ старых городских колодцах XIX века. Археология воды, инженерия, как Аликанте жил без рек.\n💰 БЕСПЛАТНО\n\n<b>3️⃣ Museo The Ocean Race</b>\nИнтерактивный — про кругосветную регату. Симуляторы, экспонаты с реальных судов. Подходит детям.\n💰 БЕСПЛАТНО\n\n<b>4️⃣ Museo de las Hogueras</b>\nВся история фестиваля + спасённые ninots («ninot indultat»).\n💰 БЕСПЛАТНО\n\n<b>5️⃣ Centro Cultural Las Cigarreras</b>\nВыставки, концерты, воркшопы в бывшей табачной фабрике. Уже работает (большой музей откроется осенью 2026).\n💰 БЕСПЛАТНО\n\n📱 <b>@afishaCB</b>\n\n#скрытое #бесплатно",
-      "followup": "💡 <b>Маршрут на полдня</b>\n• MUSA + Aguas Garrigós — оба в замке, идти вместе (2 ч)\n• Затем спускаешься в Casco Antiguo, обедаешь\n• The Ocean Race — у порта, после обеда\n• Museo de Hogueras — Rambla Méndez Núñez (центр)\n• Centro Cigarreras — у Mercado Central\n\nВсё в радиусе 20 минут пешком.\n\n<b>🆕 Большое обновление осенью</b>\nMuseo Las Cigarreras — открывается Q4 2026 с коллекцией дома Alba, Balenciaga, Sorolla, Chagall, Toulouse-Lautrec, Modigliani. Это будет совсем другой уровень.\n\n💰 ВСЕ перечисленные сегодня — БЕСПЛАТНО, ежедневно."
+      "followup": "💡 <b>Маршрут на полдня</b>\n• MUSA + Aguas Garrigós — оба в замке, идти вместе (2 ч)\n• Затем спускаешься в Casco Antiguo, обедаешь\n• The Ocean Race — у порта, после обеда\n• Museo de Hogueras — Rambla Méndez Núñez (центр)\n• Centro Cigarreras — у Mercado Central\n\nВсё в радиусе 20 минут пешком.\n\n<b>🆕 Большое обновление осенью</b>\nMuseo Las Cigarreras — открывается Q4 2026 с коллекцией дома Alba, Balenciaga, Sorolla, Chagall, Toulouse-Lautrec, Modigliani. Это будет совсем другой уровень.\n\n💰 ВСЕ перечисленные сегодня — БЕСПЛАТНО, ежедневно.",
+      "published_at": "2026-05-07T18:00:51.973932+02:00",
+      "message_id": 112
     },
     {
       "id": "w6-fri-1",
