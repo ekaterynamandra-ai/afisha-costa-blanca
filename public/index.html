@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kate in Spain — жизнь на Коста-Бланке</title>
+<meta name="description" content="Места, события, подборки, полезное для жизни на побережье Испании. Чек-лист эмигранта Costa Blanca.">
+<meta property="og:title" content="Kate in Spain — жизнь на Коста-Бланке">
+<meta property="og:description" content="Места, события, подборки, полезное для жизни на побережье Испании.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kateinspain.es/">
+<link rel="canonical" href="https://kateinspain.es/">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #FBF6EF;
+    color: #2C2420;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: #C25E3C; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  nav {
+    background: #2C2420;
+    padding: 0 24px;
+    height: 64px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    color: #fff; font-weight: 700; font-size: 18px; text-decoration: none;
+    font-family: 'Fraunces', serif; font-style: italic;
+  }
+  .nav-logo .sun { color: #C38B44; }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a {
+    color: rgba(255,255,255,0.8); font-size: 14px; font-weight: 500;
+  }
+  .nav-links a:hover { color: #fff; text-decoration: none; }
+
+  .hero {
+    padding: 80px 24px 64px; text-align: center;
+    background: linear-gradient(180deg, #FBF6EF 0%, #F4EBDD 100%);
+  }
+  .hero h1 {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 700;
+    font-size: clamp(40px, 7vw, 64px); line-height: 1.05;
+    max-width: 800px; margin: 0 auto 16px;
+  }
+  .hero h1 em { font-style: normal; color: #C25E3C; }
+  .hero .lead {
+    font-size: 18px; color: #5C544E;
+    max-width: 580px; margin: 0 auto 32px;
+  }
+  .hero-tag {
+    display: inline-block; background: rgba(194,94,60,0.1);
+    color: #C25E3C; font-size: 12px; font-weight: 700;
+    padding: 6px 14px; border-radius: 999px;
+    text-transform: uppercase; letter-spacing: 1.5px;
+    margin-bottom: 20px;
+  }
+
+  .cards {
+    max-width: 1080px; margin: 0 auto; padding: 56px 24px;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .card {
+    background: #fff; border-radius: 16px; padding: 32px 28px;
+    box-shadow: 0 4px 16px rgba(44,36,32,0.06);
+    border: 1px solid rgba(195,139,68,0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(44,36,32,0.1); }
+  .card-icon { font-size: 32px; margin-bottom: 12px; }
+  .card h3 {
+    font-family: 'Fraunces', serif; font-weight: 700;
+    font-size: 22px; margin-bottom: 10px; color: #2C2420;
+  }
+  .card p { color: #5C544E; font-size: 15px; margin-bottom: 16px; }
+  .card .cta {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: #C25E3C; font-weight: 600; font-size: 14px;
+  }
+  .card.soon { opacity: 0.7; }
+  .card.soon .cta { color: #8A8278; pointer-events: none; }
+
+  footer {
+    background: #2C2420; color: rgba(255,255,255,0.7);
+    padding: 32px 24px; text-align: center; font-size: 13px;
+    margin-top: 40px;
+  }
+  footer a { color: #C38B44; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <span class="sun">☀</span> <span>Kate <em>in</em> Spain</span>
+  </a>
+  <div class="nav-links">
+    <a href="/checklist.html">Чек-лист</a>
+    <a href="#about">О сайте</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <span class="hero-tag">Costa Blanca · Испания</span>
+  <h1>Жизнь у моря <em>без</em> бюрократического тумана</h1>
+  <p class="lead">
+    Места, события, подборки, полезное — для тех, кто живёт на Коста-Бланке или думает о переезде.
+  </p>
+</section>
+
+<section class="cards" id="about">
+
+  <div class="card">
+    <div class="card-icon">📋</div>
+    <h3>Чек-лист эмигранта</h3>
+    <p>
+      Документы, медицина, банк, школа, машина — в правильной последовательности. Бесплатно, с возможностью отмечать пройденные шаги.
+    </p>
+    <a href="/checklist.html" class="cta">Открыть чек-лист →</a>
+  </div>
+
+  <div class="card soon">
+    <div class="card-icon">📅</div>
+    <h3>Афиша</h3>
+    <p>
+      События, фестивали, рынки, концерты по всему побережью. Подборки на каждые выходные и сезон.
+    </p>
+    <a href="#" class="cta">Скоро</a>
+  </div>
+
+  <div class="card soon">
+    <div class="card-icon">🌊</div>
+    <h3>Подборки мест</h3>
+    <p>
+      Скрытые пляжи, тропы, городки, рынки, рестораны — собранные опытом и проверенные временем.
+    </p>
+    <a href="#" class="cta">Скоро</a>
+  </div>
+
+</section>
+
+<footer>
+  Kate in Spain · 2026 · <a href="https://t.me/afishaCB">Telegram</a>
+</footer>
+
+</body>
+</html>

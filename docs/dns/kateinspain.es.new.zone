@@ -1,0 +1,12 @@
+$ORIGIN kateinspain.es.
+$TTL 3600
+site-eu1._domainkey.kateinspain.es. 3600 IN CNAME site-eu1._include.site.eu.
+_dmarc.kateinspain.es. 3600 IN TXT "v=DMARC1; p=quarantine; sp=none; aspf=r; adkim=r; pct=100;"
+kateinspain.es. 3600 IN TXT "v=spf1 include:_spf.site.eu -all"
+kateinspain.es. 3600 IN MX 10 spamfilter1.site.eu.
+kateinspain.es. 3600 IN MX 20 spamfilter2.site.eu.
+kateinspain.es. 3600 IN A 185.199.108.153
+kateinspain.es. 3600 IN A 185.199.109.153
+kateinspain.es. 3600 IN A 185.199.110.153
+kateinspain.es. 3600 IN A 185.199.111.153
+www.kateinspain.es. 3600 IN CNAME ekaterynamandra-ai.github.io.
