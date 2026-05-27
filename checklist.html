@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="metaTitle">Чек-лист эмигранта — Costa Blanca</title>
+<meta name="description" content="Practical relocation checklist for the Costa Blanca: paperwork, healthcare, housing, banking, schools, transport, pets and community.">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #FBF6EF;
+    color: #2C2420;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: #C25E3C; }
+
+  /* === NAV === */
+  nav {
+    background: #2C2420;
+    padding: 0 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #FBF6EF; }
+  .nav-logo .nav-sun { color: #C38B44; font-size: 22px; flex-shrink: 0; }
+  .nav-brand { display: flex; flex-direction: column; line-height: 1; gap: 3px; }
+  .nav-brand-name {
+    font-family: 'Fraunces', serif; font-weight: 700; font-style: italic;
+    font-size: 20px; letter-spacing: -0.01em;
+  }
+  .nav-brand-tagline {
+    font-size: 9px; font-weight: 600; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #C38B44;
+  }
+  .nav-right { display: flex; align-items: center; gap: 24px; }
+  .nav-links { display: flex; gap: 24px; }
+  .nav-links a {
+    color: rgba(255,255,255,0.8); text-decoration: none;
+    font-size: 14px; font-weight: 500; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: #C25E3C; }
+  .nav-links a.is-active { color: #C38B44; }
+
+  .lang-toggle {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 6px;
+    padding: 4px 2px;
+    display: flex;
+    gap: 2px;
+  }
+  .lang-toggle button {
+    background: none; border: none;
+    color: rgba(255,255,255,0.6);
+    font-size: 13px; font-weight: 600;
+    padding: 4px 10px; border-radius: 4px;
+    cursor: pointer; transition: all 0.2s;
+    font-family: inherit;
+  }
+  .lang-toggle button.active {
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+  }
+
+  .nav-burger {
+    display: none; background: transparent; border: none;
+    color: #FBF6EF; cursor: pointer; padding: 8px; margin-left: 8px;
+    border-radius: 6px; width: 40px; height: 40px;
+    align-items: center; justify-content: center;
+  }
+  .nav-burger .icon { font-size: 22px; }
+  #nav-menu-panel {
+    display: none; position: fixed; top: 64px; left: 0; right: 0;
+    background: #2C2420; border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 16px 24px 24px; z-index: 99;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    animation: navMenuIn 0.25s ease-out;
+  }
+  #nav-menu-panel.is-open { display: block; }
+  #nav-menu-panel a {
+    display: block; padding: 14px 8px;
+    color: rgba(255,255,255,0.9); text-decoration: none;
+    font-size: 16px; font-weight: 500;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  #nav-menu-panel a:last-child { border-bottom: none; }
+  #nav-menu-panel a:hover { color: #C25E3C; }
+  #nav-menu-panel a.is-active { color: #C38B44; }
+  @keyframes navMenuIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* === SVG icon === */
+  .icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 1em; height: 1em; vertical-align: -0.13em; flex-shrink: 0;
+  }
+  .icon svg {
+    width: 100%; height: 100%; fill: none; stroke: currentColor;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  /* === PAGE HEADER === */
+  .page-header {
+    background: linear-gradient(180deg, #FBF6EF 0%, #F4EADA 100%);
+    padding: 80px 0 48px;
+    border-bottom: 1px solid #E8D9C6;
+  }
+  .page-header-inner {
+    max-width: 960px; margin: 0 auto;
+    padding: 0 24px; text-align: center;
+  }
+  .page-header .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: #C25E3C; margin-bottom: 16px;
+  }
+  .page-header .eyebrow::before, .page-header .eyebrow::after {
+    content: ''; width: 32px; height: 1px; background: #C25E3C;
+  }
+  .page-header h1 {
+    font-family: 'Fraunces', 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 54px);
+    font-weight: 700; letter-spacing: -0.02em;
+    line-height: 1.1; text-wrap: balance;
+    color: #2C2420; margin-bottom: 16px;
+  }
+  .page-header .lead {
+    font-size: clamp(15px, 1.8vw, 18px);
+    color: #5A4E44; max-width: 620px;
+    margin: 0 auto; text-wrap: balance;
+  }
+
+  /* === UNIFIED SECTION HEAD PATTERN (tips, checklist, emergency) === */
+  .section-head {
+    text-align: center;
+    margin-bottom: 28px;
+    scroll-margin-top: 80px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .section-head h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(24px, 3.5vw, 34px);
+    font-weight: 700;
+    color: #2C2420;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+    text-wrap: balance;
+  }
+  .section-head .section-subtitle {
+    font-size: 14.5px;
+    color: #7A6D60;
+    text-wrap: balance;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .section-rule-mini {
+    width: 48px;
+    height: 2px;
+    background: #C25E3C;
+    border-radius: 2px;
+    margin: 0 auto 20px;
+  }
+
+  /* === CHECKLIST SECTION — full-bleed tint band === */
+  .checklist-section {
+    width: 100%;
+    background: #F7F0E3;
+    padding: 72px 0;
+    margin: 64px 0 0;
+  }
+  .checklist-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* === PROGRESS === */
+  .progress-wrap { margin: 0 auto 32px; max-width: 680px; }
+  .progress-bar-container {
+    background: rgba(255,255,255,0.6);
+    border: 1px solid #E8D9C6; border-radius: 14px;
+    padding: 18px 22px;
+    display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  }
+  .progress-label { font-size: 14px; font-weight: 600; color: #2C2420; }
+  .progress-label strong {
+    font-family: 'Fraunces', serif; color: #C25E3C;
+    font-size: 18px; font-weight: 800; margin-right: 4px;
+  }
+  .progress-track {
+    flex: 1 1 260px; height: 8px; background: #E8D9C6;
+    border-radius: 999px; overflow: hidden; min-width: 200px;
+  }
+  .progress-fill {
+    display: block; height: 100%;
+    background: linear-gradient(90deg, #C25E3C 0%, #C38B44 100%);
+    width: 0%; border-radius: 999px;
+    transition: width 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .progress-reset {
+    background: transparent; border: 1px solid #D8C4A8;
+    color: #7A6D60; font-size: 12px; font-weight: 600;
+    padding: 6px 12px; border-radius: 8px;
+    cursor: pointer; transition: all 0.2s;
+    font-family: inherit;
+  }
+  .progress-reset:hover { color: #8B3A2A; border-color: #C25E3C; }
+
+  /* === TIPS (compact, hover-reveal, centered header) === */
+  .tips-section {
+    max-width: 960px;
+    margin: 56px auto 0;
+    padding: 0 24px;
+    scroll-margin-top: 80px;
+  }
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+  }
+  .tip-card {
+    background: #FFFFFF;
+    border: 1px solid #E8D9C6;
+    border-left: 3px solid #C25E3C;
+    border-radius: 4px 12px 12px 4px;
+    padding: 14px 16px;
+    transition: all 0.25s cubic-bezier(0.2, 0.7, 0.2, 1);
+    overflow: hidden;
+    position: relative;
+  }
+  .tip-card:hover,
+  .tip-card:focus-visible {
+    border-color: #C25E3C;
+    border-left-color: #C25E3C;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(44,36,32,0.08);
+  }
+  .tip-headline {
+    font-family: 'Fraunces', 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2C2420;
+    line-height: 1.3;
+    letter-spacing: -0.005em;
+  }
+  .tip-body {
+    font-size: 13px; color: #5A4E44; line-height: 1.5;
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+    transform: translateY(-4px);
+    transition: opacity 0.25s ease,
+                max-height 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+                margin-top 0.3s ease,
+                transform 0.25s ease;
+    overflow: hidden;
+  }
+  .tip-card:hover .tip-body,
+  .tip-card:focus-visible .tip-body {
+    opacity: 1;
+    max-height: 200px;
+    margin-top: 10px;
+    transform: translateY(0);
+  }
+  /* Touch devices: always show body (no hover) */
+  @media (hover: none) {
+    .tip-body {
+      opacity: 1;
+      max-height: 200px;
+      margin-top: 10px;
+      transform: none;
+    }
+  }
+
+  /* === EMERGENCY NUMBERS (compact, hover-reveal, centered header) === */
+  .emergency-section {
+    max-width: 960px;
+    margin: 64px auto 0;
+    padding: 0 24px 72px;
+    scroll-margin-top: 80px;
+  }
+
+  .emergency-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+  }
+  .emergency-card {
+    background: #FFFFFF;
+    border: 1px solid #E8D9C6;
+    border-radius: 12px;
+    padding: 14px 16px;
+    transition: all 0.25s cubic-bezier(0.2, 0.7, 0.2, 1);
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+  }
+  .emergency-card:hover,
+  .emergency-card:focus-visible {
+    border-color: #C25E3C;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(44,36,32,0.08);
+  }
+  .emergency-card.is-primary {
+    background: linear-gradient(145deg, #C25E3C 0%, #A84A2E 100%);
+    border-color: #A84A2E;
+  }
+  .emergency-number {
+    font-family: 'Fraunces', serif;
+    font-size: 28px; font-weight: 800;
+    color: #2C2420; letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .emergency-card.is-primary .emergency-number { color: #FBF6EF; }
+  .emergency-label {
+    font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.11em;
+    color: #C25E3C; margin-bottom: 6px;
+  }
+  .emergency-card.is-primary .emergency-label { color: #F4EADA; }
+
+  /* Hover-reveal hint: hidden compact on desktop, slides down on hover */
+  .emergency-hint {
+    font-size: 12.5px; color: #5A4E44; line-height: 1.45;
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+    transform: translateY(-4px);
+    transition: opacity 0.25s ease,
+                max-height 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+                margin-top 0.3s ease,
+                transform 0.25s ease;
+    overflow: hidden;
+  }
+  .emergency-card:hover .emergency-hint,
+  .emergency-card:focus-visible .emergency-hint {
+    opacity: 1;
+    max-height: 160px;
+    margin-top: 10px;
+    transform: translateY(0);
+  }
+  .emergency-card.is-primary .emergency-hint { color: rgba(251,246,239,0.88); }
+
+  /* Touch devices: no hover, so always show hint so users still get info */
+  @media (hover: none) {
+    .emergency-hint {
+      opacity: 1;
+      max-height: 160px;
+      margin-top: 10px;
+      transform: none;
+    }
+  }
+
+  .emergency-footnote {
+    font-size: 12.5px; color: #7A6D60;
+    margin-top: 14px; line-height: 1.5;
+    padding: 12px 16px;
+    background: #F5EDDC;
+    border-radius: 10px;
+  }
+  .emergency-footnote b { color: #8B3A2A; }
+
+  /* === CHECKLIST === */
+  .checklist-main { max-width: 960px; margin: 56px auto 0; padding: 0 24px 96px; }
+
+  .category {
+    background: #FFFFFF; border: 1px solid #E8D9C6;
+    border-radius: 16px; margin-bottom: 16px; overflow: hidden;
+    transition: box-shadow 0.25s ease;
+  }
+  .category:hover { box-shadow: 0 10px 28px rgba(44,36,32,0.08); }
+  .category.is-done { border-color: #C38B44; background: #FFFCF5; }
+
+  .category-header {
+    display: flex; align-items: center; gap: 16px;
+    padding: 20px 22px; cursor: pointer;
+    background: transparent; border: none; width: 100%;
+    text-align: left; font-family: inherit; color: inherit;
+  }
+  .category-header:focus-visible {
+    outline: 2px solid #C25E3C; outline-offset: -2px; border-radius: 16px;
+  }
+
+  .category-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: #FBF6EF; color: #C25E3C;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 22px; flex-shrink: 0;
+  }
+  .category.is-done .category-icon { background: #FFF4DA; color: #8B3A2A; }
+
+  .category-text { flex: 1; min-width: 0; }
+  .category-num {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: #C25E3C; margin-bottom: 2px;
+  }
+  .category-name {
+    font-family: 'Fraunces', 'Playfair Display', serif;
+    font-size: 20px; font-weight: 700;
+    color: #2C2420; letter-spacing: -0.005em;
+  }
+
+  .category-progress { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+  .category-progress-count {
+    font-size: 13px; font-weight: 600; color: #7A6D60;
+    font-variant-numeric: tabular-nums;
+  }
+  .category-progress-count strong { color: #2C2420; }
+  .category-chevron {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: #FBF6EF; color: #5A4E44;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1), background 0.2s;
+  }
+  .category.is-open .category-chevron {
+    transform: rotate(180deg); background: #C25E3C; color: #FBF6EF;
+  }
+
+  .category-items {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .category.is-open .category-items { max-height: 3000px; }
+  .category-items-inner {
+    padding: 8px 22px 22px;
+    border-top: 1px solid #F4EADA;
+  }
+
+  .checklist-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 14px 0; border-bottom: 1px solid #F4EADA; cursor: pointer;
+  }
+  .checklist-item:last-child { border-bottom: none; }
+  .checklist-item:focus-visible {
+    outline: 2px solid #C25E3C; outline-offset: 3px; border-radius: 6px;
+  }
+
+  .checkbox {
+    width: 24px; height: 24px; border-radius: 7px;
+    border: 2px solid #D8C4A8; background: #FFFFFF;
+    display: inline-flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 1px;
+    transition: all 0.2s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .checkbox .icon {
+    width: 14px; height: 14px; color: #FBF6EF;
+    opacity: 0; transform: scale(0.5);
+    transition: all 0.2s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .checklist-item.is-checked .checkbox { background: #C25E3C; border-color: #C25E3C; }
+  .checklist-item.is-checked .checkbox .icon { opacity: 1; transform: scale(1); }
+  .checklist-item:hover .checkbox { border-color: #C25E3C; }
+
+  .item-body { flex: 1; min-width: 0; }
+  .item-title {
+    font-size: 15.5px; font-weight: 600;
+    color: #2C2420; line-height: 1.45;
+    transition: color 0.2s;
+  }
+  .checklist-item.is-checked .item-title {
+    color: #7A6D60;
+    text-decoration: line-through;
+    text-decoration-color: rgba(194,94,60,0.5);
+  }
+  .item-hint {
+    font-size: 13px; color: #5A4E44;
+    line-height: 1.5; margin-top: 3px;
+  }
+  .item-hint b { color: #8B3A2A; font-weight: 600; }
+  .checklist-item.is-checked .item-hint { opacity: 0.65; }
+
+  /* === FOOTER === */
+  footer {
+    background: #2C2420; color: rgba(255,255,255,0.7);
+    padding: 32px 24px; text-align: center; font-size: 14px;
+  }
+  footer a { color: #C25E3C; text-decoration: none; margin: 0 8px; }
+  footer p { margin-top: 16px; }
+
+  :focus { outline: none; }
+  :focus-visible {
+    outline: 2px solid #C25E3C; outline-offset: 3px; border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-burger { display: inline-flex; }
+    .nav-brand-name { font-size: 17px; }
+    .nav-brand-tagline { display: none; }
+    .page-header { padding: 48px 0 32px; }
+    .progress-wrap { margin-top: 32px; }
+    .progress-bar-container { padding: 14px 16px; gap: 12px; }
+    .tips-section, .checklist-main { padding-left: 20px; padding-right: 20px; }
+    .tips-section { margin-top: 40px; }
+    .checklist-main { margin-top: 40px; padding-bottom: 64px; }
+    .category-header { padding: 16px 16px; gap: 12px; }
+    .category-icon { width: 38px; height: 38px; font-size: 18px; }
+    .category-name { font-size: 17px; }
+    .category-num { font-size: 10px; }
+    .category-items-inner { padding: 8px 16px 16px; }
+    .item-title { font-size: 14.5px; }
+    .item-hint { font-size: 12.5px; }
+  }
+</style>
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <defs>
+    <symbol id="i-sun" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2"/><path d="M12 20v2"/>
+      <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
+      <path d="M2 12h2"/><path d="M20 12h2"/>
+      <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24">
+      <line x1="4" y1="6" x2="20" y2="6"/>
+      <line x1="4" y1="12" x2="20" y2="12"/>
+      <line x1="4" y1="18" x2="20" y2="18"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24">
+      <path d="M12 9v4"/><path d="M12 17h.01"/>
+      <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/>
+    </symbol>
+    <symbol id="i-file-text" viewBox="0 0 24 24">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+      <polyline points="14 2 14 8 20 8"/>
+      <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+      <line x1="10" y1="9" x2="8" y2="9"/>
+    </symbol>
+    <symbol id="i-heart-pulse" viewBox="0 0 24 24">
+      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/>
+      <path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/>
+    </symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24">
+      <path d="M20 12V8H6a2 2 0 0 1 0-4h12v4"/>
+      <path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/>
+      <path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/>
+    </symbol>
+    <symbol id="i-home" viewBox="0 0 24 24">
+      <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/>
+      <polyline points="9 22 9 12 15 12 15 22"/>
+    </symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24">
+      <path d="M12 22v-5"/><path d="M9 7V2"/><path d="M15 7V2"/>
+      <path d="M6 13V9a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4Z"/>
+    </symbol>
+    <symbol id="i-car" viewBox="0 0 24 24">
+      <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
+      <circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/>
+    </symbol>
+    <symbol id="i-graduation-cap" viewBox="0 0 24 24">
+      <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/>
+      <path d="M22 10v6"/>
+      <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>
+    </symbol>
+    <symbol id="i-paw" viewBox="0 0 24 24">
+      <circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/>
+      <circle cx="4" cy="8" r="2"/><circle cx="6" cy="15" r="2"/>
+      <path d="M8 22c0-4 4-4 4-4s4 0 4 4"/>
+    </symbol>
+    <symbol id="i-book-open" viewBox="0 0 24 24">
+      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+    </symbol>
+    <symbol id="i-users" viewBox="0 0 24 24">
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+      <circle cx="9" cy="7" r="4"/>
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+      <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ===== NAVIGATION ===== -->
+<nav aria-label="Основная навигация">
+  <a class="nav-logo" href="mockup-website.html">
+    <span class="icon nav-sun" aria-hidden="true"><svg><use href="#i-sun"/></svg></span>
+    <span class="nav-brand">
+      <span class="nav-brand-name">Costa Blanca</span>
+      <span class="nav-brand-tagline" data-i18n="navTagline">афиша · события · путеводитель</span>
+    </span>
+  </a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="mockup-website.html" data-i18n="navHome">Главная</a>
+      <a href="mockup-website.html#events-catalog" data-i18n="navEvents">Все события</a>
+      <a href="mockup-website.html#categories" data-i18n="navCategories">Категории</a>
+      <a href="checklist.html" class="is-active" aria-current="page" data-i18n="navChecklist">Чек-лист</a>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Язык">
+      <button class="active" data-lang="ru">RU</button>
+      <button data-lang="en">EN</button>
+    </div>
+    <button class="nav-burger" id="nav-burger" aria-expanded="false" aria-controls="nav-menu-panel" aria-label="Menu">
+      <span class="icon" aria-hidden="true"><svg><use href="#i-menu"/></svg></span>
+    </button>
+  </div>
+</nav>
+<div id="nav-menu-panel" aria-hidden="true">
+  <a href="mockup-website.html" data-i18n="navHome">Главная</a>
+  <a href="mockup-website.html#events-catalog" data-i18n="navEvents">Все события</a>
+  <a href="mockup-website.html#categories" data-i18n="navCategories">Категории</a>
+  <a href="checklist.html" class="is-active" aria-current="page" data-i18n="navChecklistFull">Чек-лист эмигранта</a>
+</div>
+
+<main>
+
+<!-- ===== PAGE HEADER ===== -->
+<section class="page-header">
+  <div class="page-header-inner">
+    <h1 data-i18n="pageTitle">Чек-лист переезда на Costa Blanca</h1>
+    <p class="lead" data-i18n="pageLead">60+ шагов по 10 темам — от NIE и empadronamiento до школы, банка и питомцев. Не юридические советы, а практический порядок действий для любого, кто переезжает жить на Costa Blanca.</p>
+  </div>
+</section>
+
+<!-- ===== TIPS (compact, hover-reveal) ===== -->
+<section class="tips-section" id="tips" aria-labelledby="tips-title">
+  <div class="section-head">
+    <div class="section-rule-mini" aria-hidden="true"></div>
+    <h2 id="tips-title" data-i18n="tipsTitle">Что важно знать сразу</h2>
+    <p class="section-subtitle" data-i18n="tipsSubtitle">Четыре правила, которые сэкономят месяцы бюрократии</p>
+  </div>
+  <div class="tips-grid">
+    <article class="tip-card" tabindex="0">
+      <h3 class="tip-headline" data-i18n="tip1Title">Empadronamiento — ключ ко всему</h3>
+      <p class="tip-body" data-i18n="tip1Body">Банки, школы, медицина часто требуют регистрацию по адресу ДО получения NIE/TIE. Не делай бумажки в произвольном порядке — начинай с ayuntamiento.</p>
+    </article>
+    <article class="tip-card" tabindex="0">
+      <h3 class="tip-headline" data-i18n="tip2Title">Цифровой сертификат экономит месяцы</h3>
+      <p class="tip-body" data-i18n="tip2Body">Cl@ve или электронный сертификат (FNMT) превращает многодневные очереди в 10-минутные онлайн-процедуры. Получай как только есть NIE.</p>
+    </article>
+    <article class="tip-card" tabindex="0">
+      <h3 class="tip-headline" data-i18n="tip3Title">Наличные всё ещё рулят</h3>
+      <p class="tip-body" data-i18n="tip3Body">Арендодатели, сантехники, мелкие госслужбы часто требуют наличные. Держи €300–500 кэшем на первый месяц.</p>
+    </article>
+    <article class="tip-card" tabindex="0">
+      <h3 class="tip-headline" data-i18n="tip4Title">Медицина не автоматически бесплатна</h3>
+      <p class="tip-body" data-i18n="tip4Body">Тем, кто недавно приехал, обычно нужна приватная страховка. SIP-карта открывается ТОЛЬКО после empadronamiento.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ===== CHECKLIST (accordion + its progress bar) ===== -->
+<section class="checklist-section" id="checklist-list" aria-labelledby="checklist-section-title">
+  <div class="checklist-inner">
+
+  <div class="section-head">
+    <div class="section-rule-mini" aria-hidden="true"></div>
+    <h2 id="checklist-section-title" data-i18n="checklistSectionTitle">Чек-лист переезда</h2>
+    <p class="section-subtitle" data-i18n="checklistSectionSubtitle">Раскрой любую категорию и отмечай выполненные шаги. Прогресс сохраняется автоматически.</p>
+  </div>
+
+  <!-- Progress bar — now inside the checklist section where it belongs -->
+  <div class="progress-wrap">
+    <div class="progress-bar-container">
+      <div class="progress-label">
+        <span data-i18n="progressCheckedLabel">Отмечено:</span>
+        <strong id="progress-count">0</strong>
+        <span data-i18n="progressOfLabel">из</span>
+        <span id="progress-total">0</span>
+      </div>
+      <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <span class="progress-fill" id="progress-fill"></span>
+      </div>
+      <button type="button" class="progress-reset" id="progress-reset" aria-label="Сбросить все отметки" data-i18n="resetBtn">Сбросить</button>
+    </div>
+  </div>
+
+<div class="checklist-main">
+
+  <!-- 01 Docs -->
+  <section class="category" data-category-id="docs">
+    <button class="category-header" type="button" aria-expanded="false">
+      <span class="category-icon" aria-hidden="true"><svg><use href="#i-file-text"/></svg></span>
+      <span class="category-text">
+        <span class="category-num"><span data-i18n="cat1Num">01 · Основа</span></span>
+        <span class="category-name" data-i18n="cat1Name">Документы и резидентство</span>
+      </span>
+      <span class="category-progress">
+        <span class="category-progress-count"><strong>0</strong>/6</span>
+        <span class="category-chevron" aria-hidden="true"><svg><use href="#i-chevron-down"/></svg></span>
+      </span>
+    </button>
+    <div class="category-items">
+      <div class="category-items-inner">
+        <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="docs-1">
+          <span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span>
+          <div class="item-body">
+            <div class="item-title"></div>
+            <div class="item-hint"></div>
+          </div>
+        </div>
+        <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="docs-2">
+          <span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span>
+          <div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div>
+        </div>
+        <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="docs-3">
+          <span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span>
+          <div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div>
+        </div>
+        <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="docs-4">
+          <span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span>
+          <div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div>
+        </div>
+        <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="docs-5">
+          <span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span>
+          <div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div>
+        </div>
+        <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="docs-6">
+          <span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span>
+          <div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 Health -->
+  <section class="category" data-category-id="health">
+    <button class="category-header" type="button" aria-expanded="false">
+      <span class="category-icon" aria-hidden="true"><svg><use href="#i-heart-pulse"/></svg></span>
+      <span class="category-text">
+        <span class="category-num"><span data-i18n="cat2Num">02 · Здоровье</span></span>
+        <span class="category-name" data-i18n="cat2Name">Медицина и страховка</span>
+      </span>
+      <span class="category-progress">
+        <span class="category-progress-count"><strong>0</strong>/6</span>
+        <span class="category-chevron" aria-hidden="true"><svg><use href="#i-chevron-down"/></svg></span>
+      </span>
+    </button>
+    <div class="category-items">
+      <div class="category-items-inner">
+        <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="health-1">
+          <span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span>
+          <div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div>
+        </div>
+        <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="health-2">
+          <span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span>
+          <div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div>
+        </div>
+        <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="health-3">
+          <span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span>
+          <div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div>
+        </div>
+        <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="health-4">
+          <span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span>
+          <div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div>
+        </div>
+        <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="health-5">
+          <span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span>
+          <div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div>
+        </div>
+        <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="health-6">
+          <span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span>
+          <div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 Bank -->
+  <section class="category" data-category-id="bank">
+    <button class="category-header" type="button" aria-expanded="false">
+      <span class="category-icon" aria-hidden="true"><svg><use href="#i-wallet"/></svg></span>
+      <span class="category-text">
+        <span class="category-num"><span data-i18n="cat3Num">03 · Финансы</span></span>
+        <span class="category-name" data-i18n="cat3Name">Банк и деньги</span>
+      </span>
+      <span class="category-progress">
+        <span class="category-progress-count"><strong>0</strong>/5</span>
+        <span class="category-chevron" aria-hidden="true"><svg><use href="#i-chevron-down"/></svg></span>
+      </span>
+    </button>
+    <div class="category-items"><div class="category-items-inner">
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="bank-1"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="bank-2"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="bank-3"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="bank-4"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="bank-5"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+    </div></div>
+  </section>
+
+  <!-- 04 Housing -->
+  <section class="category" data-category-id="housing">
+    <button class="category-header" type="button" aria-expanded="false">
+      <span class="category-icon" aria-hidden="true"><svg><use href="#i-home"/></svg></span>
+      <span class="category-text">
+        <span class="category-num"><span data-i18n="cat4Num">04 · Крыша над головой</span></span>
+        <span class="category-name" data-i18n="cat4Name">Жильё и договор аренды</span>
+      </span>
+      <span class="category-progress">
+        <span class="category-progress-count"><strong>0</strong>/5</span>
+        <span class="category-chevron" aria-hidden="true"><svg><use href="#i-chevron-down"/></svg></span>
+      </span>
+    </button>
+    <div class="category-items"><div class="category-items-inner">
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="housing-1"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="housing-2"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="housing-3"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="housing-4"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="housing-5"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+    </div></div>
+  </section>
+
+  <!-- 05 Utilities -->
+  <section class="category" data-category-id="utilities">
+    <button class="category-header" type="button" aria-expanded="false">
+      <span class="category-icon" aria-hidden="true"><svg><use href="#i-plug"/></svg></span>
+      <span class="category-text">
+        <span class="category-num"><span data-i18n="cat5Num">05 · Ежемесячное</span></span>
+        <span class="category-name" data-i18n="cat5Name">Коммуналка и интернет</span>
+      </span>
+      <span class="category-progress">
+        <span class="category-progress-count"><strong>0</strong>/5</span>
+        <span class="category-chevron" aria-hidden="true"><svg><use href="#i-chevron-down"/></svg></span>
+      </span>
+    </button>
+    <div class="category-items"><div class="category-items-inner">
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="util-1"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="util-2"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="util-3"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="util-4"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="util-5"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+    </div></div>
+  </section>
+
+  <!-- 06 Transport -->
+  <section class="category" data-category-id="transport">
+    <button class="category-header" type="button" aria-expanded="false">
+      <span class="category-icon" aria-hidden="true"><svg><use href="#i-car"/></svg></span>
+      <span class="category-text">
+        <span class="category-num"><span data-i18n="cat6Num">06 · Мобильность</span></span>
+        <span class="category-name" data-i18n="cat6Name">Транспорт и машина</span>
+      </span>
+      <span class="category-progress">
+        <span class="category-progress-count"><strong>0</strong>/6</span>
+        <span class="category-chevron" aria-hidden="true"><svg><use href="#i-chevron-down"/></svg></span>
+      </span>
+    </button>
+    <div class="category-items"><div class="category-items-inner">
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="transport-1"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="transport-2"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="transport-3"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="transport-4"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="transport-5"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="transport-6"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+    </div></div>
+  </section>
+
+  <!-- 07 Kids -->
+  <section class="category" data-category-id="kids">
+    <button class="category-header" type="button" aria-expanded="false">
+      <span class="category-icon" aria-hidden="true"><svg><use href="#i-graduation-cap"/></svg></span>
+      <span class="category-text">
+        <span class="category-num"><span data-i18n="cat7Num">07 · Семьям</span></span>
+        <span class="category-name" data-i18n="cat7Name">Дети и школы</span>
+      </span>
+      <span class="category-progress">
+        <span class="category-progress-count"><strong>0</strong>/5</span>
+        <span class="category-chevron" aria-hidden="true"><svg><use href="#i-chevron-down"/></svg></span>
+      </span>
+    </button>
+    <div class="category-items"><div class="category-items-inner">
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="kids-1"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="kids-2"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="kids-3"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="kids-4"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="kids-5"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+    </div></div>
+  </section>
+
+  <!-- 08 Pets -->
+  <section class="category" data-category-id="pets">
+    <button class="category-header" type="button" aria-expanded="false">
+      <span class="category-icon" aria-hidden="true"><svg><use href="#i-paw"/></svg></span>
+      <span class="category-text">
+        <span class="category-num"><span data-i18n="cat8Num">08 · Питомцам</span></span>
+        <span class="category-name" data-i18n="cat8Name">Животные и ветеринар</span>
+      </span>
+      <span class="category-progress">
+        <span class="category-progress-count"><strong>0</strong>/5</span>
+        <span class="category-chevron" aria-hidden="true"><svg><use href="#i-chevron-down"/></svg></span>
+      </span>
+    </button>
+    <div class="category-items"><div class="category-items-inner">
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="pets-1"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="pets-2"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="pets-3"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="pets-4"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="pets-5"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+    </div></div>
+  </section>
+
+  <!-- 09 Language -->
+  <section class="category" data-category-id="language">
+    <button class="category-header" type="button" aria-expanded="false">
+      <span class="category-icon" aria-hidden="true"><svg><use href="#i-book-open"/></svg></span>
+      <span class="category-text">
+        <span class="category-num"><span data-i18n="cat9Num">09 · Интеграция</span></span>
+        <span class="category-name" data-i18n="cat9Name">Испанский язык</span>
+      </span>
+      <span class="category-progress">
+        <span class="category-progress-count"><strong>0</strong>/5</span>
+        <span class="category-chevron" aria-hidden="true"><svg><use href="#i-chevron-down"/></svg></span>
+      </span>
+    </button>
+    <div class="category-items"><div class="category-items-inner">
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="lang-1"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="lang-2"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="lang-3"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="lang-4"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="lang-5"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+    </div></div>
+  </section>
+
+  <!-- 10 Community -->
+  <section class="category" data-category-id="community">
+    <button class="category-header" type="button" aria-expanded="false">
+      <span class="category-icon" aria-hidden="true"><svg><use href="#i-users"/></svg></span>
+      <span class="category-text">
+        <span class="category-num"><span data-i18n="cat10Num">10 · Сеть</span></span>
+        <span class="category-name" data-i18n="cat10Name">Соседи и комьюнити</span>
+      </span>
+      <span class="category-progress">
+        <span class="category-progress-count"><strong>0</strong>/5</span>
+        <span class="category-chevron" aria-hidden="true"><svg><use href="#i-chevron-down"/></svg></span>
+      </span>
+    </button>
+    <div class="category-items"><div class="category-items-inner">
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="comm-1"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="comm-2"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="comm-3"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="comm-4"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+      <div class="checklist-item" tabindex="0" role="checkbox" aria-checked="false" data-item="comm-5"><span class="checkbox" aria-hidden="true"><span class="icon"><svg><use href="#i-check"/></svg></span></span><div class="item-body"><div class="item-title"></div><div class="item-hint"></div></div></div>
+    </div></div>
+  </section>
+
+</div>
+  </div><!-- /.checklist-inner -->
+</section><!-- /.checklist-section -->
+
+<!-- ===== EMERGENCY NUMBERS (moved to bottom — quick reference) ===== -->
+<section class="emergency-section" id="emergency" aria-labelledby="emergency-title">
+  <div class="section-head">
+    <div class="section-rule-mini" aria-hidden="true"></div>
+    <h2 id="emergency-title" data-i18n="emergencyTitle">Экстренные номера</h2>
+    <p class="section-subtitle" data-i18n="emergencySubtitle">Сохрани в закладки — работает на любом телефоне в Испании</p>
+  </div>
+  <div class="emergency-grid">
+    <a class="emergency-card is-primary emergency-call" href="tel:112">
+      <div class="emergency-label" data-i18n="emergency112Label">Главный номер ЕС</div>
+      <div class="emergency-number">112</div>
+      <div class="emergency-hint" data-i18n="emergency112Hint">Полиция, скорая, пожарные — один звонок. Бесплатно, работает без SIM.</div>
+    </a>
+    <a class="emergency-card emergency-call" href="tel:061">
+      <div class="emergency-label" data-i18n="emergency061Label">Скорая помощь</div>
+      <div class="emergency-number">061</div>
+      <div class="emergency-hint" data-i18n="emergency061Hint">Медицинская экстренная служба. Для ДТП лучше 112 — диспетчер пришлёт сразу всех нужных.</div>
+    </a>
+    <a class="emergency-card emergency-call" href="tel:091">
+      <div class="emergency-label" data-i18n="emergency091Label">Национальная полиция</div>
+      <div class="emergency-number">091</div>
+      <div class="emergency-hint" data-i18n="emergency091Hint">Policía Nacional. Документы, серьёзные преступления, пропажа паспорта, иммиграция.</div>
+    </a>
+    <a class="emergency-card emergency-call" href="tel:062">
+      <div class="emergency-label" data-i18n="emergency062Label">Гражданская гвардия</div>
+      <div class="emergency-number">062</div>
+      <div class="emergency-hint" data-i18n="emergency062Hint">Guardia Civil. Вне городов, на шоссе, пограничные вопросы, спасение в горах и на море.</div>
+    </a>
+    <a class="emergency-card emergency-call" href="tel:092">
+      <div class="emergency-label" data-i18n="emergency092Label">Местная полиция</div>
+      <div class="emergency-number">092</div>
+      <div class="emergency-hint" data-i18n="emergency092Hint">Policía Local. Парковка, шум, местные ЧП, бытовые конфликты в своём городе.</div>
+    </a>
+    <a class="emergency-card emergency-call" href="tel:080">
+      <div class="emergency-label" data-i18n="emergency080Label">Пожарные</div>
+      <div class="emergency-number">080</div>
+      <div class="emergency-hint" data-i18n="emergency080Hint">Bomberos. Пожары, спасение животных, затопления, ДТП с застрявшими.</div>
+    </a>
+    <a class="emergency-card emergency-call" href="tel:016">
+      <div class="emergency-label" data-i18n="emergency016Label">Помощь женщинам</div>
+      <div class="emergency-number">016</div>
+      <div class="emergency-hint" data-i18n="emergency016Hint">Круглосуточная линия по домашнему и гендерному насилию. Звонок не отражается в списке вызовов.</div>
+    </a>
+    <a class="emergency-card emergency-call" href="tel:024">
+      <div class="emergency-label" data-i18n="emergency024Label">Кризис и суицид</div>
+      <div class="emergency-number">024</div>
+      <div class="emergency-hint" data-i18n="emergency024Hint">Психологическая поддержка в острых ситуациях. Бесплатно, 24/7, анонимно.</div>
+    </a>
+  </div>
+  <div class="emergency-footnote" data-i18n-html="emergencyFootnote">
+    <b>112</b> понимает несколько языков (испанский, английский, французский, немецкий, иногда каталонский). Если не уверен — звони именно сюда, диспетчер разберёт. Номера <b>091 / 062 / 092 / 080 / 061</b> — это национальные shortcuts, не нужен код города.
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div>
+    <a href="mockup-website.html" data-i18n="navHome">Главная</a>
+    <a href="mockup-website.html#events-catalog" data-i18n="navEvents">Все события</a>
+    <a href="checklist.html" data-i18n="navChecklist">Чек-лист</a>
+    <a href="#">Telegram</a>
+  </div>
+  <p data-i18n="footerTagline">Costa Blanca — афиша событий и практический гид для экспатов</p>
+  <p style="margin-top: 8px; opacity: 0.6;">© 2026</p>
+</footer>
+
+<script>
+/* ============================================ */
+/* ======= i18n TRANSLATIONS ================== */
+/* ============================================ */
+
+const TRANSLATIONS = {
+  ru: {
+    metaTitle: 'Чек-лист переезда — Costa Blanca',
+    navTagline: 'афиша · события · путеводитель',
+    navHome: 'Главная',
+    navEvents: 'Все события',
+    navCategories: 'Категории',
+    navChecklist: 'Чек-лист',
+    navChecklistFull: 'Чек-лист эмигранта',
+
+    pageTitle: 'Чек-лист переезда на Costa Blanca',
+    pageLead: '60+ шагов по 10 темам — от NIE и empadronamiento до школы, банка и питомцев. Не юридические советы, а практический порядок действий для любого, кто переезжает жить на Costa Blanca.',
+
+    navEmergency: 'Срочные номера',
+    navTipsSection: 'Важно знать',
+    navChecklistSection: 'Чек-лист',
+
+    checklistSectionTitle: 'Чек-лист переезда',
+    checklistSectionSubtitle: 'Раскрой любую категорию и отмечай выполненные шаги. Прогресс сохраняется автоматически.',
+
+    progressCheckedLabel: 'Отмечено:',
+    progressOfLabel: 'из',
+    resetBtn: 'Сбросить',
+    resetConfirm: 'Сбросить все отметки в чек-листе?',
+
+    tipsTitle: 'Что важно знать сразу',
+    tipsSubtitle: 'Четыре правила, которые сэкономят месяцы бюрократии',
+    emergencySubtitle: 'Сохрани в закладки — работает на любом телефоне в Испании',
+    tip1Title: 'Empadronamiento — ключ ко всему',
+    tip1Body: 'Банки, школы, медицина часто требуют регистрацию по адресу ДО получения NIE/TIE. Не делай бумажки в произвольном порядке — начинай с ayuntamiento.',
+    tip2Title: 'Цифровой сертификат экономит месяцы',
+    tip2Body: 'Cl@ve или электронный сертификат (FNMT) превращает многодневные очереди в 10-минутные онлайн-процедуры. Получай как только есть NIE.',
+    tip3Title: 'Наличные всё ещё рулят',
+    tip3Body: 'Арендодатели, сантехники, мелкие госслужбы часто требуют наличные. Держи €300–500 кэшем на первый месяц.',
+    tip4Title: 'Медицина не автоматически бесплатна',
+    tip4Body: 'Тем, кто недавно приехал, обычно нужна приватная страховка. SIP-карта открывается ТОЛЬКО после empadronamiento.',
+
+    emergencyTitle: 'Экстренные номера',
+    emergency112Label: 'Главный номер ЕС',
+    emergency112Hint: 'Полиция, скорая, пожарные — один звонок. Бесплатно, работает без SIM.',
+    emergency061Label: 'Скорая помощь',
+    emergency061Hint: 'Медицинская экстренная служба. Для ДТП лучше 112 — диспетчер пришлёт сразу всех нужных.',
+    emergency091Label: 'Национальная полиция',
+    emergency091Hint: 'Policía Nacional. Документы, серьёзные преступления, пропажа паспорта, иммиграция.',
+    emergency062Label: 'Гражданская гвардия',
+    emergency062Hint: 'Guardia Civil. Вне городов, на шоссе, пограничные вопросы, спасение в горах и на море.',
+    emergency092Label: 'Местная полиция',
+    emergency092Hint: 'Policía Local. Парковка, шум, местные ЧП, бытовые конфликты в своём городе.',
+    emergency080Label: 'Пожарные',
+    emergency080Hint: 'Bomberos. Пожары, спасение животных, затопления, ДТП с застрявшими.',
+    emergency016Label: 'Помощь женщинам',
+    emergency016Hint: 'Круглосуточная линия по домашнему и гендерному насилию. Звонок не отражается в списке вызовов.',
+    emergency024Label: 'Кризис и суицид',
+    emergency024Hint: 'Психологическая поддержка в острых ситуациях. Бесплатно, 24/7, анонимно.',
+    emergencyFootnote: '<b>112</b> понимает несколько языков (испанский, английский, французский, немецкий, иногда каталонский). Если не уверен — звони именно сюда, диспетчер разберёт. Номера <b>091 / 062 / 092 / 080 / 061</b> — это национальные shortcuts, не нужен код города.',
+
+    cat1Num: '01 · Основа',
+    cat1Name: 'Документы и резидентство',
+    cat2Num: '02 · Здоровье',
+    cat2Name: 'Медицина и страховка',
+    cat3Num: '03 · Финансы',
+    cat3Name: 'Банк и деньги',
+    cat4Num: '04 · Крыша над головой',
+    cat4Name: 'Жильё и договор аренды',
+    cat5Num: '05 · Ежемесячное',
+    cat5Name: 'Коммуналка и интернет',
+    cat6Num: '06 · Мобильность',
+    cat6Name: 'Транспорт и машина',
+    cat7Num: '07 · Семьям',
+    cat7Name: 'Дети и школы',
+    cat8Num: '08 · Питомцам',
+    cat8Name: 'Животные и ветеринар',
+    cat9Num: '09 · Интеграция',
+    cat9Name: 'Испанский язык',
+    cat10Num: '10 · Сеть',
+    cat10Name: 'Соседи и комьюнити',
+
+    footerTagline: 'Costa Blanca — афиша событий и практический гид для экспатов'
+  },
+  en: {
+    metaTitle: 'Relocation checklist — Costa Blanca',
+    navTagline: 'events · guide · expat help',
+    navHome: 'Home',
+    navEvents: 'All events',
+    navCategories: 'Categories',
+    navChecklist: 'Checklist',
+    navChecklistFull: 'Expat checklist',
+
+    pageTitle: 'Expat checklist for the Costa Blanca',
+    pageLead: '60+ steps across 10 topics — from NIE and empadronamiento to schools, banks and pets. Not legal advice, but the real sequence of steps for anyone moving to the Costa Blanca.',
+
+    navEmergency: 'Emergency numbers',
+    navTipsSection: 'Need to know',
+    navChecklistSection: 'Checklist',
+
+    checklistSectionTitle: 'Your relocation checklist',
+    checklistSectionSubtitle: 'Expand any category and tick off the steps as you go. Your progress is saved automatically.',
+
+    progressCheckedLabel: 'Checked:',
+    progressOfLabel: 'of',
+    resetBtn: 'Reset',
+    resetConfirm: 'Reset all checked items?',
+
+    tipsTitle: 'What to know upfront',
+    tipsSubtitle: 'Four rules that save months of paperwork',
+    emergencySubtitle: 'Bookmark these — they work from any phone in Spain',
+    tip1Title: 'Empadronamiento is the key to everything',
+    tip1Body: 'Banks, schools and healthcare often require address registration BEFORE NIE/TIE. Don\u2019t tackle paperwork in a random order — start at the ayuntamiento.',
+    tip2Title: 'A digital certificate saves months',
+    tip2Body: 'Cl@ve or an electronic certificate (FNMT) turns multi-day queues into 10-minute online procedures. Get it as soon as your NIE is ready.',
+    tip3Title: 'Cash still rules',
+    tip3Body: 'Landlords, plumbers and small public offices often expect cash. Keep €300–500 on hand for your first month.',
+    tip4Title: 'Healthcare isn\u2019t automatically free',
+    tip4Body: 'New arrivals usually need private insurance at first. A SIP card is issued ONLY after empadronamiento.',
+
+    emergencyTitle: 'Emergency numbers',
+    emergency112Label: 'EU universal line',
+    emergency112Hint: 'Police, ambulance, fire — one call. Free, works without a SIM.',
+    emergency061Label: 'Ambulance',
+    emergency061Hint: 'Medical emergencies. For road accidents, 112 is better — the dispatcher sends everyone needed at once.',
+    emergency091Label: 'National police',
+    emergency091Hint: 'Policía Nacional. Paperwork, serious crime, lost passport, immigration matters.',
+    emergency062Label: 'Guardia Civil',
+    emergency062Hint: 'Outside cities, highways, border issues, rescue in the mountains and at sea.',
+    emergency092Label: 'Local police',
+    emergency092Hint: 'Policía Local. Parking, noise, local incidents, everyday conflicts in your town.',
+    emergency080Label: 'Fire brigade',
+    emergency080Hint: 'Bomberos. Fires, trapped animals, floods, road accidents with people trapped.',
+    emergency016Label: 'Women\u2019s helpline',
+    emergency016Hint: '24/7 line for domestic and gender-based violence. The call doesn\u2019t show in your call history.',
+    emergency024Label: 'Crisis & suicide line',
+    emergency024Hint: 'Psychological support in acute situations. Free, 24/7, anonymous.',
+    emergencyFootnote: '<b>112</b> operators speak several languages (Spanish, English, French, German, sometimes Catalan). When in doubt, call this one — the dispatcher will sort it. <b>091 / 062 / 092 / 080 / 061</b> are national shortcuts — no area code needed.',
+
+    cat1Num: '01 · Foundation',
+    cat1Name: 'Paperwork and residency',
+    cat2Num: '02 · Health',
+    cat2Name: 'Healthcare and insurance',
+    cat3Num: '03 · Money',
+    cat3Name: 'Banking and money',
+    cat4Num: '04 · Roof over your head',
+    cat4Name: 'Housing and rental contract',
+    cat5Num: '05 · Monthly',
+    cat5Name: 'Utilities and internet',
+    cat6Num: '06 · Mobility',
+    cat6Name: 'Transport and car',
+    cat7Num: '07 · For families',
+    cat7Name: 'Kids and schools',
+    cat8Num: '08 · For pets',
+    cat8Name: 'Pets and the vet',
+    cat9Num: '09 · Integration',
+    cat9Name: 'Spanish language',
+    cat10Num: '10 · Network',
+    cat10Name: 'Neighbours and community',
+
+    footerTagline: 'Costa Blanca — events and a practical relocation guide for expats'
+  }
+};
+
+/* ========================================
+   Item content (title + hint) per language
+   ======================================== */
+const ITEMS = {
+  'docs-1': {
+    ru: { title: 'Получить NIE (Número de Identificación de Extranjero)', hint: '<b>Зачем:</b> без него не откроешь счёт, не снимешь жильё, не оформишь работу. <b>Куда:</b> комиссариат Policía Nacional (Oficina de Extranjería), по записи через sede.administracionespublicas.gob.es.' },
+    en: { title: 'Get an NIE (foreigner ID number)', hint: '<b>Why:</b> without it you can\u2019t open a bank account, sign a lease, or take a job. <b>Where:</b> Policía Nacional Oficina de Extranjería, by appointment via sede.administracionespublicas.gob.es.' }
+  },
+  'docs-2': {
+    ru: { title: 'Оформить empadronamiento (прописку) в ayuntamiento', hint: '<b>Зачем:</b> нужен для SIP-карты, школы, многих госуслуг. <b>Куда:</b> мэрия по месту жительства (certificado de empadronamiento).' },
+    en: { title: 'Register your address at the ayuntamiento (empadronamiento)', hint: '<b>Why:</b> required for SIP card, schools and many public services. <b>Where:</b> your local town hall (ask for the certificado de empadronamiento).' }
+  },
+  'docs-3': {
+    ru: { title: 'Сделать TIE (Tarjeta de Identidad de Extranjero)', hint: '<b>Зачем:</b> физическая карта-доказательство статуса резидента. <b>Куда:</b> Oficina de Extranjería, по предварительной записи, с отпечатками пальцев.' },
+    en: { title: 'Apply for the TIE (residency ID card)', hint: '<b>Why:</b> a physical card proving your residency status. <b>Where:</b> Oficina de Extranjería, by appointment, fingerprints required.' }
+  },
+  'docs-4': {
+    ru: { title: 'Получить цифровой сертификат (Cl@ve или FNMT)', hint: '<b>Зачем:</b> электронная подпись для госуслуг online — экономит недели бюрократии. <b>Куда:</b> sede.fnmt.gob.es → онлайн-заявка → очная идентификация в hacienda.' },
+    en: { title: 'Get a digital certificate (Cl@ve or FNMT)', hint: '<b>Why:</b> electronic signature for online government services — saves weeks of paperwork. <b>How:</b> sede.fnmt.gob.es → online request → in-person ID check at hacienda.' }
+  },
+  'docs-5': {
+    ru: { title: 'Апостилировать свидетельства (о рождении, браке)', hint: '<b>Зачем:</b> для школ, ЗАГСа, наследства. <b>Куда:</b> в стране выдачи документа. Плюс присяжный перевод (traducción jurada) в Испании.' },
+    en: { title: 'Get your vital records apostilled (birth, marriage)', hint: '<b>Why:</b> needed for schools, registro civil, inheritance matters. <b>Where:</b> in the country that issued the document, then a sworn translation (traducción jurada) in Spain.' }
+  },
+  'docs-6': {
+    ru: { title: 'Записать срок продления статуса', hint: '<b>Зачем:</b> просрочка = депортация, начинать заново. <b>Как:</b> поставь напоминание за 60 дней до истечения TIE.' },
+    en: { title: 'Note your residency renewal date', hint: '<b>Why:</b> missing the deadline can mean losing status and starting over. <b>How:</b> set a reminder 60 days before your TIE expires.' }
+  },
+
+  'health-1': {
+    ru: { title: 'Записаться в centro de salud по месту empadronamiento', hint: '<b>Зачем:</b> это твой «районный» госцентр, закрепление врача. <b>Как:</b> лично или через app «Mi GVA Salut» (для Comunidad Valenciana).' },
+    en: { title: 'Register at your local centro de salud', hint: '<b>Why:</b> it\u2019s your neighbourhood public health centre and your home GP. <b>How:</b> in person, or via the Mi GVA Salut app in the Comunidad Valenciana.' }
+  },
+  'health-2': {
+    ru: { title: 'Получить SIP-карту (Sistema de Información Poblacional)', hint: '<b>Зачем:</b> бесплатная страховая карта в пределах Comunidad Valenciana — работает во всех centro de salud региона. <b>Куда:</b> в своём centro de salud при первом визите.' },
+    en: { title: 'Get your SIP card (regional health card)', hint: '<b>Why:</b> free access to the public health system across the Comunidad Valenciana. <b>Where:</b> at your centro de salud during your first visit.' }
+  },
+  'health-3': {
+    ru: { title: 'Оформить приватную страховку на первые месяцы', hint: '<b>Зачем:</b> до получения SIP или если нужен быстрый доступ к специалистам. <b>Варианты:</b> Sanitas, Adeslas, DKV, Asisa (~€40–70/мес).' },
+    en: { title: 'Get private health insurance for your first months', hint: '<b>Why:</b> before your SIP arrives, or for faster specialist access. <b>Options:</b> Sanitas, Adeslas, DKV, Asisa (~€40–70/month).' }
+  },
+  'health-4': {
+    ru: { title: 'Выбрать семейного врача (médico de cabecera)', hint: '<b>Зачем:</b> точка входа в систему — направляет к специалистам. <b>Как:</b> при получении SIP можно попросить конкретного врача, если центр позволяет.' },
+    en: { title: 'Pick a family doctor (médico de cabecera)', hint: '<b>Why:</b> the gatekeeper to specialists and referrals. <b>How:</b> when you collect your SIP you can often request a specific doctor at your centre.' }
+  },
+  'health-5': {
+    ru: { title: 'Найти педиатра (для семей с детьми)', hint: '<b>Зачем:</b> для плановых осмотров и экстренных. <b>Как:</b> в том же centro de salud есть секция pediatría, записываться отдельно.' },
+    en: { title: 'Find a paediatrician (for families)', hint: '<b>Why:</b> for check-ups and emergencies. <b>How:</b> paediatría is a separate department at your centro de salud — book separately.' }
+  },
+  'health-6': {
+    ru: { title: 'Узнать ближайшую круглосуточную аптеку (farmacia de guardia)', hint: '<b>Зачем:</b> в Испании аптеки закрываются на ночь, но в каждом районе есть дежурная. <b>Как:</b> сайт colegio de farmacéuticos провинции или app «Farmacias».' },
+    en: { title: 'Locate the nearest 24-hour pharmacy (farmacia de guardia)', hint: '<b>Why:</b> Spanish pharmacies close at night but each area has a duty one rotating. <b>How:</b> check your provincial colegio de farmacéuticos site or the Farmacias app.' }
+  },
+
+  'bank-1': {
+    ru: { title: 'Открыть счёт в испанском банке', hint: '<b>Варианты:</b> CaixaBank, BBVA, Sabadell — работают с резидентами. Non-resident счета (EVO, N26) — хороший старт, но с ограничениями. <b>Нужны:</b> NIE + паспорт + empadronamiento или адрес.' },
+    en: { title: 'Open a Spanish bank account', hint: '<b>Options:</b> CaixaBank, BBVA, Sabadell work with residents. Non-resident accounts (EVO, N26) are a good start but limited. <b>Bring:</b> NIE + passport + empadronamiento or address proof.' }
+  },
+  'bank-2': {
+    ru: { title: 'Получить IBAN для автоплатежей', hint: '<b>Зачем:</b> всё в Испании списывается через domiciliación — свет, вода, интернет, школа. Без IBAN не настроить.' },
+    en: { title: 'Get an IBAN for direct debits', hint: '<b>Why:</b> utilities, internet, school fees and more all run on domiciliación. Nothing works without an IBAN.' }
+  },
+  'bank-3': {
+    ru: { title: 'Настроить domiciliación коммуналки и аренды', hint: '<b>Как:</b> в договоре и счёте указываешь свой IBAN — дальше деньги списываются автоматически. Поставь уведомления о движениях.' },
+    en: { title: 'Set up direct debits for utilities and rent', hint: '<b>How:</b> give each provider your IBAN and payments are pulled automatically. Turn on transaction notifications from your bank.' }
+  },
+  'bank-4': {
+    ru: { title: 'Проверить лимиты переводов из своей страны', hint: '<b>Зачем:</b> санкции и лимиты SEPA/SWIFT могут блокировать переводы. <b>Альтернатива:</b> Wise, Revolut — часто работают быстрее и дешевле.' },
+    en: { title: 'Check transfer limits from your home country', hint: '<b>Why:</b> sanctions and SEPA/SWIFT limits can block or delay transfers. <b>Alternative:</b> Wise or Revolut are often faster and cheaper.' }
+  },
+  'bank-5': {
+    ru: { title: 'Разобраться с налоговым статусом', hint: '<b>Зачем:</b> резидент = IRPF, non-resident = IRNR — разные налоги. <b>Как:</b> первый год стоит проконсультироваться с gestor (бухгалтер ~€50 за консультацию).' },
+    en: { title: 'Sort out your tax status', hint: '<b>Why:</b> resident IRPF and non-resident IRNR are different regimes. <b>How:</b> in your first year, a quick chat with a gestor (~€50) is worth it.' }
+  },
+
+  'housing-1': {
+    ru: { title: 'Подписать contrato de arrendamiento (длинная аренда)', hint: '<b>Зачем:</b> долгосрочная аренда защищает арендатора (LAU). <b>На что смотреть:</b> срок ≥ 1 года, депозит 1 месяц (норма), fianza в регистрации регионального депозитария.' },
+    en: { title: 'Sign a long-term rental contract (contrato de arrendamiento)', hint: '<b>Why:</b> long-term tenancy is strongly protected under Spain\u2019s LAU. <b>Check:</b> term ≥ 1 year, 1-month deposit (normal), fianza registered with the regional body.' }
+  },
+  'housing-2': {
+    ru: { title: 'Сделать empadronamiento по новому адресу', hint: '<b>Зачем:</b> «привязка» к ayuntamiento для школы, SIP, ID. <b>Как:</b> мэрия + договор аренды + паспорт + NIE.' },
+    en: { title: 'Update your empadronamiento at the new address', hint: '<b>Why:</b> needed for schools, SIP, and ID matters tied to your local ayuntamiento. <b>Bring:</b> rental contract, passport, NIE.' }
+  },
+  'housing-3': {
+    ru: { title: 'Сфотографировать состояние квартиры при заезде', hint: '<b>Зачем:</b> чтобы при выезде не списали депозит за «старые» дефекты. <b>Что:</b> все царапины, пятна, показания счётчиков — с датой.' },
+    en: { title: 'Photograph the flat condition at move-in', hint: '<b>Why:</b> so you can\u2019t be charged at move-out for pre-existing damage. <b>Capture:</b> scratches, stains, meter readings — all with a date stamp.' }
+  },
+  'housing-4': {
+    ru: { title: 'Проверить ITE / CEE (инспекция + энергосертификат)', hint: '<b>Зачем:</b> арендодатель обязан предоставить Certificado de Eficiencia Energética. <b>Если покупаешь:</b> ITE (Inspección Técnica de Edificios) — обязательный техосмотр дома.' },
+    en: { title: 'Ask for ITE and CEE (building inspection + energy cert)', hint: '<b>Why:</b> landlords must provide the Certificado de Eficiencia Energética. <b>Buying:</b> ITE (Inspección Técnica de Edificios) is the mandatory building check.' }
+  },
+  'housing-5': {
+    ru: { title: 'Оформить страховку жилья (seguro de hogar)', hint: '<b>Зачем:</b> прорыв трубы / залитые соседи → без страховки платить из своего кармана. <b>Стоимость:</b> €15–30/мес за базовое покрытие.' },
+    en: { title: 'Get home insurance (seguro de hogar)', hint: '<b>Why:</b> a burst pipe or flooded neighbour means you pay out of pocket otherwise. <b>Cost:</b> €15–30/month for basic cover.' }
+  },
+
+  'util-1': {
+    ru: { title: 'Перевести свет на себя (cambio de titular)', hint: '<b>Провайдеры:</b> Iberdrola, Naturgy, Endesa, Holaluz. <b>Зачем:</b> счета идут на твоё имя, можно настроить тариф (valle — дешевле ночью).' },
+    en: { title: 'Put the electricity in your name (cambio de titular)', hint: '<b>Providers:</b> Iberdrola, Naturgy, Endesa, Holaluz. <b>Why:</b> bills in your name, and you can pick a tariff (valle is cheaper at night).' }
+  },
+  'util-2': {
+    ru: { title: 'Оформить воду (муниципальный оператор)', hint: '<b>Как:</b> в каждом городе свой оператор (Hidraqua, Agamed, etc.). <b>Нужно:</b> NIE + empadronamiento + IBAN.' },
+    en: { title: 'Set up water service (local operator)', hint: '<b>How:</b> each town has its own operator (Hidraqua, Agamed, etc.). <b>Bring:</b> NIE + empadronamiento + IBAN.' }
+  },
+  'util-3': {
+    ru: { title: 'Решить вопрос с газом (баллоны или магистраль)', hint: '<b>Варианты:</b> bombona (Repsol, Cepsa) — привозят оранжевый баллон, ~€15. Магистральный газ — Naturgy (centro y norte de Alicante). На юге чаще электроплиты.' },
+    en: { title: 'Sort out gas (bottles vs mains)', hint: '<b>Options:</b> bombona (Repsol, Cepsa) — the classic orange bottle, ~€15 delivered. Mains gas via Naturgy in central/northern Alicante. The south mostly uses electric.' }
+  },
+  'util-4': {
+    ru: { title: 'Подключить интернет', hint: '<b>Провайдеры:</b> Movistar, Orange, Vodafone, Masmovil, Yoigo. <b>На что смотреть:</b> fibra óptica 300–1000 Mbps, контракт без привязки (sin permanencia).' },
+    en: { title: 'Get internet installed', hint: '<b>Providers:</b> Movistar, Orange, Vodafone, Masmovil, Yoigo. <b>Look for:</b> fibra óptica 300–1000 Mbps, no lock-in (sin permanencia).' }
+  },
+  'util-5': {
+    ru: { title: 'Настроить автоплатежи (domiciliación) на все счета', hint: '<b>Зачем:</b> в Испании просрочка быстро переходит в коллекторы. <b>Как:</b> в личном кабинете каждого провайдера указать IBAN.' },
+    en: { title: 'Set direct debits for every bill', hint: '<b>Why:</b> in Spain missed payments reach collectors fast. <b>How:</b> add your IBAN in each provider\u2019s customer portal.' }
+  },
+
+  'transport-1': {
+    ru: { title: 'Обменять водительские права (canje)', hint: '<b>Срок:</b> 6 месяцев с момента empadronamiento. <b>Где:</b> DGT (Jefatura Provincial de Tráfico), по записи. Для стран без соглашения — полная сдача экзамена.' },
+    en: { title: 'Exchange your driving licence (canje)', hint: '<b>Deadline:</b> 6 months from empadronamiento. <b>Where:</b> DGT (Jefatura Provincial de Tráfico), by appointment. If your country has no agreement with Spain, you must take the full test.' }
+  },
+  'transport-2': {
+    ru: { title: 'Пройти ITV (Inspección Técnica de Vehículos)', hint: '<b>Периодичность:</b> новая машина — через 4 года, потом каждые 2 года (до 10 лет), потом ежегодно. <b>Стоимость:</b> ~€35–45.' },
+    en: { title: 'Pass the ITV (vehicle inspection)', hint: '<b>Schedule:</b> new car first test after 4 years, then every 2 years until 10, then annually. <b>Cost:</b> ~€35–45.' }
+  },
+  'transport-3': {
+    ru: { title: 'Оформить страховку автомобиля', hint: '<b>Минимум:</b> a terceros (обязательная). <b>Лучше:</b> todo riesgo или terceros ampliado. <b>Цена:</b> €200–600/год в зависимости от машины и стажа.' },
+    en: { title: 'Get car insurance', hint: '<b>Minimum:</b> a terceros (third-party, mandatory). <b>Better:</b> todo riesgo or terceros ampliado. <b>Cost:</b> €200–600/year depending on car and history.' }
+  },
+  'transport-4': {
+    ru: { title: 'Узнать про IVTM (муниципальный налог на машину)', hint: '<b>Зачем:</b> каждый год, в среднем €50–150, зависит от мощности и города. <b>Как:</b> domiciliación через банк или разовый платёж в ayuntamiento.' },
+    en: { title: 'Check the IVTM (municipal car tax)', hint: '<b>Why:</b> paid yearly, usually €50–150 depending on engine and town. <b>How:</b> direct debit via the bank or one-off payment at the ayuntamiento.' }
+  },
+  'transport-5': {
+    ru: { title: 'Проверить историю б/у машины перед покупкой', hint: '<b>Зачем:</b> аварии, задолженности, залоги. <b>Как:</b> Informe de Vehículo через DGT (€8), проверка cargas/deudas.' },
+    en: { title: 'Check a used car\u2019s history before buying', hint: '<b>Why:</b> accidents, debts, liens. <b>How:</b> order the DGT\u2019s Informe de Vehículo (€8), check for cargas and debts.' }
+  },
+  'transport-6': {
+    ru: { title: 'Разобраться в зонах SER/ORA (платная парковка)', hint: '<b>Цвета:</b> синяя — ограничение по времени, зелёная — резиденты района. <b>Штраф:</b> €90. В Гуардамаре/Торревьехе летом контроль жёсткий.' },
+    en: { title: 'Learn the SER/ORA parking zones', hint: '<b>Colours:</b> blue — timed parking, green — residents only. <b>Fine:</b> ~€90. Guardamar and Torrevieja enforce heavily in summer.' }
+  },
+
+  'kids-1': {
+    ru: { title: 'Узнать сроки подачи заявления в школу', hint: '<b>Важно:</b> основной приём — апрель-май на сентябрь. <b>Опаздываешь:</b> подавай на plazas vacantes (свободные места) в течение года.' },
+    en: { title: 'Check school application deadlines', hint: '<b>Key dates:</b> main enrolment is April–May for September. <b>If you miss it:</b> apply for plazas vacantes (empty seats) throughout the year.' }
+  },
+  'kids-2': {
+    ru: { title: 'Сделать перевод и апостиль документов ребёнка', hint: '<b>Что:</b> свидетельство о рождении + справка об окончании класса (если переходный). <b>Кто переводит:</b> traductor jurado, сертифицированный.' },
+    en: { title: 'Translate and apostille your child\u2019s documents', hint: '<b>What:</b> birth certificate + previous-year school record if mid-year. <b>Who translates:</b> a certified traductor jurado.' }
+  },
+  'kids-3': {
+    ru: { title: 'Выбрать тип школы: público / concertado / privado', hint: '<b>Público:</b> бесплатный, по району. <b>Concertado:</b> полугосударственный, часто религиозный, ~€100/мес. <b>Privado:</b> международные, билингвальные, €500+/мес.' },
+    en: { title: 'Choose the school type: público / concertado / privado', hint: '<b>Público:</b> free, based on catchment area. <b>Concertado:</b> semi-public, often religious, ~€100/mo. <b>Privado:</b> international or bilingual, €500+/mo.' }
+  },
+  'kids-4': {
+    ru: { title: 'Записать ребёнка на extraescolares (кружки)', hint: '<b>Варианты:</b> спорт (футбол, падел, плавание), музыка, рисование. <b>Где:</b> через школу, муниципальные спорткомплексы (polideportivos), частные академии.' },
+    en: { title: 'Sign your child up for extraescolares (after-school activities)', hint: '<b>Options:</b> sport (football, padel, swimming), music, art. <b>Where:</b> through the school, municipal polideportivos, or private academies.' }
+  },
+  'kids-5': {
+    ru: { title: 'Проверить право на ayuda comedor (субсидия школьного обеда)', hint: '<b>Зачем:</b> школьный обед ~€5/день = €100/мес на ребёнка. Для семей с доходом ниже порога — частичная или полная компенсация.' },
+    en: { title: 'Check eligibility for ayuda comedor (school meal subsidy)', hint: '<b>Why:</b> school lunch runs ~€5/day = €100/month per child. Families below the income threshold get partial or full support.' }
+  },
+
+  'pets-1': {
+    ru: { title: 'Чип + ЕС-паспорт животного (делать ДО переезда)', hint: '<b>Нужно:</b> микрочип (ISO 11784/11785), европаспорт, вакцинация от бешенства не позже 21 дня до въезда.' },
+    en: { title: 'Microchip + EU pet passport (do this BEFORE the move)', hint: '<b>Requirements:</b> ISO 11784/11785 microchip, EU pet passport, rabies vaccine at least 21 days before travel.' }
+  },
+  'pets-2': {
+    ru: { title: 'Зарегистрироваться у местного ветеринара', hint: '<b>Зачем:</b> текущие прививки, экстренные случаи, перечип если потребуется. <b>Цена:</b> первичный приём ~€30–50.' },
+    en: { title: 'Register with a local vet', hint: '<b>Why:</b> routine vaccines, emergencies, re-chipping if needed. <b>Cost:</b> first visit ~€30–50.' }
+  },
+  'pets-3': {
+    ru: { title: 'Оформить страховку для животного', hint: '<b>Провайдеры:</b> Santalucía, Mapfre, LINEA DIRECTA Mascota. <b>Цена:</b> €15–30/мес. Покрытие: лечение, операции, гражданская ответственность (обязательна для некоторых пород).' },
+    en: { title: 'Get pet insurance', hint: '<b>Providers:</b> Santalucía, Mapfre, LINEA DIRECTA Mascota. <b>Cost:</b> €15–30/mo. Covers treatment, surgery, civil liability (mandatory for some breeds).' }
+  },
+  'pets-4': {
+    ru: { title: 'Узнать правила выгула в своём муниципалитете', hint: '<b>Базово:</b> поводок обязателен. <b>Бойцовые породы:</b> намордник + поводок + лицензия PPP. <b>Штрафы:</b> €100–3000 за несоблюдение.' },
+    en: { title: 'Learn your town\u2019s dog-walking rules', hint: '<b>Basics:</b> leash is mandatory. <b>Dangerous breeds:</b> muzzle + leash + PPP licence. <b>Fines:</b> €100–3000 for non-compliance.' }
+  },
+  'pets-5': {
+    ru: { title: 'Найти экономичный магазин кормов', hint: '<b>Сети:</b> Tiendanimal, Kiwoko, Mascoboo. Amazon часто дешевле на premium-марки. <b>Совет:</b> следи за акциями на Black Friday и после Нового года.' },
+    en: { title: 'Find an affordable pet food shop', hint: '<b>Chains:</b> Tiendanimal, Kiwoko, Mascoboo. Amazon is often cheaper for premium brands. <b>Tip:</b> watch Black Friday and post-holiday sales.' }
+  },
+
+  'lang-1': {
+    ru: { title: 'Записаться на бесплатные курсы', hint: '<b>Где:</b> Escuela Oficial de Idiomas (EOI) — госкурсы от €100/год. Cruz Roja — бесплатно. Курсы от мэрии — бесплатно, запись весной.' },
+    en: { title: 'Sign up for free Spanish classes', hint: '<b>Where:</b> Escuela Oficial de Idiomas (EOI) — public courses from €100/year. Cruz Roja — free. Town hall courses — free, sign up in spring.' }
+  },
+  'lang-2': {
+    ru: { title: 'Сдать DELE (сертификат испанского)', hint: '<b>Зачем:</b> подтверждение для nacionalidad, работы, вуза. <b>A2</b> — базовый (достаточен для гражданства), <b>B1/B2</b> — уверенный. Instituto Cervantes.' },
+    en: { title: 'Pass the DELE Spanish certificate', hint: '<b>Why:</b> required for citizenship, work visas, university. <b>A2</b> is the basic level (enough for citizenship), <b>B1/B2</b> is confident everyday use. Run by Instituto Cervantes.' }
+  },
+  'lang-3': {
+    ru: { title: 'Найти intercambios (языковые обмены)', hint: '<b>Как:</b> Meetup, app Tandem, HelloTalk, доски объявлений в кофейнях. <b>Формат:</b> 30 мин на испанском + 30 мин на твоём родном. Бесплатно.' },
+    en: { title: 'Find intercambios (language exchanges)', hint: '<b>Where:</b> Meetup, Tandem, HelloTalk, café noticeboards. <b>Format:</b> 30 min in Spanish + 30 min in your native language. Free.' }
+  },
+  'lang-4': {
+    ru: { title: 'Установить приложение на день', hint: '<b>Варианты:</b> Duolingo (бесплатно), Busuu, Lingoda (живые классы). <b>Минимум:</b> 15 минут ежедневно — в метро, в очереди, перед сном.' },
+    en: { title: 'Install a daily language app', hint: '<b>Options:</b> Duolingo (free), Busuu, Lingoda (live classes). <b>Minimum:</b> 15 min/day — on the bus, in queues, before bed.' }
+  },
+  'lang-5': {
+    ru: { title: 'Собрать «карточки выживания» — ключевые фразы', hint: '<b>Минимум:</b> аптека (me duele... / tengo fiebre), банк (abrir cuenta / transferencia), магазин (¿tienen...? / quiero devolverlo), аренда (avería / goteando).' },
+    en: { title: 'Build a survival phrase deck', hint: '<b>Essentials:</b> pharmacy (me duele... / tengo fiebre), bank (abrir cuenta / transferencia), shop (¿tienen...? / quiero devolverlo), housing (avería / goteando).' }
+  },
+
+  'comm-1': {
+    ru: { title: 'Подписаться на локальные сообщества по своему городу', hint: '<b>Где искать:</b> Telegram / WhatsApp / Facebook группы по городам (Torrevieja, Alicante, Benidorm, Гуардамар, Costa Blanca) и темам (машины, недвижимость, работа). <b>Наш канал:</b> Афиша Costa Blanca — события по всему региону.' },
+    en: { title: 'Subscribe to local community groups', hint: '<b>Where to look:</b> Telegram / WhatsApp / Facebook groups by town (Torrevieja, Alicante, Benidorm, Guardamar, Costa Blanca) and topic (cars, property, jobs). <b>Our channel:</b> Costa Blanca Guide — events across the region.' }
+  },
+  'comm-2': {
+    ru: { title: 'Найти проверенных местных специалистов (gestor, юрист, врач, механик)', hint: '<b>Зачем:</b> первый год нужна помощь с бюрократией. <b>Как:</b> ищи в локальных группах и форумах экспатов, проси рекомендации у соседей — сарафан надёжнее рекламы.' },
+    en: { title: 'Find trusted local pros (gestor, lawyer, doctor, mechanic)', hint: '<b>Why:</b> you\u2019ll need help with paperwork in your first year. <b>How:</b> ask in local expat groups and from neighbours — word of mouth beats ads.' }
+  },
+  'comm-3': {
+    ru: { title: 'Посетить meetup экспатов', hint: '<b>Где:</b> Meetup.com, Internations, Facebook Events. В Аликанте / Бенидорме — еженедельные встречи в пабах и кафе. Отличная нетворк-точка, можно прийти одному.' },
+    en: { title: 'Attend an expat meetup', hint: '<b>Where:</b> Meetup.com, Internations, Facebook Events. Weekly gatherings in pubs and cafés in Alicante / Benidorm. A friendly way to network — solo welcome.' }
+  },
+  'comm-4': {
+    ru: { title: 'Проверить WhatsApp-группы своего дома / урбанизации', hint: '<b>Зачем:</b> соседи предупреждают об отключениях воды/света, рекомендуют проверенных мастеров, организуют общие дела.' },
+    en: { title: 'Join your building\u2019s WhatsApp group', hint: '<b>Why:</b> neighbours alert each other about water/power outages, share trusted tradespeople, and coordinate communal issues.' }
+  },
+  'comm-5': {
+    ru: { title: 'Остерегайся «сделаю всё за €300» — частая схема обмана', hint: '<b>Признаки мошенника:</b> обещает ускорить NIE/TIE, просит предоплату, не даёт чеков, работает «в серую». <b>Как правильно:</b> сертифицированный gestor берёт €150–250 за пакет и выдаёт счёт.' },
+    en: { title: 'Beware of \u201cI\u2019ll fix it all for €300\u201d — a common scam', hint: '<b>Red flags:</b> promises to speed up NIE/TIE, asks for cash upfront, no invoices, works off-the-books. <b>The right way:</b> a licensed gestor charges €150–250 for the package and issues a proper invoice.' }
+  }
+};
+
+/* ============================================
+   INIT: populate item text, wire interactions
+   ============================================ */
+
+(function () {
+  const STORAGE_KEY = 'cbChecklist';
+  const LANG_KEY = 'cbLang';
+  const categories = document.querySelectorAll('.category');
+  const items = document.querySelectorAll('.checklist-item');
+  const progressCount = document.getElementById('progress-count');
+  const progressTotal = document.getElementById('progress-total');
+  const progressFill = document.getElementById('progress-fill');
+  const progressTrack = progressFill ? progressFill.parentElement : null;
+  const resetBtn = document.getElementById('progress-reset');
+
+  let currentLang = 'ru';
+  try { currentLang = localStorage.getItem(LANG_KEY) || 'ru'; } catch (_) {}
+  if (currentLang !== 'ru' && currentLang !== 'en') currentLang = 'ru';
+
+  function applyLang(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    const dict = TRANSLATIONS[lang] || TRANSLATIONS.ru;
+
+    // Static text with data-i18n (textContent) and data-i18n-html (innerHTML)
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] != null) el.textContent = dict[key];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+      const key = el.getAttribute('data-i18n-html');
+      if (dict[key] != null) el.innerHTML = dict[key];
+    });
+
+    // Item content (title + hint) from ITEMS dict
+    items.forEach((it) => {
+      const id = it.getAttribute('data-item');
+      const data = ITEMS[id] && ITEMS[id][lang];
+      if (!data) return;
+      const titleEl = it.querySelector('.item-title');
+      const hintEl = it.querySelector('.item-hint');
+      if (titleEl) titleEl.textContent = data.title;
+      if (hintEl) hintEl.innerHTML = data.hint;
+    });
+
+    // Lang toggle visual state
+    document.querySelectorAll('.lang-toggle button').forEach((b) => {
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+
+    // Persist
+    try { localStorage.setItem(LANG_KEY, lang); } catch (_) {}
+  }
+
+  // Checkbox state
+  let state = {};
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) state = JSON.parse(raw);
+  } catch (_) { state = {}; }
+
+  function save() {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (_) {}
+  }
+
+  function updateProgress() {
+    let totalDone = 0;
+    const totalAll = items.length;
+
+    categories.forEach((cat) => {
+      const catItems = cat.querySelectorAll('.checklist-item');
+      let done = 0;
+      catItems.forEach((it) => { if (it.classList.contains('is-checked')) done++; });
+      const strong = cat.querySelector('.category-progress-count strong');
+      if (strong) strong.textContent = String(done);
+      cat.classList.toggle('is-done', done === catItems.length && catItems.length > 0);
+      totalDone += done;
+    });
+
+    progressCount.textContent = String(totalDone);
+    progressTotal.textContent = String(totalAll);
+    const pct = totalAll === 0 ? 0 : Math.round((totalDone / totalAll) * 100);
+    progressFill.style.width = pct + '%';
+    if (progressTrack) progressTrack.setAttribute('aria-valuenow', String(pct));
+  }
+
+  // Apply saved state
+  items.forEach((it) => {
+    const id = it.getAttribute('data-item');
+    if (state[id]) {
+      it.classList.add('is-checked');
+      it.setAttribute('aria-checked', 'true');
+    }
+  });
+
+  applyLang(currentLang);
+  updateProgress();
+
+  // Delegated click handling
+  document.addEventListener('click', (ev) => {
+    const item = ev.target.closest('.checklist-item');
+    if (item) {
+      const id = item.getAttribute('data-item');
+      const checked = item.classList.toggle('is-checked');
+      item.setAttribute('aria-checked', checked ? 'true' : 'false');
+      if (checked) state[id] = true; else delete state[id];
+      save();
+      updateProgress();
+      return;
+    }
+
+    const header = ev.target.closest('.category-header');
+    if (header) {
+      const cat = header.closest('.category');
+      const willOpen = !cat.classList.contains('is-open');
+      cat.classList.toggle('is-open', willOpen);
+      header.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      return;
+    }
+
+    if (ev.target.closest('#nav-burger')) {
+      const panel = document.getElementById('nav-menu-panel');
+      const burger = document.getElementById('nav-burger');
+      const willOpen = !panel.classList.contains('is-open');
+      panel.classList.toggle('is-open', willOpen);
+      burger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      panel.setAttribute('aria-hidden', willOpen ? 'false' : 'true');
+      return;
+    }
+
+    const langBtn = ev.target.closest('.lang-toggle button');
+    if (langBtn) {
+      applyLang(langBtn.getAttribute('data-lang'));
+    }
+  });
+
+  // Keyboard on item
+  document.addEventListener('keydown', (ev) => {
+    if (ev.key === ' ' || ev.key === 'Enter') {
+      const item = ev.target.closest && ev.target.closest('.checklist-item');
+      if (item && document.activeElement === item) {
+        ev.preventDefault();
+        item.click();
+      }
+    }
+  });
+
+  // Reset
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      const msg = (TRANSLATIONS[currentLang] || TRANSLATIONS.ru).resetConfirm;
+      if (!confirm(msg)) return;
+      state = {};
+      save();
+      items.forEach((it) => {
+        it.classList.remove('is-checked');
+        it.setAttribute('aria-checked', 'false');
+      });
+      categories.forEach((cat) => cat.classList.remove('is-open'));
+      updateProgress();
+    });
+  }
+
+  // Open first category by default
+  if (categories.length > 0) {
+    categories[0].classList.add('is-open');
+    const firstHeader = categories[0].querySelector('.category-header');
+    if (firstHeader) firstHeader.setAttribute('aria-expanded', 'true');
+  }
+})();
+</script>
+
+</body>
+</html>
