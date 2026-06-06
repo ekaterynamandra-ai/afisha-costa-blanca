@@ -35,12 +35,20 @@ Rubén Blades, Lila Downs, Sílvia Pérez Cruz, Judeline, Maria Arnal, Silvana E
 | **Fiestas Bigastro / Crevillente** | август | Малые городки | Patron-saint |
 | **Benidorm Pride** | **1-7 сентября** | Benidorm | LGBT+ неделя, парад с Levante Beach |
 
+## 🎭 Постоянные attractions (evergreen, не сезонные)
+
+| Событие | Когда | Где | Тип |
+|---|---|---|---|
+| **Benidorm Palace** — Cabaret Dinner Show | Круглый год, обычно вечера ср-сб | Benidorm Palace, Avda. Severo Ochoa | Закрытый театр-комплекс, шоу с танцорами в перьях, ужин-парад в стиле Moulin Rouge. Билет + ужин или билет на показ. Подходит для «один особый вечер». [benidorm-palace.com](https://www.benidorm-palace.com/) |
+
+Эти места работают весь год — упоминать можно когда тематически уместно: «вечер с подругами», «годовщина», «гости из-за границы», «дождливый вечер альтернатива пляжу».
+
 ---
 
 ## Что ещё надо ресёрчить (TODO)
 
 - [ ] **«Latino Music» Benidorm** — Катя слышала про какой-то электронный/реггетон фестиваль, точное имя не известно. Возможно часть Undersea (там есть реггетон сцена) или отдельный
-- [ ] **«Закрытый ежегодный Benidorm event» (название неизвестно)** — Катя описывает как «что-то похожее на парад, закрытый, каждый год проходит». Нужна доп. инфа: месяц, район, размер аудитории. Кандидаты для проверки: Iboga Summer Festival, Beachland, Sunday Mornings @ Hard Rock, Hotel pool-parties
+- [x] ~~«Закрытый ежегодный Benidorm event»~~ → **Benidorm Palace** Cabaret Dinner Show. Не сезонный фестиваль, evergreen attraction. Внесён в раздел «Постоянные attractions»
 - [ ] **Marenostrum Fuengirola** — крупный концертный сезон у моря, далеко от Costa Blanca но известный, упомянуть
 - [ ] **Концерты Torrevieja Auditorio** — летняя программа местного аудитория, обычно классика + традиционные испанские артисты
 - [ ] **Sax / Petrer / Elche** — местные fiestas Moros y Cristianos летом, точные даты по комаркам
