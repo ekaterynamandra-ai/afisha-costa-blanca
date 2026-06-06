@@ -32,8 +32,18 @@ Rubén Blades, Lila Downs, Sílvia Pérez Cruz, Judeline, Maria Arnal, Silvana E
 | Событие | Когда | Где | Тип |
 |---|---|---|---|
 | **Moros y Cristianos** Villajoyosa | конец июля | Villajoyosa | Историческая реконструкция, парады |
+| **🌟 Nit de l'Albà** | **13 августа, 23:15-01:00** | Эльче | Festa Nacional. 2000 кг пороха, 70000 ракет с террас. В 00:00 — Palmera de la Virgen с базилики (300 м вверх, радиус 800 м). Арбуз после. Guerras de carretillas для смелых. [visitelche.com](https://www.visitelche.com/en/fiestas/nit-de-l-alba/) — **обязательно отдельный event_alert ~10-11 августа** |
 | **Fiestas Bigastro / Crevillente** | август | Малые городки | Patron-saint |
 | **Benidorm Pride** | **1-7 сентября** | Benidorm | LGBT+ неделя, парад с Levante Beach |
+
+## 🏰 Средневековые фестивали (НЕ летние крупные)
+
+Главные средневековые в Comunidad Valenciana — **вне летнего окна**:
+- **Villena Fiestas del Medievo** — март
+- **Villajoyosa Mercat Medieval** — май
+- **Cocentaina Mercat Medieval** — октябрь (самый большой региона)
+
+Летом крупных нет — только мелкие в малых городках. **Не делаем летние посты** про средневековые. Cocentaina (октябрь) — отдельный осенний пост.
 
 ## 🎭 Постоянные attractions (evergreen, не сезонные)
 
