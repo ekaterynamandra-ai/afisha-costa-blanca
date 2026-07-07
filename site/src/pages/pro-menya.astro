@@ -16,14 +16,20 @@ const locale: Locale = 'ru';
     { label: t(locale, 'about.title') },
   ]} />
   <article class="about-page">
-    <!-- HERO: full-width photo with text overlaid on top, centered. -->
+    <!-- HERO: split layout — portrait left (contained), text right on cream. -->
     <section class="about-hero">
-      <img
-        class="about-hero__img"
-        src="/photos/about-hero.jpg"
-        alt="Катя на пляже Costa Blanca"
-      />
-      <div class="about-hero__overlay">
+      <div class="about-hero__inner">
+        <figure class="about-hero__media">
+          <img
+            class="about-hero__img"
+            src="/photos/about-portrait.jpg"
+            alt="Катя на Коста-Бланке"
+            width="800"
+            height="1000"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </figure>
         <div class="about-hero__text">
           <span class="about-eyebrow">Про меня</span>
           <h1>Я <em>Катя</em>. Живу у моря, строю онлайн-бизнес.</h1>
@@ -39,7 +45,7 @@ const locale: Locale = 'ru';
               <span class="icon" aria-hidden="true"><svg><use href="#i-send"/></svg></span>
               <span>Telegram-канал</span>
             </a>
-            <a class="btn btn-secondary about-btn--dark" href={`mailto:${SITE_EMAIL}`}>
+            <a class="btn btn-ghost" href={`mailto:${SITE_EMAIL}`}>
               <span>Написать на почту</span>
             </a>
           </div>
@@ -103,90 +109,83 @@ const locale: Locale = 'ru';
     background: var(--bg);
   }
 
-  /* ===== HERO: full-bleed photo with centered text overlay.
-     The JPG already has a dark fade baked into the right edge, so we
-     don't need a sky→sand background here. */
+  /* ===== HERO: split — portrait left (contained), text right on cream ===== */
   .about-hero {
+    background: var(--bg);
+    padding: clamp(36px, 7vw, 84px) 24px 0;
+  }
+  .about-hero__inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
+    align-items: center;
+  }
+  .about-hero__media {
     position: relative;
-    width: 100%;
-    overflow: hidden;
-    background: #1F2A38; /* matches the deepest tone of the photo, no halo */
+    margin: 0 auto;
+    width: min(78%, 340px);
+  }
+  /* Offset coral outline — editorial "frame" behind the portrait */
+  .about-hero__media::before {
+    content: '';
+    position: absolute;
+    inset: 16px -16px -16px 16px;
+    border: 1.5px solid var(--coral);
+    border-radius: 22px;
+    opacity: 0.5;
+    pointer-events: none;
   }
   .about-hero__img {
-    display: block;
+    position: relative;
     width: 100%;
-    height: auto;
-    /* The image's transparent edges blend naturally into the cream background. */
-  }
-  .about-hero__overlay {
-    /* Anchor the text block to the RIGHT edge of the hero — that's where
-       the photo's dark fade lives, and Kate is on the left, so they never
-       overlap. justify-content: flex-end actually moves the flex child;
-       margin-auto on the child wasn't enough when the row was justified. */
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 24px 6vw;
-    pointer-events: none;
-    background: radial-gradient(
-      ellipse 55% 70% at 75% 50%,
-      rgba(15, 22, 32, 0.40) 0%,
-      rgba(15, 22, 32, 0.20) 50%,
-      rgba(15, 22, 32, 0) 85%
-    );
-  }
-  .about-hero__text {
-    pointer-events: auto;
-    max-width: 480px;
-    text-align: center;
-    color: #FBF6EF;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: 22% 30%; /* stopgap crop; retune when new photo arrives */
+    border-radius: 20px;
+    box-shadow: var(--shadow-card);
   }
   .about-eyebrow {
-    display: inline-block;
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-eyebrow);
+    font-size: var(--text-eyebrow);
+    font-weight: 600;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: #F0E0C8;
-    margin-bottom: 22px;
-    padding: 6px 14px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 999px;
-    background: rgba(20, 14, 10, 0.22);
-    backdrop-filter: blur(6px);
+    color: var(--coral);
+    margin-bottom: 18px;
   }
-  .about-page h1 {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(34px, 5.6vw, 64px);
-    line-height: 1.02;
-    font-weight: 700;
+  .about-eyebrow::before {
+    content: '';
+    width: 34px;
+    height: 1.5px;
+    background: var(--coral);
+  }
+  .about-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4.6vw, 56px);
+    line-height: 1.06;
+    font-weight: 600;
     letter-spacing: -0.018em;
-    color: #FBF6EF;
-    margin: 0 0 22px;
-    text-shadow:
-      0 1px 2px rgba(0, 0, 0, 0.85),
-      0 3px 14px rgba(0, 0, 0, 0.65),
-      0 6px 36px rgba(0, 0, 0, 0.40);
+    color: var(--ink);
+    margin: 0 0 20px;
   }
-  .about-page h1 em {
+  .about-hero h1 em {
     font-style: italic;
-    color: #FBF6EF;
+    color: var(--coral);
   }
   .about-lead {
-    font-size: clamp(15px, 1.8vw, 19px);
-    line-height: 1.55;
-    color: rgba(255, 255, 255, 0.96);
-    margin: 0 auto 30px;
-    max-width: 560px;
-    text-shadow:
-      0 1px 2px rgba(0, 0, 0, 0.7),
-      0 2px 12px rgba(0, 0, 0, 0.45);
+    font-size: clamp(16px, 1.6vw, 19px);
+    line-height: 1.65;
+    color: var(--ink-2);
+    max-width: 52ch;
+    margin: 0 0 28px;
   }
   .about-lead a {
-    color: #FBF6EF;
+    color: var(--coral);
     text-decoration: underline;
     text-underline-offset: 4px;
   }
@@ -194,19 +193,21 @@ const locale: Locale = 'ru';
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
-    justify-content: center;
   }
-  /* Glass-style secondary button on the dark wash. */
-  .about-btn--dark {
-    background: rgba(255, 255, 255, 0.14);
-    color: #FBF6EF;
-    border: 1.5px solid rgba(255, 255, 255, 0.45);
-    backdrop-filter: blur(6px);
+
+  @media (min-width: 720px) {
+    .about-hero__inner {
+      grid-template-columns: minmax(280px, 380px) 1fr;
+      gap: clamp(40px, 6vw, 88px);
+    }
+    .about-hero__media {
+      width: 100%;
+      margin: 0;
+    }
   }
-  .about-btn--dark:hover {
-    background: rgba(255, 255, 255, 0.24);
-    border-color: rgba(255, 255, 255, 0.7);
-    color: #FBF6EF;
+  @media (min-width: 1024px) {
+    .about-hero { padding-bottom: 12px; }
+    .about-hero__inner { grid-template-columns: 400px 1fr; }
   }
 
   /* ===== BODY: normal left-aligned reading column ===== */
@@ -245,22 +246,7 @@ const locale: Locale = 'ru';
     margin: 22px 0 8px;
   }
 
-  /* On narrow screens the text moves back to the centre (right-shift loses
-     meaning when Kate scales down) and the wash darkens for legibility. */
   @media (max-width: 720px) {
-    .about-hero__text {
-      max-width: 100%;
-      margin: 0 auto;
-    }
-    .about-hero__overlay {
-      background: radial-gradient(
-        ellipse at center,
-        rgba(15, 22, 32, 0.60) 0%,
-        rgba(15, 22, 32, 0.40) 40%,
-        rgba(15, 22, 32, 0.15) 75%,
-        rgba(15, 22, 32, 0) 100%
-      );
-    }
     .about-body { padding: 32px 22px 64px; }
     .about-prose h2 { margin-top: 36px; }
   }

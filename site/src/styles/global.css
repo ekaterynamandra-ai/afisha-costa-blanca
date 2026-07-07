@@ -1,8 +1,6 @@
 /* Kate in Spain — global styles
-   Sunset Coral palette, Fraunces+Inter typography.
-   Carried over from docs/mockup-website.html → public/index.html. */
-
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap');
+   Sunset Coral palette, Playfair Display + Inter typography (Cyrillic-safe).
+   Fraunces was removed 2026-07-08 — no Cyrillic subset, RU users saw Georgia. */
 
 :root {
   --bg: #FBF6EF;
@@ -22,31 +20,73 @@
   --radius-card: 14px;
   --radius-btn: 10px;
   --max-w: 1200px;
-  --font-display: 'Fraunces', 'Playfair Display', Georgia, serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Typography — Playfair Display (Cyrillic-safe display serif) + Inter (body) */
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-eyebrow: var(--font-body);
+
+  --text-hero:  clamp(2.75rem, 6vw, 4.5rem);       /* 44 → 72px  — homepage/section hero */
+  --text-h1:    clamp(2.25rem, 4.5vw, 3.25rem);    /* 36 → 52px  — article h1 */
+  --text-h2:    clamp(1.75rem, 3.2vw, 2.5rem);     /* 28 → 40px  — section titles */
+  --text-h3:    clamp(1.25rem, 2vw, 1.5rem);       /* 20 → 24px  — cards */
+  --text-lead:  clamp(1.0625rem, 1.6vw, 1.3125rem); /* 17 → 21px */
+  --text-body:  1.0625rem;   /* 17px */
+  --text-small: 0.8125rem;   /* 13px */
+  --text-eyebrow: 0.75rem;   /* 12px */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
+  font-size: var(--text-body);
   background: var(--bg);
   color: var(--ink);
-  line-height: 1.5;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--coral); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 600;
   color: var(--ink);
-  line-height: 1.2;
-  font-feature-settings: 'ss01', 'ss02';
+  line-height: 1.15;
+  letter-spacing: -0.01em;
 }
+h1 { font-size: var(--text-h1); line-height: 1.1; }
+h2 { font-size: var(--text-h2); }
+h3 { font-size: var(--text-h3); line-height: 1.25; letter-spacing: 0; }
+
+/* Hero variants — big display weight, tighter tracking */
+.hero-photo h1 {
+  font-size: var(--text-hero);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+}
+
+/* Italic accent word — Kate's <em> inside headings shows in coral italic */
+h1 em, h2 em, .section-title em {
+  font-style: italic;
+  font-weight: inherit;
+  color: var(--coral);
+}
+.hero-photo h1 em { color: var(--ocra); } /* coral reads muddy on dark photo */
+
+.lead, .hero-photo p.lead {
+  font-size: var(--text-lead);
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+small, .small { font-size: var(--text-small); line-height: 1.5; }
 
 /* === NAVIGATION === */
 .site-nav {
@@ -90,7 +130,7 @@ h1, h2, h3, h4 {
 }
 .nav-brand-name {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 600;
   font-style: italic;
   font-size: 20px;
   color: #FBF6EF;
@@ -300,10 +340,11 @@ h1, h2, h3, h4 {
   border-radius: 2px;
 }
 .section-title {
-  font-size: clamp(28px, 4vw, 42px);
-  letter-spacing: -0.02em;
+  font-size: var(--text-h2);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
   margin-bottom: 14px;
-  font-weight: 700;
+  font-weight: 600;
   text-wrap: balance;
 }
 .section-sub {
@@ -368,9 +409,10 @@ h1, h2, h3, h4 {
   gap: 10px;
 }
 .card-eyebrow {
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-family: var(--font-eyebrow);
+  font-size: var(--text-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--coral);
 }

@@ -13,40 +13,67 @@ const text = locale === 'ru'
 const cta = locale === 'ru' ? 'Подписаться' : 'Subscribe';
 ---
 <aside class="tg-cta reveal">
-  <p class="tg-cta-text">{text} → <strong>@{TG_HANDLE}</strong></p>
-  <a class="tg-cta-btn" href={TG_URL} target="_blank" rel="noopener">{cta}</a>
+  <span class="tg-cta-eyebrow">Telegram</span>
+  <p class="tg-cta-text">{text}</p>
+  <p class="tg-cta-handle">@{TG_HANDLE}</p>
+  <a class="tg-cta-btn" href={TG_URL} target="_blank" rel="noopener">{cta} →</a>
 </aside>
 
 <style>
   .tg-cta {
-    margin: 48px 0 0;
-    padding: 24px 28px;
-    background: var(--cream, #FDF9F3);
-    border: 1px solid var(--border, #E8DFD0);
-    border-radius: 12px;
+    margin: 56px 0 0;
+    padding: 32px clamp(20px, 4vw, 40px);
+    background: var(--bg-alt, #F4EADA);
+    border: 1px solid var(--line, #E8DFD3);
+    border-radius: 16px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    text-align: center;
+    gap: 8px;
+  }
+  .tg-cta-eyebrow {
+    font-family: var(--font-eyebrow, 'Inter', sans-serif);
+    font-size: var(--text-eyebrow, 12px);
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--coral, #C25E3C);
+    margin-bottom: 6px;
   }
   .tg-cta-text {
     margin: 0;
-    color: var(--ink-1, #2C2620);
-    font-size: 15px;
-    line-height: 1.5;
+    color: var(--ink, #2C2420);
+    font-family: var(--font-display, 'Playfair Display', serif);
+    font-size: clamp(18px, 2vw, 22px);
+    font-weight: 500;
+    line-height: 1.3;
+    max-width: 32ch;
+  }
+  .tg-cta-handle {
+    margin: 0 0 12px;
+    font-family: var(--font-body, 'Inter', sans-serif);
+    font-size: 14px;
+    color: var(--ink-2, #5C544E);
+    letter-spacing: 0.02em;
   }
   .tg-cta-btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 12px 24px;
     background: var(--coral, #C25E3C);
     color: #fff;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 10px;
+    font-family: var(--font-body, 'Inter', sans-serif);
     font-weight: 600;
     font-size: 14px;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.02em;
     white-space: nowrap;
+    transition: background 0.18s ease, transform 0.18s ease;
   }
-  .tg-cta-btn:hover { opacity: 0.9; }
+  .tg-cta-btn:hover {
+    background: var(--coral-deep, #A84A2E);
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
 </style>
