@@ -1,0 +1,98 @@
+---
+// Big "pillar" card for the homepage — one per section.
+// Uses CSS gradient backgrounds tinted by section instead of photo placeholders,
+// so the layout stays calm even before we ship per-section cover imagery.
+
+interface Props {
+  href: string;
+  title: string;
+  description: string;
+  iconId: string;            // sprite id like 'i-leaf'
+  accent: 'coral' | 'ocra' | 'olive' | 'dusk'; // tonal family for the card
+  number: string;            // '01' .. '04' editorial marker
+}
+const { href, title, description, iconId, accent, number } = Astro.props;
+---
+<a class={`pillar pillar--${accent} reveal`} href={href}>
+  <span class="pillar-num">{number}</span>
+  <span class="pillar-icon" aria-hidden="true"><svg><use href={`#${iconId}`}/></svg></span>
+  <h3 class="pillar-title">{title}</h3>
+  <p class="pillar-desc">{description}</p>
+  <span class="pillar-cta">Открыть раздел →</span>
+</a>
+
+<style>
+  .pillar {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 32px 28px 28px;
+    border-radius: 18px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    min-height: 280px;
+    color: #FBF6EF;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 6px 22px rgba(44,36,32,0.10);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .pillar:hover {
+    transform: translateY(-6px);
+    text-decoration: none;
+    box-shadow: 0 18px 44px rgba(44,36,32,0.20);
+  }
+  .pillar--coral { background: linear-gradient(155deg, #C25E3C 0%, #8B3E28 100%); }
+  .pillar--ocra  { background: linear-gradient(155deg, #C38B44 0%, #8E6022 100%); }
+  .pillar--olive { background: linear-gradient(155deg, #6B7F6C 0%, #3E4D3F 100%); }
+  .pillar--dusk  { background: linear-gradient(155deg, #5B6A85 0%, #32405A 100%); }
+
+  .pillar-num {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 38px;
+    color: rgba(255,255,255,0.22);
+    line-height: 1;
+  }
+  .pillar-icon {
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.14);
+    color: #FBF6EF;
+  }
+  .pillar-icon svg {
+    width: 22px; height: 22px;
+    fill: none; stroke: currentColor; stroke-width: 2;
+    stroke-linecap: round; stroke-linejoin: round;
+  }
+  .pillar-title {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #FBF6EF;
+    margin: 0;
+  }
+  .pillar-desc {
+    color: rgba(255,255,255,0.85);
+    font-size: 15px;
+    line-height: 1.55;
+    margin: 0;
+    flex: 1;
+  }
+  .pillar-cta {
+    font-size: 14px;
+    font-weight: 700;
+    color: #FBF6EF;
+    letter-spacing: 0.02em;
+    margin-top: 8px;
+  }
+</style>

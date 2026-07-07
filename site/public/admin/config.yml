@@ -1,0 +1,82 @@
+# Sveltia CMS — content manager for kateinspain.es
+# https://github.com/sveltia/sveltia-cms
+#
+# Two modes, one config:
+#   1. LOCAL  — `npm run edit` starts a proxy on localhost:8081.
+#               Sveltia writes files DIRECTLY to disk, no login.
+#   2. REMOTE — on https://kateinspain.es/admin/ Sveltia commits via GitHub
+#               using a Personal Access Token (one-time, stored in browser).
+
+local_backend: true
+
+backend:
+  name: github
+  repo: ekaterynamandra-ai/afisha-costa-blanca
+  branch: main
+
+media_folder: "site/public/uploads"
+public_folder: "/uploads"
+
+site_url: https://kateinspain.es
+display_url: https://kateinspain.es
+logo_url: https://kateinspain.es/favicon.svg
+
+# Edit RU + EN side-by-side per entry.
+# Folder pattern: site/src/content/articles/{ru,en}/<section-folder>/<slug>.md
+i18n:
+  structure: multiple_folders
+  locales: [ru, en]
+  default_locale: ru
+
+collections:
+  - name: articles
+    label: "Статьи / Articles"
+    label_singular: "Статья / Article"
+    folder: "site/src/content/articles"
+    create: true
+    delete: true
+    slug: "{{section}}/{{slug}}"
+    extension: md
+    format: frontmatter
+    i18n: true
+    summary: "{{title}} ({{section}})"
+    sortable_fields: [date, title, section]
+    view_filters:
+      - { label: "Раздел: Переезд", field: section, pattern: pereezd }
+      - { label: "Раздел: Работа",  field: section, pattern: rabota  }
+      - { label: "Раздел: AI и бизнес", field: section, pattern: biznes }
+      - { label: "Раздел: Жизнь",   field: section, pattern: zhizn   }
+    fields:
+      - { label: "Title", name: title, widget: string, i18n: true }
+      - { label: "Description", name: description, widget: text, i18n: true }
+      - label: "Section"
+        name: section
+        widget: select
+        i18n: duplicate
+        default: pereezd
+        options:
+          - { label: "Переезд / Moving", value: pereezd }
+          - { label: "Работа / Work", value: rabota }
+          - { label: "AI и бизнес / AI & business", value: biznes }
+          - { label: "Жизнь / Life", value: zhizn }
+      - { label: "Date", name: date, widget: datetime, i18n: duplicate }
+      - { label: "Cover image", name: cover, widget: image, required: false, i18n: duplicate }
+      - { label: "Tags", name: tags, widget: list, required: false, i18n: true }
+      - { label: "Reading time", name: reading_time, widget: string, required: false, i18n: true }
+      - { label: "Draft", name: draft, widget: boolean, default: false, i18n: duplicate }
+      - { label: "Body", name: body, widget: markdown, i18n: true }
+      # Optional event fields (used by section=zhizn)
+      - { label: "Location (optional)", name: location, widget: string, required: false, i18n: duplicate }
+      - label: "Season (optional)"
+        name: season
+        widget: select
+        required: false
+        i18n: duplicate
+        options:
+          - { label: "Весна / Spring", value: spring }
+          - { label: "Лето / Summer", value: summer }
+          - { label: "Осень / Autumn", value: autumn }
+          - { label: "Зима / Winter", value: winter }
+          - { label: "Круглый год / Year-round", value: year-round }
+      - { label: "Event type (optional)", name: type, widget: string, required: false, i18n: duplicate }
+      - { label: "Free (optional)", name: free, widget: boolean, required: false, default: true, i18n: duplicate }

@@ -1,5 +1,5 @@
 """
-Публикация постов в Telegram-канал @afishaCB
+Публикация постов в Telegram-канал @kate_in_spain
 Использование: python publish_telegram.py [--test] [--event EVENT_FILE]
 """
 
@@ -198,7 +198,7 @@ def format_audience_digest(audience_key: str, events: list) -> str:
         lines.append("")
 
     lines.append("━━━━━━━━━━━━━")
-    lines.append("📱 <b>Подпишись @afishaCB</b> — не пропусти интересное!")
+    lines.append("📱 <b>Подпишись @kate_in_spain</b> — не пропусти интересное!")
 
     return "\n".join(lines)
 

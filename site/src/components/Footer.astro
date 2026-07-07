@@ -1,0 +1,29 @@
+---
+import { type Locale, t, sectionPath } from '../i18n';
+import { TG_URL, SITE_EMAIL } from '../config';
+const { locale } = Astro.props as { locale: Locale };
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="inner">
+    <div>
+      <h4>Kate in Spain</h4>
+      <p style="max-width: 320px;">{t(locale, 'footer.tagline')}</p>
+    </div>
+    <div>
+      <h4>{t(locale, 'footer.sections')}</h4>
+      <a href={sectionPath[locale].polezno}>{t(locale, 'nav.polezno')}</a>
+      <a href={sectionPath[locale].sobytiya}>{t(locale, 'nav.sobytiya')}</a>
+      <a href={sectionPath[locale].about}>{t(locale, 'nav.about')}</a>
+    </div>
+    <div>
+      <h4>{t(locale, 'footer.contact')}</h4>
+      <a href={TG_URL} target="_blank" rel="noopener">{t(locale, 'footer.tg')}</a>
+      <a href="https://instagram.com/kate.costablanca" target="_blank" rel="noopener">{t(locale, 'footer.ig')}</a>
+      <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>
+    </div>
+  </div>
+  <div class="copyright">
+    © {year} Kate in Spain · {locale === 'ru' ? 'Costa Blanca, Испания' : 'Costa Blanca, Spain'}
+  </div>
+</footer>

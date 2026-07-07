@@ -1,0 +1,267 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { type Locale, t, sectionPath } from '../i18n';
+import { TG_HANDLE, TG_URL, SITE_EMAIL } from '../config';
+const locale: Locale = 'ru';
+---
+<Layout
+  locale={locale}
+  current="about"
+  title={`${t(locale, 'about.title')} ${t(locale, 'site.title.suffix')}`}
+  altUrl="/en/about/"
+>
+  <Breadcrumbs items={[
+    { label: t(locale, 'nav.home'), href: sectionPath[locale].home },
+    { label: t(locale, 'about.title') },
+  ]} />
+  <article class="about-page">
+    <!-- HERO: full-width photo with text overlaid on top, centered. -->
+    <section class="about-hero">
+      <img
+        class="about-hero__img"
+        src="/photos/about-hero.jpg"
+        alt="Катя на пляже Costa Blanca"
+      />
+      <div class="about-hero__overlay">
+        <div class="about-hero__text">
+          <span class="about-eyebrow">Про меня</span>
+          <h1>Я <em>Катя</em>. Живу у моря, строю онлайн-бизнес.</h1>
+          <p class="about-lead">
+            5 лет на Costa Blanca с мужем. Вместе развиваем AI-студию
+            <a href="https://yesworkflow.com" target="_blank" rel="noopener">yesworkflow.com</a>
+            и учим людей работать с AI в сообществе
+            <a href="https://www.aipack.live/courses" target="_blank" rel="noopener">aipack.live</a>.
+            Здесь — гайды по переезду, онлайн-работе и проверенным местам региона.
+          </p>
+          <div class="about-actions">
+            <a class="btn btn-primary" href={TG_URL} target="_blank" rel="noopener">
+              <span class="icon" aria-hidden="true"><svg><use href="#i-send"/></svg></span>
+              <span>Telegram-канал</span>
+            </a>
+            <a class="btn btn-secondary about-btn--dark" href={`mailto:${SITE_EMAIL}`}>
+              <span>Написать на почту</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BODY: normal left-aligned reading column on cream. -->
+    <section class="about-body">
+      <div class="about-prose">
+        <h2>Зачем этот сайт</h2>
+        <p>
+          Я переехала, разобралась с бумагами, нашла свой ритм работы у моря —
+          и параллельно с мужем строю AI-студию для бизнесов и обучаю людей по AI.
+          Этот сайт — место, где обе мои стороны жизни перестают казаться двумя разными темами.
+        </p>
+        <p>
+          Сюда я выношу то, что выручало меня и тех, кто переезжает рядом со мной:
+          <strong>как переехать</strong> (визы, NIE, банк, медицина),
+          <strong>как жить</strong> (места, события, природа),
+          <strong>как тут зарабатывать онлайн</strong> (autónomo, налоги, фриланс, бизнес),
+          <strong>как расти с AI</strong> (инструменты, агенты, реальные кейсы).
+        </p>
+
+        <h2>AI Studio и обучение</h2>
+        <p>
+          С мужем мы делаем <a href="https://yesworkflow.com" target="_blank" rel="noopener">YESWorkflow</a> —
+          студию AI-автоматизаций под ключ для бизнесов: голосовых ботов,
+          ассистентов для команд, кастомные интеграции. И параллельно ведём
+          <a href="https://www.aipack.live/courses" target="_blank" rel="noopener">aipack.live</a> —
+          сообщество с курсами по ChatGPT, n8n, Claude Code, Codex и работе с AI-агентами.
+        </p>
+        <div class="about-cta-row">
+          <a class="btn btn-ghost" href="https://yesworkflow.com" target="_blank" rel="noopener">
+            <span class="icon" aria-hidden="true"><svg><use href="#i-landmark"/></svg></span>
+            <span>YESWorkflow</span>
+          </a>
+          <a class="btn btn-ghost" href="https://www.aipack.live/courses" target="_blank" rel="noopener">
+            <span class="icon" aria-hidden="true"><svg><use href="#i-palette"/></svg></span>
+            <span>Курсы aipack.live</span>
+          </a>
+          <a class="btn btn-ghost" href="https://t.me/yefimov_ai" target="_blank" rel="noopener">
+            <span class="icon" aria-hidden="true"><svg><use href="#i-send"/></svg></span>
+            <span>Telegram про AI</span>
+          </a>
+        </div>
+
+        <h2>Сотрудничество и связь</h2>
+        <p>
+          По партнёрствам, рекламе и совместным проектам —
+          <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>
+          или <a href={TG_URL} target="_blank" rel="noopener">@{TG_HANDLE} в Telegram</a>.
+        </p>
+      </div>
+    </section>
+  </article>
+</Layout>
+
+<style>
+  .about-page {
+    background: var(--bg);
+  }
+
+  /* ===== HERO: full-bleed photo with centered text overlay.
+     The JPG already has a dark fade baked into the right edge, so we
+     don't need a sky→sand background here. */
+  .about-hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #1F2A38; /* matches the deepest tone of the photo, no halo */
+  }
+  .about-hero__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    /* The image's transparent edges blend naturally into the cream background. */
+  }
+  .about-hero__overlay {
+    /* Anchor the text block to the RIGHT edge of the hero — that's where
+       the photo's dark fade lives, and Kate is on the left, so they never
+       overlap. justify-content: flex-end actually moves the flex child;
+       margin-auto on the child wasn't enough when the row was justified. */
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 24px 6vw;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse 55% 70% at 75% 50%,
+      rgba(15, 22, 32, 0.40) 0%,
+      rgba(15, 22, 32, 0.20) 50%,
+      rgba(15, 22, 32, 0) 85%
+    );
+  }
+  .about-hero__text {
+    pointer-events: auto;
+    max-width: 480px;
+    text-align: center;
+    color: #FBF6EF;
+  }
+  .about-eyebrow {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #F0E0C8;
+    margin-bottom: 22px;
+    padding: 6px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 999px;
+    background: rgba(20, 14, 10, 0.22);
+    backdrop-filter: blur(6px);
+  }
+  .about-page h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(34px, 5.6vw, 64px);
+    line-height: 1.02;
+    font-weight: 700;
+    letter-spacing: -0.018em;
+    color: #FBF6EF;
+    margin: 0 0 22px;
+    text-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.85),
+      0 3px 14px rgba(0, 0, 0, 0.65),
+      0 6px 36px rgba(0, 0, 0, 0.40);
+  }
+  .about-page h1 em {
+    font-style: italic;
+    color: #FBF6EF;
+  }
+  .about-lead {
+    font-size: clamp(15px, 1.8vw, 19px);
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.96);
+    margin: 0 auto 30px;
+    max-width: 560px;
+    text-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.7),
+      0 2px 12px rgba(0, 0, 0, 0.45);
+  }
+  .about-lead a {
+    color: #FBF6EF;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .about-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  /* Glass-style secondary button on the dark wash. */
+  .about-btn--dark {
+    background: rgba(255, 255, 255, 0.14);
+    color: #FBF6EF;
+    border: 1.5px solid rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(6px);
+  }
+  .about-btn--dark:hover {
+    background: rgba(255, 255, 255, 0.24);
+    border-color: rgba(255, 255, 255, 0.7);
+    color: #FBF6EF;
+  }
+
+  /* ===== BODY: normal left-aligned reading column ===== */
+  .about-body {
+    padding: 56px 24px 96px;
+  }
+  .about-prose {
+    max-width: 720px;
+    margin: 0 auto;
+    /* default text-align: left */
+  }
+  .about-prose h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(24px, 2.6vw, 30px);
+    line-height: 1.25;
+    margin-top: 48px;
+    margin-bottom: 14px;
+    color: var(--ink);
+  }
+  .about-prose h2:first-child { margin-top: 0; }
+  .about-prose p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+  .about-prose a {
+    color: var(--coral);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .about-cta-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 22px 0 8px;
+  }
+
+  /* On narrow screens the text moves back to the centre (right-shift loses
+     meaning when Kate scales down) and the wash darkens for legibility. */
+  @media (max-width: 720px) {
+    .about-hero__text {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    .about-hero__overlay {
+      background: radial-gradient(
+        ellipse at center,
+        rgba(15, 22, 32, 0.60) 0%,
+        rgba(15, 22, 32, 0.40) 40%,
+        rgba(15, 22, 32, 0.15) 75%,
+        rgba(15, 22, 32, 0) 100%
+      );
+    }
+    .about-body { padding: 32px 22px 64px; }
+    .about-prose h2 { margin-top: 36px; }
+  }
+</style>

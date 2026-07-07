@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'public/**'
+      - 'site/**'
       - '.github/workflows/deploy-pages.yml'
   workflow_dispatch:
 
@@ -22,9 +22,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Push public/ to gh-pages branch
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: site/package-lock.json
+
+      - name: Install deps
+        working-directory: site
+        run: npm ci
+
+      - name: Build Astro site
+        working-directory: site
+        run: npm run build
+
+      - name: Push site/dist to gh-pages branch
         run: |
-          cd public
+          cd site/dist
           git init -b gh-pages
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'

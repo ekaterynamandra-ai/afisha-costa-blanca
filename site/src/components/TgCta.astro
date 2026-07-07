@@ -1,0 +1,52 @@
+---
+import { TG_URL, TG_HANDLE } from '../config';
+import type { Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+
+const text = locale === 'ru'
+  ? 'Каждый день пишу про жизнь на Коста-Бланке в Telegram'
+  : 'Daily notes on life on Costa Blanca in Telegram';
+const cta = locale === 'ru' ? 'Подписаться' : 'Subscribe';
+---
+<aside class="tg-cta reveal">
+  <p class="tg-cta-text">{text} → <strong>@{TG_HANDLE}</strong></p>
+  <a class="tg-cta-btn" href={TG_URL} target="_blank" rel="noopener">{cta}</a>
+</aside>
+
+<style>
+  .tg-cta {
+    margin: 48px 0 0;
+    padding: 24px 28px;
+    background: var(--cream, #FDF9F3);
+    border: 1px solid var(--border, #E8DFD0);
+    border-radius: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .tg-cta-text {
+    margin: 0;
+    color: var(--ink-1, #2C2620);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .tg-cta-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--coral, #C25E3C);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+  .tg-cta-btn:hover { opacity: 0.9; }
+</style>

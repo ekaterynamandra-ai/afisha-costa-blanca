@@ -1,0 +1,141 @@
+---
+// Client-side chips filter that toggles a `data-type` attribute on
+// .card elements inside its sibling .cards-grid. Pure CSS attribute
+// selectors do the hiding — JS just swaps a single attribute on the
+// container, no per-card DOM walks, no flicker.
+
+interface Chip {
+  value: string;        // empty string = "All"
+  label: string;
+  count?: number;
+}
+interface Props {
+  chips: Chip[];
+  label?: string;
+}
+const { chips, label = 'Категории' } = Astro.props;
+---
+<div class="cat-filter" data-cat-filter>
+  <span class="cat-filter__label">{label}:</span>
+  <div class="cat-filter__chips" role="tablist">
+    {chips.map((c, i) => (
+      <button
+        type="button"
+        class={`cat-chip${i === 0 ? ' is-active' : ''}`}
+        data-value={c.value}
+        role="tab"
+        aria-selected={i === 0 ? 'true' : 'false'}
+      >
+        {c.label}
+        {typeof c.count === 'number' && <span class="cat-chip__count">{c.count}</span>}
+      </button>
+    ))}
+  </div>
+</div>
+
+<script is:inline>
+  // Plain JS — no TS generics — so it bundles without surprises and
+  // runs in every browser. Wires each filter to the sibling .cards-grid.
+  (function () {
+    var roots = document.querySelectorAll('[data-cat-filter]');
+    for (var i = 0; i < roots.length; i++) {
+      (function (root) {
+        var parent = root.parentElement;
+        var grid = parent ? parent.querySelector('.cards-grid') : null;
+        if (!grid) return;
+        // Initialise to "all visible" so CSS rules have something to key on.
+        grid.setAttribute('data-active-type', '');
+        var chips = root.querySelectorAll('.cat-chip');
+        chips.forEach(function (chip) {
+          chip.addEventListener('click', function () {
+            chips.forEach(function (c) {
+              c.classList.remove('is-active');
+              c.setAttribute('aria-selected', 'false');
+            });
+            chip.classList.add('is-active');
+            chip.setAttribute('aria-selected', 'true');
+            var value = chip.getAttribute('data-value') || '';
+            grid.setAttribute('data-active-type', value);
+          });
+        });
+      })(roots[i]);
+    }
+  })();
+</script>
+
+<style>
+  .cat-filter {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .cat-filter__label {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .cat-filter__chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .cat-filter .cat-chip {
+    appearance: none;
+    background: var(--paper-solid);
+    border: 1.5px solid var(--line);
+    border-radius: 999px;
+    padding: 7px 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--ink);
+    cursor: pointer;
+    transition: all 0.18s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .cat-filter .cat-chip:hover {
+    border-color: var(--coral);
+    color: var(--coral);
+  }
+  .cat-filter .cat-chip.is-active {
+    background: var(--coral);
+    border-color: var(--coral);
+    color: #FBF6EF;
+  }
+  .cat-chip__count {
+    font-size: 11.5px;
+    opacity: 0.75;
+    font-weight: 500;
+  }
+  .cat-filter .cat-chip.is-active .cat-chip__count {
+    opacity: 0.9;
+  }
+
+  /* Hide cards whose data-type doesn't match the active filter.
+     Empty active value = no filter = everything visible. */
+  .cards-grid[data-active-type]:not([data-active-type=""]) .card {
+    display: none;
+  }
+  .cards-grid[data-active-type] .card[data-type] {
+    /* nothing — needs the explicit match below */
+  }
+  .cards-grid[data-active-type=""] .card { display: flex; }
+  /* Match — show */
+  .cards-grid[data-active-type="nature"]  .card[data-type="nature"],
+  .cards-grid[data-active-type="gastro"]  .card[data-type="gastro"],
+  .cards-grid[data-active-type="festival"] .card[data-type="festival"],
+  .cards-grid[data-active-type="family"]  .card[data-type="family"],
+  .cards-grid[data-active-type="parade"]  .card[data-type="parade"],
+  .cards-grid[data-active-type="market"]  .card[data-type="market"],
+  .cards-grid[data-active-type="beach"]   .card[data-type="beach"],
+  .cards-grid[data-active-type="other"]   .card[data-type="other"] {
+    display: flex;
+  }
+</style>

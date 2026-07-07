@@ -1,0 +1,69 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { type Locale, t } from '../../../i18n';
+import { TG_HANDLE, TG_URL, SITE_EMAIL } from '../../../config';
+const locale: Locale = 'en';
+---
+<Layout
+  locale={locale}
+  current="about"
+  title={`${t(locale, 'about.title')} ${t(locale, 'site.title.suffix')}`}
+  altUrl="/pro-menya/"
+>
+  <div class="hero-photo hero-photo--compact">
+    <div class="hero-inner">
+      <h1>Kate — two lives, one place</h1>
+      <p class="lead">I live in Spain, run a Telegram community, and build an AI Studio with my husband. I keep both threads here because I live both.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="prose">
+        <h2>Why this site exists</h2>
+        <p>
+          I moved, figured out the paperwork, found a rhythm of working by the sea —
+          and in parallel my husband and I build an AI studio for businesses and teach AI to people.
+          This site is where those two sides stop looking like two separate topics.
+        </p>
+        <p>
+          I publish what helped me and the people moving alongside me:
+          <strong>how to move</strong> (visas, NIE, banking, healthcare),
+          <strong>how to work here</strong> (autónomo, taxes, coworkings, seasonal work),
+          <strong>how to grow with AI</strong> (tools, agents, real cases),
+          <strong>how to live</strong> (places, events, nature).
+        </p>
+
+        <h2>AI Studio &amp; learning</h2>
+        <p>
+          With my husband we run <a href="https://yesworkflow.com" target="_blank" rel="noopener">YESWorkflow</a> —
+          a studio that ships custom AI automations for businesses: voice bots, team assistants,
+          integrations. And in parallel
+          <a href="https://www.aipack.live/courses" target="_blank" rel="noopener">aipack.live</a> —
+          a learning community with courses on ChatGPT, n8n, Claude Code, Codex and working with AI agents.
+        </p>
+        <p style="display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;">
+          <a class="btn btn-ghost" href="https://yesworkflow.com" target="_blank" rel="noopener">
+            <span class="icon" aria-hidden="true"><svg><use href="#i-landmark"/></svg></span>
+            <span>YESWorkflow</span>
+          </a>
+          <a class="btn btn-ghost" href="https://www.aipack.live/courses" target="_blank" rel="noopener">
+            <span class="icon" aria-hidden="true"><svg><use href="#i-palette"/></svg></span>
+            <span>aipack.live courses</span>
+          </a>
+          <a class="btn btn-ghost" href="https://t.me/yefimov_ai" target="_blank" rel="noopener">
+            <span class="icon" aria-hidden="true"><svg><use href="#i-send"/></svg></span>
+            <span>Telegram (AI)</span>
+          </a>
+        </p>
+
+        <h2>Get in touch</h2>
+        <p>
+          Partnerships, collaborations, sponsorships —
+          <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>
+          or <a href={TG_URL} target="_blank" rel="noopener">@{TG_HANDLE} on Telegram</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

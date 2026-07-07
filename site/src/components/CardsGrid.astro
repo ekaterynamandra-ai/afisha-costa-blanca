@@ -1,0 +1,39 @@
+---
+import { type Locale } from '../i18n';
+
+interface Card {
+  href: string;
+  title: string;
+  description: string;
+  eyebrow?: string;
+  cover?: string;
+  placeholder?: string;
+  // Optional metadata used by the filter chips on /zhizn/
+  dataType?: string;
+  dataSeason?: string;
+  dataLocation?: string;
+}
+
+interface Props { locale: Locale; cards: Card[]; }
+const { cards } = Astro.props;
+---
+<div class="cards-grid">
+  {cards.map(c => (
+    <a
+      class="card"
+      href={c.href}
+      data-type={c.dataType}
+      data-season={c.dataSeason}
+      data-location={c.dataLocation}
+    >
+      {c.cover
+        ? <div class="card-image"><img src={c.cover} alt={c.title} loading="lazy" /></div>
+        : <div class="card-image">{c.placeholder ?? c.title.split(' ').slice(0, 2).join(' ')}</div>}
+      <div class="card-body">
+        {c.eyebrow && <span class="card-eyebrow">{c.eyebrow}</span>}
+        <h3>{c.title}</h3>
+        <p>{c.description}</p>
+      </div>
+    </a>
+  ))}
+</div>

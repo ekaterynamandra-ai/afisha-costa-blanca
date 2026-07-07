@@ -1,0 +1,104 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SectionCard from '../../components/SectionCard.astro';
+import CardsGrid from '../../components/CardsGrid.astro';
+import { getArticles, articleUrl } from '../../lib/content';
+import { type Locale, t, sectionPath } from '../../i18n';
+import { TG_HANDLE, TG_URL } from '../../config';
+
+const locale: Locale = 'en';
+
+const latest = (await getArticles(locale))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const latestCards = latest.map((a) => ({
+  href: articleUrl(locale, a._meta.section, a._meta.slug),
+  title: a.data.title,
+  description: a.data.description,
+  eyebrow: t(locale, `section.${a._meta.section}.title` as const),
+  cover: a.data.cover,
+}));
+---
+<Layout locale={locale} current="home" altUrl="/">
+  <div class="hero-photo">
+    <div class="hero-inner">
+      <span class="hero-eyebrow">Kate in Spain</span>
+      <h1>{t(locale, 'home.hero.title')}</h1>
+      <p class="lead">{t(locale, 'home.hero.lead')}</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href={sectionPath[locale].pereezd}>
+          <span class="icon" aria-hidden="true"><svg><use href="#i-arrow-right"/></svg></span>
+          <span>{t(locale, 'home.cta.primary')}</span>
+        </a>
+        <a class="btn btn-secondary" href={TG_URL} target="_blank" rel="noopener">
+          <span class="icon" aria-hidden="true"><svg><use href="#i-send"/></svg></span>
+          <span>{t(locale, 'home.cta.telegram')}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <section class="section reveal">
+    <div class="section-inner">
+      <div class="section-rule"></div>
+      <h2 class="section-title">{t(locale, 'home.sections.title')}</h2>
+      <p class="section-sub">{t(locale, 'home.sections.sub')}</p>
+      <div class="pillars-grid">
+        <SectionCard href={sectionPath[locale].pereezd} title={t(locale, 'section.pereezd.title')} description={t(locale, 'section.pereezd.lead')} iconId="i-arrow-right" accent="coral" number="01" />
+        <SectionCard href={sectionPath[locale].zhizn}   title={t(locale, 'section.zhizn.title')}   description={t(locale, 'section.zhizn.lead')}   iconId="i-leaf"       accent="olive" number="02" />
+        <SectionCard href={sectionPath[locale].biznes}  title={t(locale, 'section.biznes.title')}  description={t(locale, 'section.biznes.lead')}  iconId="i-file-text"  accent="ocra"  number="03" />
+        <SectionCard href={sectionPath[locale].ai}      title={t(locale, 'section.ai.title')}      description={t(locale, 'section.ai.lead')}      iconId="i-palette"    accent="dusk"  number="04" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt reveal">
+    <div class="section-inner">
+      <div class="section-rule"></div>
+      <h2 class="section-title">Latest</h2>
+      <p class="section-sub">Most recently published across the sections.</p>
+      <CardsGrid locale={locale} cards={latestCards} />
+    </div>
+  </section>
+
+  <section class="section section-alt reveal">
+    <div class="section-inner">
+      <div class="tg-cta">
+        <h2>{t(locale, 'home.telegram.title')}</h2>
+        <p>{t(locale, 'home.telegram.sub')}</p>
+        <a class="btn btn-primary" href={TG_URL} target="_blank" rel="noopener">
+          <span class="icon" aria-hidden="true"><svg><use href="#i-send"/></svg></span>
+          <span>{t(locale, 'home.telegram.cta')} @{TG_HANDLE}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero-eyebrow {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #F0E0C8;
+    margin-bottom: 18px;
+    padding: 6px 14px;
+    border: 1px solid rgba(255,255,255,0.30);
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+  }
+  .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; }
+  @media (min-width: 900px) { .pillars-grid { grid-template-columns: repeat(4, 1fr); } }
+
+  .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
+  .product-card { display: flex; flex-direction: column; gap: 10px; padding: 32px 28px 28px; border-radius: 16px; background: #fff; border: 1px solid var(--line); color: var(--ink); text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+  .product-card:hover { transform: translateY(-4px); text-decoration: none; border-color: var(--coral); box-shadow: 0 12px 30px rgba(44,36,32,0.10); }
+  .product-eyebrow { font-size: 11.5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--coral); }
+  .product-card h3 { font-family: 'Fraunces', serif; font-size: 24px; font-weight: 700; margin: 0; }
+  .product-card p { color: var(--ink-2); font-size: 15px; line-height: 1.55; margin: 0; }
+  .product-cta { margin-top: 8px; color: var(--coral); font-size: 14px; font-weight: 700; }
+</style>

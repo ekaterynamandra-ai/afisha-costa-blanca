@@ -1,0 +1,82 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import IconSprite from '../components/IconSprite.astro';
+import { type Locale, type NavCurrent, t, altLocale, sectionPath } from '../i18n';
+
+interface Props {
+  locale: Locale;
+  current: NavCurrent;
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  altUrl?: string;
+}
+
+const {
+  locale,
+  current,
+  title,
+  description,
+  ogImage = '/og-default.jpg',
+  altUrl,
+} = Astro.props;
+
+const pageTitle = title ?? t(locale, 'site.title.default');
+const pageDesc = description ?? t(locale, 'site.desc.default');
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const htmlLang = locale === 'ru' ? 'ru' : 'en';
+const other = altLocale(locale);
+const hrefOther = altUrl ?? sectionPath[other].home;
+---
+<!DOCTYPE html>
+<html lang={htmlLang}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{pageTitle}</title>
+  <meta name="description" content={pageDesc} />
+  <link rel="canonical" href={canonical} />
+  <link rel="alternate" hreflang={htmlLang} href={canonical} />
+  <link rel="alternate" hreflang={other === 'ru' ? 'ru' : 'en'} href={new URL(hrefOther, Astro.site).toString()} />
+  <link rel="alternate" hreflang="x-default" href={Astro.site?.toString() ?? '/'} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={pageDesc} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={new URL(ogImage, Astro.site).toString()} />
+  <meta property="og:locale" content={locale === 'ru' ? 'ru_RU' : 'en_US'} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="generator" content={Astro.generator} />
+
+  <script is:inline>document.documentElement.classList.add('js');</script>
+
+  <!-- GoatCounter analytics (cookieless, EU-hosted) -->
+  <script data-goatcounter="https://kateinspain.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+  <IconSprite />
+  <Nav locale={locale} current={current} altUrl={altUrl} />
+  <main>
+    <slot />
+  </main>
+  <Footer locale={locale} />
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      }
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px' });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>

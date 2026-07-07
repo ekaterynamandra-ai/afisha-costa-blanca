@@ -1,0 +1,53 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import CardsGrid from '../../../components/CardsGrid.astro';
+import { getArticles, articleUrl } from '../../../lib/content';
+import type { Section } from '../../../content.config';
+import { type Locale, t, sectionSlug } from '../../../i18n';
+
+const locale: Locale = 'en';
+
+export async function getStaticPaths() {
+  // EN URL slugs (moving/work/business/life) → logical section ids (RU slugs).
+  return Object.entries(sectionSlug.en).map(([logical, enSlug]) => ({
+    params: { section: enSlug },
+    props: { section: logical as Section },
+  }));
+}
+
+const { section } = Astro.props as { section: Section };
+const articles = (await getArticles(locale, section))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const cards = articles.map((a) => ({
+  href: articleUrl(locale, section, a._meta.slug),
+  title: a.data.title,
+  description: a.data.description,
+  eyebrow: a.data.reading_time ?? a.data.tags[0],
+  cover: a.data.cover,
+}));
+
+const titleKey = `section.${section}.title` as const;
+const leadKey = `section.${section}.lead` as const;
+---
+<Layout
+  locale={locale}
+  current={section}
+  title={`${t(locale, titleKey)} ${t(locale, 'site.title.suffix')}`}
+  description={t(locale, leadKey)}
+  altUrl={`/${section}/`}
+>
+  <div class="hero-photo hero-photo--compact">
+    <div class="hero-inner">
+      <h1>{t(locale, titleKey)}</h1>
+      <p class="lead">{t(locale, leadKey)}</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="section-inner">
+      {cards.length === 0
+        ? <p style="color: var(--ink-3); font-style: italic; font-family: var(--font-display); font-size: 18px;">Articles for this section are on the way.</p>
+        : <CardsGrid locale={locale} cards={cards} />}
+    </div>
+  </section>
+</Layout>

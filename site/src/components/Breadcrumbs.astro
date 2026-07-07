@@ -1,0 +1,67 @@
+---
+// Simple two-or-three-level breadcrumbs. Each item is { label, href? }.
+// The last item is rendered as plain text (current page), no link.
+
+interface Crumb {
+  label: string;
+  href?: string;
+}
+interface Props {
+  items: Crumb[];
+}
+const { items } = Astro.props;
+---
+<nav class="breadcrumbs" aria-label="Хлебные крошки">
+  <ol>
+    {items.map((c, i) => (
+      <li>
+        {c.href && i < items.length - 1
+          ? <a href={c.href}>{c.label}</a>
+          : <span aria-current="page">{c.label}</span>}
+        {i < items.length - 1 && <span class="sep" aria-hidden="true">/</span>}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<style>
+  .breadcrumbs {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 18px 24px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    color: var(--ink-3);
+  }
+  .breadcrumbs ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 0;
+    align-items: center;
+  }
+  .breadcrumbs li {
+    display: inline-flex;
+    align-items: center;
+  }
+  .breadcrumbs a {
+    color: var(--ink-3);
+    text-decoration: none;
+    padding: 4px 0;
+  }
+  .breadcrumbs a:hover {
+    color: var(--coral);
+    text-decoration: underline;
+  }
+  .breadcrumbs [aria-current="page"] {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .breadcrumbs .sep {
+    margin: 0 10px;
+    color: var(--ink-3);
+    opacity: 0.55;
+  }
+</style>

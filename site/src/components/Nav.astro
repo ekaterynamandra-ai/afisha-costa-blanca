@@ -1,0 +1,45 @@
+---
+import { type Locale, type NavCurrent, t, sectionPath, altLocale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+  current: NavCurrent;
+  /** Path on the other-language counterpart of this page (resolved per-page). */
+  altUrl?: string;
+}
+const { locale, current, altUrl } = Astro.props;
+
+const links = [
+  { key: 'home'    as const, href: sectionPath[locale].home,    label: t(locale, 'nav.home')    },
+  { key: 'pereezd' as const, href: sectionPath[locale].pereezd, label: t(locale, 'nav.pereezd') },
+  { key: 'zhizn'   as const, href: sectionPath[locale].zhizn,   label: t(locale, 'nav.zhizn')   },
+  { key: 'biznes'  as const, href: sectionPath[locale].biznes,  label: t(locale, 'nav.biznes')  },
+  { key: 'ai'      as const, href: sectionPath[locale].ai,      label: t(locale, 'nav.ai')      },
+  { key: 'about'   as const, href: sectionPath[locale].about,   label: t(locale, 'nav.about')   },
+];
+
+const other = altLocale(locale);
+const otherHref = altUrl ?? sectionPath[other].home;
+---
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="inner">
+    <a href={sectionPath[locale].home} class="nav-logo">
+      <span class="icon nav-sun" aria-hidden="true"><svg><use href="#i-sun"/></svg></span>
+      <span class="nav-brand">
+        <span class="nav-brand-name">Kate in Spain</span>
+        <span class="nav-brand-tagline">{locale === 'ru' ? 'жить у моря · работать удалённо' : 'live by the sea · work remotely'}</span>
+      </span>
+    </a>
+    <div class="nav-right">
+      <div class="nav-links">
+        {links.map(l => (
+          <a href={l.href} aria-current={current === l.key ? 'page' : undefined}>{l.label}</a>
+        ))}
+      </div>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <a href={locale === 'ru' ? '#' : (altUrl ?? '/')} class={locale === 'ru' ? 'active' : ''} aria-current={locale === 'ru' ? 'true' : undefined}>RU</a>
+        <a href={locale === 'en' ? '#' : (altUrl ?? '/en/')} class={locale === 'en' ? 'active' : ''} aria-current={locale === 'en' ? 'true' : undefined}>EN</a>
+      </div>
+    </div>
+  </div>
+</nav>

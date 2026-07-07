@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import TgCta from '../../components/TgCta.astro';
+import { render } from 'astro:content';
+import { getArticles, altArticleUrl } from '../../lib/content';
+import type { Section } from '../../content.config';
+import { type Locale, t, sectionPath } from '../../i18n';
+
+export async function getStaticPaths() {
+  // getStaticPaths runs in isolation — must inline the locale.
+  const articles = await getArticles('ru');
+  return articles.map((entry) => ({
+    params: { section: entry._meta.section, slug: entry._meta.slug },
+    props: { entry },
+  }));
+}
+
+const locale: Locale = 'ru';
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const formatted = new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }).format(entry.data.date);
+
+// Resolve EN counterpart by matching section+slug.
+const all = await getArticles('en');
+const altUrl = altArticleUrl(all, 'en', entry._meta.section, entry._meta.slug);
+
+const sectionTitleKey = `section.${entry._meta.section}.title` as const;
+---
+<Layout
+  locale={locale}
+  current={entry._meta.section}
+  title={`${entry.data.title} ${t(locale, 'site.title.suffix')}`}
+  description={entry.data.description}
+  ogImage={entry.data.cover ?? '/og-default.jpg'}
+  altUrl={altUrl}
+>
+  <Breadcrumbs items={[
+    { label: t(locale, 'nav.home'), href: sectionPath[locale].home },
+    { label: t(locale, sectionTitleKey), href: sectionPath[locale][entry._meta.section] },
+    { label: entry.data.title },
+  ]} />
+  <article class="section">
+    <div class="prose">
+      <p style="color: var(--coral); font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">
+        {t(locale, sectionTitleKey)}
+        {entry.data.reading_time && ` · ${entry.data.reading_time}`}
+      </p>
+      <h1>{entry.data.title}</h1>
+      <p style="color: var(--ink-2); font-size: 14px; margin-bottom: 28px;">{formatted}</p>
+      {entry.data.cover && <img src={entry.data.cover} alt={entry.data.title} />}
+      <Content />
+      <TgCta locale={locale} />
+      <p style="margin-top: 32px;">
+        <a class="btn btn-ghost" href={sectionPath[locale][entry._meta.section]}>{t(locale, 'section.back')}</a>
+      </p>
+    </div>
+  </article>
+</Layout>
