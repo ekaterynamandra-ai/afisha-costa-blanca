@@ -1,27 +1,26 @@
-# Product previews — обсуждаем до генерации
+# Product previews
 
-Каждый файл здесь — простое MD-описание продукта. **До того как я что-то производить** (PDF, Google Sheet, шаблоны, страницы) — ты читаешь превью и говоришь «полезно / нет / переделать что-то».
+**Активная стратегия (Катя 2026-07-08): 1 платный продукт.** Всё остальное отложено.
 
 ## Файлы
 
-- **[00-user-journey.md](00-user-journey.md)** — общая карта: от посетителя до покупателя (+ открытые вопросы к тебе)
-- **[01-free-basic-checklist.md](01-free-basic-checklist.md)** — FREE лид-магнит (базовый чек-лист за email)
-- **[02-paid-first-year-playbook.md](02-paid-first-year-playbook.md)** — €39-49 «Первый год на Коста-Бланке» (расширенный чек-лист + шаблоны)
-- **[03-paid-mortgage-pro.md](03-paid-mortgage-pro.md)** — €15 «Ипотека Pro» (инвест-калькулятор + гайд по опыту)
-- **[04-paid-autonomo-pro.md](04-paid-autonomo-pro.md)** — €19 «Autonomo Pro» (калькулятор доходов на 3 рынка + шаблоны фактур)
-- **[05-paid-spanish-apps-pack.md](05-paid-spanish-apps-pack.md)** — €15 «Apps Pack» (гайд по ~50 испанским приложениям)
-- **[06-paid-interactive-brokers-spain.md](06-paid-interactive-brokers-spain.md)** — €25 «IB Pro» (инвестиции из Испании через Interactive Brokers)
+- **[00-user-journey.md](00-user-journey.md)** — карта пути от Instagram/TG до покупки + открытые вопросы
+- **[01-free-basic-checklist.md](01-free-basic-checklist.md)** — FREE открытая страница `/checklist/` (без email, без подписок)
+- **[02-paid-first-year-playbook.md](02-paid-first-year-playbook.md)** — €X «Первый год в Испании» (единственный платный)
+
+## На потом
+
+Директория **[on-hold/](on-hold/)** — 4 продуктовых идеи, отложенных до валидации первого продукта:
+- Ипотека Pro, Autonomo Pro, Apps Pack, IB Pro
+
+Возвращаемся, когда «Первый год в Испании» продан ≥50 копий и TG/IG выросли.
 
 ## Правило работы
 
-По memory `feedback_preview_md_before_produce`:
+По memory `feedback_preview_md_before_produce`: ты читаешь превью → даёшь ОК / правки → **только после ОК** производство (PDF, Google Sheet, landing-страница, wiring Gumroad).
 
-1. Ты читаешь превью
-2. Даёшь ОК / правку / отказ
-3. **Только после ОК** — я начинаю производство (генерация PDF, вёрстка калькулятора, вёрстка landing-страницы на сайте, wiring Gumroad, etc.)
+По memory `feedback_kate_traffic_channels_no_seo_no_email`: сайт весь free, direct-buy для платного, email только для post-purchase delivery.
 
-## Что не в списке (по твоему решению 2026-07-08)
+По memory `feedback_kate_infoproducts_only`: только инфопродукты — не консультации, не paid TG, не курсы.
 
-- ❌ Консультации 1:1 — не хочешь
-- ❌ Paid Telegram community (Tribute) — не хочешь
-- ❌ Курсы / video-обучение — не твоя ниша (это aipack.live)
+По memory `feedback_kate_analyst_not_lawyer`: тон аналитика (личный опыт + числа + логика), не юриста.
