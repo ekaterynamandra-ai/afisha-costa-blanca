@@ -6,14 +6,14 @@
 
 - **[00-user-journey.md](00-user-journey.md)** — карта пути от Instagram/TG до покупки + открытые вопросы
 - **[01-free-basic-checklist.md](01-free-basic-checklist.md)** — FREE открытая страница `/checklist/` (без email, без подписок)
-- **[02-paid-first-year-playbook.md](02-paid-first-year-playbook.md)** — €X «Первый год в Испании» (единственный платный)
+- **[02-paid-first-year-playbook.md](02-paid-first-year-playbook.md)** — €X «Испания без "помогаторов"» (единственный платный)
 
 ## На потом
 
 Директория **[on-hold/](on-hold/)** — 4 продуктовых идеи, отложенных до валидации первого продукта:
 - Ипотека Pro, Autonomo Pro, Apps Pack, IB Pro
 
-Возвращаемся, когда «Первый год в Испании» продан ≥50 копий и TG/IG выросли.
+Возвращаемся, когда «Испания без "помогаторов"» продан ≥50 копий и TG/IG выросли.
 
 ## Правило работы
 
