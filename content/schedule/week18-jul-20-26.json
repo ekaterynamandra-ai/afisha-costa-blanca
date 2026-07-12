@@ -1,0 +1,51 @@
+{
+  "week": "2026-07-20 to 2026-07-26",
+  "approved": false,
+  "_notes": "Week18 v7. Пт про медузы (сезонное предупреждение + личный опыт укуса). Вс про Sant Jaume гастрономию. Ср weekend picks за 3 дня (Sant Jaume 25.07 + Табарка).",
+  "posts": [
+    {
+      "id": "w18-mon-news",
+      "date": "2026-07-20",
+      "time": "10:00",
+      "title": "📰 Новость иммигранту (мониторинг)",
+      "type": "immigrant_news",
+      "status": "planning",
+      "photo": null,
+      "text": null,
+      "_planning_note": "Мониторинг BOE + expat-каналы. Skip если нет темы."
+    },
+    {
+      "id": "w18-wed-weekend",
+      "date": "2026-07-22",
+      "time": "10:00",
+      "title": "🌟 Топ 25-26 июля",
+      "type": "weekend_picks",
+      "status": "planning",
+      "photo": null,
+      "text": null,
+      "_planning_note": "Sant Jaume 25.07 (Santa Pola, Кальпе, Сан-Хуан-де-Аликанте) + Остров Табарка как day trip + семейная опция (парк / beach)."
+    },
+    {
+      "id": "w18-fri-jellyfish",
+      "date": "2026-07-24",
+      "time": "10:00",
+      "title": "🪼 Медузы на Коста-Бланке — что знать",
+      "type": "living_useful",
+      "status": "draft",
+      "photo": "content/photos/places/mediterranean-sunset-sea.jpg",
+      "text": "🪼 <b>МЕДУЗЫ НА КОСТА-БЛАНКЕ — ЧТО ЗНАТЬ</b>\n\nПервый раз меня ужалила pelagia noctiluca на пляже Guardamar в конце июля. Я думала — водоросли. Оказалось: маленькая розовая медуза, я её не увидела. Обжигает как крапива, следы 3-4 дня.\n\n<b>Сезон</b>\nПриходят с восточными ветрами. Обычно с конца июля до середины сентября. В хорошие годы мало, в плохие — весь август.\n\n<b>Какие бывают</b>\n• Pelagia noctiluca — розово-фиолетовая, 5-8 см. Самая частая, жжёт.\n• Rhizostoma pulmo — большая полупрозрачная. Может ужалить, редко.\n\n<b>Как узнать что рядом</b>\nНа пляжах флаги: красный/жёлтый/зелёный — про волны. Медузы — отдельный флаг с силуэтом или знак у входа. На comunitatvalenciana.com карта в реальном времени.\n\n<b>Что делать если ужалила</b>\n1. НЕ трогать пресной водой — активирует остатки жала\n2. Морская вода — промыть\n3. Уксус или сода — приложить на 15 минут\n4. Сильная боль или сыпь по телу — к врачу\n\n<b>Что не работает</b>\nМоча, лимон, тереть песком.\n\nС тех пор ношу маленький уксус и купаюсь только на «зелёном флаге».\n\n#медузы #пляж",
+      "_visible_length": 1000
+    },
+    {
+      "id": "w18-sun-sant-jaume-food",
+      "date": "2026-07-26",
+      "time": "10:00",
+      "title": "🥘 Sant Jaume и средиземноморская кухня",
+      "type": "seasonal_guide",
+      "status": "draft",
+      "photo": "site/public/photos/imports/fresh-seafood-ice-greenery.jpeg",
+      "text": "🥘 <b>SANT JAUME И СРЕДИЗЕМНОМОРСКАЯ КУХНЯ</b>\n\n25 июля — день святого Иакова, покровителя Испании. Национальный праздник в Galicia, а по побережью Costa Blanca — свой гастрономический формат.\n\n<b>🍚 Arroces</b>\nНе только paella. Arroz a banda (на рыбном бульоне), arroz negro (с чернилами кальмара), arroz al horno (запечённый с фасолью). Каждый рецепт — отдельная культура городка.\n\n<b>🐟 Рыба и морепродукты</b>\nSepia a la plancha, gambas rojas de Denia, mejillones al vapor. У каждого рыбака — свой лучший стол.\n\n<b>🥤 Sangría vs tinto de verano</b>\nSangría — красное вино с фруктами. Tinto de verano — то же с лимонадом Casera. Местные пьют tinto de verano, sangría — для туристов.\n\n<b>🍮 Десерты</b>\nCoca de fresa, turrón de verano, granizado de limón.\n\n<b>Где искать не туристическое</b>\nМеню только на испанском, половина мест — местные. Прайс от €20 за меню дня.\n\nГотовишь arroces дома? Свои любимые?\n\n#SantJaume #гастро",
+      "_visible_length": 882
+    }
+  ]
+}
