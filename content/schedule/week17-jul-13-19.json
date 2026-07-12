@@ -1,7 +1,7 @@
 {
   "week": "2026-07-13 to 2026-07-19",
   "approved": false,
-  "_notes": "Week17 v7. Пт про лучший сезон до медуз, Вс про fiestas patronales. Ср weekend picks будет добавлен за 3 дня (research по Fiesta Virgen del Carmen 16.07 морская). Пн — мониторинг новостей (TIE в стоп-листе публикации).",
+  "_notes": "Week17 v8 (Пн+Ср регулярно, правило 13.07): Ср 15.07 «Лучший сезон». Fiestas patronales guide перенесён на Пн 27.07 (week19). Пн 13.07 пропущен (правило вступило поздно). Пт 17.07 не публикуем (только ad-hoc).",
   "posts": [
     {
       "id": "w17-mon-news",
@@ -26,8 +26,8 @@
       "_planning_note": "Fiesta Virgen del Carmen (16.07 морская, все прибрежные городки — процессии катеров, фейерверк с моря) + Playa del Carabassí (Elche/Alicante) + evening rooftop options. Research за 2 дня."
     },
     {
-      "id": "w17-fri-best-season",
-      "date": "2026-07-17",
+      "id": "w17-wed-best-season",
+      "date": "2026-07-15",
       "time": "10:00",
       "title": "☀️ Почему конец июня — начало июля лучший пляжный сезон",
       "type": "living_useful",
@@ -37,15 +37,9 @@
       "_visible_length": 1010
     },
     {
-      "id": "w17-sun-fiestas",
-      "date": "2026-07-19",
-      "time": "10:00",
-      "title": "🇪🇸 Fiestas patronales — самая настоящая Испания",
-      "type": "seasonal_guide",
-      "status": "draft",
-      "photo": "site/public/photos/imports/hogueras-aesthetic.jpg",
-      "text": "🇪🇸 <b>FIESTAS PATRONALES — САМАЯ НАСТОЯЩАЯ ИСПАНИЯ</b>\n\nПока туристы смотрят Sagrada Familia, местные каждый уикенд едут на fiesta своего городка. Это то, что делает Испанию — Испанией.\n\n<b>Что это</b>\nКаждый городок в июле-сентябре отмечает святого-покровителя. Три-пять дней: концерты, парады, ужин на площади, фейерверк.\n\n<b>Как найти свою</b>\nСайт ayuntamiento своего города → раздел «Fiestas». Или comunitatvalenciana.com → «Grandes eventos».\n\n<b>Что там происходит</b>\n• Открытие с речью алькальда, парад gigantes y cabezudos\n• Ежедневная mascletà (пиротехника) в 14:00\n• Кулинарные конкурсы (paella, arroces) — участвуют все\n• Concurso de peñas — местные соревнуются в костюмах\n• Финальный фейерверк с пляжа\n\n<b>Мой лайфхак</b>\nНе еду на пик fiesta в незнакомый городок. Приезжаю за день до — гуляю, смотрю подготовку. Атмосферы больше, толкучки меньше.\n\nПервые 2 года я ходила «как туристка». Потом поняла: fiesta — не событие, а способ познакомиться с городом изнутри.\n\nКакие fiestas у тебя на этой неделе?\n\n#fiestas #Испания",
-      "_visible_length": 999
+      "id": "w17-fri-fiestas-moved",
+      "_status": "MOVED_TO_WEEK19",
+      "_note": "Fiestas patronales guide перенесён на Пн 27.07 (week19) — новое правило v8 (только Пн+Ср регулярно, Пт не публикуем без ad-hoc)."
     }
   ]
 }
