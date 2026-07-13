@@ -11,13 +11,14 @@ const { locale, current, altUrl } = Astro.props;
 
 // AI moved from top-nav into "Заработок" as a sub-rubric (Menu research 2026-07-08).
 // Page /ai/ still exists and is linked from the biznes landing.
-// Order: what you came to DO first (settle in, earn), then the archive, then me.
+// "Обустройство" is now the product, not an article list — it points at the
+// checklist. "Заработок" is out of the menu until its product exists; its
+// articles are still reachable through the filter on /zhizn/.
 const links = [
-  { key: 'home'    as const, href: sectionPath[locale].home,    label: t(locale, 'nav.home')    },
-  { key: 'pereezd' as const, href: sectionPath[locale].pereezd, label: t(locale, 'nav.pereezd') },
-  { key: 'biznes'  as const, href: sectionPath[locale].biznes,  label: t(locale, 'nav.biznes')  },
-  { key: 'zhizn'   as const, href: sectionPath[locale].zhizn,   label: t(locale, 'nav.zhizn')   },
-  { key: 'about'   as const, href: sectionPath[locale].about,   label: t(locale, 'nav.about')   },
+  { key: 'home'    as const, href: sectionPath[locale].home, label: t(locale, 'nav.home') },
+  { key: 'pereezd' as const, href: locale === 'ru' ? '/checklist/' : sectionPath[locale].pereezd, label: t(locale, 'nav.pereezd') },
+  { key: 'zhizn'   as const, href: sectionPath[locale].zhizn, label: t(locale, 'nav.zhizn') },
+  { key: 'about'   as const, href: sectionPath[locale].about, label: t(locale, 'nav.about') },
 ];
 
 const other = altLocale(locale);

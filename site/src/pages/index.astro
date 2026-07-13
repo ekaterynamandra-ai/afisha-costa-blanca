@@ -47,11 +47,11 @@ const latestCards = latest.map((a) => ({
       <div class="section-rule"></div>
       <h2 class="section-title">{t(locale, 'home.sections.title')}</h2>
       <p class="section-sub">{t(locale, 'home.sections.sub')}</p>
-      <div class="pillars-grid">
+      <div class="pillars-grid pillars-grid--3">
         <SectionCard
-          href={sectionPath[locale].pereezd}
-          title={t(locale, 'section.pereezd.title')}
-          description={t(locale, 'section.pereezd.lead')}
+          href="/checklist/"
+          title="Обустройство"
+          description="Пошаговый чек-лист: документы, жильё, банки, врач, транспорт. Один шаг открыт бесплатно."
           iconId="i-arrow-right"
           accent="coral"
           number="01"
@@ -65,38 +65,13 @@ const latestCards = latest.map((a) => ({
           number="02"
         />
         <SectionCard
-          href={sectionPath[locale].biznes}
-          title={t(locale, 'section.biznes.title')}
-          description={t(locale, 'section.biznes.lead')}
-          iconId="i-file-text"
-          accent="ocra"
-          number="03"
-        />
-        <SectionCard
           href={sectionPath[locale].ai}
           title={t(locale, 'section.ai.title')}
           description={t(locale, 'section.ai.lead')}
           iconId="i-palette"
           accent="dusk"
-          number="04"
+          number="03"
         />
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== TOOLS / LEAD MAGNET ===== -->
-  <section class="section reveal">
-    <div class="section-inner">
-      <div class="section-rule"></div>
-      <h2 class="section-title">Мои шпаргалки</h2>
-      <p class="section-sub">Что я собрала, пока сама разбиралась — можно взять и пользоваться.</p>
-      <div class="products-grid">
-        <a class="product-card" href="/checklist/">
-          <span class="product-eyebrow">Бесплатно</span>
-          <h3>Чек-лист первого года</h3>
-          <p>8 разделов, около 60 шагов: документы, банк, врач, жильё, транспорт, быт, язык, интеграция. Раздел «Документы» открыт целиком — плюс 4 правила, которые экономят месяцы бюрократии.</p>
-          <span class="product-cta">Открыть чек-лист →</span>
-        </a>
       </div>
     </div>
   </section>
@@ -148,6 +123,7 @@ const latestCards = latest.map((a) => ({
   }
   @media (min-width: 900px) {
     .pillars-grid { grid-template-columns: repeat(4, 1fr); }
+    .pillars-grid--3 { grid-template-columns: repeat(3, 1fr); }
   }
 
   .products-grid {
