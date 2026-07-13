@@ -11,7 +11,7 @@ export const ui = {
   ru: {
     'nav.home': 'Домой',
     'nav.pereezd': 'Обустройство',
-    'nav.zhizn': 'Коста-Бланка',
+    'nav.zhizn': 'Жизнь в Испании',
     'nav.biznes': 'Заработок',
     'nav.ai': 'AI в помощь',
     'nav.about': 'Про меня',
@@ -36,8 +36,8 @@ export const ui = {
     // Section labels (used on listing pages + section badges)
     'section.pereezd.title': 'Обустройство',
     'section.pereezd.lead': 'NIE, банк, прописка, врач, школа, права — всё, что нужно сделать в первый год. По шагам и без паники.',
-    'section.zhizn.title': 'Коста-Бланка',
-    'section.zhizn.lead': 'Пляжи, городки, праздники и еда — то, ради чего мы все сюда приехали.',
+    'section.zhizn.title': 'Жизнь в Испании',
+    'section.zhizn.lead': 'Самое полезное и интересное — здесь. Каждую статью я разбирала и собирала для себя, пока училась жить в этой стране.',
     'section.biznes.title': 'Заработок',
     'section.biznes.lead': 'Удалённая работа, фриланс, autónomo и своё дело — как зарабатывать, живя у моря.',
     'section.ai.title': 'AI в помощь',

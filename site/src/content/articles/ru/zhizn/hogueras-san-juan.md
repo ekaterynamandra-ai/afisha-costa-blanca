@@ -1,6 +1,7 @@
 ---
 title: "Hogueras de San Juan — главный июньский праздник Аликанте"
 description: "Куклы-гиганты, ночные костры на пляже и фейерверки до утра. Что это, когда ехать и куда смотреть."
+cover: "/photos/imports/hogueras-aesthetic.jpg"
 section: zhizn
 date: 2026-06-20
 location: "Alicante"

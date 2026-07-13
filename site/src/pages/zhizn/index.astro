@@ -1,0 +1,247 @@
+---
+// /zhizn/ — the archive: every article on the site in one grid behind one
+// filter. Deliberately NOT the generic [section] listing: settling-in and
+// earning aren't tied to a location, places are — the filter splits them.
+import Layout from '../../layouts/Layout.astro';
+import { getArticles, articleUrl } from '../../lib/content';
+import { type Locale } from '../../i18n';
+
+const locale: Locale = 'ru';
+
+const all = (await getArticles(locale)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+// One filter key per article. Place articles (zhizn) keep their own `type`;
+// everything else is grouped by what it's FOR — settling in, or earning.
+// Quotes in frontmatter ("festival" vs festival) split the buckets, so strip them.
+const norm = (v?: string) => (v ?? '').replace(/["']/g, '').trim().toLowerCase();
+
+function filterKey(section: string, type?: string): string {
+  if (section === 'pereezd') return 'obustroystvo';
+  if (section === 'biznes' || section === 'ai') return 'zarabotok';
+  const t = norm(type);
+  return t || 'other';
+}
+
+const items = all.map((a) => ({
+  href: articleUrl(locale, a._meta.section, a._meta.slug),
+  title: a.data.title,
+  description: a.data.description,
+  cover: a.data.cover,
+  eyebrow: a.data.reading_time ?? a.data.tags?.[0],
+  key: filterKey(a._meta.section, a.data.type),
+}));
+
+const LABELS: Record<string, string> = {
+  nature: 'Природа',
+  beach: 'Пляжи',
+  gastro: 'Гастро',
+  market: 'Рынки',
+  festival: 'Праздники',
+  parade: 'Парады',
+  family: 'С детьми',
+  other: 'Разное',
+  obustroystvo: 'Обустройство',
+  zarabotok: 'Полезное для заработка',
+};
+
+const count = (k: string) => items.filter((i) => i.key === k).length;
+const chip = (k: string) => ({ value: k, label: LABELS[k] ?? k, count: count(k) });
+const present = (keys: string[]) => keys.filter((k) => count(k) > 0).map(chip);
+
+// Local = tied to a place on the Costa Blanca. Settling-in and earning aren't
+// tied to any location at all, so they sit in their own group.
+const LOCAL_KEYS = ['nature', 'beach', 'gastro', 'market', 'festival', 'parade', 'family', 'other'];
+const localCount = items.filter((i) => LOCAL_KEYS.includes(i.key)).length;
+---
+
+<Layout
+  locale={locale}
+  current="zhizn"
+  title="Жизнь в Испании — все материалы · Kate in Spain"
+  description="Все статьи в одном месте: места, праздники, гастро, обустройство и заработок. С фильтром."
+>
+  <div class="hero-photo hero-photo--compact" style="--hero-image: url('/photos/sections/zhizn-hero.jpg')">
+    <div class="hero-inner">
+      <h1>Жизнь в Испании</h1>
+      <p class="lead">
+        Самое полезное и интересное — здесь. Каждую статью я разбирала и собирала
+        для себя, пока училась жить в этой стране.
+      </p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="filter" id="filter">
+        <div class="filter-top">
+          <span class="filter-title">Что тебе нужно?</span>
+          <button type="button" class="chip chip-all is-active" data-value="" aria-selected="true">
+            Показать всё<span class="chip-count">{items.length}</span>
+          </button>
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-group-title">Полезное · не зависит от города</span>
+          <div class="filter-chips" role="tablist">
+            {present(['obustroystvo', 'zarabotok']).map((c) => (
+              <button type="button" class="chip" data-value={c.value} role="tab" aria-selected="false">
+                {c.label}<span class="chip-count">{c.count}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-group-title">Коста-Бланка · места и события</span>
+          <div class="filter-chips" role="tablist">
+            <button type="button" class="chip chip-local" data-group="local" role="tab" aria-selected="false">
+              Вся Коста-Бланка<span class="chip-count">{localCount}</span>
+            </button>
+            {present(LOCAL_KEYS).map((c) => (
+              <button type="button" class="chip" data-value={c.value} role="tab" aria-selected="false">
+                {c.label}<span class="chip-count">{c.count}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <p class="filter-status" id="filter-status">{items.length} материалов</p>
+
+      <div class="cards-grid" id="grid">
+        {items.map((c) => (
+          <a class="card" href={c.href} data-key={c.key} data-group={LOCAL_KEYS.includes(c.key) ? 'local' : c.key}>
+            {c.cover
+              ? <div class="card-image"><img src={c.cover} alt={c.title} loading="lazy" /></div>
+              : <div class="card-image">{c.title.split(' ').slice(0, 2).join(' ')}</div>}
+            <div class="card-body">
+              <span class="card-eyebrow">{LABELS[c.key] ?? c.key}</span>
+              <h3>{c.title}</h3>
+              <p>{c.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const filter = document.getElementById('filter');
+  const grid = document.getElementById('grid');
+  const status = document.getElementById('filter-status');
+
+  if (filter && grid && status) {
+    const cards = Array.from(grid.querySelectorAll<HTMLElement>('.card'));
+    const chips = Array.from(filter.querySelectorAll<HTMLButtonElement>('.chip'));
+
+    const word = (n: number) => {
+      const t = n % 10;
+      const h = n % 100;
+      if (t === 1 && h !== 11) return 'материал';
+      if (t >= 2 && t <= 4 && (h < 12 || h > 14)) return 'материала';
+      return 'материалов';
+    };
+
+    // A chip filters either by a single key ("Гастро") or by a whole group
+    // ("Вся Коста-Бланка" = every location-tied article).
+    const apply = (key: string, group: string) => {
+      let shown = 0;
+      for (const card of cards) {
+        const match =
+          (!key && !group) ||
+          (key && card.dataset.key === key) ||
+          (group && card.dataset.group === group);
+        card.style.display = match ? '' : 'none';
+        if (match) shown++;
+      }
+      status.textContent = `${shown} ${word(shown)}`;
+    };
+
+    for (const chip of chips) {
+      chip.addEventListener('click', () => {
+        for (const c of chips) {
+          c.classList.remove('is-active');
+          c.setAttribute('aria-selected', 'false');
+        }
+        chip.classList.add('is-active');
+        chip.setAttribute('aria-selected', 'true');
+        apply(chip.dataset.value || '', chip.dataset.group || '');
+      });
+    }
+  }
+</script>
+
+<style>
+  .filter {
+    padding: clamp(20px, 3vw, 26px) clamp(20px, 3vw, 28px);
+    margin-bottom: 18px;
+    background: var(--paper-solid);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+  }
+  .filter-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-bottom: 18px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid var(--line);
+  }
+  .filter-title {
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    color: var(--ink);
+  }
+
+  .filter-group + .filter-group { margin-top: 16px; }
+  .filter-group-title {
+    display: block;
+    font-size: var(--text-eyebrow);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 10px;
+  }
+  .filter-chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .chip {
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 17px;
+    background: var(--bg);
+    border: 1.5px solid var(--line);
+    border-radius: 999px;
+    font-family: var(--font-body);
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--ink);
+    cursor: pointer;
+    transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+  }
+  .chip:hover { border-color: var(--coral); color: var(--coral); }
+  .chip.is-active {
+    background: var(--coral);
+    border-color: var(--coral);
+    color: #FBF6EF;
+  }
+  .chip-all { background: var(--paper-solid); }
+  .chip-count { font-size: 12px; font-weight: 500; opacity: 0.75; }
+
+  .filter-status {
+    margin: 0 0 24px;
+    font-size: var(--text-small);
+    color: var(--ink-3);
+  }
+</style>

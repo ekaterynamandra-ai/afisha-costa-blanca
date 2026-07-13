@@ -11,7 +11,9 @@ const locale: Locale = 'ru';
 
 export async function getStaticPaths() {
   // One page per RU section slug. EN equivalents live under /en/[section]/.
-  return (['pereezd', 'zhizn', 'biznes', 'ai'] as const).map((section) => ({
+  // `zhizn` is excluded: it has its own page (src/pages/zhizn/index.astro) that
+  // shows every article on the site behind one filter, not just its own section.
+  return (['pereezd', 'biznes', 'ai'] as const).map((section) => ({
     params: { section: section },
     props: { section },
   }));

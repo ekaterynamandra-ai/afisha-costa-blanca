@@ -12,6 +12,8 @@ interface Props {
   description?: string;
   ogImage?: string;
   altUrl?: string;
+  /** Set on article pages so Open Graph and JSON-LD describe an article, not the site. */
+  article?: { published?: Date; modified?: Date; section?: string };
 }
 
 const {
@@ -21,6 +23,7 @@ const {
   description,
   ogImage = '/og-default.jpg',
   altUrl,
+  article,
 } = Astro.props;
 
 const pageTitle = title ?? t(locale, 'site.title.default');
@@ -29,6 +32,36 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 const htmlLang = locale === 'ru' ? 'ru' : 'en';
 const other = altLocale(locale);
 const hrefOther = altUrl ?? sectionPath[other].home;
+const ogImageUrl = new URL(ogImage, Astro.site).toString();
+
+const AUTHOR = 'Kate in Spain';
+
+// Structured data: an article page describes itself as a BlogPosting; every
+// other page just identifies the site.
+const jsonLd = article
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: pageTitle,
+      description: pageDesc,
+      image: ogImageUrl,
+      url: canonical,
+      inLanguage: htmlLang,
+      datePublished: article.published?.toISOString(),
+      dateModified: (article.modified ?? article.published)?.toISOString(),
+      articleSection: article.section,
+      author: { '@type': 'Person', name: AUTHOR, url: Astro.site?.toString() },
+      publisher: { '@type': 'Organization', name: AUTHOR, url: Astro.site?.toString() },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+    }
+  : {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: AUTHOR,
+      url: Astro.site?.toString(),
+      inLanguage: htmlLang,
+      publisher: { '@type': 'Organization', name: AUTHOR, url: Astro.site?.toString() },
+    };
 ---
 <!DOCTYPE html>
 <html lang={htmlLang}>
@@ -51,12 +84,25 @@ const hrefOther = altUrl ?? sectionPath[other].home;
   <!-- Open Graph -->
   <meta property="og:title" content={pageTitle} />
   <meta property="og:description" content={pageDesc} />
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content={article ? 'article' : 'website'} />
   <meta property="og:url" content={canonical} />
-  <meta property="og:image" content={new URL(ogImage, Astro.site).toString()} />
+  <meta property="og:image" content={ogImageUrl} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content={AUTHOR} />
   <meta property="og:locale" content={locale === 'ru' ? 'ru_RU' : 'en_US'} />
+  {article?.published && (
+    <meta property="article:published_time" content={article.published.toISOString()} />
+  )}
+
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={pageTitle} />
+  <meta name="twitter:description" content={pageDesc} />
+  <meta name="twitter:image" content={ogImageUrl} />
+
   <meta name="generator" content={Astro.generator} />
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
   <script is:inline>document.documentElement.classList.add('js');</script>
 

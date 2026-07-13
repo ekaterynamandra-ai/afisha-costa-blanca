@@ -35,6 +35,7 @@ const sectionTitleKey = `section.${entry._meta.section}.title` as const;
   description={entry.data.description}
   ogImage={entry.data.cover ?? '/og-default.jpg'}
   altUrl={altUrl}
+  article={{ published: entry.data.date, section: t(locale, sectionTitleKey) }}
 >
   <Breadcrumbs items={[
     { label: t(locale, 'nav.home'), href: sectionPath[locale].home },

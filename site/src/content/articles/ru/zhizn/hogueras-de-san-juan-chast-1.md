@@ -3,7 +3,7 @@ title: "Что такое Hogueras de San Juan — часть 1: ninots и ма�
 description: "🎆 ЧТО ТАКОЕ HOGUERAS DE SAN JUAN — часть 1: ninots"
 section: zhizn
 date: 2026-05-05
-cover: "/photos/imports/hogueras-aesthetic.jpg"
+cover: "/photos/imports/hogueras-fiesta.png"
 location: "Alicante"
 season: summer
 type: festival

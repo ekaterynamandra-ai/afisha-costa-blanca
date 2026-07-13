@@ -14,6 +14,7 @@
     "edit": "concurrently --names \"site,admin\" --prefix-colors \"yellow,cyan\" \"npm:dev\" \"npm:cms-proxy\""
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
     "astro": "^6.3.8"
   },
   "devDependencies": {
