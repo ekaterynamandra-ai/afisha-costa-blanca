@@ -12,8 +12,8 @@ const year = new Date().getFullYear();
     </div>
     <div>
       <h4>{t(locale, 'footer.sections')}</h4>
-      <a href={sectionPath[locale].polezno}>{t(locale, 'nav.polezno')}</a>
-      <a href={sectionPath[locale].sobytiya}>{t(locale, 'nav.sobytiya')}</a>
+      <a href={locale === 'ru' ? '/checklist/' : sectionPath[locale].pereezd}>{t(locale, 'nav.pereezd')}</a>
+      <a href={sectionPath[locale].zhizn}>{t(locale, 'nav.zhizn')}</a>
       <a href={sectionPath[locale].about}>{t(locale, 'nav.about')}</a>
     </div>
     <div>
