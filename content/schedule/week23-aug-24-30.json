@@ -1,0 +1,29 @@
+{
+  "week": "2026-08-24 to 2026-08-30",
+  "approved": false,
+  "_notes": "Week23 v8: Пн 24.08 SUP + скрытые пляжи в жару (Катин выбор 16.07). Ср 26.08 weekend picks 29-30.08 Villajoyosa финал.",
+  "posts": [
+    {
+      "id": "w23-mon-sup-hidden-beaches",
+      "date": "2026-08-24",
+      "time": "10:00",
+      "title": "🏖 SUP и скрытые пляжи Costa Blanca — куда я езжу в жару",
+      "type": "living_useful",
+      "status": "draft",
+      "photo": "site/public/photos/imports/beach-club-loungers-parasols.jpeg",
+      "text": "🏖 <b>SUP И СКРЫТЫЕ ПЛЯЖИ COSTA BLANCA — КУДА Я ЕЗЖУ В ЖАРУ</b>\n\nПик августа. Известные пляжи забиты, парковаться негде. Но у меня есть свой список мест, куда еду сама и с друзьями. Тихо, чисто, без толпы.\n\n<b>🌊 Cabo Roig walk</b>\nОт Torrevieja до Cabo Roig — пешеходная тропа вдоль обрыва. Маленькие бухты с прозрачной водой, много мест где спуститься. Утром почти пустые.\n\n<b>🏝 Cala Ferris (Torrevieja)</b>\nМаленькая бухта прямо в городе, скальный берег, спокойная вода. Идеально для snorkelling. Парковка платная, но есть.\n\n<b>🚤 SUP на Guardamar + Санта-Пола</b>\nОт пляжа Guardamar до устья Segura — 2 км спокойной воды. Аренда SUP от €15/час. Идеально утром или после 18:00.\n\n<b>🌳 Puntal de la Torre (Alicante)</b>\nСкалистая точка возле Cabo Huertas. Мало кто знает. Виды на Cala Cantalar. Без лежаков и баров.\n\n<b>Что взять</b>\n✓ Вода 1.5 л/чел, SPF 50, шляпа\n✓ Обувь для скал\n✓ Полотенце-микрофибра\n✓ Маска (в Cabo Roig и Cala Ferris — черепахи)\n\nМой день: приезжаю в 8:30, купаюсь и SUP до 12:00, обед из своего в тени, до 17:00 отдыхаю, обратно до пик-жары.",
+      "_visible_length": 1022
+    },
+    {
+      "id": "w23-wed-weekend",
+      "date": "2026-08-26",
+      "time": "10:00",
+      "title": "🌟 Weekend picks 29-30.08",
+      "type": "weekend_picks",
+      "status": "planning",
+      "photo": null,
+      "text": null,
+      "_planning_note": "Moros y Cristianos Villajoyosa финал (24-30.08). Desembarco с моря на рассвете 28.08 — главное. Research за 3 дня."
+    }
+  ]
+}
