@@ -18,12 +18,12 @@
       "id": "w23-wed-weekend",
       "date": "2026-08-26",
       "time": "10:00",
-      "title": "🌟 Weekend picks 29-30.08",
+      "title": "🌟 Выходные 29-30 августа — финал Villajoyosa",
       "type": "weekend_picks",
-      "status": "planning",
-      "photo": null,
-      "text": null,
-      "_planning_note": "Moros y Cristianos Villajoyosa финал (24-30.08). Desembarco с моря на рассвете 28.08 — главное. Research за 3 дня."
+      "status": "draft",
+      "photo": "site/public/photos/imports/moros-cristianos-alcoy-2.jpg",
+      "text": "🌟 <b>ВЫХОДНЫЕ 29-30 АВГУСТА — ФИНАЛ VILLAJOYOSA</b>\n\nЗаключительный уикенд лета. Villajoyosa Moros y Cristianos подходит к финалу — самое зрелищное событие Costa Blanca.\n\n<b>⚔️ Desembarco 28.08 (пропущенный — повтор возможен)</b>\nЛегендарная «высадка пиратов» с моря на рассвете 28.08 — если пропустил, часть городка повторяет реконструкции в выходные. Спрашивай в туринфо у порта.\n\n<b>🎉 Финал Moros y Cristianos 29-30.08</b>\nПоследние entradas в вечер 30.08 — вся Villajoyosa на улицах, музыка, костюмы, ужин на площади. Общий финальный фейерверк с моря.\n\n<b>🌄 Прощание с летом на Cabo de la Nao (Jávea)</b>\nТихий уикенд: пляж, обед в chiringuito, закат на смотровой Cabo de la Nao. Одно из самых красивых мест побережья, без толпы.\n\n<b>Совет</b>\nНа финал Villajoyosa 30.08 приезжай к 18:00 и оставайся до полуночи. Парковка — только у окраин, дальше пешком.",
+      "_visible_length": 824
     }
   ]
 }
