@@ -22,10 +22,12 @@
       "time": "10:00",
       "title": "🎪 Sant Jaume 25-26 июля — куда идти на парады",
       "type": "weekend_picks",
-      "status": "approved",
+      "status": "published",
       "photo": "content/photos/website/sant-jaume-guardamar-parade.jpg",
       "text": "🎪 <b>SANT JAUME 25-26 ИЮЛЯ — КУДА ИДТИ НА ПАРАДЫ</b>\n\nSant Jaume (Santiago Apóstol) — покровитель Испании, 25 июля. На побережье не большой праздник, но два городка Costa Blanca делают из него зрелище.\n\n<b>🎪 Guardamar del Segura</b>\nСтатус Fiesta de Interés Turístico Autonómico. С 17 июля, пик 25-26.\n\nГлавное — парадные шествия мавров и христиан в исторических костюмах. Красочно, с музыкой, длится вечером несколько часов. Открытый доступ на площадях и вдоль главной улицы. Финал — водный фейерверк с моря.\n\n<b>⚔️ Villajoyosa (30 мин от Alicante)</b>\nMoros y Cristianos в честь Santa Marta, 24-31 июля.\n\nКульминация — Desembarco: «высадка пиратов» с моря на рассвете, 28 июля. Живая реконструкция битвы на пляже. Одно из самых узнаваемых событий побережья.\n\n<b>Как встроиться</b>\nПриходи в центр городка, всё бесплатно. Программа Guardamar — jcguardamar.com. Villajoyosa — villajoyosa.com.\n\n<b>Совет</b>\nПриезжай за час до парада — найдёшь место у ограждения. С детьми — берегите слух от mascletà.",
-      "_visible_length": 965
+      "_visible_length": 965,
+      "published_at": "2026-07-22T10:01:02.975998+02:00",
+      "message_id": 197
     }
   ]
 }
