@@ -22,10 +22,11 @@
       "time": "10:00",
       "title": "🌟 Выходные на Costa Blanca 1-2 августа",
       "type": "weekend_picks",
-      "status": "approved",
+      "status": "cancelled",
       "photo": "content/photos/website/rototom-sunsplash.jpg",
       "text": "🌟 <b>ВЫХОДНЫЕ НА COSTA BLANCA 1-2 АВГУСТА</b>\n\nФинал большой недели fiestas + анонс главного фестиваля лета впереди.\n\n<b>🎪 Финал Moros y Cristianos в Villajoyosa</b>\n30.07 — конкурс паэлий на площади. 31.07 — Entrada Cristiana, парадные шествия христианских войск с 20:00 в центре. Заключительные события Moros y Cristianos в честь Santa Marta — самое зрелищное на побережье.\n\n<b>🏖 Скрытые пляжи Cabo Roig</b>\nПешеходная тропа вдоль обрыва Torrevieja → Cabo Roig. Маленькие бухты с прозрачной водой. Утром почти пустые. Парковка бесплатная у Playa de la Glea.\n\n<b>🎵 Тизер: Rototom Sunsplash через 2 недели</b>\nКрупнейший reggae-фестиваль Европы, 16-22 августа в Benicàssim. 4 сцены, международные артисты, world music. От €70/день, кемпинг рядом. 2.5 часа от Аликанте — планировать заранее.\n\n<b>Совет</b>\nНа фестивалях в жару бери воду и SPF. К вечеру температура падает до +25°C.",
-      "_visible_length": 845
+      "_visible_length": 845,
+      "_note": "Cron падал 29.07-2.08 из-за missing rototom-sunsplash.jpg в git. Выходные 1-2.08 прошли, публиковать поздно."
     }
   ]
 }
