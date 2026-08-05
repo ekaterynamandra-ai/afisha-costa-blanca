@@ -18,12 +18,13 @@
       "id": "w24-wed-weekend",
       "date": "2026-09-02",
       "time": "10:00",
-      "title": "🌟 Выходные на Costa Blanca 5-6 сентября",
+      "title": "🌟 Выходные 5-6 сентября. La Vuelta в Андалусии и стадионные туры",
       "type": "weekend_picks",
-      "status": "draft",
+      "status": "cancelled",
       "photo": "content/photos/places/mediterranean-sunset-sea.jpg",
-      "text": "🌟 <b>ВЫХОДНЫЕ НА COSTA BLANCA 5-6 СЕНТЯБРЯ</b>\n\nПервые сентябрьские выходные. Море ещё +25°C, толпы ушли, самое время для поездок.\n\n<b>🍇 Fiesta de la Vendimia Requena (5-9.09)</b>\nВиноградный праздник в винном регионе. Дегустации молодого вина, danzas del vino, ярмарка ремёсел. 2 часа от Аликанте, стоит остаться на ночь.\n\n<b>🎪 Feria de las Virtudes Villena (4-9.09)</b>\nОдна из главных ferias Costa Blanca interior. Sevillanas, verbenas, mercadillos, парад лошадей. Час от Аликанте, семейная атмосфера без туристов.\n\n<b>🌊 Пляжи без толпы</b>\nPlaya de la Roqueta Guardamar, Playa San Juan Alicante. Дневные бары ещё работают, но людей в 3-4 раза меньше. Морская температура +25°C.\n\n<b>Совет</b>\nОсенние ferias это редкий случай попробовать сельскую Испанию без туристов. Меню только на испанском, цены в 2 раза ниже прибрежных.",
-      "_visible_length": 793
+      "text": "🌟 <b>ВЫХОДНЫЕ 5-6 СЕНТЯБРЯ. LA VUELTA В АНДАЛУСИИ И СТАДИОННЫЕ ТУРЫ</b>\n\nПервые сентябрьские выходные. Море ещё +25°C, туристов меньше, но событий в стране полно.\n\n<b>🚴 La Vuelta в Андалусии</b>\nСтадия 14 (сб): Jaén → Sierra de la Pandera, горное шоу. Стадия 15 (вс): Palma del Río → Córdoba, финиш среди улиц старого города с видом на Mezquita. Ради атмосферы и телекартинки главной велогонки Испании.\n\n<b>🎤 The Weeknd в Барселоне, 1.09</b>\nЕдинственный концерт в Испании в этом туре. Estadi Olímpic. Билеты на ticketmaster.es если ещё остались.\n\n<b>🎵 Shakira, 6 вечеров в Мадриде с 18.09</b>\nРезиденция шоу «Las Mujeres Ya No Lloran» в столице. Только 6 дат, стадион на 60k каждый вечер. Раскупают быстро.\n\n<b>🏝 Пляжи без толпы</b>\nPlaya de la Roqueta Guardamar, Playa San Juan Alicante. Море ещё тёплое, парковка свободная. Финальный шанс на августовский ритм перед осенью.",
+      "_visible_length": 841,
+      "_note": "Cancelled 2026-08-02: Катя убирает Ср weekend picks, оставляет только Пн-рубрику event-digest."
     }
   ]
 }
